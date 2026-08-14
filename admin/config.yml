@@ -17,6 +17,7 @@ collections:
         format: "json"
         fields:
           - { label: "Hero Title", name: "hero_title", widget: "string" }
-          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
+          - { label: "Hero Paragraph 1", name: "hero_p1", widget: "text" }
+          - { label: "Hero Paragraph 2", name: "hero_p2", widget: "text" }
           - { label: "About Title", name: "about_title", widget: "string" }
-          - { label: "About Text", name: "about_text", widget: "text" }
+          - { label: "About Paragraph 1", name: "about_p1", widget: "text" }
