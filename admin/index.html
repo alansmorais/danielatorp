@@ -87,12 +87,12 @@
             // 3. Pillars Grid Preview
             h('section', { style: { padding: '30px 10px', background: 'linear-gradient(90deg, #f8dce4 0%, #fff 50%, #d8f0f2 100%)', textAlign: 'center' } },
               h('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px', maxWidth: '600px', margin: 'auto' } },
-                h('div', { style: { background: '#fff', padding: '10px', fontSize: '10px' } }, pillar1),
-                h('div', { style: { background: '#fff', padding: '10px', fontSize: '10px' } }, pillar2),
-                h('div', { style: { background: '#fff', padding: '10px', fontSize: '10px' } }, pillar3),
-                h('div', { style: { background: '#fff', padding: '10px', fontSize: '10px' } }, pillar4),
-                h('div', { style: { background: '#fff', padding: '10px', fontSize: '10px' } }, pillar5),
-                h('div', { style: { background: '#fff', padding: '10px', fontSize: '10px' } }, pillar6)
+                h('div', { style: { background: '#fff', padding: '10px', fontSize: '10px' }, dangerouslySetInnerHTML: { __html: pillar1 } }),
+                h('div', { style: { background: '#fff', padding: '10px', fontSize: '10px' }, dangerouslySetInnerHTML: { __html: pillar2 } }),
+                h('div', { style: { background: '#fff', padding: '10px', fontSize: '10px' }, dangerouslySetInnerHTML: { __html: pillar3 } }),
+                h('div', { style: { background: '#fff', padding: '10px', fontSize: '10px' }, dangerouslySetInnerHTML: { __html: pillar4 } }),
+                h('div', { style: { background: '#fff', padding: '10px', fontSize: '10px' }, dangerouslySetInnerHTML: { __html: pillar5 } }),
+                h('div', { style: { background: '#fff', padding: '10px', fontSize: '10px' }, dangerouslySetInnerHTML: { __html: pillar6 } })
               )
             ),
 
