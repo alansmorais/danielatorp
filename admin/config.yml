@@ -9,15 +9,39 @@ public_folder: "/wp-content/uploads"
 
 collections:
   - name: "content"
-    label: "Site Content"
+    label: "Nettsidinnhold"
     files:
-      - label: "Homepage Text"
+      - label: "Forside (Alle tekster)"
         name: "homepage"
         file: "data.json"
         format: "json"
         fields:
-          - { label: "Hero Title", name: "hero_title", widget: "string" }
-          - { label: "Hero Paragraph 1", name: "hero_p1", widget: "text" }
-          - { label: "Hero Paragraph 2", name: "hero_p2", widget: "text" }
-          - { label: "About Title", name: "about_title", widget: "string" }
-          - { label: "About Paragraph 1", name: "about_p1", widget: "text" }
+          - { label: "Hovedtittel (Hero)", name: "hero_title", widget: "string" }
+          - { label: "Hero Tekst 1", name: "hero_subtitle", widget: "text" }
+          - { label: "Hero Tekst 2", name: "hero_subtitle_2", widget: "text" }
+          
+          - { label: "Datoer Overskrift", name: "dates_title", widget: "string" }
+          - { label: "Dato 1", name: "date_1", widget: "string" }
+          - { label: "Dato 2", name: "date_2", widget: "string" }
+          - { label: "Dato 3", name: "date_3", widget: "string" }
+          - { label: "Dato 4", name: "date_4", widget: "string" }
+          - { label: "Dato 5", name: "date_5", widget: "string" }
+
+          - { label: "Pilar 1 Tittel", name: "pillar_1", widget: "string" }
+          - { label: "Pilar 2 Tittel", name: "pillar_2", widget: "string" }
+          - { label: "Pilar 3 Tittel", name: "pillar_3", widget: "string" }
+          - { label: "Pilar 4 Tittel", name: "pillar_4", widget: "string" }
+          - { label: "Pilar 5 Tittel", name: "pillar_5", widget: "string" }
+          - { label: "Pilar 6 Tittel", name: "pillar_6", widget: "string" }
+
+          - { label: "Om oss Tittel", name: "about_title", widget: "string" }
+          - { label: "Om oss Avsnitt 1", name: "about_p1", widget: "text" }
+          - { label: "Om oss Avsnitt 2", name: "about_p2", widget: "string" }
+          - { label: "Om oss Avsnitt 3", name: "about_p3", widget: "text" }
+
+          - { label: "Workshop 1 Tittel", name: "workshop_1_title", widget: "string" }
+          - { label: "Workshop 1 Beskrivelse", name: "workshop_1_desc", widget: "string" }
+          - { label: "Workshop 2 Tittel", name: "workshop_2_title", widget: "string" }
+          - { label: "Workshop 2 Beskrivelse", name: "workshop_2_desc", widget: "string" }
+          - { label: "Workshop 3 Tittel", name: "workshop_3_title", widget: "string" }
+          - { label: "Workshop 3 Beskrivelse", name: "workshop_3_desc", widget: "string" }
