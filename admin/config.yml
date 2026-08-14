@@ -1,0 +1,19 @@
+local_backend: true
+backend:
+  name: github
+  repo: https://alansmorais.github.io/danielatorp/ # IMPORTANT: Update this to the actual repo
+  branch: main # Or master, depending on your default branch
+
+media_folder: "wp-content/uploads" # Where images will be saved
+public_folder: "/wp-content/uploads" # The public path to those images
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Homepage"
+        name: "home"
+        file: "index.html"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
