@@ -242,6 +242,17 @@
       <p id="cms-hero-subtitle">Intimitet er ikke bare sex. Det handler om å etablere et fortrolig forhold til deg selv og til menneskene som står deg nær. Intimitet, den behagelige følelsen av tillit, sammensmelting og forståelse uten ord, hviler på 6 pilarer. Det starter med oss selv. Ta et skritt sammen med meg på veien mot tillit og kjærlig omsorg.</p>
       <p>Jeg vil hjelpe deg med å finne veien til ditt sanne jeg og til dine nærmeste.</p>
 
+<script>
+  fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+      if(data.hero_title) document.getElementById('cms-hero-title').innerText = data.hero_title;
+      if(data.hero_p1) document.getElementById('cms-hero-p1').innerText = data.hero_p1;
+      if(data.about_title) document.getElementById('cms-about-title').innerText = data.about_title;
+    })
+    .catch(error => console.error('Error loading CMS data:', error));
+</script>
+    
     /* =========================================
        4. 6 PILLARS SECTION
        ========================================= */
