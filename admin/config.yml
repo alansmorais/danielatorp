@@ -1,4 +1,3 @@
-
 local_backend: true
 backend:
   name: github
@@ -9,12 +8,15 @@ media_folder: "wp-content/uploads"
 public_folder: "/wp-content/uploads"
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: "content"
+    label: "Site Content"
     files:
-      - label: "Homepage"
-        name: "home"
-        file: "index.html"
+      - label: "Homepage Text"
+        name: "homepage"
+        file: "data.json"
+        format: "json"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
+          - { label: "About Title", name: "about_title", widget: "string" }
+          - { label: "About Text", name: "about_text", widget: "text" }
