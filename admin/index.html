@@ -3,51 +3,73 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Content Manager</title>
-    <!-- Include Sveltia CMS -->
+    <title>Full Page Preview</title>
     <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <script>
-      // 1. Define the Full Page Preview Template
-      const HomepagePreview = createClass({
+      const FullPagePreview = createClass({
         render: function() {
           const { entry } = this.props;
           const heroTitle = entry.getIn(['data', 'hero_title']) || '';
-          const heroSubtitle = entry.getIn(['data', 'hero_subtitle']) || '';
+          const heroP1 = entry.getIn(['data', 'hero_p1']) || '';
+          const heroP2 = entry.getIn(['data', 'hero_p2']) || '';
           const aboutTitle = entry.getIn(['data', 'about_title']) || '';
-          const aboutText = entry.getIn(['data', 'about_text']) || '';
+          const aboutP1 = entry.getIn(['data', 'about_p1']) || '';
 
-          // This recreates your exact HTML layout and CSS styles inside the preview pane
-          return h('div', { style: { fontFamily: 'Roboto, Arial, sans-serif', color: '#080808', margin: '0' } },
+          return h('div', { 
+            style: { 
+              fontFamily: 'Roboto, Arial, sans-serif', 
+              color: '#080808', 
+              margin: '0', 
+              background: '#fff',
+              overflowX: 'hidden'
+            } 
+          },
             
-            // Hero Section Preview
+            // 1. Header Bar Simulation
+            h('div', { style: { height: '47px', background: '#fff', borderBottom: '1px solid #eee', display: 'flex', alignItems: 'center', padding: '0 20px', fontSize: '12px', fontWeight: '400', color: '#948f8f' } },
+              h('span', {}, 'Hjem  •  6 pilarer for intimitet  •  Hvem er Daniela  •  Workshoper  •  Kontakt')
+            ),
+
+            // 2. Hero Section with Gradient Background
             h('section', { 
               style: { 
-                padding: '50px 20px', 
+                minHeight: '486px', 
                 textAlign: 'center', 
+                padding: '70px 20px', 
                 background: 'linear-gradient(90deg, #f9dbe3 0%, #f8d7e1 31%, #fff 49%, #d7f0f3 71%, #d5eff2 100%)' 
               } 
             },
               h('div', { style: { maxWidth: '555px', margin: 'auto' } },
                 h('h1', { style: { fontSize: '25px', fontWeight: '700', margin: '0 0 13px' } }, heroTitle),
-                h('p', { style: { fontSize: '13px', lineHeight: '1.7', margin: '0 0 12px' } }, heroSubtitle)
+                h('p', { style: { fontSize: '13px', lineHeight: '1.7', margin: '0 0 12px' } }, heroP1),
+                h('p', { style: { fontSize: '13px', lineHeight: '1.7', margin: '0 0 12px' } }, heroP2),
+                
+                // Dates Box Simulation
+                h('div', { style: { margin: '29px auto 30px', border: '1px solid #ee5a7a', padding: '15px', fontSize: '13px', background: 'rgba(255,255,255,0.5)', textAlign: 'left' } },
+                  h('h3', { style: { fontSize: '16px', margin: '0 0 8px', fontWeight: '700' } }, 'Kommende datoer:'),
+                  h('div', {}, '20.6.2026: Åpning av senteret Tilstedeværelse'),
+                  h('div', { style: { color: '#e9476b', fontWeight: '700' } }, '4.–5.7.2026: Lughnasad – Kvinneessens og livskraft')
+                )
               )
             ),
 
-            // About Section Preview
-            h('section', { style: { padding: '50px 20px', background: '#fff' } },
-              h('div', { style: { maxWidth: '800px', margin: 'auto' } },
-                h('h2', { style: { fontSize: '31px', fontWeight: '300', margin: '0 0 20px' } }, aboutTitle),
-                h('p', { style: { fontSize: '16px', lineHeight: '1.5', color: '#9b9291' } }, aboutText)
+            // 3. About Section Simulation
+            h('section', { style: { padding: '80px 20px', background: '#fff' } },
+              h('div', { style: { maxWidth: '800px', margin: 'auto', display: 'flex', gap: '40px', alignItems: 'center' } },
+                h('div', { style: { flex: 1 } },
+                  h('h2', { style: { fontSize: '31px', fontWeight: '300', margin: '0 0 20px' } }, aboutTitle),
+                  h('p', { style: { fontSize: '15px', lineHeight: '1.6', color: '#9b9291' } }, aboutP1)
+                )
               )
             )
           );
         }
       });
 
-      // 2. Register the template for your homepage file configuration
-      CMS.registerPreviewTemplate('homepage', HomepagePreview);
+      CMS.registerPreviewTemplate('homepage', FullPagePreview);
     </script>
   </body>
 </html>
