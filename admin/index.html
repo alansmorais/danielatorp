@@ -9,67 +9,131 @@
   </head>
   <body>
     <script>
-      const FullPagePreview = createClass({
+      const FullWebsitePreview = createClass({
         render: function() {
           const { entry } = this.props;
-          const heroTitle = entry.getIn(['data', 'hero_title']) || '';
-          const heroP1 = entry.getIn(['data', 'hero_p1']) || '';
-          const heroP2 = entry.getIn(['data', 'hero_p2']) || '';
-          const aboutTitle = entry.getIn(['data', 'about_title']) || '';
-          const aboutP1 = entry.getIn(['data', 'about_p1']) || '';
+          const data = entry.get('data');
+
+          const heroTitle = data.get('hero_title') || '';
+          const heroSubtitle = data.get('hero_subtitle') || '';
+          const heroSubtitle2 = data.get('hero_subtitle_2') || '';
+          const datesTitle = data.get('dates_title') || '';
+          const date1 = data.get('date_1') || '';
+          const date2 = data.get('date_2') || '';
+          const date3 = data.get('date_3') || '';
+          const date4 = data.get('date_4') || '';
+          const date5 = data.get('date_5') || '';
+
+          const pillar1 = data.get('pillar_1') || '';
+          const pillar2 = data.get('pillar_2') || '';
+          const pillar3 = data.get('pillar_3') || '';
+          const pillar4 = data.get('pillar_4') || '';
+          const pillar5 = data.get('pillar_5') || '';
+          const pillar6 = data.get('pillar_6') || '';
+
+          const aboutTitle = data.get('about_title') || '';
+          const aboutP1 = data.get('about_p1') || '';
+          const aboutP2 = data.get('about_p2') || '';
+          const aboutP3 = data.get('about_p3') || '';
+
+          const w1Title = data.get('workshop_1_title') || '';
+          const w1Desc = data.get('workshop_1_desc') || '';
+          const w2Title = data.get('workshop_2_title') || '';
+          const w2Desc = data.get('workshop_2_desc') || '';
+          const w3Title = data.get('workshop_3_title') || '';
+          const w3Desc = data.get('workshop_3_desc') || '';
 
           return h('div', { 
             style: { 
-              fontFamily: 'Roboto, Arial, sans-serif', 
+              fontFamily: "'Roboto', Arial, sans-serif", 
               color: '#080808', 
-              margin: '0', 
               background: '#fff',
-              overflowX: 'hidden'
+              fontSize: '14px',
+              lineHeight: '1.6'
             } 
           },
             
-            // 1. Header Bar Simulation
-            h('div', { style: { height: '47px', background: '#fff', borderBottom: '1px solid #eee', display: 'flex', alignItems: 'center', padding: '0 20px', fontSize: '12px', fontWeight: '400', color: '#948f8f' } },
-              h('span', {}, 'Hjem  •  6 pilarer for intimitet  •  Hvem er Daniela  •  Workshoper  •  Kontakt')
+            // 1. Header Navigation Bar
+            h('div', { style: { height: '47px', background: '#fff', borderBottom: '1px solid #eee', display: 'flex', alignItems: 'center', padding: '0 20px', fontSize: '11px', color: '#948f8f' } },
+              h('span', { style: { fontWeight: 'bold', color: '#111', marginRight: 'auto' } }, 'Daniela Torp'),
+              h('span', {}, 'Hjem  •  6 pilarer  •  Hvem er Daniela  •  Workshoper  •  Kontakt  •  🇳🇴')
             ),
 
-            // 2. Hero Section with Gradient Background
+            // 2. Hero Section
             h('section', { 
               style: { 
-                minHeight: '486px', 
                 textAlign: 'center', 
-                padding: '70px 20px', 
+                padding: '50px 20px', 
                 background: 'linear-gradient(90deg, #f9dbe3 0%, #f8d7e1 31%, #fff 49%, #d7f0f3 71%, #d5eff2 100%)' 
               } 
             },
               h('div', { style: { maxWidth: '555px', margin: 'auto' } },
-                h('h1', { style: { fontSize: '25px', fontWeight: '700', margin: '0 0 13px' } }, heroTitle),
-                h('p', { style: { fontSize: '13px', lineHeight: '1.7', margin: '0 0 12px' } }, heroP1),
-                h('p', { style: { fontSize: '13px', lineHeight: '1.7', margin: '0 0 12px' } }, heroP2),
+                h('h1', { style: { fontSize: '24px', fontWeight: '700', margin: '0 0 13px' } }, heroTitle),
+                h('p', { style: { fontSize: '12px', lineHeight: '1.6', margin: '0 0 10px' } }, heroSubtitle),
+                h('p', { style: { fontSize: '12px', lineHeight: '1.6', margin: '0 0 20px' } }, heroSubtitle2),
                 
-                // Dates Box Simulation
-                h('div', { style: { margin: '29px auto 30px', border: '1px solid #ee5a7a', padding: '15px', fontSize: '13px', background: 'rgba(255,255,255,0.5)', textAlign: 'left' } },
-                  h('h3', { style: { fontSize: '16px', margin: '0 0 8px', fontWeight: '700' } }, 'Kommende datoer:'),
-                  h('div', {}, '20.6.2026: Åpning av senteret Tilstedeværelse'),
-                  h('div', { style: { color: '#e9476b', fontWeight: '700' } }, '4.–5.7.2026: Lughnasad – Kvinneessens og livskraft')
+                // Dates Box
+                h('div', { style: { border: '1px solid #ee5a7a', padding: '12px', background: 'rgba(255,255,255,0.6)', textAlign: 'left', fontSize: '11px', lineHeight: '1.8' } },
+                  h('h3', { style: { fontSize: '14px', margin: '0 0 6px', fontWeight: '700' } }, datesTitle),
+                  h('div', {}, date1),
+                  h('div', { style: { color: '#e9476b', fontWeight: '700' } }, date2),
+                  h('div', { style: { color: '#e9476b', fontWeight: '700' } }, date3),
+                  h('div', { style: { color: '#e9476b', fontWeight: '700' } }, date4),
+                  h('div', { style: { color: '#e9476b', fontWeight: '700' } }, date5)
                 )
               )
             ),
 
-            // 3. About Section Simulation
-            h('section', { style: { padding: '80px 20px', background: '#fff' } },
-              h('div', { style: { maxWidth: '800px', margin: 'auto', display: 'flex', gap: '40px', alignItems: 'center' } },
-                h('div', { style: { flex: 1 } },
-                  h('h2', { style: { fontSize: '31px', fontWeight: '300', margin: '0 0 20px' } }, aboutTitle),
-                  h('p', { style: { fontSize: '15px', lineHeight: '1.6', color: '#9b9291' } }, aboutP1)
+            // 3. Pillars Grid Preview
+            h('section', { style: { padding: '30px 10px', background: 'linear-gradient(90deg, #f8dce4 0%, #fff 50%, #d8f0f2 100%)', textAlign: 'center' } },
+              h('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px', maxWidth: '600px', margin: 'auto' } },
+                h('div', { style: { background: '#fff', padding: '10px', fontSize: '10px' } }, pillar1),
+                h('div', { style: { background: '#fff', padding: '10px', fontSize: '10px' } }, pillar2),
+                h('div', { style: { background: '#fff', padding: '10px', fontSize: '10px' } }, pillar3),
+                h('div', { style: { background: '#fff', padding: '10px', fontSize: '10px' } }, pillar4),
+                h('div', { style: { background: '#fff', padding: '10px', fontSize: '10px' } }, pillar5),
+                h('div', { style: { background: '#fff', padding: '10px', fontSize: '10px' } }, pillar6)
+              )
+            ),
+
+            // 4. About Section
+            h('section', { style: { padding: '50px 20px', background: '#fff' } },
+              h('div', { style: { maxWidth: '700px', margin: 'auto' } },
+                h('h2', { style: { fontSize: '24px', fontWeight: '300', margin: '0 0 15px' } }, aboutTitle),
+                h('p', { style: { fontSize: '13px', lineHeight: '1.6', color: '#9b9291', marginBottom: '10px' } }, aboutP1),
+                h('p', { style: { fontSize: '13px', lineHeight: '1.6', color: '#9b9291', marginBottom: '10px', fontWeight: 'bold' } }, aboutP2),
+                h('p', { style: { fontSize: '13px', lineHeight: '1.6', color: '#9b9291' } }, aboutP3)
+              )
+            ),
+
+            // 5. Workshops Cards Preview
+            h('section', { style: { padding: '50px 20px', background: '#fafafa', textAlign: 'center' } },
+              h('h2', { style: { fontSize: '24px', fontWeight: '300', marginBottom: '20px' } }, 'Workshoper'),
+              h('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px', maxWidth: '800px', margin: 'auto', textAlign: 'left' } },
+                h('div', { style: { background: '#fff', padding: '15px', border: '1px solid #ddd' } },
+                  h('h3', { style: { fontSize: '14px', margin: '0 0 5px' } }, w1Title),
+                  h('p', { style: { fontSize: '11px', color: '#777', margin: 0 } }, w1Desc)
+                ),
+                h('div', { style: { background: '#fff', padding: '15px', border: '1px solid #ddd' } },
+                  h('h3', { style: { fontSize: '14px', margin: '0 0 5px' } }, w2Title),
+                  h('p', { style: { fontSize: '11px', color: '#777', margin: 0 } }, w2Desc)
+                ),
+                h('div', { style: { background: '#fff', padding: '15px', border: '1px solid #ddd' } },
+                  h('h3', { style: { fontSize: '14px', margin: '0 0 5px' } }, w3Title),
+                  h('p', { style: { fontSize: '11px', color: '#777', margin: 0 } }, w3Desc)
                 )
               )
+            ),
+
+            // 6. Footer
+            h('div', { style: { padding: '30px', textAlign: 'center', background: '#fff', borderTop: '1px solid #eee', fontSize: '11px', color: '#aaa' } },
+              '© 2026 Alle rettigheter forbeholdt | Daniela Torp'
             )
           );
         }
       });
 
-      CMS.registerPreviewTemplate('homepage', FullPagePreview);
+      CMS.registerPreviewTemplate('homepage', FullWebsitePreview);
     </script>
   </body>
 </html>
