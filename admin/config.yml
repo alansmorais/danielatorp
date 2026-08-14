@@ -16,6 +16,7 @@ collections:
         file: "data.json"
         format: "json"
         fields:
+          - { label: "Hovedtitel (Hero)", name: "hero_title", widget: "string" }
           - { label: "Hovedtittel (Hero)", name: "hero_title", widget: "string" }
           - { label: "Hero Tekst 1", name: "hero_subtitle", widget: "text" }
           - { label: "Hero Tekst 2", name: "hero_subtitle_2", widget: "text" }
@@ -45,3 +46,5 @@ collections:
           - { label: "Workshop 2 Beskrivelse", name: "workshop_2_desc", widget: "string" }
           - { label: "Workshop 3 Tittel", name: "workshop_3_title", widget: "string" }
           - { label: "Workshop 3 Beskrivelse", name: "workshop_3_desc", widget: "string" }
+
+          
