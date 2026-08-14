@@ -1,13 +1,12 @@
 local_backend: true
 backend:
   name: github
-  repo: https://alansmorais.github.io/danielatorp/ # IMPORTANT: Update this to the actual repo
+  repo: alansmorais/danielatorp # FIXED: Owner/repo format only
   branch: main # Or master, depending on your default branch
   base_url: https://decap-cms-oauth-provider.vercel.app # The proxy
   auth_endpoint: auth
   client_id: Ov23liKXJmMdjP08mtYS # Paste the ID from Step 2
 
-  
 media_folder: "wp-content/uploads" # Where images will be saved
 public_folder: "/wp-content/uploads" # The public path to those images
 
@@ -21,4 +20,3 @@ collections:
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
-
