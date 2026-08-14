@@ -1,12 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager</title>
+    <!-- Include Sveltia CMS -->
+    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
   </head>
   <body>
-    <!-- Include the Sveltia CMS script -->
-    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+    <script>
+      // 1. Define the Full Page Preview Template
+      const HomepagePreview = createClass({
+        render: function() {
+          const { entry } = this.props;
+          const heroTitle = entry.getIn(['data', 'hero_title']) || '';
+          const heroSubtitle = entry.getIn(['data', 'hero_subtitle']) || '';
+          const aboutTitle = entry.getIn(['data', 'about_title']) || '';
+          const aboutText = entry.getIn(['data', 'about_text']) || '';
+
+          // This recreates your exact HTML layout and CSS styles inside the preview pane
+          return h('div', { style: { fontFamily: 'Roboto, Arial, sans-serif', color: '#080808', margin: '0' } },
+            
+            // Hero Section Preview
+            h('section', { 
+              style: { 
+                padding: '50px 20px', 
+                textAlign: 'center', 
+                background: 'linear-gradient(90deg, #f9dbe3 0%, #f8d7e1 31%, #fff 49%, #d7f0f3 71%, #d5eff2 100%)' 
+              } 
+            },
+              h('div', { style: { maxWidth: '555px', margin: 'auto' } },
+                h('h1', { style: { fontSize: '25px', fontWeight: '700', margin: '0 0 13px' } }, heroTitle),
+                h('p', { style: { fontSize: '13px', lineHeight: '1.7', margin: '0 0 12px' } }, heroSubtitle)
+              )
+            ),
+
+            // About Section Preview
+            h('section', { style: { padding: '50px 20px', background: '#fff' } },
+              h('div', { style: { maxWidth: '800px', margin: 'auto' } },
+                h('h2', { style: { fontSize: '31px', fontWeight: '300', margin: '0 0 20px' } }, aboutTitle),
+                h('p', { style: { fontSize: '16px', lineHeight: '1.5', color: '#9b9291' } }, aboutText)
+              )
+            )
+          );
+        }
+      });
+
+      // 2. Register the template for your homepage file configuration
+      CMS.registerPreviewTemplate('homepage', HomepagePreview);
+    </script>
   </body>
 </html>
