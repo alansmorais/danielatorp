@@ -236,12 +236,39 @@
       color: #fff;
     }
 
-    <section class="hero">
-    <div class="intro">
-      <h1 id="cms-hero-title">Intimitet i sammenheng</h1>
-      <p id="cms-hero-subtitle">Intimitet er ikke bare sex. Det handler om å etablere et fortrolig forhold til deg selv og til menneskene som står deg nær. Intimitet, den behagelige følelsen av tillit, sammensmelting og forståelse uten ord, hviler på 6 pilarer. Det starter med oss selv. Ta et skritt sammen med meg på veien mot tillit og kjærlig omsorg.</p>
-      <p>Jeg vil hjelpe deg med å finne veien til ditt sanne jeg og til dine nærmeste.</p>
+   <!-- Hero Section -->
+<h1 id="cms-hero-title"></h1>
+<p id="cms-hero-subtitle"></p>
+<p id="cms-hero-subtitle-2"></p>
 
+<!-- Dates Section -->
+<h2 id="cms-dates-title"></h2>
+<div id="cms-date-1"></div>
+<div id="cms-date-2"></div>
+<div id="cms-date-3"></div>
+<div id="cms-date-4"></div>
+<div id="cms-date-5"></div>
+
+<!-- Pillars Section -->
+<div class="pillar"><img ...><h3 id="cms-pillar-1"></h3></div>
+<div class="pillar"><img ...><h3 id="cms-pillar-2"></h3></div>
+<div class="pillar"><img ...><h3 id="cms-pillar-3"></h3></div>
+<div class="pillar"><img ...><h3 id="cms-pillar-4"></h3></div>
+<div class="pillar"><img ...><h3 id="cms-pillar-5"></h3></div>
+<div class="pillar"><img ...><h3 id="cms-pillar-6"></h3></div>
+
+<!-- About Section -->
+<h2 id="cms-about-title"></h2>
+<p id="cms-about-p1"></p>
+<p id="cms-about-p2"></p>
+<p id="cms-about-p3"></p>
+
+<!-- Workshops Section -->
+<h3 id="cms-w1-title"></h3><p id="cms-w1-desc"></p>
+<h3 id="cms-w2-title"></h3><p id="cms-w2-desc"></p>
+<h3 id="cms-w3-title"></h3><p id="cms-w3-desc"></p>
+
+    
 <script>
   fetch('data.json')
     .then(response => response.json())
@@ -1203,5 +1230,43 @@
       if (e.key === 'Escape') closeModalDirect();
     });
   </script>
+
+<script>
+  fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+      if (data.hero_title) document.getElementById('cms-hero-title').innerText = data.hero_title;
+      if (data.hero_subtitle) document.getElementById('cms-hero-subtitle').innerText = data.hero_subtitle;
+      if (data.hero_subtitle_2) document.getElementById('cms-hero-subtitle-2').innerText = data.hero_subtitle_2;
+      
+      if (data.dates_title) document.getElementById('cms-dates-title').innerText = data.dates_title;
+      if (data.date_1) document.getElementById('cms-date-1').innerText = data.date_1;
+      if (data.date_2) document.getElementById('cms-date-2').innerText = data.date_2;
+      if (data.date_3) document.getElementById('cms-date-3').innerText = data.date_3;
+      if (data.date_4) document.getElementById('cms-date-4').innerText = data.date_4;
+      if (data.date_5) document.getElementById('cms-date-5').innerText = data.date_5;
+
+      if (data.pillar_1) document.getElementById('cms-pillar-1').innerHTML = data.pillar_1;
+      if (data.pillar_2) document.getElementById('cms-pillar-2').innerHTML = data.pillar_2;
+      if (data.pillar_3) document.getElementById('cms-pillar-3').innerHTML = data.pillar_3;
+      if (data.pillar_4) document.getElementById('cms-pillar-4').innerHTML = data.pillar_4;
+      if (data.pillar_5) document.getElementById('cms-pillar-5').innerHTML = data.pillar_5;
+      if (data.pillar_6) document.getElementById('cms-pillar-6').innerHTML = data.pillar_6;
+
+      if (data.about_title) document.getElementById('cms-about-title').innerText = data.about_title;
+      if (data.about_p1) document.getElementById('cms-about-p1').innerText = data.about_p1;
+      if (data.about_p2) document.getElementById('cms-about-p2').innerText = data.about_p2;
+      if (data.about_p3) document.getElementById('cms-about-p3').innerText = data.about_p3;
+
+      if (data.workshop_1_title) document.getElementById('cms-w1-title').innerText = data.workshop_1_title;
+      if (data.workshop_1_desc) document.getElementById('cms-w1-desc').innerText = data.workshop_1_desc;
+      if (data.workshop_2_title) document.getElementById('cms-w2-title').innerText = data.workshop_2_title;
+      if (data.workshop_2_desc) document.getElementById('cms-w2-desc').innerText = data.workshop_2_desc;
+      if (data.workshop_3_title) document.getElementById('cms-w3-title').innerText = data.workshop_3_title;
+      if (data.workshop_3_desc) document.getElementById('cms-w3-desc').innerText = data.workshop_3_desc;
+    })
+    .catch(error => console.error('Error loading CMS data:', error));
+</script>
+  
 </body>
 </html>
