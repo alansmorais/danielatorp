@@ -230,8 +230,8 @@
     }
 
     .pillar-image img {
-      width: 594px;
-      height: 594px;
+      width: 224px;
+      height: 224px;
       max-width: 100%;
       object-fit: contain;
       display: inline-block;
@@ -398,7 +398,7 @@
       }
       .pillar-image img {
         width: 100%;
-        max-width: 594px;
+        max-width: 224px;
         height: auto;
       }
       .svg-divider {
@@ -430,7 +430,6 @@
     <div class="wrap">
       <a href="../index.html">
         <img class="logo" src="https://www.danielatorp.cz/wp-content/uploads/2020/02/logo_perem_bez_pozadi%CC%81.png" alt="Daniela Torp">
-      
       </a>
       
       <nav class="nav" id="mainNav">
@@ -520,7 +519,7 @@
     <section class="pillar-section" id="pilar-1">
       <div class="pillar-row">
         <div class="pillar-image">
-          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/1male_komplet_na_web.png" width="594" height="594" alt="Parintimitet">
+          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/1male_komplet_na_web.png" width="224" height="224" alt="Parintimitet">
         </div>
         <div class="pillar-content">
           <div class="svg-divider"></div>
@@ -542,7 +541,7 @@
     <section class="pillar-section" id="pilar-2">
       <div class="pillar-row">
         <div class="pillar-image">
-          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/2mal%C3%A9_komplet_na_web.png" width="594" height="594" alt="Graviditet">
+          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/2mal%C3%A9_komplet_na_web.png" width="224" height="224" alt="Graviditet">
         </div>
         <div class="pillar-content">
           <div class="svg-divider"></div>
@@ -564,7 +563,7 @@
     <section class="pillar-section" id="pilar-3">
       <div class="pillar-row">
         <div class="pillar-image">
-          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/3mal%C3%A9_komplet_na_web.png" width="594" height="594" alt="Morsrollen">
+          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/3mal%C3%A9_komplet_na_web.png" width="224" height="224" alt="Morsrollen">
         </div>
         <div class="pillar-content">
           <div class="svg-divider"></div>
@@ -586,7 +585,7 @@
     <section class="pillar-section" id="pilar-4">
       <div class="pillar-row">
         <div class="pillar-image">
-          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/4mal%C3%A9_komplet_na_web.png" width="594" height="594" alt="Barn og Ungdom">
+          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/4mal%C3%A9_komplet_na_web.png" width="224" height="224" alt="Barn og Ungdom">
         </div>
         <div class="pillar-content">
           <div class="svg-divider"></div>
@@ -608,7 +607,7 @@
     <section class="pillar-section" id="pilar-5">
       <div class="pillar-row">
         <div class="pillar-image">
-          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/5mal%C3%A9_komplet_na_web.png" width="594" height="594" alt="Moden alder">
+          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/5mal%C3%A9_komplet_na_web.png" width="224" height="224" alt="Moden alder">
         </div>
         <div class="pillar-content">
           <div class="svg-divider"></div>
@@ -630,7 +629,7 @@
     <section class="pillar-section" id="pilar-6">
       <div class="pillar-row">
         <div class="pillar-image">
-          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/6mal%C3%A9_komplet_na_web.png" width="594" height="594" alt="Døden">
+          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/6mal%C3%A9_komplet_na_web.png" width="224" height="224" alt="Døden">
         </div>
         <div class="pillar-content">
           <div class="svg-divider"></div>
@@ -723,6 +722,7 @@
 
   <!-- ================= SCRIPTS ================= -->
   <script>
+    // Language switching logic with persistent storage
     function setLanguage(lang) {
       if (lang === 'en') {
         document.body.classList.add('lang-en');
@@ -735,6 +735,7 @@
       }
     }
 
+    // Apply saved language on page load
     (function initLanguage() {
       const saved = localStorage.getItem('site_lang');
       if (saved === 'en') {
@@ -742,6 +743,7 @@
       }
     })();
 
+    // Mobile nav toggle
     function toggleMobileNav() {
       const nav = document.getElementById('mainNav');
       if (nav.style.display === 'flex' && nav.style.flexDirection === 'column') {
