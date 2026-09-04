@@ -50,11 +50,9 @@
     /* =========================================
        2. MULTILINGUAL SWITCHER ENGINE
        ========================================= */
-    /* Hide English elements by default */
     body:not(.lang-en) [data-lang="en"] {
       display: none !important;
     }
-    /* Hide Norwegian elements when English is active */
     body.lang-en [data-lang="no"] {
       display: none !important;
     }
@@ -232,10 +230,9 @@
     }
 
     .pillar-image img {
-      max-width: 100%;
       width: 594px;
       height: 594px;
-      max-height: 480px;
+      max-width: 100%;
       object-fit: contain;
       display: inline-block;
     }
@@ -400,7 +397,9 @@
         padding: 0;
       }
       .pillar-image img {
-        max-height: 360px;
+        width: 100%;
+        max-width: 594px;
+        height: auto;
       }
       .svg-divider {
         margin: 0 auto 18px;
@@ -431,6 +430,7 @@
     <div class="wrap">
       <a href="../index.html">
         <img class="logo" src="https://www.danielatorp.cz/wp-content/uploads/2020/02/logo_perem_bez_pozadi%CC%81.png" alt="Daniela Torp">
+      
       </a>
       
       <nav class="nav" id="mainNav">
@@ -520,7 +520,7 @@
     <section class="pillar-section" id="pilar-1">
       <div class="pillar-row">
         <div class="pillar-image">
-          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/refs/heads/main/images/1male_komplet_na_web.png" alt="Parintimitet">
+          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/1male_komplet_na_web.png" width="594" height="594" alt="Parintimitet">
         </div>
         <div class="pillar-content">
           <div class="svg-divider"></div>
@@ -542,7 +542,7 @@
     <section class="pillar-section" id="pilar-2">
       <div class="pillar-row">
         <div class="pillar-image">
-          <img src="https://github.com/alansmorais/danielatorp/blob/main/images/2male%CC%81_komplet_na_web.png" alt="Graviditet">
+          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/2mal%C3%A9_komplet_na_web.png" width="594" height="594" alt="Graviditet">
         </div>
         <div class="pillar-content">
           <div class="svg-divider"></div>
@@ -564,7 +564,7 @@
     <section class="pillar-section" id="pilar-3">
       <div class="pillar-row">
         <div class="pillar-image">
-          <img src="https://github.com/alansmorais/danielatorp/blob/main/images/3male%CC%81_komplet_na_web.png" alt="Morsrollen">
+          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/3mal%C3%A9_komplet_na_web.png" width="594" height="594" alt="Morsrollen">
         </div>
         <div class="pillar-content">
           <div class="svg-divider"></div>
@@ -586,7 +586,7 @@
     <section class="pillar-section" id="pilar-4">
       <div class="pillar-row">
         <div class="pillar-image">
-          <img src="https://github.com/alansmorais/danielatorp/blob/main/images/4male%CC%81_komplet_na_web.png" alt="Barn og Ungdom">
+          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/4mal%C3%A9_komplet_na_web.png" width="594" height="594" alt="Barn og Ungdom">
         </div>
         <div class="pillar-content">
           <div class="svg-divider"></div>
@@ -608,7 +608,7 @@
     <section class="pillar-section" id="pilar-5">
       <div class="pillar-row">
         <div class="pillar-image">
-          <img src="https://github.com/alansmorais/danielatorp/blob/main/images/5male%CC%81_komplet_na_web.png" alt="Moden alder">
+          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/5mal%C3%A9_komplet_na_web.png" width="594" height="594" alt="Moden alder">
         </div>
         <div class="pillar-content">
           <div class="svg-divider"></div>
@@ -630,7 +630,7 @@
     <section class="pillar-section" id="pilar-6">
       <div class="pillar-row">
         <div class="pillar-image">
-          <img src="https://github.com/alansmorais/danielatorp/blob/main/images/6male%CC%81_komplet_na_web.png" alt="Døden">
+          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/6mal%C3%A9_komplet_na_web.png" width="594" height="594" alt="Døden">
         </div>
         <div class="pillar-content">
           <div class="svg-divider"></div>
@@ -723,7 +723,6 @@
 
   <!-- ================= SCRIPTS ================= -->
   <script>
-    // Language switching logic with persistent storage
     function setLanguage(lang) {
       if (lang === 'en') {
         document.body.classList.add('lang-en');
@@ -736,7 +735,6 @@
       }
     }
 
-    // Apply saved language on page load
     (function initLanguage() {
       const saved = localStorage.getItem('site_lang');
       if (saved === 'en') {
@@ -744,7 +742,6 @@
       }
     })();
 
-    // Mobile nav toggle
     function toggleMobileNav() {
       const nav = document.getElementById('mainNav');
       if (nav.style.display === 'flex' && nav.style.flexDirection === 'column') {
