@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Daniela Torp – Intimitet i sammenheng</title>
+  <title>Personlige konsultasjoner – Daniela Torp</title>
 
   <style>
     /* =========================================
@@ -82,10 +82,6 @@
       font-weight: 400;
     }
 
-    .nav a:first-child {
-      color: #948f8f;
-    }
-
     .nav a:hover, .nav .drop:hover {
       color: #ee5a7a;
     }
@@ -141,7 +137,6 @@
       cursor: default;
     }
 
-    /* Mobile toggle */
     .mobile-menu-btn {
       display: none;
       font-size: 20px;
@@ -149,73 +144,41 @@
     }
 
     /* =========================================
-       3. HERO SECTION
+       3. PAGE HERO SECTION (Updated with Stock Image Background)
        ========================================= */
-    .hero {
+    .page-hero {
       position: relative;
       text-align: center;
-      padding: 24px 15px 100px;
-      background: linear-gradient(90deg, #f9dbe3 0%, #f8d7e1 31%, #fff 49%, #d7f0f3 71%, #d5eff2 100%);
+      padding: 100px 15px 120px;
+      background: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
     }
 
-    .hero:before {
+    .page-hero:before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 33% 75% at 25% 40%, rgba(246,174,194,.68), transparent 70%),
-                  radial-gradient(ellipse 30% 75% at 80% 45%, rgba(113,210,226,.55), transparent 73%),
-                  radial-gradient(ellipse 38% 90% at 50% 48%, #fff 3%, rgba(255,255,255,.75) 37%, transparent 69%);
+      background: rgba(255, 255, 255, 0.90); /* High-opacity white fade to keep text readable */
       pointer-events: none;
     }
 
-    .intro {
+    .page-hero-content {
       position: relative;
       z-index: 1;
-      max-width: 555px;
+      max-width: 700px;
       margin: auto;
     }
 
-    .intro h1 {
-      font-size: 25px;
-      font-weight: 700;
-      margin: 0 0 13px;
+    .page-hero-content h1 {
+      font-size: 38px;
+      font-weight: 300;
+      margin-bottom: 15px;
+      color: #111;
     }
 
-    .intro p {
-      font-size: 13px;
-      line-height: 1.7;
-      margin: 0 0 12px;
-    }
-
-    .dates {
-      margin: 29px auto 30px;
-      border: 1px solid #ee5a7a;
-      width: 100%;
-      max-width: 530px;
-      min-height: 194px;
-      padding: 10px 14px;
-      font-size: 13px;
-      line-height: 2.25;
-      font-weight: 500;
-      background: rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(2px);
-    }
-
-    .dates h2 {
-      font-size: 22px;
-      margin: 0 0 4px;
-      font-weight: 700;
-    }
-
-    .dates a, .dates button {
-      color: #e9476b;
-      font-weight: 700;
-      cursor: pointer;
-      text-align: center;
-    }
-
-    .dates a:hover, .dates button:hover {
-      text-decoration: underline;
+    .page-hero-content p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
     }
 
     .button {
@@ -237,214 +200,127 @@
     }
 
     /* =========================================
-       4. 6 PILLARS SECTION
+       4. CONSULTATION DETAILS SECTION
        ========================================= */
-    .pillars {
-      margin-top: -48px;
-      position: relative;
-      z-index: 10;
-      padding: 0 3.2% 58px;
-      background: linear-gradient(90deg, #f8dce4 0%, #fff 50%, #d8f0f2 100%);
-    }
-
-    .pillar-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 5px;
-    }
-
-    .pillar {
-      height: 230px;
-      background: #fff;
-      text-align: center;
-      padding: 28px 10px 15px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .pillar:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
-    }
-
-    .pillar img {
-      height: 108px;
-      width: 130px;
-      object-fit: contain;
-      transition: transform 0.3s;
-    }
-
-    .pillar:hover img {
-      transform: scale(1.05);
-    }
-
-    .pillar h3 {
-      font-size: 15px;
-      font-weight: 300;
-      line-height: 1.18;
-      margin: 10px 5px 0;
-    }
-
-    /* =========================================
-       5. ABOUT SECTION
-       ========================================= */
-    .about {
-      min-height: 590px;
-      padding: 124px 6.1% 90px;
-      position: relative;
+    .consultation-main {
+      padding: 90px 6%;
       background: #fff;
     }
 
-    .about:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 47px;
-      background: linear-gradient(100deg, #f9dbe3 0 32%, #fff 49%, #d8f1f4 68%);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 55px;
+    .consultation-grid {
       max-width: 1170px;
       margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
       align-items: start;
     }
 
-    .portrait {
-      width: 320px;
-      height: 320px;
-      object-fit: cover;
-      border-radius: 50%;
-      object-position: center;
-      background: #fcf0f2;
-      display: block;
-    }
-
-    .photo-buttons {
-      display: flex;
-      gap: 12px;
-      margin: 23px 19px;
-      justify-content: center;
-    }
-
-    .photo-buttons .button {
-      min-width: 112px;
-      text-align: center;
-      padding: 9px 14px;
-    }
-
-    .about h2 {
-      font-size: 31px;
+    .consultation-col h2 {
+      font-size: 28px;
       font-weight: 300;
-      margin: 4px 0 42px;
+      margin-bottom: 20px;
+      color: #111;
     }
 
-    .about-copy {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      color: #9b9291;
-      font-size: 16px;
-      line-height: 1.5;
+    .consultation-col h5 {
+      font-size: 18px;
+      font-weight: 500;
+      margin: 25px 0 10px;
     }
 
-    .about-copy p {
-      margin: 0 0 16px;
+    .consultation-col p {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 15px;
     }
 
-    .about-copy strong {
+    .consultation-col ul {
+      margin: 15px 0 20px 20px;
+      color: #555;
+      font-size: 15px;
+    }
+
+    .consultation-col ul li {
+      margin-bottom: 8px;
+    }
+
+    .pricing-box {
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 24px;
+      margin-top: 20px;
+    }
+
+    .pricing-box h3 {
+      font-size: 18px;
       font-weight: 400;
-      color: #8d8584;
+      margin-bottom: 15px;
+      color: #ee5a7a;
+    }
+
+    .pricing-item {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed #e5e5e5;
+      padding-bottom: 8px;
+    }
+
+    .pricing-item:last-child {
+      border-bottom: none;
     }
 
     /* =========================================
-       6. WORKSHOPS SECTION
+       5. PHOTO GALLERY STRIP
        ========================================= */
-    .workshops {
-      padding: 120px 4% 80px;
-      background: radial-gradient(ellipse at 12% 10%, rgba(241,200,130,.73), transparent 30%),
-                  radial-gradient(ellipse at 74% 15%, #e9e9e9, transparent 35%),
-                  #fff;
-    }
-
-    .section-title {
-      text-align: center;
-    }
-
-    .section-title h2 {
-      font-size: 32px;
-      font-weight: 300;
-      margin: 0 0 17px;
-    }
-
-    .section-title p {
-      font-size: 16px;
-      line-height: 1.5;
-      margin: 0 auto 55px;
-      max-width: 720px;
-    }
-
-    .cards {
-      max-width: 1120px;
-      margin: 0 auto 20px;
+    .gallery-strip {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .card {
       background: #fafafa;
-      text-align: center;
-      border: 1px solid #f0f0f0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    }
-
-    .card img {
+    .gallery-strip img {
       width: 100%;
-      height: 200px;
+      height: 350px;
       object-fit: cover;
       display: block;
     }
 
-    .card-body {
-      min-height: 185px;
-      padding: 21px 14px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    /* =========================================
+       6. ABOUT DANIELA MINI SECTION
+       ========================================= */
+    .about-mini {
+      padding: 100px 6%;
+      background: #fdf8f9;
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 50px;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .card h3 {
-      margin: 11px 0 14px;
+    .about-mini img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 50%;
+      display: block;
+      margin: auto;
+    }
+
+    .about-mini h2 {
+      font-size: 28px;
       font-weight: 300;
-      font-size: 22px;
-      line-height: 1.2;
+      margin-bottom: 20px;
     }
 
-    .card p {
-      color: #a49a9a;
-      margin: 0 0 18px;
-      font-size: 16px;
-    }
-
-    .card .button {
-      padding: 9px 20px;
+    .about-mini p {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 15px;
     }
 
     /* =========================================
@@ -630,7 +506,7 @@
     }
 
     /* =========================================
-       9. POPUP MODAL
+       9. MODAL DIALOG
        ========================================= */
     .modal-overlay {
       display: none;
@@ -711,56 +587,14 @@
        10. RESPONSIVE MEDIA QUERIES
        ========================================= */
     @media (max-width: 900px) {
-      .nav {
-        display: none;
-      }
-      .mobile-menu-btn {
-        display: block;
-      }
-      .hero {
-        padding: 30px 15px 100px;
-      }
-      .pillars {
-        margin-top: -40px;
-      }
-      .pillar-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      .about-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .portrait {
-        margin: auto;
-      }
-      .about-copy {
-        text-align: left;
-      }
-      .cards {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .nav { display: none; }
+      .mobile-menu-btn { display: block; }
+      .consultation-grid, .about-mini, .footer-grid { grid-template-columns: 1fr; }
+      .gallery-strip { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 560px) {
-      .pillar-grid,
-      .cards,
-      .footer-grid,
-      .about-copy,
-      .form {
-        grid-template-columns: 1fr;
-      }
-      .pillar {
-        height: 200px;
-      }
-      .about {
-        padding: 95px 7% 65px;
-      }
-      .about-copy {
-        gap: 0;
-      }
+      .form { grid-template-columns: 1fr; }
       .form-bottom {
         flex-direction: column;
         align-items: stretch;
@@ -778,12 +612,12 @@
        ========================================= -->
   <header>
     <div class="wrap">
-      <a href="#hjem">
+      <a href="index.html">
         <img class="logo" src="https://www.danielatorp.cz/wp-content/uploads/2020/02/logo_perem_bez_pozadi%CC%81.png" alt="Daniela Torp">
       </a>
       
       <nav class="nav">
-        <a href="#hjem">Hjem</a>
+        <a href="index.html">Hjem</a>
         
         <div class="drop" onclick="location.href='6-piliru-intimity/index.html'">
           6 pilarer for intimitet
@@ -797,7 +631,7 @@
           </div>
         </div>
 
-        <a href="#om-daniela">Hvem er Daniela</a>
+        <a href="index.html#om-daniela">Hvem er Daniela</a>
         
         <div class="drop" onclick="location.href='workshops.html'">
           Workshoper
@@ -809,7 +643,7 @@
           </div>
         </div>
 
-        <a href="konsultasjon.html">Personlig konsultasjon</a>
+        <a href="konsultasjon.html" style="color:#ee5a7a; font-weight:500;">Personlig konsultasjon</a>
         <a href="blog.html">Blogg</a>
         <a href="#kontakt">Kontakt</a>
         <span class="flag">🇳🇴</span>
@@ -819,141 +653,90 @@
     </div>
   </header>
 
-  <!-- =========================================
-       HERO SECTION
-       ========================================= -->
-  <section class="hero" id="hjem">
-    <div class="intro">
-      <h1>Intimitet i sammenheng</h1>
-      <p>Intimitet er ikke bare sex. Det handler om å etablere et fortrolig forhold til deg selv og til menneskene som står deg nær. Intimitet, den behagelige følelsen av tillit, sammensmelting og forståelse uten ord, hviler på 6 pilarer. Det starter med oss selv. Ta et skritt sammen med meg på veien mot tillit og kjærlig omsorg.</p>
-      <p>Jeg vil hjelpe deg med å finne veien til ditt sanne jeg og til dine nærmeste.</p>
-      
-      <div class="dates">
-        <h2>Kommende datoer:</h2>
-        <div>20.6.2026: Åpning av senteret Tilstedeværelse</div>
-        <div><button onclick="openDateModal('Lughnasad – Kvinneessens og livskraft', '4.–5.7.2026')">4.–5.7.2026: Lughnasad – Kvinneessens og livskraft</button></div>
-        <div><button onclick="openWorkshopModal('w1')">3.10.2026: Kunsten å behage en kvinne</button></div>
-        <div><button onclick="openWorkshopModal('w2')">4.10.2026: Kunsten å behage en mann</button></div>
-        <div><button onclick="openDateModal('Samhain – Kvinneessens og livskraft', '16.–18.10.2026')">16.–18.10.2026: Samhain – Kvinneessens og livskraft</button></div>
-      </div>
-      
-      <a class="button" href="#workshops">Vis workshoper</a>
+  <!-- PAGE HERO WITH STOCK BACKGROUND IMAGE -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <h1>Personlige konsultasjoner</h1>
+      <p>Når du foretrekker et møte i tomannshånd eller tre. Når du føler at noen ting bare kan sies ansikt til ansikt. Jeg er her for deg.</p>
     </div>
   </section>
 
-  <!-- =========================================
-       6 PILLARS SECTION
-       ========================================= -->
-  <section class="pillars" id="pilarer">
-    <div class="pillar-grid wrap">
-      <div class="pillar" onclick="openPillarModal(1)">
-        <img src="https://www.danielatorp.cz/wp-content/uploads/2020/02/1male_komplet_na_web-150x150.png" alt="Parintimitet">
-        <h3>Parintimitet<br>Forholdet til egen kropp</h3>
-      </div>
+  <!-- CONSULTATION MAIN SECTION -->
+  <section class="consultation-main">
+    <div class="consultation-grid">
       
-      <div class="pillar" onclick="openPillarModal(2)">
-        <img src="https://www.danielatorp.cz/wp-content/uploads/2020/02/2male%CC%81_komplet_na_web-150x150.png" alt="Graviditet">
-        <h3>Intimitet under graviditet<br>og ved fødsel</h3>
+      <!-- Left Column: Details & What I Help With -->
+      <div class="consultation-col">
+        <h2>Personlige konsultasjoner</h2>
+        <p>Jeg tilbyr personlige konsultasjoner for både par og enkeltpersoner. Jeg vil hjelpe deg med å finne løsninger på dine problemer. Jeg vil ikke løse dem for deg; jeg vil bare følge deg til ditt ønskede mål. Den største delen av arbeidet må du gjøre selv.</p>
+        
+        <h5>Hvordan møtes vi?</h5>
+        <p>Jeg tilbyr konsultasjoner i form av personlige møter eller online via Skype. Hvis du er interessert, skriv til meg via kontaktskjemaet.</p>
+
+        <h5>Hva kan jeg hjelpe med?</h5>
+        <ul>
+          <li>Løsning av partnerskapsproblemer på alle intimitetsområder, se <a href="6-piliru-intimity/index.html" style="color:#ee5a7a; text-decoration:underline;">de 6 pilarene for intimitet</a>.</li>
+          <li>Smerter under samleie.</li>
+          <li>Lav eller ingen sexlyst.</li>
+          <li>Postoperative tilstander – keisersnitt, klipp i mellomkjøttet osv.</li>
+          <li>Traumer.</li>
+          <li>Avtabuisering av intimitetstemaer.</li>
+          <li>Ereksjonsproblemer.</li>
+          <li>Problemer med for tidlig utløsning.</li>
+          <li>Kommunikasjonsproblemer.</li>
+          <li>Selvkjærlighet og forholdet til egen kropp.</li>
+        </ul>
       </div>
-      
-      <div class="pillar" onclick="openPillarModal(3)">
-        <img src="https://www.danielatorp.cz/wp-content/uploads/2020/02/3male%CC%81_komplet_na_web-150x150.png" alt="Baby">
-        <h3>Intimitet med baby,<br>familieintimitet</h3>
+
+      <!-- Right Column: Suitable For & Pricing -->
+      <div class="consultation-col">
+        <h2>Passer for</h2>
+        <p>kun for voksne menn og kvinner.</p>
+
+        <div class="pricing-box">
+          <h3>Priser og pakker</h3>
+          <div class="pricing-item"><strong>1x Bodywork / Massasje (2–4 timer):</strong> 3 990 Kč</div>
+          <div class="pricing-item"><strong>Pakke 5x (Bodywork):</strong> 18 000 Kč</div>
+          <div class="pricing-item"><strong>Undervisning (4–6 timer):</strong> 6 500 Kč</div>
+          <div class="pricing-item"><strong>Pakke 5x (Undervisning):</strong> 30 000 Kč</div>
+          <div class="pricing-item"><strong>Online konsultasjon (60–90 min):</strong> 2 300 Kč</div>
+          <div class="pricing-item"><strong>Pakke 5x (Online):</strong> 10 500 Kč</div>
+        </div>
+
+        <p style="margin-top: 15px; font-size: 13px; color: #777;"><strong>Rabatterte pakker:</strong> Pakkeprisen betales som et engangsbeløp, og pakken kan også brukes for flere personer.</p>
+
+        <h2 style="margin-top: 30px;">Hvor foregår konsultasjonene?</h2>
+        <p>Tsjekkia, Norge, online</p>
+
+        <div style="margin-top: 25px;">
+          <a class="button" href="#kontakt" style="background:#111; color:#fff; padding: 12px 28px;">Meld interesse / Bestill</a>
+        </div>
       </div>
-      
-      <div class="pillar" onclick="openPillarModal(4)">
-        <img src="https://www.danielatorp.cz/wp-content/uploads/2020/02/4male%CC%81_komplet_na_web-150x150.png" alt="Barn og ungdom">
-        <h3>Intimitet hos barn<br>og ungdom</h3>
-      </div>
-      
-      <div class="pillar" onclick="openPillarModal(5)">
-        <img src="https://www.danielatorp.cz/wp-content/uploads/2020/02/5male%CC%81_komplet_na_web-150x150.png" alt="Moden alder">
-        <h3>Intimitet<br>i moden alder</h3>
-      </div>
-      
-      <div class="pillar" onclick="openPillarModal(6)">
-        <img src="https://www.danielatorp.cz/wp-content/uploads/2020/02/6male%CC%81_komplet_na_web-150x150.png" alt="Døden">
-        <h3>Intimitet<br>i døden</h3>
-      </div>
+
     </div>
   </section>
 
-  <!-- =========================================
-       ABOUT SECTION
-       ========================================= -->
-  <section class="about" id="om-daniela">
-    <div class="about-grid">
-      <div>
-        <img class="portrait" src="https://www.danielatorp.cz/wp-content/uploads/2020/05/untitled-design-7.jpg" alt="Daniela">
-        <div class="photo-buttons">
-          <button class="button" onclick="openGenericModal('Mer om Daniela', 'Daniela har over 15 års erfaring med helhetlig kroppsarbeid, parterapi og somatisk veiledning. Gjennom de 6 pilarene for intimitet hjelper hun mennesker med å finne trygghet, livslyst og ekte tilstedeværelse.')">Mer om Daniela</button>
-          <button class="button" onclick="openGenericModal('Daniela i media', 'Utvalgte podkaster og artikler:\n\n• Podkast Livsreise: «Intimitet starter i speilet»\n• Magasinet Harmoni: «6 pilarer som forandrer parforholdet»\n• Kultur & Relasjoner: «Kunsten å lytte uten ord»')">Media</button>
-        </div>
-      </div>
-      <div>
-        <h2>Hvem er Daniela</h2>
-        <div class="about-copy">
-          <div>
-            <p>Jeg er et menneske. Jeg føler og oppfatter akkurat som deg. Jeg opplever lignende situasjoner, utfordringer, gleder og sorger. Jeg tar vare på meg selv, familien min og vennene mine. Jeg ærer naturen og bøyer meg ydmykt for dens lover, dens uendelige mangfold og dens sans for humor.</p>
-            <p><strong>Visste du at det finnes mer enn 180 000 øyer i verden?</strong></p>
-            <p>Det finnes tusenvis av øyer, og de ligner ofte på hverandre. Likevel er hver enkelt et unikt økosystem.</p>
-          </div>
-          <div>
-            <p>Kan du tenke deg å dyrke plommer i et paradis av kokospalmer? Det kan kanskje fungere en stund, men du må anstrenge deg mye for å lykkes.</p>
-            <p>Ofte behandler vi oss selv på samme måte. Vi tvinger oss til å gjøre ting som er i strid med vårt egentlige jeg.</p>
-            <p>Jeg har selv gått gjennom tusenvis av øyer før jeg fant min egen.</p>
-            <p>Klart til suksess er kjærlighet – kjærlighet til deg selv.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- PHOTO GALLERY STRIP -->
+  <section class="gallery-strip">
+    <img src="https://www.danielatorp.cz/wp-content/uploads/2020/05/2.jpg" alt="Konsultasjon bilde 1">
+    <img src="https://www.danielatorp.cz/wp-content/uploads/2020/05/3.jpg" alt="Konsultasjon bilde 2">
+    <img src="https://www.danielatorp.cz/wp-content/uploads/2020/05/1.jpg" alt="Konsultasjon bilde 3">
   </section>
 
-  <!-- =========================================
-       WORKSHOPS SECTION
-       ========================================= -->
-  <section class="workshops" id="workshops">
-    <div class="section-title">
-      <h2>Workshoper</h2>
-      <p>Hver av oss havner av og til i en situasjon vi ikke helt vet hvordan vi skal håndtere. På workshopene mine finner du svar på spørsmålene dine. I et trygt rom.</p>
+  <!-- ABOUT DANIELA MINI SECTION -->
+  <section class="about-mini">
+    <div>
+      <img src="https://www.danielatorp.cz/wp-content/uploads/2020/02/daniela-torp.png" alt="Daniela Torp">
+      <div style="text-align: center; margin-top: 20px; display: flex; gap: 10px; justify-content: center;">
+        <button class="button" onclick="openGenericModal('Daniela i media', 'Presse og podkaster er tilgjengelige via forespørsel.')">Media</button>
+        <button class="button" onclick="openGenericModal('Om Daniela', 'Daniela har over 15 års erfaring med somatisk veiledning og intimitetsterapi.')">Mer om Daniela</button>
+      </div>
     </div>
-    
-    <div class="cards">
-      <article class="card">
-        <img src="https://www.danielatorp.cz/wp-content/uploads/2020/03/2-1024x1024.jpg" alt="Kunsten å behage en kvinne">
-        <div class="card-body">
-          <h3>Kunsten å behage en kvinne</h3>
-          <p>Bli en perfekt elsker.</p>
-          <div>
-            <button class="button" onclick="openWorkshopModal('w1')">Workshop-detaljer</button>
-          </div>
-        </div>
-      </article>
-      
-      <article class="card">
-        <img src="https://www.danielatorp.cz/wp-content/uploads/2020/03/9-1024x1024.jpg" alt="Kunsten å behage en mann">
-        <div class="card-body">
-          <h3>Kunsten å behage en mann</h3>
-          <p>Bli en perfekt elskerinne.</p>
-          <div>
-            <button class="button" onclick="openWorkshopModal('w2')">Workshop-detaljer</button>
-          </div>
-        </div>
-      </article>
-      
-      <article class="card">
-        <img src="https://www.danielatorp.cz/wp-content/uploads/2020/03/6-1024x1024.jpg" alt="Kunsten å behage">
-        <div class="card-body">
-          <h3>Kunsten å behage</h3>
-          <p>Workshop for menn og kvinner.</p>
-          <div>
-            <button class="button" onclick="openWorkshopModal('w3')">Workshop-detaljer</button>
-          </div>
-        </div>
-      </article>
-    </div>
-    <div style="text-align: center; margin-top: 35px;">
-      <a class="button" href="workshops.html" style="background:#111; color:#fff; padding: 12px 30px; font-size: 13px;">Se alle 9 workshoper ➜</a>
+    <div>
+      <h2>Hvem er Daniela Torp</h2>
+      <p>Jeg er et menneske. Jeg føler og oppfatter akkurat som deg. Jeg opplever lignende situasjoner, utfordringer, gleder og sorger. Jeg tar vare på meg selv, familien min og vennene mine. Jeg ærer naturen og bøyer meg ydmykt for dens lover, dens uendelige mangfold og dens sans for humor.</p>
+      <p>Visste du at det finnes mer enn 180 000 øyer i verden? Øyene er tusenvis og ofte svært like. Likevel er hver enkelt et unikt økosystem.</p>
+      <p>Kjernen til suksess er kjærlighet – kjærlighet til deg selv.</p>
     </div>
   </section>
 
@@ -962,7 +745,7 @@
        ========================================= -->
   <section class="contact" id="kontakt">
     <h2>Skriv til meg</h2>
-    <p>Har du et spørsmål? Jeg er her for deg.</p>
+    <p>og avtal en personlig konsultasjon.</p>
     
     <form class="form" id="contactForm" onsubmit="handleFormSubmit(event)">
       <div class="field">
@@ -975,7 +758,7 @@
       </div>
       <div class="field full">
         <label>Emne <span class="required">*</span></label>
-        <input type="text" required placeholder="Konsultasjon, workshop" id="formSubject">
+        <input type="text" required placeholder="Konsultasjon, workshop" id="formSubject" value="Personlig konsultasjon">
       </div>
       <div class="field full">
         <label>Melding <span class="required">*</span></label>
@@ -1007,8 +790,8 @@
     <div class="footer-grid">
       <div>
         <h4>Kontakt</h4>
-        <a href="#hjem">Hjem</a>
-        <a href="#om-daniela">Hvem er Daniela</a>
+        <a href="index.html">Hjem</a>
+        <a href="index.html#om-daniela">Hvem er Daniela</a>
         <button onclick="openGenericModal('Daniela i media', 'Presse og podkaster er tilgjengelige via forespørsel.')">Daniela i media</button>
         <a href="blog.html">Blogg</a>
         <a href="#kontakt">Kontakt</a>
@@ -1059,51 +842,33 @@
   </div>
 
   <!-- =========================================
-       JAVASCRIPT FUNCTIONALITY
+       JAVASCRIPT LOGIC
        ========================================= -->
   <script>
     const pillarsData = {
       1: {
         title: "1. Parintimitet & Forholdet til egen kropp",
-        text: "Vår evne til å være intime med en partner starter med hvordan vi aksepterer og forstår vår egen kropp. Uten et ærlig, kjærlig forhold til egen anatomi og sanselighet er det vanskelig å oppleve ekte trygghet med en annen. Denne pilaren fokuserer på kroppsbilde, grenser, glede og kunsten å kommunisere begjær."
+        text: "Vår evne til å være intime med en partner starter med hvordan vi aksepterer og forstår vår egen kropp. Uten et ærlig, kjærlig forhold til egen anatomi og sanselighet er det vanskelig å oppleve ekte trygghet med en annen."
       },
       2: {
         title: "2. Intimitet under graviditet og ved fødsel",
-        text: "Svangerskap og fødsel åpner porter til dyp sårbarhet og uendelig styrke. Vi jobber med å bevare tilknytningen mellom partnere, forberede kroppen emosjonelt og fysisk, samt bearbeide fødselsfrykt med ro og trygghet."
+        text: "Svangerskap og fødsel åpner porter til dyp sårbarhet og uendelig styrke. Vi jobber med å bevare tilknytningen mellom partnere, forberede kroppen emosjonelt og fysisk."
       },
       3: {
         title: "3. Intimitet med baby, familieintimitet",
-        text: "Hud-mot-hud-kontakt, intuitiv omsorg og oppbyggingen av et trygt tilknytningsmønster legger fundamentet for barnets fremtidige evne til tillit. Samtidig lærer foreldrene å finne rom for hverandre i den nye hverdagen."
+        text: "Hud-mot-hud-kontakt, intuitiv omsorg og oppbyggingen av et trygt tilknytningsmønster legger fundamentet for barnets fremtidige evne til tillit."
       },
       4: {
         title: "4. Intimitet hos barn og ungdom",
-        text: "Hvordan vi møter barns nysgjerrighet og ungdoms utforsking former deres fremtidige syn på relasjoner. Vi belyser samtaler om kropp, samtykke, respekt, følelser og beskyttelse mot skadelig påvirkning."
+        text: "Hvordan vi møter barns nysgjerrighet og ungdoms utforsking former deres fremtidige syn på relasjoner, samtykke og respekt."
       },
       5: {
         title: "5. Intimitet i moden alder",
-        text: "Intimitet slutter aldri, men dens form modnes. I moden alder kan intimitet bli mer subtil, dyp og frigjørende – fri for prestasjonspress, preget av takknemlighet, sanselig tilstedeværelse og sjelens berøring."
+        text: "Intimitet slutter aldri, men dens form modnes. I moden alder kan intimitet bli mer subtil, dyp og frigjørende – fri for prestasjonspress."
       },
       6: {
         title: "6. Intimitet i døden",
-        text: "Den siste fasen i livet krever den reneste form for nærvær. Å tørre å sitte ved en døendes seng, holde en hånd uten frykt, uttrykke uuttalte ord og skape et verdig, kjærlig rom for overgangen er intimitetens høyeste uttrykk."
-      }
-    };
-
-    const workshopsData = {
-      w1: {
-        tag: "Workshop for menn",
-        title: "Kunsten å behage en kvinne",
-        text: "En praktisk og respektfull workshop der du lærer hemmelighetene bak kvinnelig nytelse, langsom berøring, energiflyt og hvordan du skaper trygghet der kvinnen kan åpne seg fullstendig.<br><br><strong>Dato:</strong> 3.10.2026<br><strong>Varighet:</strong> 1 dag (10:00 – 18:00)"
-      },
-      w2: {
-        tag: "Workshop for kvinner",
-        title: "Kunsten å behage en mann",
-        text: "Forstå mannens indre verden, hans behov for anerkjennelse og berøring som går langt dypere enn overfladisk lyst. Oppdag hvordan du vekker både hans villskap og hans mest hengivne ømhet.<br><br><strong>Dato:</strong> 4.10.2026<br><strong>Varighet:</strong> 1 dag (10:00 – 18:00)"
-      },
-      w3: {
-        tag: "Workshop for par & begge",
-        title: "Kunsten å behage (for par)",
-        text: "En felles reise inn i samspillet mellom det maskuline og feminine. Vi utforsker polaritet, dyp berøring, sansestimulering og ritualer for å holde lidenskapen levende gjennom årene.<br><br><strong>Dato:</strong> 4.–5.7.2026 / 16.–18.10.2026<br><strong>Varighet:</strong> Helg"
+        text: "Den siste fasen i livet krever den reneste form for nærvær. Å tørre å sitte ved en døendes seng, holde en hånd uten frykt og skape et verdig rom."
       }
     };
 
@@ -1114,21 +879,8 @@
       });
     }
 
-    function openWorkshopModal(id) {
-      const data = workshopsData[id];
-      showModal(data.tag, data.title, data.text, function() {
-        prefillSubject("Påmelding: " + data.title);
-      });
-    }
-
-    function openDateModal(title, dateStr) {
-      showModal("Kommende arrangement", title, "Arrangementet finner sted " + dateStr + ". Ønsker du mer informasjon eller å melde interesse?", function() {
-        prefillSubject("Dato: " + title + " (" + dateStr + ")");
-      });
-    }
-
     function openGenericModal(title, text) {
-      showModal("Informasjon", title, text.replace(/\n/g, "<br>"), function() {
+      showModal("Informasjon", title, text, function() {
         prefillSubject("Henvendelse: " + title);
       });
     }
@@ -1139,6 +891,7 @@
       document.getElementById('modalContent').innerHTML = contentHtml;
       
       const actionBtn = document.getElementById('modalActionBtn');
+      actionBtn.innerText = "Meld interesse / Spør";
       actionBtn.onclick = function() {
         closeModalDirect();
         if (onAction) onAction();
@@ -1237,42 +990,5 @@
     });
   </script>
 
-<script>
-  fetch('data.json')
-    .then(response => response.json())
-    .then(data => {
-      if (data.hero_title) document.getElementById('cms-hero-title').innerText = data.hero_title;
-      if (data.hero_subtitle) document.getElementById('cms-hero-subtitle').innerText = data.hero_subtitle;
-      if (data.hero_subtitle_2) document.getElementById('cms-hero-subtitle-2').innerText = data.hero_subtitle_2;
-      
-      if (data.dates_title) document.getElementById('cms-dates-title').innerText = data.dates_title;
-      if (data.date_1) document.getElementById('cms-date-1').innerText = data.date_1;
-      if (data.date_2) document.getElementById('cms-date-2').innerText = data.date_2;
-      if (data.date_3) document.getElementById('cms-date-3').innerText = data.date_3;
-      if (data.date_4) document.getElementById('cms-date-4').innerText = data.date_4;
-      if (data.date_5) document.getElementById('cms-date-5').innerText = data.date_5;
-
-      if (data.pillar_1) document.getElementById('cms-pillar-1').innerHTML = data.pillar_1;
-      if (data.pillar_2) document.getElementById('cms-pillar-2').innerHTML = data.pillar_2;
-      if (data.pillar_3) document.getElementById('cms-pillar-3').innerHTML = data.pillar_3;
-      if (data.pillar_4) document.getElementById('cms-pillar-4').innerHTML = data.pillar_4;
-      if (data.pillar_5) document.getElementById('cms-pillar-5').innerHTML = data.pillar_5;
-      if (data.pillar_6) document.getElementById('cms-pillar-6').innerHTML = data.pillar_6;
-
-      if (data.about_title) document.getElementById('cms-about-title').innerText = data.about_title;
-      if (data.about_p1) document.getElementById('cms-about-p1').innerText = data.about_p1;
-      if (data.about_p2) document.getElementById('cms-about-p2').innerText = data.about_p2;
-      if (data.about_p3) document.getElementById('cms-about-p3').innerText = data.about_p3;
-
-      if (data.workshop_1_title) document.getElementById('cms-w1-title').innerText = data.workshop_1_title;
-      if (data.workshop_1_desc) document.getElementById('cms-w1-desc').innerText = data.workshop_1_desc;
-      if (data.workshop_2_title) document.getElementById('cms-w2-title').innerText = data.workshop_2_title;
-      if (data.workshop_2_desc) document.getElementById('cms-w2-desc').innerText = data.workshop_2_desc;
-      if (data.workshop_3_title) document.getElementById('cms-w3-title').innerText = data.workshop_3_title;
-      if (data.workshop_3_desc) document.getElementById('cms-w3-desc').innerText = data.workshop_3_desc;
-    })
-    .catch(error => console.error('Error loading CMS data:', error));
-</script>
-  
 </body>
 </html>
