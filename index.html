@@ -1063,195 +1063,43 @@
   <!-- =========================================
        JAVASCRIPT FUNCTIONALITY
        ========================================= -->
-  <script>
-    const pillarsData = {
-      1: {
-        title: "1. Parintimitet & Forholdet til egen kropp",
-        text: "Vår evne til å være intime med en partner starter med hvordan vi aksepterer og forstår vår egen kropp. Uten et ærlig, kjærlig forhold til egen anatomi og sanselighet er det vanskelig å oppleve ekte trygghet med en annen. Denne pilaren fokuserer på kroppsbilde, grenser, glede og kunsten å kommunisere begjær."
-      },
-      2: {
-        title: "2. Intimitet under graviditet og ved fødsel",
-        text: "Svangerskap og fødsel åpner porter til dyp sårbarhet og uendelig styrke. Vi jobber med å bevare tilknytningen mellom partnere, forberede kroppen emosjonelt og fysisk, samt bearbeide fødselsfrykt med ro og trygghet."
-      },
-      3: {
-        title: "3. Intimitet med baby, familieintimitet",
-        text: "Hud-mot-hud-kontakt, intuitiv omsorg og oppbyggingen av et trygt tilknytningsmønster legger fundamentet for barnets fremtidige evne til tillit. Samtidig lærer foreldrene å finne rom for hverandre i den nye hverdagen."
-      },
-      4: {
-        title: "4. Intimitet hos barn og ungdom",
-        text: "Hvordan vi møter barns nysgjerrighet og ungdoms utforsking former deres fremtidige syn på relasjoner. Vi belyser samtaler om kropp, samtykke, respekt, følelser og beskyttelse mot skadelig påvirkning."
-      },
-      5: {
-        title: "5. Intimitet i moden alder",
-        text: "Intimitet slutter aldri, men dens form modnes. I moden alder kan intimitet bli mer subtil, dyp og frigjørende – fri for prestasjonspress, preget av takknemlighet, sanselig tilstedeværelse og sjelens berøring."
-      },
-      6: {
-        title: "6. Intimitet i døden",
-        text: "Den siste fasen i livet krever den reneste form for nærvær. Å tørre å sitte ved en døendes seng, holde en hånd uten frykt, uttrykke uuttalte ord og skape et verdig, kjærlig rom for overgangen er intimitetens høyeste uttrykk."
-      }
-    };
+    <script>
+  // Insert your live Google Apps Script URL here
+  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwrA4qfZdmzOWaRdbIgtDqL0VO5NpURvNBU-5GdnmJ__3cBPbK4Hy-b5vkn1P0FJo0F/exec?api=json";
+  
+  // Set to 'EN' for .com, 'NO' for .no, or 'CZ' for .cz
+  const PAGE_LANG = "NO"; // CHANGE THIS ON EACH SITE
 
-    const workshopsData = {
-      w1: {
-        tag: "Workshop for menn",
-        title: "Kunsten å behage en kvinne",
-        text: "En praktisk og respektfull workshop der du lærer hemmelighetene bak kvinnelig nytelse, langsom berøring, energiflyt og hvordan du skaper trygghet der kvinnen kan åpne seg fullstendig.<br><br><strong>Dato:</strong> 3.10.2026<br><strong>Varighet:</strong> 1 dag (10:00 – 18:00)"
-      },
-      w2: {
-        tag: "Workshop for kvinner",
-        title: "Kunsten å behage en mann",
-        text: "Forstå mannens indre verden, hans behov for anerkjennelse og berøring som går langt dypere enn overfladisk lyst. Oppdag hvordan du vekker både hans villskap og hans mest hengivne ømhet.<br><br><strong>Dato:</strong> 4.10.2026<br><strong>Varighet:</strong> 1 dag (10:00 – 18:00)"
-      },
-      w3: {
-        tag: "Workshop for par & begge",
-        title: "Kunsten å behage (for par)",
-        text: "En felles reise inn i samspillet mellom det maskuline og feminine. Vi utforsker polaritet, dyp berøring, sansestimulering og ritualer for å holde lidenskapen levende gjennom årene.<br><br><strong>Dato:</strong> 4.–5.7.2026 / 16.–18.10.2026<br><strong>Varighet:</strong> Helg"
-      }
-    };
-
-    function openPillarModal(num) {
-      const data = pillarsData[num];
-      showModal("6 Pilarer for Intimitet", data.title, data.text, function() {
-        prefillSubject("Pilar: " + data.title);
-      });
-    }
-
-    function openWorkshopModal(id) {
-      const data = workshopsData[id];
-      showModal(data.tag, data.title, data.text, function() {
-        prefillSubject("Påmelding: " + data.title);
-      });
-    }
-
-    function openDateModal(title, dateStr) {
-      showModal("Kommende arrangement", title, "Arrangementet finner sted " + dateStr + ". Ønsker du mer informasjon eller å melde interesse?", function() {
-        prefillSubject("Dato: " + title + " (" + dateStr + ")");
-      });
-    }
-
-    function openGenericModal(title, text) {
-      showModal("Informasjon", title, text.replace(/\n/g, "<br>"), function() {
-        prefillSubject("Henvendelse: " + title);
-      });
-    }
-
-    function showModal(tag, title, contentHtml, onAction) {
-      document.getElementById('modalTag').innerText = tag;
-      document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalContent').innerHTML = contentHtml;
+  fetch(WEB_APP_URL)
+    .then(response => response.json())
+    .then(data => {
+      const langData = data[PAGE_LANG];
+      const listContainer = document.getElementById('dynamic-dates-list');
       
-      const actionBtn = document.getElementById('modalActionBtn');
-      actionBtn.onclick = function() {
-        closeModalDirect();
-        if (onAction) onAction();
-      };
-
-      document.getElementById('modalOverlay').style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal(e) {
-      if (e.target.id === 'modalOverlay') {
-        closeModalDirect();
-      }
-    }
-
-    function closeModalDirect() {
-      document.getElementById('modalOverlay').style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-
-    function prefillSubject(subject) {
-      const subInput = document.getElementById('formSubject');
-      subInput.value = subject;
-      document.getElementById('kontakt').scrollIntoView({ behavior: 'smooth' });
-      subInput.focus();
-    }
-
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwrA4qfZdmzOWaRdbIgtDqL0VO5NpURvNBU-5GdnmJ__3cBPbK4Hy-b5vkn1P0FJo0F/exec?api=json";
-    const PAGE_LANG = "NO"; 
-
-    fetch(WEB_APP_URL)
-      .then(response => response.json())
-      .then(data => {
-        const langData = data[PAGE_LANG];
-        if (langData) {
-          if (langData.date_1 && document.getElementById('cms-date-1')) document.getElementById('cms-date-1').innerText = langData.date_1;
-          if (langData.date_2 && document.getElementById('cms-date-2')) document.getElementById('cms-date-2').innerText = langData.date_2;
-          if (langData.date_3 && document.getElementById('cms-date-3')) document.getElementById('cms-date-3').innerText = langData.date_3;
-          if (langData.date_4 && document.getElementById('cms-date-4')) document.getElementById('cms-date-4').innerText = langData.date_4;
-          if (langData.date_5 && document.getElementById('cms-date-5')) document.getElementById('cms-date-5').innerText = langData.date_5;
-        }
-      })
-      .catch(error => console.error("Error fetching live dates:", error));
-
-    async function handleFormSubmit(e) {
-      e.preventDefault();
-      const sendBtn = document.querySelector('.send') || e.target.querySelector('button[type="submit"]');
-      const originalText = sendBtn ? sendBtn.innerHTML : 'Send inn ➜';
-      
-      if (sendBtn) {
-        sendBtn.disabled = true;
-        sendBtn.innerHTML = 'Sender...';
-      }
-
-      const name = document.getElementById('formName').value.trim();
-      const email = document.getElementById('formEmail').value.trim();
-      const subject = document.getElementById('formSubject') ? document.getElementById('formSubject').value.trim() : '';
-      const message = document.getElementById('formMessage').value.trim();
-
-      const formattedMessage = subject ? `[Emne: ${subject}]\n\n${message}` : message;
-
-      const payload = {
-        type: 'contact',
-        name: name,
-        email: email,
-        message: formattedMessage
-      };
-
-      try {
-        await fetch('https://script.google.com/macros/s/AKfycbwiptZDdNVNSavoyJeHCvoc7XxOSTG0yg_K5Z-Si81Up_4CSBo5AJUUOuMYLNh2eT3h/exec', {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'text/plain;charset=utf-8'
-          },
-          body: JSON.stringify(payload)
+      // Only overwrite the existing dates IF we successfully fetched an array with at least 1 date
+      if (langData && Array.isArray(langData) && langData.length > 0 && listContainer) {
+        listContainer.innerHTML = ""; // Clear the fallback dates
+        
+        langData.forEach(dateText => {
+          if (dateText.trim() === "") return; 
+          
+          const div = document.createElement('div');
+          
+          // The first date in your current list is not a button, so we can make them all buttons now 
+          // to ensure visitors can easily open the contact modal.
+          const btn = document.createElement('button');
+          btn.innerText = dateText;
+          
+          btn.onclick = function() {
+            openGenericModal("Event Inquiry", "Would you like more information or to reserve your spot for this event?\n\n" + dateText);
+          };
+          
+          div.appendChild(btn);
+          listContainer.appendChild(div);
         });
-
-        document.getElementById('contactForm').style.display = 'none';
-        document.getElementById('successBox').style.display = 'block';
-        document.getElementById('successBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } catch (err) {
-        console.error('Error submitting form:', err);
-        alert('Det oppstod en feil ved sending av meldingen. Vennligst prøv igjen.');
-        if (sendBtn) {
-          sendBtn.disabled = false;
-          sendBtn.innerHTML = originalText;
-        }
       }
-    }
-
-    function toggleMobileNav() {
-      const nav = document.querySelector('.nav');
-      if (nav.style.display === 'flex') {
-        nav.style.display = 'none';
-      } else {
-        nav.style.display = 'flex';
-        nav.style.flexDirection = 'column';
-        nav.style.position = 'absolute';
-        nav.style.top = '47px';
-        nav.style.left = '0';
-        nav.style.right = '0';
-        nav.style.background = '#fff';
-        nav.style.padding = '20px';
-        nav.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-      }
-    }
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeModalDirect();
-    });
-  </script>
+    })
+    .catch(error => console.error("Error fetching live dates (falling back to hardcoded):", error));
+    </script>
 </body>
 </html>
