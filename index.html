@@ -829,14 +829,15 @@
       <p id="cms-hero-subtitle">Intimitet er ikke bare sex. Det handler om å etablere et fortrolig forhold til deg selv og til menneskene som står deg nær. Intimitet, den behagelige følelsen av tillit, sammensmelting og forståelse uten ord, hviler på 6 pilarer. Det starter med oss selv. Ta et skritt sammen med meg på veien mot tillit og kjærlig omsorg.</p>
       <p id="cms-hero-subtitle-2">Jeg vil hjelpe deg med å finne veien til ditt sanne jeg og til dine nærmeste.</p>
       
-      <div class="dates">
-        <h2 id="cms-dates-title">Kommende datoer:</h2>
-        <div id="cms-date-1">20.6.2026: Åpning av senteret Tilstedeværelse</div>
-        <div><button id="cms-date-2" onclick="openDateModal('Lughnasad – Kvinneessens og livskraft', '4.–5.7.2026')">4.–5.7.2026: Lughnasad – Kvinneessens og livskraft</button></div>
-        <div><button id="cms-date-3" onclick="openWorkshopModal('w1')">3.10.2026: Kunsten å behage en kvinne</button></div>
-        <div><button id="cms-date-4" onclick="openWorkshopModal('w2')">4.10.2026: Kunsten å behage en mann</button></div>
-        <div><button id="cms-date-5" onclick="openDateModal('Samhain – Kvinneessens og livskraft', '16.–18.10.2026')">16.–18.10.2026: Samhain – Kvinneessens og livskraft</button></div>
-      </div>
+<div class="dates">
+  <h2 id="cms-dates-title">Kommende datoer:</h2>
+  <div id="dynamic-dates-list">
+    <!-- These act as a fallback and will be updated by the script -->
+    <div><button onclick="openWorkshopModal('w1')">3.10.2026: Kunsten å behage en kvinne</button></div>
+    <div><button onclick="openWorkshopModal('w2')">4.10.2026: Kunsten å behage en mann</button></div>
+    <div><button onclick="openDateModal('Samhain – Kvinneessens og livskraft', '16.–18.10.2026')">16.–18.10.2026: Samhain – Kvinneessens og livskraft</button></div>
+  </div>
+</div>>
       
       <a class="button" href="#workshops">Vis workshoper</a>
     </div>
