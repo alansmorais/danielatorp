@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Kunsten å behage – Daniela Torp</title>
+  <title>Bekkenbunnens hemmeligheter – Daniela Torp</title>
   <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-32x32.png" sizes="32x32">
   <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-192x192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-180x180.png">
@@ -148,14 +148,14 @@
     }
 
     /* =========================================
-       3. HERO SECTION (Couple Background)
+       3. HERO SECTION (Custom Workshop Image)
        ========================================= */
     .hero {
       position: relative;
       text-align: center;
       padding: 110px 15px 120px;
-      background: linear-gradient(rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.82)),
-                  url('https://www.danielatorp.cz/wp-content/uploads/2020/03/6-1024x1024.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.84)),
+                  url('https://www.danielatorp.cz/wp-content/uploads/2020/03/2-2-1024x1024.jpg') center/cover no-repeat;
     }
 
     .intro {
@@ -232,7 +232,7 @@
 
     .workshop-left p {
       font-size: 15px;
-      line-height: 1.7;
+      line-height: 1.75;
       color: #444;
       margin-bottom: 16px;
     }
@@ -240,7 +240,7 @@
     .workshop-left h4 {
       font-size: 18px;
       font-weight: 500;
-      margin: 32px 0 12px;
+      margin: 30px 0 12px;
       color: #111;
     }
 
@@ -250,6 +250,39 @@
       font-size: 14.5px;
       line-height: 1.85;
       margin-bottom: 20px;
+    }
+
+    .level-box {
+      background: #fafafa;
+      border: 1px solid #f0f0f0;
+      border-radius: 8px;
+      padding: 20px 22px;
+      margin-bottom: 18px;
+    }
+
+    .level-box h5 {
+      font-size: 16px;
+      font-weight: 500;
+      color: #ee5a7a;
+      margin-bottom: 8px;
+    }
+
+    .level-box p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 0;
+    }
+
+    .highlight-quote {
+      background: #fdf8f9;
+      border-left: 3px solid #ee5a7a;
+      padding: 18px 22px;
+      margin: 24px 0;
+      font-style: italic;
+      color: #444;
+      font-size: 14.5px;
+      line-height: 1.7;
+      border-radius: 0 8px 8px 0;
     }
 
     .workshop-right {
@@ -279,11 +312,32 @@
       margin-top: 6px;
     }
 
-    .price-value {
-      font-size: 17px;
+    .price-tag {
+      font-size: 18px;
       font-weight: 500;
       color: #111;
       margin-top: 4px;
+    }
+
+    .side-card {
+      background: #fdf8f9;
+      border: 1px solid #f8e7ec;
+      border-radius: 8px;
+      padding: 24px;
+      margin-top: 25px;
+    }
+
+    .side-card h5 {
+      font-size: 16px;
+      font-weight: 500;
+      color: #ee5a7a;
+      margin-bottom: 10px;
+    }
+
+    .side-card p {
+      font-size: 13.5px;
+      color: #555;
+      line-height: 1.7;
     }
 
     /* =========================================
@@ -291,7 +345,7 @@
        ========================================= */
     .dates-divider {
       max-width: 1180px;
-      margin: 40px auto 0;
+      margin: 30px auto 0;
       padding: 0 6%;
       text-align: left;
     }
@@ -307,7 +361,7 @@
     }
 
     /* =========================================
-       6. CONTACT SECTION (Exact Index Match)
+       6. CONTACT SECTION
        ========================================= */
     .contact {
       padding: 110px 7% 100px;
@@ -434,7 +488,7 @@
     }
 
     /* =========================================
-       7. FOOTER (Exact Index Match)
+       7. FOOTER
        ========================================= */
     footer {
       padding: 65px 8% 30px;
@@ -609,9 +663,10 @@
         <div class="drop" onclick="location.href=\'../workshops.html\'">
           Workshoper
           <div class="dropdown-menu">
-            <button onclick="location.href=\'umeni-potesit-zenu.html\'">Kunsten å behage en kvinne</button>
-            <button onclick="location.href=\'umeni-potesit-muze.html\'">Kunsten å behage en mann</button>
-            <button onclick="location.href=\'jen-pro-pary.html\'">Kunsten å behage (for par)</button>
+            <button onclick="location.href='umeni-potesit-zenu.html'">Kunsten å behage en kvinne</button>
+            <button onclick="location.href='umeni-potesit-muze.html'">Kunsten å behage en mann</button>
+            <button onclick="location.href='jen-pro-pary.html'">Kunsten å behage (for par)</button>
+            <button onclick="location.href='tajemstvi-panevniho-dna.html'" style="color:#ee5a7a;font-weight:500;">Bekkenbunnens hemmeligheter</button>
             <button onclick="location.href=\'../workshops.html\'" style="font-weight:500;color:#ee5a7a;border-top:1px solid #eee;">Se alle workshoper ➜</button>
           </div>
         </div>
@@ -626,68 +681,85 @@
     </div>
   </header>
 
-  <!-- HERO (With Couple Background Photo) -->
+  <!-- HERO -->
   <section class="hero">
     <div class="intro">
-      <h1>KUNSTEN Å BEHAGE</h1>
-      <p>Workshop for menn og kvinner</p>
+      <h1>BEKKENBUNNENS HEMMELIGHETER</h1>
+      <p>Møt din nye beste venn – en helhetlig opplevelsesworkshop for kvinner</p>
       <a class="button" href="#kontakt">Meld deg på</a>
     </div>
   </section>
 
-  <!-- WORKSHOP DETAILS (Two-Column Layout) -->
+  <!-- TWO-COLUMN WORKSHOP CONTENT -->
   <section class="workshop-main">
     <div class="workshop-grid">
       
       <!-- Left Column -->
       <div class="workshop-left">
-        <h2>Kunsten å behage</h2>
-        <h3 class="subtitle">Workshop for menn og kvinner</h3>
+        <h2>Tajemství pánevního dna</h2>
+        <h3 class="subtitle">Celodenní zážitkový workshop pro ženy</h3>
 
-        <p>Oppdag hva menn og kvinner virkelig ønsker i intimitet. Lær å gi, ta imot, berøre, kommunisere… bevisst.</p>
-        <p>Føler du også noen ganger at den andre personen er fra en helt annen planet?</p>
-        <p>Kvinner er ofte et mysterium for menn, og menn fremstår som «enkle» for kvinner – men sannheten er langt dypere. Denne unike workshopen for en blandet gruppe er skapt for alle som ønsker å fordype sin intimitet, bedre forstå egne og partnerens behov, og bli trygge, kjærlige elskere.</p>
-
-        <h4>Hva kan du forvente på workshopen?</h4>
+        <p>Uansett om du ønsker å bli gravid, få et rikere og mer tilfredsstillende sexliv, eller om du sliter med gynekologiske plager – på denne workshopen vil du bli kjent med din nye beste venn: bekkenbunnen din.</p>
         
-        <h4>For kvinner:</h4>
-        <ul>
-          <li>Oppdag at mannlig seksualitet ikke bare handler om «fart» og prestasjon</li>
-          <li>Lær teknikken for tantrisk lingammassasje og bevisst tilstedeværelse</li>
-          <li>Få større trygghet, frihet og letthet i intimiteten</li>
-          <li>Lær hvordan du stiller deg inn på partneren selv når du ikke har lyst selv</li>
-          <li>Forstå hvordan du sanser mannens kropp og gleder ham med respekt og nytelse</li>
-        </ul>
+        <p>Vi arbeider etter den anerkjente <strong>3×3-metoden fra Skolen for bekkenbunn ved Renata Skálová</strong>, som forener tre dimensjoner:</p>
 
-        <h4>For menn:</h4>
-        <ul>
-          <li>Finn endelig ut når en kvinne virkelig ønsker sex – og når hun bare «samtykker»</li>
-          <li>Lær å berøre en kvinne varsomt og sanse hennes fineste reaksjoner</li>
-          <li>Få praktisk, sannferdig og verdifull tilbakemelding</li>
-          <li>Forstå hvorfor det som fungerte én gang, ikke nødvendigvis fungerer alltid</li>
-          <li>Lær hemmelighetene bak intim massasje av kvinnekroppen og reflekspunkter</li>
-        </ul>
+        <!-- Level 1 -->
+        <div class="level-box">
+          <h5>1. Kroppens plan = Helseøvelser for bekkenbunnen</h5>
+          <p>Lær bekkenbunnens ulike lag og hvordan du kjenner dem igjen. Enkle teknikker for avspenning og styrking. Her handler det ikke om rå styrke, men om <em>funksjon</em> og smidighet – glem alt du har lært på treningssenteret. Vi rydder opp i vanlige misforståelser og lærer deg å bruke den såklekte PC-pumpen i hverdagen.</p>
+        </div>
+
+        <!-- Level 2 -->
+        <div class="level-box">
+          <h5>2. Det emosjonelle plan = Psykosomatikk og bioenergetikk</h5>
+          <p>Vi utforsker bekkenbunnen fra et psykosomatisk perspektiv og ser på sammenhengen mellom spenninger i kroppen og opplevelsene i hverdagen vår. Vi bruker bioenergetiske øvelser spesielt rettet mot bekkenregionen.</p>
+        </div>
+
+        <!-- Level 3 -->
+        <div class="level-box">
+          <h5>3. Det energetiske plan = Østlig filosofi, yoga og tantriske teknikker</h5>
+          <p>En dypere tilnærming som forener det fysiske og mentale til en helhet. Vi fletter inn prinsipper fra hormonell yoga, gyn-yoga, kundalini og tantra og kobler dem til bekkenbunnens iboende livskraft.</p>
+        </div>
+
+        <div class="highlight-quote">
+          «For kvinner i alle livsfaser. Spesielt anbefalt for kvinner som ønsker å bli gravid, kvinner i overgangsalderen, og for nybakte mødre i tiden etter fødsel.»
+        </div>
       </div>
 
       <!-- Right Column -->
       <div class="workshop-right">
-        <h4>Hvem passer seminaret for?</h4>
+        <h4>Hvem passer kurset for?</h4>
         <ul>
-          <li>For enkeltpersoner og par</li>
-          <li>For de som vil fordype sin seksualitet og sitt parforhold</li>
-          <li>For nysgjerrige, åpne og respektfulle mennesker</li>
-          <li>Både for nybegynnere og de med tidligere erfaring</li>
+          <li>Kvinner i alle aldre</li>
+          <li>Kvinner som ønsker å bli gravide eller som opplever gynekologiske ubalanser</li>
+          <li>Friske kvinner som ønsker dypere selvforståelse, sterkere seksualitet og mer livsglede</li>
+          <li>Kvinner i overgangsalderen og mødre etter fødsel</li>
         </ul>
 
         <h4>Møtested</h4>
-        <p><strong>Tantracentrum Kameňák</strong><br>Kamenný Újezd 83, Nýřany</p>
-        <p>🚗 5 min med bil fra Bory retning Zbůch, Nýřany<br>🚆 Togforbindelse hver time fra Pilsen (20 min)</p>
+        <p><strong>Kamenný Újezd 83, Nýřany (Plzeň-Nord)</strong></p>
+        <p>🚗 5 min med bil langs motorveien fra Bory i retning Zbůch/Nýřany.<br>
+        🚆 Togforbindelse hver time fra Pilsen (reisetid ca. 20 min).</p>
 
-        <h4>Når og hvordan?</h4>
-        <p><strong>15.11.2025</strong><br>Programmet starter kl. 10:00 (oppmøte anbefales kl. 09:45).<br>Ta med: behagelige klær og notatbok.</p>
+        <h4>Hva du må ta med</h4>
+        <ul>
+          <li>Behagelige klær du føler deg feminin og komfortabel i</li>
+          <li>Yogamatte eller et teppe å sitte på, samt en liten pute for ekstra komfort</li>
+        </ul>
 
-        <h4>Pris:</h4>
-        <p class="price-value">2 900 Kč / person</p>
+        <h4>Program</h4>
+        <p><strong>Lørdag kl. 10:00 – 20:00</strong><br>
+        <strong>Søndag kl. 10:00 – 15:00</strong><br>
+        Oppmøte lørdag senest kl. 09:45 for felles start.</p>
+
+        <h4>Pris</h4>
+        <p class="price-tag">2 250 Kč</p>
+        <p style="font-size:13.5px; color:#777; margin-top:4px;">+ Vegetarisk kost (bestilles ved ankomst lørdag morgen: lunsj/middag lørdag + frokost/lunsj søndag): <strong>850 Kč per person</strong>.</p>
+
+        <div class="side-card">
+          <h5>Om metoden</h5>
+          <p>Skolen for bekkenbunn bygger på skånsom, helhetlig somatie der målet er å gjenopprette kroppens naturlige flyt og avspenning, uten belastende eller feilaktige knipeøvelser.</p>
+        </div>
       </div>
 
     </div>
@@ -700,7 +772,7 @@
     </div>
   </div>
 
-  <!-- CONTACT SECTION (Using Google Apps Script Backend) -->
+  <!-- CONTACT SECTION -->
   <section class="contact" id="kontakt">
     <h2>Skriv til meg</h2>
     <p>og meld deg på kurset.</p>
@@ -716,7 +788,7 @@
       </div>
       <div class="field full">
         <label>Emne <span class="required">*</span></label>
-        <input type="text" required value="Påmelding: Kunsten å behage" id="formSubject">
+        <input type="text" required value="Påmelding: Bekkenbunnens hemmeligheter" id="formSubject">
       </div>
       <div class="field full">
         <label>Melding <span class="required">*</span></label>
@@ -727,7 +799,7 @@
         <div>
           <div class="captcha">Beskyttet av reCAPTCHA ✓</div>
           <div class="notice">
-            Felt merket med stjerne er obligatoriske.<br>
+            Felt merket sletter/stjerne er obligatoriske.<br>
             Ved å sende meldingen aksepterer jeg <a onclick="openGenericModal('Personvern', 'Alle henvendelser behandles strengt konfidensielt etter gjeldende GDPR-retningslinjer.')">behandling av personopplysninger</a>.
           </div>
         </div>
@@ -757,7 +829,7 @@
         <a href="umeni-potesit-zenu.html">Kunsten å behage en kvinne</a>
         <a href="umeni-potesit-muze.html">Kunsten å behage en mann</a>
         <a href="jen-pro-pary.html">Kunsten å behage (for par)</a>
-        <a href="tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
+        <a href="tajemstvi-panevniho-dna.html" style="color:#ee5a7a;font-weight:500;">Bekkenbunnens hemmeligheter</a>
         <a href="byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
         <a href="../workshops.html" style="color:#ee5a7a; font-weight:500;">Se alle 9 workshoper ➜</a>
       </div>

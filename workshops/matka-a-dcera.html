@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Kunsten å behage – Daniela Torp</title>
+  <title>Mor og datter – Daniela Torp</title>
   <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-32x32.png" sizes="32x32">
   <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-192x192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-180x180.png">
@@ -148,14 +148,14 @@
     }
 
     /* =========================================
-       3. HERO SECTION (Couple Background)
+       3. HERO SECTION (Custom Workshop Image)
        ========================================= */
     .hero {
       position: relative;
       text-align: center;
       padding: 110px 15px 120px;
-      background: linear-gradient(rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.82)),
-                  url('https://www.danielatorp.cz/wp-content/uploads/2020/03/6-1024x1024.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.84)),
+                  url('https://www.danielatorp.cz/wp-content/uploads/2020/03/3-1024x1024.jpg') center/cover no-repeat;
     }
 
     .intro {
@@ -232,7 +232,7 @@
 
     .workshop-left p {
       font-size: 15px;
-      line-height: 1.7;
+      line-height: 1.75;
       color: #444;
       margin-bottom: 16px;
     }
@@ -240,7 +240,7 @@
     .workshop-left h4 {
       font-size: 18px;
       font-weight: 500;
-      margin: 32px 0 12px;
+      margin: 30px 0 12px;
       color: #111;
     }
 
@@ -250,6 +250,24 @@
       font-size: 14.5px;
       line-height: 1.85;
       margin-bottom: 20px;
+    }
+
+    .letter-box {
+      background: #fdf8f9;
+      border-left: 3px solid #ee5a7a;
+      padding: 22px;
+      margin: 24px 0;
+      font-size: 14.5px;
+      color: #444;
+      line-height: 1.75;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .letter-box h5 {
+      font-size: 16px;
+      font-weight: 500;
+      color: #ee5a7a;
+      margin-bottom: 10px;
     }
 
     .workshop-right {
@@ -279,11 +297,33 @@
       margin-top: 6px;
     }
 
-    .price-value {
-      font-size: 17px;
+    .price-tag {
+      font-size: 18px;
       font-weight: 500;
       color: #111;
       margin-top: 4px;
+    }
+
+    /* Testimonials Box */
+    .testimonial-card {
+      background: #fafafa;
+      border: 1px solid #f0f0f0;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-card p {
+      font-size: 13.5px;
+      color: #555;
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+
+    .testimonial-card .author {
+      font-weight: 500;
+      color: #ee5a7a;
+      font-size: 13px;
     }
 
     /* =========================================
@@ -291,7 +331,7 @@
        ========================================= */
     .dates-divider {
       max-width: 1180px;
-      margin: 40px auto 0;
+      margin: 30px auto 0;
       padding: 0 6%;
       text-align: left;
     }
@@ -307,7 +347,7 @@
     }
 
     /* =========================================
-       6. CONTACT SECTION (Exact Index Match)
+       6. CONTACT SECTION
        ========================================= */
     .contact {
       padding: 110px 7% 100px;
@@ -434,7 +474,7 @@
     }
 
     /* =========================================
-       7. FOOTER (Exact Index Match)
+       7. FOOTER
        ========================================= */
     footer {
       padding: 65px 8% 30px;
@@ -609,9 +649,10 @@
         <div class="drop" onclick="location.href=\'../workshops.html\'">
           Workshoper
           <div class="dropdown-menu">
-            <button onclick="location.href=\'umeni-potesit-zenu.html\'">Kunsten å behage en kvinne</button>
-            <button onclick="location.href=\'umeni-potesit-muze.html\'">Kunsten å behage en mann</button>
-            <button onclick="location.href=\'jen-pro-pary.html\'">Kunsten å behage (for par)</button>
+            <button onclick="location.href='umeni-potesit-zenu.html'">Kunsten å behage en kvinne</button>
+            <button onclick="location.href='umeni-potesit-muze.html'">Kunsten å behage en mann</button>
+            <button onclick="location.href='jen-pro-pary.html'">Kunsten å behage (for par)</button>
+            <button onclick="location.href='matka-a-dcera.html'" style="color:#ee5a7a;font-weight:500;">Mor og datter</button>
             <button onclick="location.href=\'../workshops.html\'" style="font-weight:500;color:#ee5a7a;border-top:1px solid #eee;">Se alle workshoper ➜</button>
           </div>
         </div>
@@ -626,68 +667,78 @@
     </div>
   </header>
 
-  <!-- HERO (With Couple Background Photo) -->
+  <!-- HERO -->
   <section class="hero">
     <div class="intro">
-      <h1>KUNSTEN Å BEHAGE</h1>
-      <p>Workshop for menn og kvinner</p>
+      <h1>MOR OG DATTER</h1>
+      <p>Bygg bro over generasjonene, finn felles forståelse og helbred relasjonen</p>
       <a class="button" href="#kontakt">Meld deg på</a>
     </div>
   </section>
 
-  <!-- WORKSHOP DETAILS (Two-Column Layout) -->
+  <!-- TWO-COLUMN WORKSHOP CONTENT -->
   <section class="workshop-main">
     <div class="workshop-grid">
       
       <!-- Left Column -->
       <div class="workshop-left">
-        <h2>Kunsten å behage</h2>
-        <h3 class="subtitle">Workshop for menn og kvinner</h3>
+        <h2>Matka a dcera</h2>
+        <h3 class="subtitle">Et transformerende seminar for mødre og døtre</h3>
 
-        <p>Oppdag hva menn og kvinner virkelig ønsker i intimitet. Lær å gi, ta imot, berøre, kommunisere… bevisst.</p>
-        <p>Føler du også noen ganger at den andre personen er fra en helt annen planet?</p>
-        <p>Kvinner er ofte et mysterium for menn, og menn fremstår som «enkle» for kvinner – men sannheten er langt dypere. Denne unike workshopen for en blandet gruppe er skapt for alle som ønsker å fordype sin intimitet, bedre forstå egne og partnerens behov, og bli trygge, kjærlige elskere.</p>
+        <div class="letter-box">
+          <h5>Til min datter:</h5>
+          <p><em>«Jeg ser tårene renne nedover kinnet ditt. Jeg ser sinnet i øynene dine. Jeg ser deg knytte tenner av raseri, og jeg sverger på at jeg kjenner den samme smerten i hjertet mitt som du gjør. Kanskje enda større. Jeg vet ikke. For jeg vet ikke lenger hvordan jeg skal snakke med deg om dette.»</em></p>
+          <p><em>«Hver gang du roper til meg: 'Du forstår meg overhodet ikke, du skjønner meg ikke i det hele tatt... Hvis du bare ante hvor ulykkelig jeg er...', kjenner jeg hjertet verke og pusten snøre seg. Lille jenta mi, jeg vet det, jeg har også vært ung. Jeg har også vært skuffet og såret av livet og venner... Jeg vet bare ikke hvordan jeg skal overlevere mine erfaringer slik at det kan hjelpe deg. Jeg trodde jeg visste det, men nå ser jeg at du ikke forsto meg slik jeg ønsket. Jeg skammer meg, jeg er redd, og jeg vet ikke ut eller inn.»</em></p>
+          <p><em>«Men jeg vet at jeg elsker deg uendelig høyt, og jeg vil ikke at det skal være slik. Jeg vil ikke at disse misforståelsene skal gjenta seg. Jeg vil være din støtte hele livet ut. Jeg elsker deg, / Mamma»</em></p>
+        </div>
 
-        <h4>Hva kan du forvente på workshopen?</h4>
-        
-        <h4>For kvinner:</h4>
-        <ul>
-          <li>Oppdag at mannlig seksualitet ikke bare handler om «fart» og prestasjon</li>
-          <li>Lær teknikken for tantrisk lingammassasje og bevisst tilstedeværelse</li>
-          <li>Få større trygghet, frihet og letthet i intimiteten</li>
-          <li>Lær hvordan du stiller deg inn på partneren selv når du ikke har lyst selv</li>
-          <li>Forstå hvordan du sanser mannens kropp og gleder ham med respekt og nytelse</li>
-        </ul>
+        <div class="letter-box">
+          <h5>Til mammaen min:</h5>
+          <p><em>«Kjære mamma. Slik som jeg skrek til deg i går, mente jeg det ikke slik, jeg føler bare at du ikke forstår meg og at jeg ikke kan snakke med deg om disse tingene i det hele tatt. Du ser meg ikke og hører ikke hva jeg trenger. Jeg vet ikke engang om du er glad i meg. Men jeg er så uendelig glad i deg og trenger deg. Jeg trenger å snakke med deg om ting mer enn jeg vil innrømme, men det går ikke når du ikke vil snakke med meg om noe som helst.»</em></p>
+          <p><em>«Jeg skulle så gjerne ønske at det var som før, da jeg var liten, skrubbet knærne mine og du alltid blåste på og ga meg en kyss. Jeg elsker deg og vil si alt dette til deg, bare jeg ikke vet hvordan. Jeg elsker deg, / Datter»</em></p>
+        </div>
 
-        <h4>For menn:</h4>
-        <ul>
-          <li>Finn endelig ut når en kvinne virkelig ønsker sex – og når hun bare «samtykker»</li>
-          <li>Lær å berøre en kvinne varsomt og sanse hennes fineste reaksjoner</li>
-          <li>Få praktisk, sannferdig og verdifull tilbakemelding</li>
-          <li>Forstå hvorfor det som fungerte én gang, ikke nødvendigvis fungerer alltid</li>
-          <li>Lær hemmelighetene bak intim massasje av kvinnekroppen og reflekspunkter</li>
-        </ul>
+        <p>Dette seminaret passer for alle døtre og mødre. Dere kan delta sammen som mor og datter, på tvers av flere generasjoner (også med bestemor, for bestemor er jo også mamma).</p>
+        <p><strong>Nedre aldersgrense for døtre er 8 år.</strong></p>
       </div>
 
       <!-- Right Column -->
       <div class="workshop-right">
-        <h4>Hvem passer seminaret for?</h4>
+        <h4>Hva vil dere oppleve og lære?</h4>
         <ul>
-          <li>For enkeltpersoner og par</li>
-          <li>For de som vil fordype sin seksualitet og sitt parforhold</li>
-          <li>For nysgjerrige, åpne og respektfulle mennesker</li>
-          <li>Både for nybegynnere og de med tidligere erfaring</li>
+          <li>Lære å lytte til hverandre og kommunisere med respekt for den anres følelser.</li>
+          <li>Gjøre dere bevisst på familiemønstre og ubrukte byrder, og lære å frigjøre både dere selv og døtrene fra dem.</li>
+          <li>Få støtte og et trygt rom til å snakke om vanskelige temaer som ellers skaper emosjonell avstand i relasjonen.</li>
+          <li>Le, danse, hvile, pleie dere selv og knytte dypere bånd på tvers av generasjoner.</li>
         </ul>
 
         <h4>Møtested</h4>
-        <p><strong>Tantracentrum Kameňák</strong><br>Kamenný Újezd 83, Nýřany</p>
-        <p>🚗 5 min med bil fra Bory retning Zbůch, Nýřany<br>🚆 Togforbindelse hver time fra Pilsen (20 min)</p>
+        <p><strong>Kamenný Újezd 83, Nýřany (Plzeň-Nord)</strong></p>
+        <p>🚗 5 min med bil langs motorveien fra Bory i retning Zbůch/Nýřany.<br>
+        🚆 Togforbindelse hver time fra Pilsen (reisetid ca. 20 min).</p>
 
-        <h4>Når og hvordan?</h4>
-        <p><strong>15.11.2025</strong><br>Programmet starter kl. 10:00 (oppmøte anbefales kl. 09:45).<br>Ta med: behagelige klær og notatbok.</p>
+        <h4>Hva du må ta med</h4>
+        <ul>
+          <li>Behagelige klær du føler deg feminin og vel i</li>
+          <li>Notatbok og penn</li>
+        </ul>
 
-        <h4>Pris:</h4>
-        <p class="price-value">2 900 Kč / person</p>
+        <h4>Pris</h4>
+        <p class="price-tag">2 250 Kč for mor og datter</p>
+        <p style="font-size:13.5px; color:#777; margin-top:4px;">+ 500 Kč per ekstra kvinnelige familiemedlem (ekstra datter eller bestemor).</p>
+
+        <!-- Testimonials -->
+        <h4 style="margin-top:35px;">Referanser</h4>
+        
+        <div class="testimonial-card">
+          <p>«Tusen takk for at du åpnet øynene mine, ikke bare innen det seksuelle feltet. En utrolig behagelig, menneskelig og trygg tilnærming fra Danča som man kunne lyttet til i ukevis... Det er fantastisk å lære av mennesker på rett plass. Anbefales på det sterkeste!»</p>
+          <div class="author">– Lucie Lomská</div>
+        </div>
+
+        <div class="testimonial-card">
+          <p>«En lærerik og overraskende opplevelse for alle som vil bryte ned gamle grenser og myter som foreldrene våre innpodet oss. Mulighetene er uendelige!»</p>
+          <div class="author">– Hana Valentová-Vojtová</div>
+        </div>
       </div>
 
     </div>
@@ -700,27 +751,27 @@
     </div>
   </div>
 
-  <!-- CONTACT SECTION (Using Google Apps Script Backend) -->
+  <!-- CONTACT SECTION -->
   <section class="contact" id="kontakt">
     <h2>Skriv til meg</h2>
-    <p>og meld deg på kurset.</p>
+    <p>og meld dere på kurset.</p>
     
     <form class="form" id="contactForm" onsubmit="handleFormSubmit(event)">
       <div class="field">
         <label>Navn og etternavn <span class="required">*</span></label>
-        <input type="text" required placeholder="Ola Nordmann" id="formName">
+        <input type="text" required placeholder="Helena og Anna Hansen" id="formName">
       </div>
       <div class="field">
         <label>Din e-postadresse <span class="required">*</span></label>
-        <input type="email" required placeholder="ola.nordmann@eksempel.no" id="formEmail">
+        <input type="email" required placeholder="helena@eksempel.no" id="formEmail">
       </div>
       <div class="field full">
         <label>Emne <span class="required">*</span></label>
-        <input type="text" required value="Påmelding: Kunsten å behage" id="formSubject">
+        <input type="text" required value="Påmelding: Mor og datter" id="formSubject">
       </div>
       <div class="field full">
         <label>Melding <span class="required">*</span></label>
-        <textarea required placeholder="Skriv din melding eller eventuelle spørsmål her" id="formMessage"></textarea>
+        <textarea required placeholder="Skriv hvem som deltar og eventuelle spørsmål her" id="formMessage"></textarea>
       </div>
       
       <div class="form-bottom">
@@ -757,8 +808,8 @@
         <a href="umeni-potesit-zenu.html">Kunsten å behage en kvinne</a>
         <a href="umeni-potesit-muze.html">Kunsten å behage en mann</a>
         <a href="jen-pro-pary.html">Kunsten å behage (for par)</a>
+        <a href="matka-a-dcera.html" style="color:#ee5a7a;font-weight:500;">Mor og datter</a>
         <a href="tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
-        <a href="byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
         <a href="../workshops.html" style="color:#ee5a7a; font-weight:500;">Se alle 9 workshoper ➜</a>
       </div>
       <div>

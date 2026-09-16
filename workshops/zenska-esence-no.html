@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Kunsten å behage – Daniela Torp</title>
+  <title>Kvinneessens og livskraft – Daniela Torp</title>
   <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-32x32.png" sizes="32x32">
   <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-192x192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-180x180.png">
@@ -148,14 +148,14 @@
     }
 
     /* =========================================
-       3. HERO SECTION (Couple Background)
+       3. HERO SECTION (Custom Theme Image)
        ========================================= */
     .hero {
       position: relative;
       text-align: center;
       padding: 110px 15px 120px;
-      background: linear-gradient(rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.82)),
-                  url('https://www.danielatorp.cz/wp-content/uploads/2020/03/6-1024x1024.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.84)),
+                  url('https://www.danielatorp.cz/wp-content/uploads/2020/05/1.jpg') center/cover no-repeat;
     }
 
     .intro {
@@ -237,21 +237,76 @@
       margin-bottom: 16px;
     }
 
-    .workshop-left h4 {
-      font-size: 18px;
-      font-weight: 500;
-      margin: 32px 0 12px;
+    .highlight-banner {
+      background: #fdf8f9;
+      border-left: 3px solid #ee5a7a;
+      padding: 20px 24px;
+      margin: 25px 0 35px;
+      border-radius: 0 8px 8px 0;
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    /* Seasonal Festivals Grid */
+    .seasons-title {
+      font-size: 22px;
+      font-weight: 400;
+      margin: 40px 0 20px;
       color: #111;
     }
 
-    .workshop-left ul {
-      padding-left: 20px;
-      color: #555;
-      font-size: 14.5px;
-      line-height: 1.85;
-      margin-bottom: 20px;
+    .seasons-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 30px;
     }
 
+    .season-card {
+      background: #fafafa;
+      border: 1px solid #f0f0f0;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .season-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .season-card-body {
+      padding: 18px;
+      flex-grow: 1;
+    }
+
+    .season-card h5 {
+      font-size: 17px;
+      font-weight: 500;
+      color: #ee5a7a;
+      margin-bottom: 4px;
+    }
+
+    .season-card .date {
+      font-size: 12px;
+      font-weight: 500;
+      color: #888;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .season-card p {
+      font-size: 13.5px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    /* Right Column Details */
     .workshop-right {
       background: #fff;
       padding-left: 20px;
@@ -279,11 +334,90 @@
       margin-top: 6px;
     }
 
-    .price-value {
-      font-size: 17px;
+    .side-card {
+      background: #fdf8f9;
+      border: 1px solid #f8e7ec;
+      border-radius: 8px;
+      padding: 24px;
+      margin-top: 25px;
+    }
+
+    .side-card h5 {
+      font-size: 16px;
       font-weight: 500;
+      color: #ee5a7a;
+      margin-bottom: 10px;
+    }
+
+    .side-card p {
+      font-size: 13.5px;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* Pusteritual Section */
+    .ritual-section {
+      max-width: 1180px;
+      margin: 30px auto;
+      padding: 40px;
+      background: #fafafa;
+      border: 1px solid #f0f0f0;
+      border-radius: 8px;
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .ritual-section img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      max-height: 320px;
+    }
+
+    .ritual-content h3 {
+      font-size: 22px;
+      font-weight: 400;
       color: #111;
-      margin-top: 4px;
+      margin-bottom: 14px;
+    }
+
+    .ritual-content p {
+      font-size: 14.5px;
+      color: #555;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+
+    /* Values Grid (8 points) */
+    .values-grid {
+      max-width: 1180px;
+      margin: 40px auto 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .value-item {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 22px 18px;
+      text-align: center;
+    }
+
+    .value-item .icon {
+      color: #ee5a7a;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .value-item p {
+      font-size: 13.5px;
+      color: #555;
+      line-height: 1.6;
+      margin: 0;
     }
 
     /* =========================================
@@ -291,7 +425,7 @@
        ========================================= */
     .dates-divider {
       max-width: 1180px;
-      margin: 40px auto 0;
+      margin: 50px auto 0;
       padding: 0 6%;
       text-align: left;
     }
@@ -569,12 +703,13 @@
     @media (max-width: 900px) {
       .nav { display: none; }
       .mobile-menu-btn { display: block; }
-      .workshop-grid, .footer-grid { grid-template-columns: 1fr; }
+      .workshop-grid, .seasons-grid, .ritual-section, .footer-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
       .workshop-right { padding-left: 0; }
     }
 
     @media (max-width: 560px) {
-      .form { grid-template-columns: 1fr; }
+      .values-grid, .form { grid-template-columns: 1fr; }
       .form-bottom { flex-direction: column; align-items: stretch; }
       .send { margin-top: 10px; }
     }
@@ -611,7 +746,7 @@
           <div class="dropdown-menu">
             <button onclick="location.href=\'umeni-potesit-zenu.html\'">Kunsten å behage en kvinne</button>
             <button onclick="location.href=\'umeni-potesit-muze.html\'">Kunsten å behage en mann</button>
-            <button onclick="location.href=\'jen-pro-pary.html\'">Kunsten å behage (for par)</button>
+            <button onclick="location.href='jen-pro-pary.html'">Kunsten å behage (for par)</button>
             <button onclick="location.href=\'../workshops.html\'" style="font-weight:500;color:#ee5a7a;border-top:1px solid #eee;">Se alle workshoper ➜</button>
           </div>
         </div>
@@ -626,72 +761,174 @@
     </div>
   </header>
 
-  <!-- HERO (With Couple Background Photo) -->
+  <!-- HERO -->
   <section class="hero">
     <div class="intro">
-      <h1>KUNSTEN Å BEHAGE</h1>
-      <p>Workshop for menn og kvinner</p>
+      <h1>KVINNEESSENS OG LIVSKRAFT</h1>
+      <p>Fire årstidsmøter for kvinner dedikert til ekte hvile, tilstedeværelse og fornyelse</p>
       <a class="button" href="#kontakt">Meld deg på</a>
     </div>
   </section>
 
-  <!-- WORKSHOP DETAILS (Two-Column Layout) -->
+  <!-- WORKSHOP MAIN CONTENT -->
   <section class="workshop-main">
     <div class="workshop-grid">
       
       <!-- Left Column -->
       <div class="workshop-left">
-        <h2>Kunsten å behage</h2>
-        <h3 class="subtitle">Workshop for menn og kvinner</h3>
+        <h2>Kvinneessens og livskraft</h2>
+        <h3 class="subtitle">En helhetlig reise gjennom årets fire årstider</h3>
 
-        <p>Oppdag hva menn og kvinner virkelig ønsker i intimitet. Lær å gi, ta imot, berøre, kommunisere… bevisst.</p>
-        <p>Føler du også noen ganger at den andre personen er fra en helt annen planet?</p>
-        <p>Kvinner er ofte et mysterium for menn, og menn fremstår som «enkle» for kvinner – men sannheten er langt dypere. Denne unike workshopen for en blandet gruppe er skapt for alle som ønsker å fordype sin intimitet, bedre forstå egne og partnerens behov, og bli trygge, kjærlige elskere.</p>
+        <p>I løpet av året møtes vi til fire kvinnesamlinger dedikert til ekte hvile og egenomsorg. Ikke overfladisk avslapning, men dyp forløsning – for kropp, sinn og indre balanse. Dette er samlinger hvor du ikke trenger å bevise noe, ikke skynde deg noe sted, eller lede noe. Et rom hvor du rett og slett bare kan være.</p>
 
-        <h4>Hva kan du forvente på workshopen?</h4>
-        
-        <h4>For kvinner:</h4>
-        <ul>
-          <li>Oppdag at mannlig seksualitet ikke bare handler om «fart» og prestasjon</li>
-          <li>Lær teknikken for tantrisk lingammassasje og bevisst tilstedeværelse</li>
-          <li>Få større trygghet, frihet og letthet i intimiteten</li>
-          <li>Lær hvordan du stiller deg inn på partneren selv når du ikke har lyst selv</li>
-          <li>Forstå hvordan du sanser mannens kropp og gleder ham med respekt og nytelse</li>
-        </ul>
+        <p>Hver samling er en invitasjon til å roe ned og vende tilbake til deg selv. Til å lytte til kroppen, pusten og følelsene som ofte blir skjøvet til side i hverdagens kjas og mas. Det venter skånsomt kroppsarbeid, rom for mental ro, bevisst hvile og en støttende sirkel av kvinner som holder og bærer deg.</p>
 
-        <h4>For menn:</h4>
-        <ul>
-          <li>Finn endelig ut når en kvinne virkelig ønsker sex – og når hun bare «samtykker»</li>
-          <li>Lær å berøre en kvinne varsomt og sanse hennes fineste reaksjoner</li>
-          <li>Få praktisk, sannferdig og verdifull tilbakemelding</li>
-          <li>Forstå hvorfor det som fungerte én gang, ikke nødvendigvis fungerer alltid</li>
-          <li>Lær hemmelighetene bak intim massasje av kvinnekroppen og reflekspunkter</li>
-        </ul>
+        <p>Alt foregår i et trygt og respektfullt miljø hvor du er velkommen akkurat slik du er. Samlingen inkluderer også næringsrik mat tilberedt med kjærlighet for å støtte restitusjon og helhetlig velvære.</p>
+
+        <p>Du kan velge å gå gjennom hele syklusen av fire samlinger og gi deg selv næring gjennom hele året, eller delta på kun én samling – avhengig av hva du trenger mest akkurat nå. Begge veier er like velkomne. Det viktigste er å lytte til deg selv og din egen rytme.</p>
+
+        <div class="highlight-banner">
+          <strong>Hva venter deg?</strong><br>
+          En rikholdig variasjon av praksiser som støtter en dypere kontakt med deg selv – dans, kroppsarbeid, energisk heling og ekstatisk forankring i kroppen. Et rom for å trygt berøre temaer som selvkjærlighet, sunne grenser, nytelse, ikkevoldelig kommunikasjon og helbredelse av slektslinjer. Vi utforsker kvinnens faser, gjenoppretter kontakten med det indre barnet, åpner opp for sanselighet og vekker livmorens naturlige kraft – skånsomt og i ditt eget tempo.
+        </div>
+
+        <h4 class="seasons-title">Årets fire samlinger:</h4>
+
+        <!-- 4 Seasons Grid -->
+        <div class="seasons-grid">
+          
+          <!-- Imbolc -->
+          <div class="season-card">
+            <img src="https://www.danielatorp.cz/wp-content/uploads/2026/01/chatgpt-image-9.-1.-2026-14_29_46-2-1024x1024.png" alt="Imbolc">
+            <div class="season-card-body">
+              <h5>Imbolc</h5>
+              <span class="date">27.02. – 01.03.2026</span>
+              <p><strong>Barndom & røtter:</strong> Oppdag din lekne natur, hel barndommens sår og forstå hvordan familierelasjoner former dine overbevisninger. Knytt kontakt med røttene dine og finn emosjonell støtte for å nære ditt indre barn.</p>
+            </div>
+          </div>
+
+          <!-- Beltane -->
+          <div class="season-card">
+            <img src="https://www.danielatorp.cz/wp-content/uploads/2026/01/danča-fb-1-1024x1024.jpg" alt="Beltane">
+            <div class="season-card-body">
+              <h5>Beltane</h5>
+              <span class="date">Vår / Forsommer</span>
+              <p><strong>Ungdom & selverkjennelse:</strong> Favn din sensualitet, lær å elske deg selv og sett sunne grenser. Møt ungdomstidens utfordringer, skam, skyld og identitetssøken. Lær kunsten å samtykke og fullstendig selvaksept.</p>
+            </div>
+          </div>
+
+          <!-- Lughnasad -->
+          <div class="season-card">
+            <img src="https://www.danielatorp.cz/wp-content/uploads/2026/01/danča-fb-2-1024x1024.jpg" alt="Lughnasad">
+            <div class="season-card-body">
+              <h5>Lughnasad</h5>
+              <span class="date">04.07. – 05.07.2026</span>
+              <p><strong>Morskap & egenkraft:</strong> Favn kroppen din, ta imot kraften i lyst og livmor, og gi slipp på gamle traumer. Tre inn i svangerskapets magi, fødselens skjønnhet og kunsten å skape bevisst.</p>
+            </div>
+          </div>
+
+          <!-- Samhain -->
+          <div class="season-card">
+            <img src="https://www.danielatorp.cz/wp-content/uploads/2026/01/danča-fb-3-1024x1024.jpg" alt="Samhain">
+            <div class="season-card-body">
+              <h5>Samhain</h5>
+              <span class="date">16.10. – 18.10.2026</span>
+              <p><strong>Visdom & ro:</strong> Favn modningen, finn ro i din sanselige visdom og oppdag overgangsalderens skjønnhet. Gjenopprett kontakten med din dype intuisjon og lær kunsten å ikke dømme.</p>
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
       <!-- Right Column -->
       <div class="workshop-right">
-        <h4>Hvem passer seminaret for?</h4>
-        <ul>
-          <li>For enkeltpersoner og par</li>
-          <li>For de som vil fordype sin seksualitet og sitt parforhold</li>
-          <li>For nysgjerrige, åpne og respektfulle mennesker</li>
-          <li>Både for nybegynnere og de med tidligere erfaring</li>
-        </ul>
+        <h4>Helgesamlinger</h4>
+        <p><strong>Imbolc:</strong> 27.02. – 01.03.2026<br>
+        <strong>Beltane:</strong> Kunngjøres snart<br>
+        <strong>Lughnasad:</strong> 04.07. – 05.07.2026<br>
+        <strong>Samhain:</strong> 16.10. – 18.10.2026</p>
+        <p>Reserver én helg eller en helhetlig pakke for alle fire samlinger.</p>
+
+        <h4>Pris</h4>
+        <p><strong>2 250 Kč / samling</strong></p>
+        <p style="font-size:13.5px; color:#777;">Vennligst overfør beløpet til konto <strong>3497044044/5500</strong>. Oppgi <em>«Ženská esence – [Navn på samling]»</em> i meldingsfeltet.</p>
 
         <h4>Møtested</h4>
-        <p><strong>Tantracentrum Kameňák</strong><br>Kamenný Újezd 83, Nýřany</p>
-        <p>🚗 5 min med bil fra Bory retning Zbůch, Nýřany<br>🚆 Togforbindelse hver time fra Pilsen (20 min)</p>
+        <p><strong>Kamenný Újezd 38</strong><br>Nýřany, Tsjekkia</p>
 
-        <h4>Når og hvordan?</h4>
-        <p><strong>15.11.2025</strong><br>Programmet starter kl. 10:00 (oppmøte anbefales kl. 09:45).<br>Ta med: behagelige klær og notatbok.</p>
+        <h4>Tidsskjema for helgen</h4>
+        <p><strong>Ankomst:</strong> Fredag kl. 16:00 – 16:45<br>
+        <strong>Programstart:</strong> Fredag kl. 17:00<br>
+        <strong>Slutt:</strong> Søndag kl. 15:00 – 16:00</p>
 
-        <h4>Pris:</h4>
-        <p class="price-value">2 900 Kč / person</p>
+        <h4>Hva du må ta med</h4>
+        <ul>
+          <li>Behagelige klær og innesko</li>
+          <li>Vannflaske</li>
+          <li>Teppe</li>
+          <li>Sovepose eller dyne/pute</li>
+        </ul>
+
+        <div class="side-card">
+          <h5>Om Daniela Torp</h5>
+          <p>Kroppsterapeut og veileder innen intimitet og somatisk tilstedeværelse. Grunnlegger av Den tsjekkiske foreningen for Sexological Bodywork, utdannet i California. Hun støtter kvinner i å gjenoppdage sin iboende sensualitet, selvkjærlighet og trygghet i egen kropp.</p>
+        </div>
       </div>
 
     </div>
   </section>
+
+  <!-- PUSTERITUAL SECTION -->
+  <div class="wrap">
+    <div class="ritual-section">
+      <img src="https://www.danielatorp.cz/wp-content/uploads/2026/01/danča-fb-4-1024x1024.jpg" alt="Pusteritual">
+      <div class="ritual-content">
+        <h3>Pusteritual for heling av «søstersåret»</h3>
+        <p>Et dypt forankret, intimt pusteritual som har som mål å hele søstersåret og gjenoppbygge tillit, trygghet og kontakt mellom kvinner.</p>
+        <p>Gjennom sammenhengende pust, somatisk oppmerksomhet og emosjonelt uttrykk møter og forløser vi skånsomt følelser lagret i kroppen. Søstersår – ofte formet av sammenligning, fordømmelse, utestengelse eller svik – sitter ikke bare i minnet, men i nervesystemet.</p>
+        <p>Pusten bidrar til å myke opp forsvarsmønstre, frigjøre fastlåst emosjonell energi og åpne opp for ekte tilknytning og levende tillit.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VALUES GRID (8 Somatic Principles) -->
+  <div class="wrap">
+    <div class="values-grid">
+      <div class="value-item">
+        <div class="icon">♥</div>
+        <p>Følelser æres som hellige uttrykk for livskraft, ikke som noe som må undertrykkes.</p>
+      </div>
+      <div class="value-item">
+        <div class="icon">♥</div>
+        <p>Støtte gjennom jording, indre og ytre ressurser og integrasjon.</p>
+      </div>
+      <div class="value-item">
+        <div class="icon">♥</div>
+        <p>Heling av søstersåret styrker opplevelsen av trygghet og tilhørighet.</p>
+      </div>
+      <div class="value-item">
+        <div class="icon">♥</div>
+        <p>Fokus på trygghet, samtykke og egne grenser gjennom hele opplevelsen.</p>
+      </div>
+      <div class="value-item">
+        <div class="icon">♥</div>
+        <p>Bevegelse og emosjonell integrering gjenoppretter vitalitet og livskraft.</p>
+      </div>
+      <div class="value-item">
+        <div class="icon">♥</div>
+        <p>Traumeinformert praksis med et trygt og varsomt tilpasset tempo.</p>
+      </div>
+      <div class="value-item">
+        <div class="icon">♥</div>
+        <p>En invitasjon til å erfare at kvinnefellesskap kan være genuint trygt.</p>
+      </div>
+      <div class="value-item">
+        <div class="icon">♥</div>
+        <p>En påminnelse om at kroppen din har en iboende visdom og evne til å heles.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- DATES DIVIDER -->
   <div class="dates-divider">
@@ -700,10 +937,10 @@
     </div>
   </div>
 
-  <!-- CONTACT SECTION (Using Google Apps Script Backend) -->
+  <!-- CONTACT SECTION -->
   <section class="contact" id="kontakt">
     <h2>Skriv til meg</h2>
-    <p>og meld deg på kurset.</p>
+    <p>og meld deg på samlingen.</p>
     
     <form class="form" id="contactForm" onsubmit="handleFormSubmit(event)">
       <div class="field">
@@ -716,11 +953,11 @@
       </div>
       <div class="field full">
         <label>Emne <span class="required">*</span></label>
-        <input type="text" required value="Påmelding: Kunsten å behage" id="formSubject">
+        <input type="text" required value="Påmelding: Kvinneessens og livskraft" id="formSubject">
       </div>
       <div class="field full">
         <label>Melding <span class="required">*</span></label>
-        <textarea required placeholder="Skriv din melding eller eventuelle spørsmål her" id="formMessage"></textarea>
+        <textarea required placeholder="Skriv din melding eller spesifiser hvilken samling du ønsker å delta på her" id="formMessage"></textarea>
       </div>
       
       <div class="form-bottom">

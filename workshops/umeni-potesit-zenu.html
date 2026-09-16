@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Kunsten å behage – Daniela Torp</title>
+  <title>Kunsten å behage en kvinne – Daniela Torp</title>
   <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-32x32.png" sizes="32x32">
   <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-192x192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-180x180.png">
@@ -148,14 +148,14 @@
     }
 
     /* =========================================
-       3. HERO SECTION (Couple Background)
+       3. HERO SECTION
        ========================================= */
     .hero {
       position: relative;
       text-align: center;
       padding: 110px 15px 120px;
-      background: linear-gradient(rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.82)),
-                  url('https://www.danielatorp.cz/wp-content/uploads/2020/03/6-1024x1024.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.84)),
+                  url('https://www.danielatorp.cz/wp-content/uploads/2020/03/2-1024x1024.jpg') center/cover no-repeat;
     }
 
     .intro {
@@ -240,7 +240,7 @@
     .workshop-left h4 {
       font-size: 18px;
       font-weight: 500;
-      margin: 32px 0 12px;
+      margin: 30px 0 12px;
       color: #111;
     }
 
@@ -250,6 +250,18 @@
       font-size: 14.5px;
       line-height: 1.85;
       margin-bottom: 20px;
+    }
+
+    .highlight-quote {
+      background: #fdf8f9;
+      border-left: 3px solid #ee5a7a;
+      padding: 18px 22px;
+      margin: 24px 0;
+      font-style: italic;
+      color: #444;
+      font-size: 14.5px;
+      line-height: 1.7;
+      border-radius: 0 8px 8px 0;
     }
 
     .workshop-right {
@@ -279,11 +291,33 @@
       margin-top: 6px;
     }
 
-    .price-value {
-      font-size: 17px;
+    .price-tag {
+      font-size: 18px;
       font-weight: 500;
       color: #111;
       margin-top: 4px;
+    }
+
+    /* Testimonials Box */
+    .testimonial-card {
+      background: #fafafa;
+      border: 1px solid #f0f0f0;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-card p {
+      font-size: 13.5px;
+      color: #555;
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+
+    .testimonial-card .author {
+      font-weight: 500;
+      color: #ee5a7a;
+      font-size: 13px;
     }
 
     /* =========================================
@@ -291,7 +325,7 @@
        ========================================= */
     .dates-divider {
       max-width: 1180px;
-      margin: 40px auto 0;
+      margin: 30px auto 0;
       padding: 0 6%;
       text-align: left;
     }
@@ -307,7 +341,7 @@
     }
 
     /* =========================================
-       6. CONTACT SECTION (Exact Index Match)
+       6. CONTACT SECTION
        ========================================= */
     .contact {
       padding: 110px 7% 100px;
@@ -434,7 +468,7 @@
     }
 
     /* =========================================
-       7. FOOTER (Exact Index Match)
+       7. FOOTER
        ========================================= */
     footer {
       padding: 65px 8% 30px;
@@ -609,9 +643,9 @@
         <div class="drop" onclick="location.href=\'../workshops.html\'">
           Workshoper
           <div class="dropdown-menu">
-            <button onclick="location.href=\'umeni-potesit-zenu.html\'">Kunsten å behage en kvinne</button>
+            <button onclick="location.href='umeni-potesit-zenu.html'" style="color:#ee5a7a;font-weight:500;">Kunsten å behage en kvinne</button>
             <button onclick="location.href=\'umeni-potesit-muze.html\'">Kunsten å behage en mann</button>
-            <button onclick="location.href=\'jen-pro-pary.html\'">Kunsten å behage (for par)</button>
+            <button onclick="location.href='jen-pro-pary.html'">Kunsten å behage (for par)</button>
             <button onclick="location.href=\'../workshops.html\'" style="font-weight:500;color:#ee5a7a;border-top:1px solid #eee;">Se alle workshoper ➜</button>
           </div>
         </div>
@@ -626,68 +660,82 @@
     </div>
   </header>
 
-  <!-- HERO (With Couple Background Photo) -->
+  <!-- HERO -->
   <section class="hero">
     <div class="intro">
-      <h1>KUNSTEN Å BEHAGE</h1>
-      <p>Workshop for menn og kvinner</p>
+      <h1>KUNSTEN Å BEHAGE EN KVINNE</h1>
+      <p>Bli en bevisst og trygg elsker</p>
       <a class="button" href="#kontakt">Meld deg på</a>
     </div>
   </section>
 
-  <!-- WORKSHOP DETAILS (Two-Column Layout) -->
+  <!-- TWO-COLUMN WORKSHOP CONTENT -->
   <section class="workshop-main">
     <div class="workshop-grid">
       
       <!-- Left Column -->
       <div class="workshop-left">
-        <h2>Kunsten å behage</h2>
-        <h3 class="subtitle">Workshop for menn og kvinner</h3>
+        <h2>Kunsten å behage en kvinne</h2>
+        <h3 class="subtitle">Seminaret er forbeholdt menn</h3>
 
-        <p>Oppdag hva menn og kvinner virkelig ønsker i intimitet. Lær å gi, ta imot, berøre, kommunisere… bevisst.</p>
-        <p>Føler du også noen ganger at den andre personen er fra en helt annen planet?</p>
-        <p>Kvinner er ofte et mysterium for menn, og menn fremstår som «enkle» for kvinner – men sannheten er langt dypere. Denne unike workshopen for en blandet gruppe er skapt for alle som ønsker å fordype sin intimitet, bedre forstå egne og partnerens behov, og bli trygge, kjærlige elskere.</p>
-
-        <h4>Hva kan du forvente på workshopen?</h4>
+        <p>Kvinnen er hemmelighetsfull. Noen ganger myk og sårbar, andre ganger bestemt og sterk. Hun er som en blomst: hun kan åpne seg for en ny dag med vidåpne armer, eller hun kan lukke seg helt inn i seg selv. Lær å kjenne din blomst.</p>
         
-        <h4>For kvinner:</h4>
+        <p>Er kvinner også en gåte for deg? Noen ganger skal det så lite til for at hun er fullstendig fornøyd. Andre ganger kan du anstrenge deg av all din kraft, og det eneste du får tilbake er: <em>«Joda, det var helt greit.»</em></p>
+
+        <p>Meld deg på workshopen vår og ta et bevisst skritt mot et rikere og tryggere intimliv. Det handler om din vilje til å forstå og lytte dypere.</p>
+
+        <div class="highlight-quote">
+          «Du lærer å gjenkjenne når kvinnen din har det godt og hva hun egentlig trenger. Oppdag skjønnheten i ekte omsorg og bli den elskeren hun drømmer om.»
+        </div>
+
+        <h4>Hva gir deltakelse på kurset deg?</h4>
         <ul>
-          <li>Oppdag at mannlig seksualitet ikke bare handler om «fart» og prestasjon</li>
-          <li>Lær teknikken for tantrisk lingammassasje og bevisst tilstedeværelse</li>
-          <li>Få større trygghet, frihet og letthet i intimiteten</li>
-          <li>Lær hvordan du stiller deg inn på partneren selv når du ikke har lyst selv</li>
-          <li>Forstå hvordan du sanser mannens kropp og gleder ham med respekt og nytelse</li>
+          <li><strong>Gjenkjenne sann lyst:</strong> Du lærer endelig å se om og når partneren din virkelig ønsker nærhet og sex – og når hun bare føyer seg.</li>
+          <li><strong>Forstå forskjellene:</strong> Få innsikt i de fundamentale forskjellene mellom kvinnelig og mannlig seksualopplevelse.</li>
+          <li><strong>Varsom berøring:</strong> Vi lærer deg hvordan du berører en kvinne langsomt og tilstedeværende. Du får sann og nyttig tilbakemelding under praktiske øvelser.</li>
+          <li><strong>Tenning og opphisselse:</strong> Lær hva som vekker hennes dypeste sanselighet og hvordan du opptrer med ro og trygg maskulinitet.</li>
+          <li><strong>Massasje og anatomi:</strong> Vi går grundig gjennom intim massasje av kvinnekroppen og de viktigste erogene reflekspunktene.</li>
         </ul>
 
-        <h4>For menn:</h4>
-        <ul>
-          <li>Finn endelig ut når en kvinne virkelig ønsker sex – og når hun bare «samtykker»</li>
-          <li>Lær å berøre en kvinne varsomt og sanse hennes fineste reaksjoner</li>
-          <li>Få praktisk, sannferdig og verdifull tilbakemelding</li>
-          <li>Forstå hvorfor det som fungerte én gang, ikke nødvendigvis fungerer alltid</li>
-          <li>Lær hemmelighetene bak intim massasje av kvinnekroppen og reflekspunkter</li>
-        </ul>
+        <p>Uansett om du er i et ferskt forhold, ønsker å gjenopplive lidenskapen i et langvarig ekteskap, eller opplever at samlivet har endret seg etter graviditet og fødsel: På dette kurset lærer du å sanse kvinnen og gi henne den omsorgen og nytelsen hun fortjener.</p>
       </div>
 
       <!-- Right Column -->
       <div class="workshop-right">
-        <h4>Hvem passer seminaret for?</h4>
+        <h4>Møtested</h4>
+        <p><strong>Kamenný Újezd 83, Nýřany</strong></p>
+        <p>🚗 5 min med bil fra Bory retning Zbůch, Nýřany.<br>
+        🚆 Togforbindelse hver time fra Pilsen (reisetid ca. 20 min).</p>
+
+        <h4>Hva du må ta med</h4>
         <ul>
-          <li>For enkeltpersoner og par</li>
-          <li>For de som vil fordype sin seksualitet og sitt parforhold</li>
-          <li>For nysgjerrige, åpne og respektfulle mennesker</li>
-          <li>Både for nybegynnere og de med tidligere erfaring</li>
+          <li>Behagelige og myke klær</li>
+          <li>Notatbok og penn</li>
         </ul>
 
-        <h4>Møtested</h4>
-        <p><strong>Tantracentrum Kameňák</strong><br>Kamenný Újezd 83, Nýřany</p>
-        <p>🚗 5 min med bil fra Bory retning Zbůch, Nýřany<br>🚆 Togforbindelse hver time fra Pilsen (20 min)</p>
+        <h4>Program</h4>
+        <p>Programmet starter kl. <strong>10:00</strong>.<br>Vi ber om oppmøte senest <strong>09:45</strong>, slik at alle rekker å finne seg til rette og vi kan starte presist.</p>
 
-        <h4>Når og hvordan?</h4>
-        <p><strong>15.11.2025</strong><br>Programmet starter kl. 10:00 (oppmøte anbefales kl. 09:45).<br>Ta med: behagelige klær og notatbok.</p>
+        <h4>Pris</h4>
+        <p class="price-tag">2 900 Kč</p>
 
-        <h4>Pris:</h4>
-        <p class="price-value">2 900 Kč / person</p>
+        <!-- Testimonials -->
+        <h4 style="margin-top:35px;">Referanser</h4>
+        
+        <div class="testimonial-card">
+          <p>«Mange takk for en skikkelig øyeåpner, ikke bare på det seksuelle planet. En utrolig behagelig, menneskelig og trygg tilnærming fra Daniela. Det er fantastisk å lære av noen som virkelig forstår faget sitt. Dette var det absolutt verdt!»</p>
+          <div class="author">– Lucie Lomská</div>
+        </div>
+
+        <div class="testimonial-card">
+          <p>«En lærerik og overraskende opplevelse for alle som vil bryte ned gamle myter. Verden henger sammen på en helt annen måte enn vi ofte tror. Mulighetene er uendelige!»</p>
+          <div class="author">– Hana Valentová-Vojtová</div>
+        </div>
+
+        <div class="testimonial-card">
+          <p>«Helt utrolig! Tusen takk igjen for en unik opplevelse og dyp innsikt på workshopen.»</p>
+          <div class="author">– Martina Horáková</div>
+        </div>
       </div>
 
     </div>
@@ -700,7 +748,7 @@
     </div>
   </div>
 
-  <!-- CONTACT SECTION (Using Google Apps Script Backend) -->
+  <!-- CONTACT SECTION -->
   <section class="contact" id="kontakt">
     <h2>Skriv til meg</h2>
     <p>og meld deg på kurset.</p>
@@ -716,7 +764,7 @@
       </div>
       <div class="field full">
         <label>Emne <span class="required">*</span></label>
-        <input type="text" required value="Påmelding: Kunsten å behage" id="formSubject">
+        <input type="text" required value="Påmelding: Kunsten å behage en kvinne" id="formSubject">
       </div>
       <div class="field full">
         <label>Melding <span class="required">*</span></label>
@@ -754,7 +802,7 @@
       </div>
       <div>
         <h4>Workshoper</h4>
-        <a href="umeni-potesit-zenu.html">Kunsten å behage en kvinne</a>
+        <a href="umeni-potesit-zenu.html" style="color:#ee5a7a;font-weight:500;">Kunsten å behage en kvinne</a>
         <a href="umeni-potesit-muze.html">Kunsten å behage en mann</a>
         <a href="jen-pro-pary.html">Kunsten å behage (for par)</a>
         <a href="tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
