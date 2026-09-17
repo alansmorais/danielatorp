@@ -120,6 +120,7 @@
       display: block;
     }
 
+    .dropdown-menu a,
     .dropdown-menu button {
       display: block;
       width: 100%;
@@ -129,6 +130,7 @@
       color: #333;
     }
 
+    .dropdown-menu a:hover,
     .dropdown-menu button:hover {
       background: #fff5f7;
       color: #e9476b;
@@ -615,7 +617,8 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+    <!-- HEADER -->
+    <!-- HEADER -->
   <header>
     <div class="wrap">
       <a href="../index.html">
@@ -628,25 +631,30 @@
         <div class="drop" onclick="location.href='../6-piliru-intimity/index.html'">
           6 pilarer for intimitet
           <div class="dropdown-menu">
-            <button onclick="location.href='../6-piliru-intimity/index.html#pilar-1'">1. Parintimitet & egen kropp</button>
-            <button onclick="location.href='../6-piliru-intimity/index.html#pilar-2'">2. Graviditet og fødsel</button>
-            <button onclick="location.href='../6-piliru-intimity/index.html#pilar-3'">3. Intimitet med baby</button>
-            <button onclick="location.href='../6-piliru-intimity/index.html#pilar-4'">4. Barn og ungdom</button>
-            <button onclick="location.href='../6-piliru-intimity/index.html#pilar-5'">5. Intimitet i moden alder</button>
-            <button onclick="location.href='../6-piliru-intimity/index.html#pilar-6'">6. Intimitet i døden</button>
+            <a href="../6-piliru-intimity/index.html#pilar-1">1. Parintimitet & egen kropp</a>
+            <a href="../6-piliru-intimity/index.html#pilar-2">2. Graviditet og fødsel</a>
+            <a href="../6-piliru-intimity/index.html#pilar-3">3. Intimitet med baby</a>
+            <a href="../6-piliru-intimity/index.html#pilar-4">4. Barn og ungdom</a>
+            <a href="../6-piliru-intimity/index.html#pilar-5">5. Intimitet i moden alder</a>
+            <a href="../6-piliru-intimity/index.html#pilar-6">6. Intimitet i døden</a>
           </div>
         </div>
 
         <a href="../index.html#om-daniela">Hvem er Daniela</a>
         
-        <div class="drop" onclick="location.href=\'../workshops.html\'">
+        <div class="drop" onclick="location.href='../workshops.html'">
           Workshoper
           <div class="dropdown-menu">
-            <button onclick="location.href='umeni-potesit-zenu.html'">Kunsten å behage en kvinne</button>
-            <button onclick="location.href='umeni-potesit-muze.html'">Kunsten å behage en mann</button>
-            <button onclick="location.href='jen-pro-pary.html'">Kunsten å behage (for par)</button>
-            <button onclick="location.href='byla-jsem-tehotna-ale.html'" style="color:#ee5a7a;font-weight:500;">Jeg var gravid, men …</button>
-            <button onclick="location.href=\'../workshops.html\'" style="font-weight:500;color:#ee5a7a;border-top:1px solid #eee;">Se alle workshoper ➜</button>
+            <a href="umeni-potesit-zenu.html">Kunsten å behage en kvinne</a>
+            <a href="umeni-potesit-muze.html">Kunsten å behage en mann</a>
+            <a href="jen-pro-pary.html">Kunsten å behage (for par)</a>
+            <a href="tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
+            <a href="byla-jsem-tehotna-ale.html" style="color:#ee5a7a;font-weight:500;">Jeg var gravid, men …</a>
+            <a href="porod-jako-jistota.html">Fødsel som sikkerhet</a>
+            <a href="matka-a-dcera.html">Mor og datter</a>
+            <a href="Hraj-si-se-mnou.html">Spill med meg</a>
+            <a href="zenska-esence-no.html">Kvinneessens og livskraft</a>
+            <a href="../workshops.html" style="font-weight:500;color:#ee5a7a;border-top:1px solid #eee;">Se alle 9 workshoper ➜</a>
           </div>
         </div>
 
@@ -768,7 +776,7 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+    <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div>
@@ -784,8 +792,10 @@
         <a href="umeni-potesit-zenu.html">Kunsten å behage en kvinne</a>
         <a href="umeni-potesit-muze.html">Kunsten å behage en mann</a>
         <a href="jen-pro-pary.html">Kunsten å behage (for par)</a>
-        <a href="byla-jsem-tehotna-ale.html" style="color:#ee5a7a;font-weight:500;">Jeg var gravid, men …</a>
         <a href="tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
+        <a href="byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
+        <a href="porod-jako-jistota.html">Fødsel som sikkerhet</a>
+        <a href="matka-a-dcera.html">Mor og datter</a>
         <a href="../workshops.html" style="color:#ee5a7a; font-weight:500;">Se alle 9 workshoper ➜</a>
       </div>
       <div>
@@ -821,39 +831,60 @@
     </div>
   </div>
 
-  <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwrA4qfZdmzOWaRdbIgtDqL0VO5NpURvNBU-5GdnmJ__3cBPbK4Hy-b5vkn1P0FJo0F/exec";
+    <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwiptZDdNVNSavoyJeHCvoc7XxOSTG0yg_K5Z-Si81Up_4CSBo5AJUUOuMYLNh2eT3h/exec";
 
     async function handleFormSubmit(e) {
       e.preventDefault();
-      const name = document.getElementById('formName').value;
-      const email = document.getElementById('formEmail').value;
-      const subject = document.getElementById('formSubject').value;
-      const message = document.getElementById('formMessage').value;
+      const sendBtn = document.getElementById('sendBtn') || document.getElementById('sendSubmitBtn') || document.querySelector('.send');
+      const originalText = sendBtn ? sendBtn.innerHTML : 'Send inn ➜';
 
-      const sendBtn = document.getElementById('sendBtn');
-      sendBtn.innerText = "Sender...";
-      sendBtn.disabled = true;
+      if (sendBtn) {
+        sendBtn.disabled = true;
+        sendBtn.innerHTML = 'Sender...';
+      }
+
+      const name = document.getElementById('formName').value.trim();
+      const email = document.getElementById('formEmail').value.trim();
+      const subject = document.getElementById('formSubject') ? document.getElementById('formSubject').value.trim() : '';
+      const message = document.getElementById('formMessage').value.trim();
+
+      const formattedMessage = subject ? `[Emne: ${subject}]
+
+${message}` : message;
+
+      const payload = {
+        type: 'contact',
+        name: name,
+        email: email,
+        subject: subject,
+        message: formattedMessage
+      };
 
       try {
         await fetch(SCRIPT_URL, {
           method: 'POST',
           mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            type: "contact",
-            name: name,
-            email: email,
-            message: `Emne: ${subject}\n\n${message}`
-          })
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8'
+          },
+          body: JSON.stringify(payload)
         });
 
-        document.getElementById('contactForm').style.display = 'none';
-        document.getElementById('successBox').style.display = 'block';
+        const formEl = document.getElementById('contactForm');
+        if (formEl) formEl.style.display = 'none';
+        const successEl = document.getElementById('successBox');
+        if (successEl) {
+          successEl.style.display = 'block';
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
       } catch (err) {
-        alert("Feil ved sending. Vennligst prøv igjen.");
-        sendBtn.innerText = "Send inn ➜";
-        sendBtn.disabled = false;
+        console.error('Error submitting form:', err);
+        alert('Det oppstod en feil ved sending av meldingen. Vennligst prøv igjen.');
+        if (sendBtn) {
+          sendBtn.disabled = false;
+          sendBtn.innerHTML = originalText;
+        }
       }
     }
 
