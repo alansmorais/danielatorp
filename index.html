@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Daniela Torp – Intimitet i sammenheng</title>
-  <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-32x32.png" sizes="32x32">
-  <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-192x192.png" sizes="192x192">
-  <link rel="apple-touch-icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-180x180.png">
+  <title>Daniela Torp – Intimitet i kontekst</title>
+  <link rel="icon" href="images/cropped-favicona-32x32.png" sizes="32x32">
+  <link rel="icon" href="images/cropped-favicona-192x192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="images/cropped-favicona-180x180.png">
 
   <style>
     /* =========================================
@@ -24,7 +24,7 @@
       --color-border: #e6e6eb;
       --color-card-bg: #ffffff;
       --color-page-bg: #ffffff;
-      --container-max-width: 1200px;
+      --container-max-width: 1344px;
       --border-radius-sm: 8px;
       --border-radius-md: 12px;
       --border-radius-lg: 20px;
@@ -75,9 +75,7 @@
       display: block;
     }
 
-    /* Core Unified Container */
-    .wrap,
-    .container {
+    .wrap {
       width: 100%;
       max-width: var(--container-max-width);
       margin-left: auto;
@@ -86,7 +84,6 @@
       padding-right: 24px;
     }
 
-    /* Buttons */
     .button {
       display: inline-flex;
       align-items: center;
@@ -126,15 +123,15 @@
     }
 
     /* =========================================
-       2. HEADER & NAVIGATION
+       2. HEADER & NAVIGATION (STANDARDIZED)
        ========================================= */
     header {
-      height: 90px;
-      background: rgba(255, 255, 255, 0.96);
+      height: 100px;
+      background: rgba(255, 255, 255, 0.98);
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       display: flex;
@@ -145,38 +142,39 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      width: 100%;
     }
 
     .logo-link {
       display: inline-flex;
       align-items: center;
-      height: 100%;
+      height: 100px;
+      margin-right: auto;
     }
 
     .logo {
-      width: auto;
-      height: 52px;
-      max-width: 250px;
+      width: 325px;
+      height: 100px;
       object-fit: contain;
     }
 
     .nav {
       display: flex;
       align-items: center;
-      gap: 22px;
-      font-size: 13px;
+      gap: 24px;
+      font-size: 14px;
       font-weight: 400;
-      letter-spacing: 0.2px;
+      color: #111;
     }
 
     .nav > a,
     .nav .drop-toggle {
-      color: #2b2b2e;
-      padding: 8px 0;
+      color: inherit;
+      padding: 10px 0;
       position: relative;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
     }
 
     .nav a:hover,
@@ -188,6 +186,7 @@
     .nav .drop {
       position: relative;
       padding: 10px 0;
+      cursor: pointer;
     }
 
     .drop-arrow {
@@ -204,10 +203,10 @@
     .dropdown-menu {
       display: none;
       position: absolute;
-      top: calc(100% - 4px);
-      left: -12px;
+      top: 100%;
+      left: 0;
       background: #fff;
-      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       border: 1px solid var(--color-border);
       border-radius: var(--border-radius-sm);
       padding: 8px 0;
@@ -383,7 +382,7 @@
     }
 
     /* =========================================
-       4. SIX PILLARS SECTION (FIXED CONTAINER)
+       4. SIX PILLARS SECTION
        ========================================= */
     .pillars-section {
       margin-top: -46px;
@@ -397,6 +396,8 @@
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .pillar {
@@ -474,6 +475,8 @@
       grid-template-columns: 320px 1fr;
       gap: 60px;
       align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .about-visual {
@@ -576,6 +579,9 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 28px;
       margin-bottom: 45px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .card {
@@ -647,6 +653,7 @@
 
     .workshops-cta {
       text-align: center;
+      margin-top: 40px;
     }
 
     /* =========================================
@@ -838,7 +845,8 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1.3fr;
       gap: 40px;
-      margin-bottom: 55px;
+      max-width: 1200px;
+      margin: 0 auto 55px;
     }
 
     .footer-col h4 {
@@ -1203,7 +1211,7 @@
   <header>
     <div class="wrap">
       <a href="#hjem" class="logo-link">
-        <img class="logo" src="https://www.danielatorp.cz/wp-content/uploads/2020/02/logo_perem_bez_pozadi%CC%81.png" alt="Daniela Torp">
+        <img class="logo" src="images/logo_perem_bez_pozadi%CC%81.png" alt="Daniela Torp">
       </a>
       
       <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Åpne meny" aria-expanded="false">☰</button>
@@ -1213,15 +1221,15 @@
         
         <div class="drop">
           <button type="button" class="drop-toggle" onclick="toggleDropdown(this)">
-            6 pilarer for intimitet <span class="drop-arrow">▼</span>
+            Intimitetens 6 søyler <span class="drop-arrow">▼</span>
           </button>
           <div class="dropdown-menu">
-            <a href="6-piliru-intimity/index.html#pilar-1">1. Parintimitet & egen kropp</a>
+            <a href="6-piliru-intimity/index.html#pilar-1">1. Intimitet i parforhold og forholdet til egen kropp</a>
             <a href="6-piliru-intimity/index.html#pilar-2">2. Graviditet og fødsel</a>
-            <a href="6-piliru-intimity/index.html#pilar-3">3. Intimitet med baby</a>
-            <a href="6-piliru-intimity/index.html#pilar-4">4. Barn og ungdom</a>
+            <a href="6-piliru-intimity/index.html#pilar-3">3. Intimitet med baby og familie</a>
+            <a href="6-piliru-intimity/index.html#pilar-4">4. Intimitet hos barn og ungdom</a>
             <a href="6-piliru-intimity/index.html#pilar-5">5. Intimitet i moden alder</a>
-            <a href="6-piliru-intimity/index.html#pilar-6">6. Intimitet i døden</a>
+            <a href="6-piliru-intimity/index.html#pilar-6">6. Intimitet ved livets slutt</a>
           </div>
         </div>
 
@@ -1229,26 +1237,26 @@
         
         <div class="drop">
           <button type="button" class="drop-toggle" onclick="toggleDropdown(this)">
-            Workshoper <span class="drop-arrow">▼</span>
+            Workshops <span class="drop-arrow">▼</span>
           </button>
           <div class="dropdown-menu">
-            <a href="workshops/umeni-potesit-zenu.html">Kunsten å behage en kvinne</a>
-            <a href="workshops/umeni-potesit-muze.html">Kunsten å behage en mann</a>
-            <a href="workshops/jen-pro-pary.html">Kunsten å behage (for par)</a>
+            <a href="workshops/umeni-potesit-zenu.html">Kunsten å tilfredsstille en kvinne</a>
+            <a href="workshops/umeni-potesit-muze.html">Kunsten å tilfredsstille en mann</a>
+            <a href="workshops/jen-pro-pary.html">Kunsten å tilfredsstille – for par</a>
             <a href="workshops/tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
             <a href="workshops/byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
-            <a href="workshops/porod-jako-jistota.html">Fødsel som sikkerhet</a>
+            <a href="workshops/porod-jako-jistota.html">Fødsel som trygghet</a>
             <a href="workshops/matka-a-dcera.html">Mor og datter</a>
-            <a href="workshops/Hraj-si-se-mnou.html">Spill med meg</a>
-            <a href="workshops/zenska-esence-no.html">Kvinneessens og livskraft</a>
-            <a href="workshops.html" style="font-weight:500;color:var(--color-primary);">Se alle 9 workshoper ➜</a>
+            <a href="workshops/Hraj-si-se-mnou.html">Lek med meg</a>
+            <a href="workshops/zenska-esence-no.html">Kvinnelig essens og vitalitet</a>
+            <a href="workshops.html" style="font-weight:500;color:var(--color-primary);">Se alle 9 workshops ➜</a>
           </div>
         </div>
 
-        <a href="konsultasjon.html">Personlig konsultasjon</a>
+        <a href="konsultasjon.html">Privat konsultasjon</a>
         <a href="blog.html">Blogg</a>
         <a href="#kontakt">Kontakt</a>
-        <span class="flag"><img src="https://flagcdn.com/w20/no.png" width="20" alt="Norsk"></span>
+        <span class="flag"><img src="https://flagcdn.com/w20/gb.png" width="20" alt="Norsk"></span>
       </nav>
     </div>
   </header>
@@ -1259,92 +1267,91 @@
   <section class="hero" id="hjem">
     <div class="wrap">
       <div class="intro">
-        <h1 id="cms-hero-title">Intimitet i sammenheng</h1>
+        <h1 id="cms-hero-title">Intimitet i kontekst</h1>
         
         <div class="intro-text-block">
-          <p id="cms-hero-subtitle">Intimitet er ikke bare sex. Det handler om å etablere et fortrolig forhold til deg selv og til menneskene som står deg nær. Intimitet, den behagelige følelsen av tillit, sammensmelting og forståelse uten ord, hviler på 6 pilarer. Det starter med oss selv. Ta et skritt sammen med meg på veien mot tillit og kjærlig omsorg.</p>
-          <p id="cms-hero-subtitle-2">Jeg vil hjelpe deg med å finne veien til ditt sanne jeg og til dine nærmeste.</p>
+          <p id="cms-hero-subtitle">Intimitet handler ikke bare om sex. Det handler om å skape en dyp og tillitsfull forbindelse med deg selv og med menneskene som betyr mest for deg. Intimitet – den trygge følelsen av nærhet, sammensmelting og forståelse uten ord – hviler på 6 grunnleggende søyler. Den begynner alltid i oss selv. Ta et skritt sammen med meg på veien mot trygghet, ømhet og bevisst omsorg.</p>
+          <p id="cms-hero-subtitle-2">Jeg er her for å veilede deg tilbake til ditt sanne jeg og til dem du har kjær.</p>
         </div>
         
         <div class="dates">
           <h2 id="cms-dates-title">Kommende datoer</h2>
           <div id="dynamic-dates-list">
-            <!-- Fallback dates populated or replaced dynamically via Google Apps Script -->
-            <div><button type="button" onclick="openWorkshopModal('w1')">3.10.2026: Kunsten å behage en kvinne</button></div>
-            <div><button type="button" onclick="openWorkshopModal('w2')">4.10.2026: Kunsten å behage en mann</button></div>
-            <div><button type="button" onclick="openDateModal('Samhain – Kvinneessens og livskraft', '16.–18.10.2026')">16.–18.10.2026: Samhain – Kvinneessens og livskraft</button></div>
+            <div><button type="button" onclick="openWorkshopModal('w1')">3. okt. 2026: Kunsten å tilfredsstille en kvinne</button></div>
+            <div><button type="button" onclick="openWorkshopModal('w2')">4. okt. 2026: Kunsten å tilfredsstille en mann</button></div>
+            <div><button type="button" onclick="openDateModal('Samhain – Kvinnelig essens og vitalitet', 'Oct 16–18, 2026')">16.–18. okt. 2026: Samhain – Kvinnelig essens og vitalitet</button></div>
           </div>
         </div>
         
-        <a class="button primary" href="#workshops">Vis workshoper</a>
+        <a class="button primary" href="#workshops">Utforsk workshops</a>
       </div>
     </div>
   </section>
 
   <!-- =========================================
-       6 PILLARS SECTION (ONE PROPER GRID)
+       6 PILLARS SECTION
        ========================================= -->
   <section class="pillars-section" id="pilarer">
     <div class="wrap">
       <div class="pillar-grid">
         
-        <!-- Pillar 1 -->
+        <!-- Søyle 1 -->
         <div class="pillar">
           <a href="6-piliru-intimity/index.html#pilar-1">
             <div class="pillar-img-wrapper">
-              <img src="https://www.danielatorp.cz/wp-content/uploads/2020/02/1male_komplet_na_web-150x150.png" alt="Parintimitet">
+              <img src="images/1male_komplet_na_web-150x150.png" alt="Intimitet i parforhold">
             </div>
-            <h3 id="cms-pillar-1">Parintimitet<br>Forholdet til egen kropp</h3>
+            <h3 id="cms-pillar-1">Intimitet i parforhold<br>Forholdet til egen kropp</h3>
           </a>
         </div>
 
-        <!-- Pillar 2 -->
+        <!-- Søyle 2 -->
         <div class="pillar">
           <a href="6-piliru-intimity/index.html#pilar-2">
             <div class="pillar-img-wrapper">
-              <img src="https://www.danielatorp.cz/wp-content/uploads/2020/02/2male%CC%81_komplet_na_web-150x150.png" alt="Graviditet">
+              <img src="images/2male%CC%81_komplet_na_web-150x150.png" alt="Graviditet">
             </div>
-            <h3 id="cms-pillar-2">Intimitet under graviditet<br>og ved fødsel</h3>
+            <h3 id="cms-pillar-2">Intimitet under graviditet<br>og fødsel</h3>
           </a>
         </div>
 
-        <!-- Pillar 3 -->
+        <!-- Søyle 3 -->
         <div class="pillar">
           <a href="6-piliru-intimity/index.html#pilar-3">
             <div class="pillar-img-wrapper">
-              <img src="https://www.danielatorp.cz/wp-content/uploads/2020/02/3male%CC%81_komplet_na_web-150x150.png" alt="Baby">
+              <img src="images/3male%CC%81_komplet_na_web-150x150.png" alt="Baby">
             </div>
-            <h3 id="cms-pillar-3">Intimitet med baby,<br>familieintimitet</h3>
+            <h3 id="cms-pillar-3">Baby og familie<br>Intimitet</h3>
           </a>
         </div>
 
-        <!-- Pillar 4 -->
+        <!-- Søyle 4 -->
         <div class="pillar">
           <a href="6-piliru-intimity/index.html#pilar-4">
             <div class="pillar-img-wrapper">
-              <img src="https://www.danielatorp.cz/wp-content/uploads/2020/02/4male%CC%81_komplet_na_web-150x150.png" alt="Barn og ungdom">
+              <img src="images/4male%CC%81_komplet_na_web-150x150.png" alt="Children og ungdom">
             </div>
             <h3 id="cms-pillar-4">Intimitet hos barn<br>og ungdom</h3>
           </a>
         </div>
 
-        <!-- Pillar 5 -->
+        <!-- Søyle 5 -->
         <div class="pillar">
           <a href="6-piliru-intimity/index.html#pilar-5">
             <div class="pillar-img-wrapper">
-              <img src="https://www.danielatorp.cz/wp-content/uploads/2020/02/5male%CC%81_komplet_na_web-150x150.png" alt="Moden alder">
+              <img src="images/5male%CC%81_komplet_na_web-150x150.png" alt="moden alder">
             </div>
-            <h3 id="cms-pillar-5">Intimitet<br>i moden alder</h3>
+            <h3 id="cms-pillar-5">Intimitet i<br>moden alder</h3>
           </a>
         </div>
 
-        <!-- Pillar 6 -->
+        <!-- Søyle 6 -->
         <div class="pillar">
           <a href="6-piliru-intimity/index.html#pilar-6">
             <div class="pillar-img-wrapper">
-              <img src="https://www.danielatorp.cz/wp-content/uploads/2020/02/6male%CC%81_komplet_na_web-150x150.png" alt="Døden">
+              <img src="images/6male%CC%81_komplet_na_web-150x150.png" alt="livets slutt">
             </div>
-            <h3 id="cms-pillar-6">Intimitet<br>i døden</h3>
+            <h3 id="cms-pillar-6">Intimitet i<br>livets slutt</h3>
           </a>
         </div>
 
@@ -1359,10 +1366,10 @@
     <div class="wrap">
       <div class="about-grid">
         <div class="about-visual">
-          <img class="portrait" src="https://www.danielatorp.cz/wp-content/uploads/2020/05/untitled-design-7.jpg" alt="Daniela Torp">
+          <img class="portrait" src="images/untitled-design-7.jpg" alt="Daniela Torp">
           <div class="photo-buttons">
-            <button type="button" class="button" onclick="openGenericModal('Mer om Daniela', 'Daniela har over 15 års erfaring med helhetlig kroppsarbeid, parterapi og somatisk veiledning. Gjennom de 6 pilarene for intimitet hjelper hun mennesker med å finne trygghet, livslyst og ekte tilstedeværelse.')">Mer om Daniela</button>
-            <button type="button" class="button" onclick="openGenericModal('Daniela i media', 'Utvalgte podkaster og artikler:\n\n• Podkast Livsreise: «Intimitet starter i speilet»\n• Magasinet Harmoni: «6 pilarer som forandrer parforholdet»\n• Kultur & Relasjoner: «Kunsten å lytte uten ord»')">Media</button>
+            <button type="button" class="button" onclick="openGenericModal('Om Daniela', 'Daniela har over 15 års omfattende erfaring med somatisk terapi, parveiledning og bevisst veiledning innen intimitet. Med utgangspunkt i intimitetens 6 søyler hjelper hun mennesker med å styrke emosjonell trygghet, vitalitet og nærvær.')">Om Daniela</button>
+            <button type="button" class="button" onclick="openGenericModal('Daniela i media', 'Selected media features:\n\n• Podcast Life Journey: «Intimitet begins in the mirror»\n• Harmoni Magazine: «6 Pillars that transform romantic relationships»\n• Culture & Connections: «The art of listening without words»')">Media</button>
           </div>
         </div>
         
@@ -1370,15 +1377,15 @@
           <h2 id="cms-about-title">Hvem er Daniela</h2>
           <div class="about-copy">
             <div>
-              <p id="cms-about-p1">Jeg er et menneske. Jeg føler og oppfatter akkurat som deg. Jeg opplever lignende situasjoner, utfordringer, gleder og sorger. Jeg tar vare på meg selv, familien min og vennene mine. Jeg ærer naturen og bøyer meg ydmykt for dens lover, dens uendelige mangfold og dens sans for humor.</p>
+              <p id="cms-about-p1">Jeg er et menneske. Jeg føler og opplever, akkurat som du. Jeg møter lignende omstendigheter, utfordringer, gleder og hjertesorg. Jeg tar vare på meg selv, familien min og vennene mine. Jeg har dyp respekt for naturen og bøyer meg ydmykt for dens tidløse lover, uendelige mangfold og subtile humor.</p>
               <p id="cms-about-p2"><strong>Visste du at det finnes mer enn 180 000 øyer i verden?</strong></p>
-              <p id="cms-about-p3">Det finnes tusenvis av øyer, og de ligner ofte på hverandre. Likevel er hver enkelt et unikt økosystem.</p>
+              <p id="cms-about-p3">Det finnes tusenvis på tusenvis av øyer, og de ligner ofte på hverandre. Likevel er hver og en et selvstendig og unikt økosystem.</p>
             </div>
             <div>
-              <p>Kan du tenke deg å dyrke plommer i et paradis av kokospalmer? Det kan kanskje fungere en stund, men du må anstrenge deg mye for å lykkes.</p>
-              <p>Ofte behandler vi oss selv på samme måte. Vi tvinger oss til å gjøre ting som er i strid med vårt egentlige jeg.</p>
-              <p>Jeg har selv gått gjennom tusenvis av øyer før jeg fant min egen.</p>
-              <p>Nøkkelen til suksess er kjærlighet – kjærlighet til deg selv.</p>
+              <p>Kan du forestille deg å prøve å dyrke plommer i en lund med kokospalmer? Det kunne kanskje fungere en stund, men det ville kreve en enorm belastning og unaturlig innsats.</p>
+              <p>Vi behandler ofte oss selv på akkurat samme måte – vi tvinger kropp og sinn inn i mønstre som strider mot den vi egentlig er.</p>
+              <p>Jeg har selv reist gjennom tusenvis av øyer før jeg fant min egen strand.</p>
+              <p>Grunnlaget for all oppfyllelse er kjærlighet – ubetinget kjærlighet til den du er.</p>
             </div>
           </div>
         </div>
@@ -1392,23 +1399,23 @@
   <section class="workshops" id="workshops">
     <div class="wrap">
       <div class="section-title">
-        <h2>Workshoper</h2>
-        <p>Hver av oss havner av og til i en situasjon vi ikke helt vet hvordan vi skal håndtere. På workshopene mine finner du svar på spørsmålene dine. I et trygt rom.</p>
+        <h2>Workshops</h2>
+        <p>Vi opplever alle øyeblikk der vi er usikre på hva neste steg skal være. I workshopene mine finner du svar på spørsmålene dine i et autentisk og støttende miljø.</p>
       </div>
       
       <div class="cards">
         <!-- Card 1 -->
         <article class="card">
           <a href="workshops/umeni-potesit-zenu.html" class="card-img-link">
-            <img src="https://www.danielatorp.cz/wp-content/uploads/2020/03/2-1024x1024.jpg" alt="Kunsten å behage en kvinne">
+            <img src="images/2-1024x1024.jpg" alt="Kunsten å tilfredsstille en kvinne">
           </a>
           <div class="card-body">
             <div class="card-content-top">
-              <h3 id="cms-w1-title"><a href="workshops/umeni-potesit-zenu.html">Kunsten å behage en kvinne</a></h3>
-              <p id="cms-w1-desc">Bli en perfekt elsker.</p>
+              <h3 id="cms-w1-title"><a href="workshops/umeni-potesit-zenu.html">Kunsten å tilfredsstille en kvinne</a></h3>
+              <p id="cms-w1-desc">Bli en oppmerksom og dypt nærværende elsker.</p>
             </div>
             <div>
-              <a class="button" href="workshops/umeni-potesit-zenu.html">Workshop-detaljer</a>
+              <a class="button" href="workshops/umeni-potesit-zenu.html">Workshopdetaljer</a>
             </div>
           </div>
         </article>
@@ -1416,15 +1423,15 @@
         <!-- Card 2 -->
         <article class="card">
           <a href="workshops/umeni-potesit-muze.html" class="card-img-link">
-            <img src="https://www.danielatorp.cz/wp-content/uploads/2020/03/9-1024x1024.jpg" alt="Kunsten å behage en mann">
+            <img src="images/9-1024x1024.jpg" alt="Kunsten å tilfredsstille en mann">
           </a>
           <div class="card-body">
             <div class="card-content-top">
-              <h3 id="cms-w2-title"><a href="workshops/umeni-potesit-muze.html">Kunsten å behage en mann</a></h3>
-              <p id="cms-w2-desc">Bli en perfekt elskerinne.</p>
+              <h3 id="cms-w2-title"><a href="workshops/umeni-potesit-muze.html">Kunsten å tilfredsstille en mann</a></h3>
+              <p id="cms-w2-desc">Forstå mannens emosjonelle dybde og berøring.</p>
             </div>
             <div>
-              <a class="button" href="workshops/umeni-potesit-muze.html">Workshop-detaljer</a>
+              <a class="button" href="workshops/umeni-potesit-muze.html">Workshopdetaljer</a>
             </div>
           </div>
         </article>
@@ -1432,22 +1439,22 @@
         <!-- Card 3 -->
         <article class="card">
           <a href="workshops/jen-pro-pary.html" class="card-img-link">
-            <img src="https://www.danielatorp.cz/wp-content/uploads/2020/03/6-1024x1024.jpg" alt="Kunsten å behage for par">
+            <img src="images/6-1024x1024.jpg" alt="The Art of Pleasing for Couples">
           </a>
           <div class="card-body">
             <div class="card-content-top">
-              <h3 id="cms-w3-title"><a href="workshops/jen-pro-pary.html">Kunsten å behage (for par)</a></h3>
-              <p id="cms-w3-desc">Workshop for menn og kvinner.</p>
+              <h3 id="cms-w3-title"><a href="workshops/jen-pro-pary.html">Kunsten å tilfredsstille – for par</a></h3>
+              <p id="cms-w3-desc">En felles, erfaringsbasert workshop for partnere.</p>
             </div>
             <div>
-              <a class="button" href="workshops/jen-pro-pary.html">Workshop-detaljer</a>
+              <a class="button" href="workshops/jen-pro-pary.html">Workshopdetaljer</a>
             </div>
           </div>
         </article>
       </div>
 
       <div class="workshops-cta">
-        <a class="button primary" href="workshops.html" style="padding: 13px 34px; font-size: 13.5px;">Se alle 9 workshoper ➜</a>
+        <a class="button primary" href="workshops.html" style="padding: 13px 34px; font-size: 13.5px;">Se alle 9 workshops ➜</a>
       </div>
     </div>
   </section>
@@ -1462,37 +1469,37 @@
       
       <form class="form" id="contactForm" onsubmit="handleFormSubmit(event)">
         <div class="field">
-          <label for="formName">Navn og etternavn <span class="required">*</span></label>
+          <label for="formName">Fullt navn <span class="required">*</span></label>
           <input type="text" required placeholder="Ola Nordmann" id="formName">
         </div>
         <div class="field">
           <label for="formEmail">Din e-postadresse <span class="required">*</span></label>
-          <input type="email" required placeholder="ola.nordmann@eksempel.no" id="formEmail">
+          <input type="email" required placeholder="john.doe@example.com" id="formEmail">
         </div>
         <div class="field full">
-          <label for="formSubject">Emne <span class="required">*</span></label>
-          <input type="text" required placeholder="Konsultasjon, workshop" id="formSubject">
+          <label for="formEmne">Emne <span class="required">*</span></label>
+          <input type="text" required placeholder="Konsultasjon, workshop" id="formEmne">
         </div>
         <div class="field full">
-          <label for="formMessage">Melding <span class="required">*</span></label>
-          <textarea required placeholder="Skriv en melding" id="formMessage"></textarea>
+          <label for="formMelding">Melding <span class="required">*</span></label>
+          <textarea required placeholder="Skriv meldingen din her" id="formMelding"></textarea>
         </div>
         
         <div class="form-bottom">
           <div class="security-notice">
             <div class="captcha">Beskyttet av reCAPTCHA ✓</div>
             <div class="notice">
-              Felt merket med stjerne er obligatoriske.<br>
-              Ved å sende meldingen aksepterer jeg <a onclick="openGenericModal('Personvern', 'Alle henvendelser behandles strengt konfidensielt etter gjeldende GDPR-retningslinjer. Opplysningene dine blir aldri delt videre.')">behandling av personopplysninger</a>.
+              Felt merket med en stjerne er obligatoriske.<br>
+              Ved å sende inn dette skjemaet samtykker jeg til <a onclick="openGenericModal('Personvernerklæring', 'Alle henvendelser behandles strengt konfidensielt i henhold til gjeldende GDPR-standarder. Opplysningene dine deles aldri.')">behandling av personopplysninger</a>.
             </div>
           </div>
-          <button class="send" id="sendSubmitBtn" type="submit">Send inn ➜</button>
+          <button class="send" id="sendSubmitBtn" type="submit">Send ➜</button>
         </div>
       </form>
 
       <div class="success-box" id="successBox">
-        <h3>Takk for henvendelsen din!</h3>
-        <p>Meldingen din er sendt. Daniela vil svare deg så snart som mulig.</p>
+        <h3>Takk for meldingen din!</h3>
+        <p>Meldingen din er sendt inn. Daniela vil svare så snart som mulig.</p>
       </div>
     </div>
   </section>
@@ -1507,37 +1514,37 @@
           <h4>Kontakt</h4>
           <div class="footer-links">
             <a href="#hjem">Hjem</a>
-            <a href="#om-daniela">Hvem er Daniela</a>
-            <button type="button" onclick="openGenericModal('Daniela i media', 'Presse og podkaster er tilgjengelige via forespørsel.')">Daniela i media</button>
+            <a href="#om-daniela">Om Daniela</a>
+            <button type="button" onclick="openGenericModal('Daniela i media', 'Medieomtale og podkastintervjuer er tilgjengelige på forespørsel.')">Daniela i media</button>
             <a href="blog.html">Blogg</a>
             <a href="#kontakt">Kontakt</a>
           </div>
         </div>
 
         <div class="footer-col">
-          <h4>Workshoper</h4>
+          <h4>Workshops</h4>
           <div class="footer-links">
-            <a href="workshops/umeni-potesit-zenu.html">Kunsten å behage en kvinne</a>
-            <a href="workshops/umeni-potesit-muze.html">Kunsten å behage en mann</a>
-            <a href="workshops/jen-pro-pary.html">Kunsten å behage (for par)</a>
+            <a href="workshops/umeni-potesit-zenu.html">Kunsten å tilfredsstille en kvinne</a>
+            <a href="workshops/umeni-potesit-muze.html">Kunsten å tilfredsstille en mann</a>
+            <a href="workshops/jen-pro-pary.html">Kunsten å tilfredsstille – for par</a>
             <a href="workshops/tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
             <a href="workshops/byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
-            <a href="workshops/porod-jako-jistota.html">Fødsel som sikkerhet</a>
+            <a href="workshops/porod-jako-jistota.html">Fødsel som trygghet</a>
             <a href="workshops/matka-a-dcera.html">Mor og datter</a>
-            <a href="workshops.html" style="color:var(--color-primary); font-weight:500;">Se alle 9 workshoper ➜</a>
+            <a href="workshops.html" style="color:var(--color-primary); font-weight:500;">Se alle 9 workshops ➜</a>
           </div>
         </div>
 
         <div class="footer-col">
-          <h4>Konsultasjoner / 6 pilarer</h4>
+          <h4>Konsultasjoner / Intimitetens 6 søyler</h4>
           <div class="footer-links">
-            <a href="konsultasjon.html">Personlig konsultasjon</a>
-            <a href="6-piliru-intimity/index.html#pilar-1">1. Parintimitet & egen kropp</a>
+            <a href="konsultasjon.html">Privat konsultasjon</a>
+            <a href="6-piliru-intimity/index.html#pilar-1">1. Intimitet i parforhold og forholdet til egen kropp</a>
             <a href="6-piliru-intimity/index.html#pilar-2">2. Graviditet og fødsel</a>
-            <a href="6-piliru-intimity/index.html#pilar-3">3. Intimitet med baby</a>
-            <a href="6-piliru-intimity/index.html#pilar-4">4. Barn og ungdom</a>
+            <a href="6-piliru-intimity/index.html#pilar-3">3. Intimitet med baby og familie</a>
+            <a href="6-piliru-intimity/index.html#pilar-4">4. Intimitet hos barn og ungdom</a>
             <a href="6-piliru-intimity/index.html#pilar-5">5. Intimitet i moden alder</a>
-            <a href="6-piliru-intimity/index.html#pilar-6">6. Intimitet i døden</a>
+            <a href="6-piliru-intimity/index.html#pilar-6">6. Intimitet ved livets slutt</a>
           </div>
         </div>
       </div>
@@ -1560,11 +1567,11 @@
     <div class="modal-card">
       <span class="modal-close" onclick="closeModalDirect()">&times;</span>
       <span class="modal-tag" id="modalTag">Detaljer</span>
-      <h3 class="modal-title" id="modalTitle">Tittel</h3>
-      <div class="modal-body" id="modalContent">Innhold</div>
+      <h3 class="modal-title" id="modalTittel">Tittel</h3>
+      <div class="modal-body" id="modalInnhold">Innhold</div>
       <div class="modal-btn-row">
         <button type="button" class="button" onclick="closeModalDirect()">Lukk</button>
-        <button type="button" class="button primary" id="modalActionBtn">Bestill / Spør</button>
+        <button type="button" class="button primary" id="modalActionBtn">Book / Inquire</button>
       </div>
     </div>
   </div>
@@ -1573,9 +1580,6 @@
        JAVASCRIPT FUNCTIONALITY
        ========================================= -->
   <script>
-    /* -----------------------------------------
-       1. NAVIGATION & ACCORDIONS (MOBILE)
-       ----------------------------------------- */
     function toggleMobileNav() {
       const nav = document.getElementById('mainNav');
       const btn = document.querySelector('.mobile-menu-btn');
@@ -1607,24 +1611,21 @@
       }
     });
 
-    /* -----------------------------------------
-       2. MODAL CONTROLS
-       ----------------------------------------- */
     const workshopsData = {
       w1: {
         tag: "Workshop for menn",
-        title: "Kunsten å behage en kvinne",
-        text: "En praktisk og respektfull workshop der du lærer hemmelighetene bak kvinnelig nytelse, langsom berøring, energiflyt og hvordan du skaper trygghet.<br><br><strong>Dato:</strong> 3.10.2026<br><strong>Varighet:</strong> 1 dag (10:00 – 18:00)"
+        title: "Kunsten å tilfredsstille en kvinne",
+        text: "En praktisk og respektfull workshop der du lærer hemmelighetene bak kvinnelig nytelse, langsom berøring, energiflyt og emosjonell trygghet.<br><br><strong>Dato:</strong> Oct 3, 2026<br><strong>Varighet:</strong> 1 dag (10:00 – 18:00)"
       },
       w2: {
         tag: "Workshop for kvinner",
-        title: "Kunsten å behage en mann",
-        text: "Forstå mannens indre verden, hans behov for anerkjennelse og berøring som går langt dypere enn overfladisk lyst.<br><br><strong>Dato:</strong> 4.10.2026<br><strong>Varighet:</strong> 1 dag (10:00 – 18:00)"
+        title: "Kunsten å tilfredsstille en mann",
+        text: "Forstå mannens emosjonelle landskap, hans genuine behov for anerkjennelse og berøring som berører hjertet.<br><br><strong>Dato:</strong> Oct 4, 2026<br><strong>Varighet:</strong> 1 dag (10:00 – 18:00)"
       },
       w3: {
         tag: "Workshop for par",
-        title: "Kunsten å behage (for par)",
-        text: "Gjenoppdag magien ved intimitet sammen. En felles reise inn i samspillet mellom det maskuline og feminine for å holde lidenskapen og tryggheten levende."
+        title: "Kunsten å tilfredsstille – for par",
+        text: "Gjenoppdag gnisten i forbindelsen med partneren din. En reise inn i samspillet mellom maskulin og feminin energi for å holde lidenskapen levende."
       }
     };
 
@@ -1632,29 +1633,29 @@
       const data = workshopsData[id];
       if (!data) return;
       showModal(data.tag, data.title, data.text, function() {
-        prefillSubject("Påmelding / Spørsmål: " + data.title);
+        prefillEmne("Registration / Forespørsel: " + data.title);
       });
     }
 
     function openDateModal(title, dateStr) {
-      showModal("Dato / Arrangement", title, "Dato: " + dateStr + "\n\nØnsker du mer informasjon eller å melde interesse for dette arrangementet? Fyll ut skjemaet nedenfor.", function() {
-        prefillSubject("Interesse for arrangement: " + title + " (" + dateStr + ")");
+      showModal("Arrangementsdato", title, "Dato: " + dateStr + "\\n\\nØnsker du mer informasjon eller vil du reservere plassen din? Fyll ut skjemaet nedenfor.", function() {
+        prefillEmne("Interesse for arrangement: " + title + " (" + dateStr + ")");
       });
     }
 
     function openGenericModal(title, text) {
       showModal("Informasjon", title, text, function() {
-        prefillSubject("Henvendelse: " + title);
+        prefillEmne("Forespørsel: " + title);
       });
     }
 
     function showModal(tag, title, contentHtml, onAction) {
       document.getElementById('modalTag').innerText = tag;
-      document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalContent').innerHTML = contentHtml;
+      document.getElementById('modalTittel').innerText = title;
+      document.getElementById('modalInnhold').innerHTML = contentHtml;
 
       const actionBtn = document.getElementById('modalActionBtn');
-      actionBtn.innerText = "Meld interesse / Spør";
+      actionBtn.innerText = "Registrer / spør";
       actionBtn.onclick = function() {
         closeModalDirect();
         if (onAction) onAction();
@@ -1675,8 +1676,8 @@
       document.body.style.overflow = 'auto';
     }
 
-    function prefillSubject(subject) {
-      const subInput = document.getElementById('formSubject');
+    function prefillEmne(subject) {
+      const subInput = document.getElementById('formEmne');
       if (subInput) {
         subInput.value = subject;
         document.getElementById('kontakt').scrollIntoView({ behavior: 'smooth' });
@@ -1688,15 +1689,12 @@
       if (e.key === 'Escape') closeModalDirect();
     });
 
-    /* -----------------------------------------
-       3. CONTACT FORM SUBMISSION
-       ----------------------------------------- */
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwiptZDdNVNSavoyJeHCvoc7XxOSTG0yg_K5Z-Si81Up_4CSBo5AJUUOuMYLNh2eT3h/exec';
 
     async function handleFormSubmit(e) {
       e.preventDefault();
       const sendBtn = document.getElementById('sendSubmitBtn') || document.querySelector('.send');
-      const originalText = sendBtn ? sendBtn.innerHTML : 'Send inn ➜';
+      const originalText = sendBtn ? sendBtn.innerHTML : 'Send ➜';
 
       if (sendBtn) {
         sendBtn.disabled = true;
@@ -1705,17 +1703,17 @@
 
       const name = document.getElementById('formName').value.trim();
       const email = document.getElementById('formEmail').value.trim();
-      const subject = document.getElementById('formSubject') ? document.getElementById('formSubject').value.trim() : '';
-      const message = document.getElementById('formMessage').value.trim();
+      const subject = document.getElementById('formEmne') ? document.getElementById('formEmne').value.trim() : '';
+      const message = document.getElementById('formMelding').value.trim();
 
-      const formattedMessage = subject ? `[Emne: ${subject}]\n\n${message}` : message;
+      const formattedMelding = subject ? `[Emne: ${subject}]\\n\\n${message}` : message;
 
       const payload = {
         type: 'contact',
         name: name,
         email: email,
         subject: subject,
-        message: formattedMessage
+        message: formattedMelding
       };
 
       try {
@@ -1723,7 +1721,7 @@
           method: 'POST',
           mode: 'no-cors',
           headers: {
-            'Content-Type': 'text/plain;charset=utf-8'
+            'Innhold-Type': 'text/plain;charset=utf-8'
           },
           body: JSON.stringify(payload)
         });
@@ -1732,8 +1730,8 @@
         document.getElementById('successBox').style.display = 'block';
         document.getElementById('successBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
       } catch (err) {
-        console.error('Error submitting form:', err);
-        alert('Det oppstod en feil ved sending av meldingen. Vennligst prøv igjen.');
+        console.error('Feil ved innsending av skjema:', err);
+        alert('Det oppstod en feil ved sending av meldingen. Prøv igjen.');
         if (sendBtn) {
           sendBtn.disabled = false;
           sendBtn.innerHTML = originalText;
@@ -1741,16 +1739,13 @@
       }
     }
 
-    /* -----------------------------------------
-       4. DYNAMIC DATES INTEGRATION (PRESERVED)
-       ----------------------------------------- */
     const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwrA4qfZdmzOWaRdbIgtDqL0VO5NpURvNBU-5GdnmJ__3cBPbK4Hy-b5vkn1P0FJo0F/exec?api=json";
     const PAGE_LANG = "NO";
 
     fetch(WEB_APP_URL)
       .then(response => response.json())
       .then(data => {
-        const langData = data[PAGE_LANG];
+        const langData = data[PAGE_LANG] || data["NO"];
         const listContainer = document.getElementById('dynamic-dates-list');
         
         if (langData && Array.isArray(langData) && langData.length > 0 && listContainer) {
@@ -1765,7 +1760,7 @@
             btn.innerText = dateText;
             
             btn.onclick = function() {
-              openGenericModal("Arrangementshenvendelse", "Ønsker du mer informasjon eller å reservere plass for dette arrangementet?\n\n" + dateText);
+              openGenericModal("Forespørsel om arrangement", "Ønsker du mer informasjon eller å registrere deg til dette arrangementet?\\n\\n" + dateText);
             };
             
             div.appendChild(btn);
@@ -1773,7 +1768,7 @@
           });
         }
       })
-      .catch(error => console.error("Error fetching live dates (falling back to hardcoded):", error));
+      .catch(error => console.error("Error fetching live dates:", error));
   </script>
 </body>
 </html>
