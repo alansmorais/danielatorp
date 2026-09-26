@@ -50,10 +50,10 @@
     }
 
     /* =========================================
-       2. HEADER & NAVIGATION (Exact Match)
+       2. HEADER & NAVIGATION (Exact Match to Workshop Reference)
        ========================================= */
     header {
-      height: 100px;
+      height: 80px;
       background: #fff;
       display: flex;
       align-items: center;
@@ -70,18 +70,24 @@
       align-items: center;
     }
 
+    .logo-link {
+      display: inline-flex;
+      align-items: center;
+      height: 80px;
+    }
+
     .logo {
-      width: 325px;
-      height: 100px;
+      width: auto;
+      height: 52px;
       object-fit: contain;
       margin-right: auto;
     }
 
     .nav {
-      display: flex;
+      display: none;
       align-items: center;
-      gap: 21px;
-      font-size: 12px;
+      gap: 24px;
+      font-size: 14px;
       font-weight: 400;
     }
 
@@ -95,11 +101,11 @@
       padding: 10px 0;
     }
 
-    .nav .drop:after {
-      content: '▼';
+    .drop-arrow {
       font-size: 7px;
-      margin-left: 7px;
+      margin-left: 5px;
       display: inline-block;
+      transition: transform .2s ease;
     }
 
     .dropdown-menu {
@@ -136,17 +142,126 @@
       color: #e9476b;
     }
 
-    .flag {
-      margin-left: 30px;
-      cursor: default;
-      display: flex;
-      align-items: center;
-    }
-
     .mobile-menu-btn {
-      display: none;
+      display: block;
       font-size: 20px;
       padding: 5px;
+      margin-left: auto;
+    }
+
+    /* Multilingual language switcher */
+    .language-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 10px;
+    }
+
+    .language-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 5px;
+      border-radius: 5px;
+      font-size: 11px;
+      font-weight: 500;
+      color: #555;
+      transition: all .2s ease;
+    }
+
+    .language-link:hover {
+      background: #f7f7f7;
+      color: #ee5a7a;
+    }
+
+    .language-link.active {
+      color: #111;
+      background: #f3f3f3;
+    }
+
+    .language-link svg {
+      width: 20px;
+      height: 14px;
+      display: block;
+      border-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.15);
+    }
+
+    @media (min-width: 992px) {
+      header {
+        height: 100px;
+      }
+
+      .logo-link {
+        height: 100px;
+      }
+
+      .logo {
+        height: 100px;
+        width: 325px;
+      }
+
+      .nav {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+      }
+
+      .language-switcher {
+        margin-left: 10px;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .nav {
+        position: absolute;
+        top: 80px;
+        left: 4.3%;
+        right: 4.3%;
+        background: #fff;
+        padding: 14px 0 18px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        box-shadow: 0 10px 25px rgba(0,0,0,.08);
+        border-top: 1px solid #f5f5f5;
+      }
+
+      .nav.is-open {
+        display: flex;
+      }
+
+      .nav > a,
+      .nav > .drop {
+        padding: 10px 0;
+      }
+
+      .language-switcher {
+        width: 100%;
+        margin: 8px 0 0;
+        padding-top: 8px;
+        border-top: 1px solid #f5f5f5;
+        gap: 12px;
+      }
+
+      .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: 0;
+        border-radius: 0;
+        padding: 4px 0 4px 14px;
+        min-width: 0;
+      }
+
+      .nav .drop:hover .dropdown-menu {
+        display: none;
+      }
+
+      .nav .drop .dropdown-menu.is-open {
+        display: block;
+      }
     }
 
     /* =========================================
@@ -612,18 +727,19 @@
 <body>
 
     <!-- HEADER -->
-    <!-- HEADER -->
   <header>
     <div class="wrap">
-      <a href="../index.html">
+      <a href="../index.html" class="logo-link">
         <img class="logo" src="https://www.danielatorp.cz/wp-content/uploads/2020/02/logo_perem_bez_pozadi%CC%81.png" alt="Daniela Torp">
       </a>
-      
-      <nav class="nav">
+
+      <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Meny" aria-expanded="false">☰</button>
+
+      <nav class="nav" id="mainNav">
         <a href="../index.html">Hjem</a>
-        
+
         <div class="drop" onclick="location.href='../6-piliru-intimity/index.html'">
-          6 pilarer for intimitet
+          6 pilarer for intimitet <span class="drop-arrow">▼</span>
           <div class="dropdown-menu">
             <a href="../6-piliru-intimity/index.html#pilar-1">1. Parintimitet & egen kropp</a>
             <a href="../6-piliru-intimity/index.html#pilar-2">2. Graviditet og fødsel</a>
@@ -635,9 +751,9 @@
         </div>
 
         <a href="../index.html#om-daniela">Hvem er Daniela</a>
-        
+
         <div class="drop" onclick="location.href='../workshops.html'">
-          Workshoper
+          Workshoper <span class="drop-arrow">▼</span>
           <div class="dropdown-menu">
             <a href="umeni-potesit-zenu.html">Kunsten å behage en kvinne</a>
             <a href="umeni-potesit-muze.html">Kunsten å behage en mann</a>
@@ -655,10 +771,37 @@
         <a href="../konsultasjon.html">Personlig konsultasjon</a>
         <a href="../blog.html">Blogg</a>
         <a href="#kontakt">Kontakt</a>
-        <span class="flag"><img src="https://flagcdn.com/w20/no.png" width="20" alt="Norsk" style="border-radius: 2px;"></span>
-      </nav>
 
-      <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Meny">☰</button>
+        <div class="language-switcher" aria-label="Language selection">
+          <a class="language-link active" href="https://danielatorp.no/workshops/Hraj-si-se-mnou.html" aria-label="Norsk">
+            <svg viewBox="0 0 20 14" aria-hidden="true">
+              <rect width="20" height="14" fill="#BA0C2F"/>
+              <rect x="6" width="2" height="14" fill="#fff"/>
+              <rect y="6" width="20" height="2" fill="#fff"/>
+              <rect x="6.5" width="1" height="14" fill="#00205B"/>
+              <rect y="6.5" width="20" height="1" fill="#00205B"/>
+            </svg>
+            <span>NO</span>
+          </a>
+          <a class="language-link" href="https://www.danielatorp.cz/workshops/Hraj-si-se-mnou.html" aria-label="Čeština">
+            <svg viewBox="0 0 20 14" aria-hidden="true">
+              <path d="M0 0h20v7H0z" fill="#fff"/>
+              <path d="M0 7h20v7H0z" fill="#d7141a"/>
+              <path d="M0 0v14l10-7z" fill="#11457e"/>
+            </svg>
+            <span>CZ</span>
+          </a>
+          <a class="language-link" href="https://danielatorp.com/workshops/Hraj-si-se-mnou.html" aria-label="English">
+            <svg viewBox="0 0 20 14" aria-hidden="true">
+              <rect width="20" height="14" fill="#fff"/>
+              <path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="2"/>
+              <path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/>
+              <path d="M10 0v14M0 7h20" stroke="#012169" stroke-width="2"/>
+            </svg>
+            <span>EN</span>
+          </a>
+        </div>
+      </nav>
     </div>
   </header>
 
@@ -917,9 +1060,25 @@ ${message}` : message;
     }
 
     function toggleMobileNav() {
-      const nav = document.querySelector('.nav');
-      nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+      const nav = document.getElementById('mainNav');
+      const btn = document.querySelector('.mobile-menu-btn');
+      if (!nav || !btn) return;
+      const isOpen = nav.classList.toggle('is-open');
+      btn.innerText = isOpen ? '✕' : '☰';
+      btn.setAttribute('aria-expanded', isOpen);
     }
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 992) {
+        const nav = document.getElementById('mainNav');
+        const btn = document.querySelector('.mobile-menu-btn');
+        if (nav) nav.classList.remove('is-open');
+        if (btn) {
+          btn.innerText = '☰';
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
 
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeModalDirect();
