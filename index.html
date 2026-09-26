@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Daniela Torp – Intimitet i kontekst</title>
-  <link rel="icon" href="images/cropped-favicona-32x32.png" sizes="32x32">
-  <link rel="icon" href="images/cropped-favicona-192x192.png" sizes="192x192">
-  <link rel="apple-touch-icon" href="images/cropped-favicona-180x180.png">
+  <link rel="icon" href="images/logo_perem_bez_pozadi%CC%81.png" sizes="32x32">
+  <link rel="icon" href="images/logo_perem_bez_pozadi%CC%81.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="images/logo_perem_bez_pozadi%CC%81.png">
 
   <style>
     /* =========================================
@@ -1201,7 +1201,84 @@
         gap: 32px;
       }
     }
+  
+    /* =========================================
+       MULTILINGUAL LANGUAGE SWITCHER
+       ========================================= */
+
+    /* Language flags: inline SVG so they render consistently on Windows, macOS, iOS and Android. */
+    .language-flag {
+      display: inline-flex;
+      width: 22px;
+      height: 16px;
+      flex: 0 0 22px;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+      vertical-align: middle;
+    }
+    .language-flag svg {
+      display: block;
+      width: 22px;
+      height: 16px;
+    }
+
+    .language-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 4px;
+      padding-left: 4px;
+      border-left: 1px solid var(--color-border);
+    }
+
+    .language-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 4px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #555;
+      white-space: nowrap;
+      border-radius: 6px;
+    }
+
+    .language-link:hover,
+    .language-link.active {
+      color: var(--color-primary);
+    }
+
+    .language-flag {
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    @media (max-width: 991px) {
+      .language-switcher {
+        width: 100%;
+        justify-content: center;
+        margin: 8px 0 0;
+        padding: 12px 0 4px;
+        border-left: 0;
+        border-top: 1px solid var(--color-border);
+      }
+
+      .language-link {
+        padding: 8px 10px;
+      }
+    }
+
   </style>
+
+  <!-- Multilingual SEO: equivalent homepage versions -->
+  <link rel="alternate" hreflang="no" href="https://danielatorp.no/">
+  <link rel="alternate" hreflang="cs" href="https://www.danielatorp.cz/">
+  <link rel="alternate" hreflang="en" href="https://danielatorp.com/">
+  <link rel="alternate" hreflang="x-default" href="https://danielatorp.com/">
+
 </head>
 <body>
 
@@ -1211,7 +1288,7 @@
   <header>
     <div class="wrap">
       <a href="#hjem" class="logo-link">
-        <img class="logo" src="images/logo.png" alt="Daniela Torp">
+        <img class="logo" src="images/logo_perem_bez_pozadi%CC%81.png" alt="Daniela Torp">
       </a>
       
       <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Åpne meny" aria-expanded="false">☰</button>
@@ -1256,7 +1333,12 @@
         <a href="konsultasjon.html">Privat konsultasjon</a>
         <a href="blog.html">Blogg</a>
         <a href="#kontakt">Kontakt</a>
-        <span class="flag"><img src="https://flagcdn.com/w20/gb.png" width="20" alt="Norsk"></span>
+
+        <div class="language-switcher" aria-label="Language selection">
+          <a class="language-link active" href="https://danielatorp.no/" hreflang="no" lang="no" aria-label="Norsk"><span class="language-flag" aria-hidden="true"><svg viewBox="0 0 22 16" role="img"><rect width="22" height="16" fill="#ba0c2f"/><rect x="6" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="7" width="2" height="16" fill="#00205b"/><rect y="7" width="22" height="2" fill="#00205b"/></svg></span><span>NO</span></a>
+          <a class="language-link" href="https://www.danielatorp.cz/" hreflang="cs" lang="cs" aria-label="Čeština"><span class="language-flag" aria-hidden="true"><svg viewBox="0 0 22 16" role="img"><rect width="22" height="8" fill="#fff"/><rect y="8" width="22" height="8" fill="#d7141a"/><path d="M0 0L11 8 0 16Z" fill="#11457e"/></svg></span><span>CZ</span></a>
+          <a class="language-link" href="https://danielatorp.com/" hreflang="en" lang="en" aria-label="English"><span class="language-flag" aria-hidden="true"><svg viewBox="0 0 22 16" role="img"><rect width="22" height="16" fill="#012169"/><path d="M0 0L22 16M22 0L0 16" stroke="#fff" stroke-width="4"/><path d="M0 0L22 16M22 0L0 16" stroke="#c8102e" stroke-width="2"/><path d="M11 0V16M0 8H22" stroke="#fff" stroke-width="6"/><path d="M11 0V16M0 8H22" stroke="#c8102e" stroke-width="3"/></svg></span><span>EN</span></a>
+        </div>
       </nav>
     </div>
   </header>
@@ -1299,7 +1381,7 @@
         <div class="pillar">
           <a href="6-piliru-intimity/index.html#pilar-1">
             <div class="pillar-img-wrapper">
-              <img src="images/pillar-1.png" alt="Intimitet i parforhold">
+              <img src="images/1male_komplet_na_web-150x150.png" alt="Intimitet i parforhold">
             </div>
             <h3 id="cms-pillar-1">Intimitet i parforhold<br>Forholdet til egen kropp</h3>
           </a>
@@ -1309,7 +1391,7 @@
         <div class="pillar">
           <a href="6-piliru-intimity/index.html#pilar-2">
             <div class="pillar-img-wrapper">
-              <img src="images/pillar-2.png" alt="Graviditet">
+              <img src="images/2male%CC%81_komplet_na_web-150x150.png" alt="Graviditet">
             </div>
             <h3 id="cms-pillar-2">Intimitet under graviditet<br>og fødsel</h3>
           </a>
@@ -1319,7 +1401,7 @@
         <div class="pillar">
           <a href="6-piliru-intimity/index.html#pilar-3">
             <div class="pillar-img-wrapper">
-              <img src="images/pillar-3.png" alt="Baby">
+              <img src="images/3male%CC%81_komplet_na_web-150x150.png" alt="Baby">
             </div>
             <h3 id="cms-pillar-3">Baby og familie<br>Intimitet</h3>
           </a>
@@ -1329,7 +1411,7 @@
         <div class="pillar">
           <a href="6-piliru-intimity/index.html#pilar-4">
             <div class="pillar-img-wrapper">
-              <img src="images/pillar-4.png" alt="Children og ungdom">
+              <img src="images/4male%CC%81_komplet_na_web-150x150.png" alt="Children og ungdom">
             </div>
             <h3 id="cms-pillar-4">Intimitet hos barn<br>og ungdom</h3>
           </a>
@@ -1339,7 +1421,7 @@
         <div class="pillar">
           <a href="6-piliru-intimity/index.html#pilar-5">
             <div class="pillar-img-wrapper">
-              <img src="images/pillar-5.png" alt="moden alder">
+              <img src="images/5male%CC%81_komplet_na_web-150x150.png" alt="moden alder">
             </div>
             <h3 id="cms-pillar-5">Intimitet i<br>moden alder</h3>
           </a>
@@ -1349,7 +1431,7 @@
         <div class="pillar">
           <a href="6-piliru-intimity/index.html#pilar-6">
             <div class="pillar-img-wrapper">
-              <img src="images/pillar-6.png" alt="livets slutt">
+              <img src="images/6male%CC%81_komplet_na_web-150x150.png" alt="livets slutt">
             </div>
             <h3 id="cms-pillar-6">Intimitet i<br>livets slutt</h3>
           </a>
@@ -1366,7 +1448,7 @@
     <div class="wrap">
       <div class="about-grid">
         <div class="about-visual">
-          <img class="portrait" src="images/daniela.jpg" alt="Daniela Torp">
+          <img class="portrait" src="images/untitled-design-7.jpg" alt="Daniela Torp">
           <div class="photo-buttons">
             <button type="button" class="button" onclick="openGenericModal('Om Daniela', 'Daniela har over 15 års omfattende erfaring med somatisk terapi, parveiledning og bevisst veiledning innen intimitet. Med utgangspunkt i intimitetens 6 søyler hjelper hun mennesker med å styrke emosjonell trygghet, vitalitet og nærvær.')">Om Daniela</button>
             <button type="button" class="button" onclick="openGenericModal('Daniela i media', 'Selected media features:\n\n• Podcast Life Journey: «Intimitet begins in the mirror»\n• Harmoni Magazine: «6 Pillars that transform romantic relationships»\n• Culture & Connections: «The art of listening without words»')">Media</button>
@@ -1407,7 +1489,7 @@
         <!-- Card 1 -->
         <article class="card">
           <a href="workshops/umeni-potesit-zenu.html" class="card-img-link">
-            <img src="images/workshop-1.jpg" alt="Kunsten å tilfredsstille en kvinne">
+            <img src="images/2-1024x1024.jpg" alt="Kunsten å tilfredsstille en kvinne">
           </a>
           <div class="card-body">
             <div class="card-content-top">
@@ -1423,7 +1505,7 @@
         <!-- Card 2 -->
         <article class="card">
           <a href="workshops/umeni-potesit-muze.html" class="card-img-link">
-            <img src="images/workshop-2.jpg" alt="Kunsten å tilfredsstille en mann">
+            <img src="images/9-1024x1024.jpg" alt="Kunsten å tilfredsstille en mann">
           </a>
           <div class="card-body">
             <div class="card-content-top">
@@ -1439,7 +1521,7 @@
         <!-- Card 3 -->
         <article class="card">
           <a href="workshops/jen-pro-pary.html" class="card-img-link">
-            <img src="images/workshop-3.jpg" alt="The Art of Pleasing for Couples">
+            <img src="images/6-1024x1024.jpg" alt="The Art of Pleasing for Couples">
           </a>
           <div class="card-body">
             <div class="card-content-top">
@@ -1580,6 +1662,28 @@
        JAVASCRIPT FUNCTIONALITY
        ========================================= -->
   <script>
+    /* =========================================
+       MULTILINGUAL DOMAIN CONFIGURATION
+       ========================================= */
+    const LANGUAGE_DOMAINS = {'no': 'https://danielatorp.no/', 'cz': 'https://www.danielatorp.cz/', 'en': 'https://danielatorp.com/'};
+
+    // The three homepage links above are explicit. For equivalent deeper pages,
+    // preserve the current pathname/hash when this same file is reused there.
+    function updateLanguageLinksForCurrentPath() {
+      const currentPath = window.location.pathname || '/';
+      const currentHash = window.location.hash || '';
+      document.querySelectorAll('.language-link').forEach(link => {
+        const targetCode = link.getAttribute('hreflang') === 'cs' ? 'cz' : link.getAttribute('hreflang');
+        if (!targetCode || !LANGUAGE_DOMAINS[targetCode]) return;
+        // Keep homepage links clean while preserving deeper paths automatically.
+        if (currentPath !== '/' && currentPath !== '/index.html') {
+          link.href = LANGUAGE_DOMAINS[targetCode].replace(/\/$/, '') + currentPath + currentHash;
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', updateLanguageLinksForCurrentPath);
+
     function toggleMobileNav() {
       const nav = document.getElementById('mainNav');
       const btn = document.querySelector('.mobile-menu-btn');
