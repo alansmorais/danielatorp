@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>6 pilarer for intimitet / 6 Pillars of Intimacy | Daniela Torp</title>
-  <meta name="description" content="Intimitet i sammenheng / Intimacy in context - Daniela Torp">
+  <title>Intimitetens 6 søyler – Daniela Torp</title>
+  <meta name="description" content="Intimitetens 6 søyler – utforsk intimitet i parforhold, graviditet, morsrollen, ungdomstid, moden alder og ved livets slutt med Daniela Torp.">
+  <link rel="icon" href="../images/logo_perem_bez_pozadi%CC%81.png" type="image/png">
+  <link rel="apple-touch-icon" href="../images/logo_perem_bez_pozadi%CC%81.png">
 
   <style>
     /* =========================================
@@ -48,17 +50,7 @@
     }
 
     /* =========================================
-       2. MULTILINGUAL SWITCHER ENGINE
-       ========================================= */
-    body:not(.lang-en) [data-lang="en"] {
-      display: none !important;
-    }
-    body.lang-en [data-lang="no"] {
-      display: none !important;
-    }
-
-    /* =========================================
-       3. HEADER & NAVIGATION
+       2. HEADER & NAVIGATION
        ========================================= */
     header {
       height: 100px;
@@ -142,29 +134,42 @@
       color: #e9476b;
     }
 
-    .lang-switcher {
+    .language-switcher {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      margin-left: 20px;
+      gap: 10px;
+      margin-left: 10px;
+      white-space: nowrap;
+    }
+    .language-switcher a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
       font-size: 12px;
-      font-weight: 500;
+      font-weight: 400;
+      color: #555;
+      text-decoration: none;
     }
-
-    .lang-btn {
-      padding: 3px 7px;
-      border-radius: 4px;
-      color: #777;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    body:not(.lang-en) #btn-no,
-    body.lang-en #btn-en {
+    .language-switcher a:hover,
+    .language-switcher a.active {
       color: #ee5a7a;
-      background: #fff0f3;
-      font-weight: 700;
+    }
+    .language-flag {
+      display: inline-flex;
+      width: 22px;
+      height: 16px;
+      flex: 0 0 22px;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+      vertical-align: middle;
+    }
+    .language-flag svg {
+      display: block;
+      width: 22px;
+      height: 16px;
     }
 
     .mobile-menu-btn {
@@ -174,7 +179,7 @@
     }
 
     /* =========================================
-       4. HERO SECTION
+       3. HERO SECTION
        ========================================= */
     .page-hero {
       position: relative;
@@ -205,7 +210,7 @@
     }
 
     /* =========================================
-       5. PILLARS ROWS
+       4. PILLARS ROWS
        ========================================= */
     .pillar-section {
       padding: 65px 20px;
@@ -285,7 +290,7 @@
     }
 
     /* =========================================
-       6. FOOTER
+       5. FOOTER
        ========================================= */
     footer {
       padding: 65px 8% 30px;
@@ -305,20 +310,21 @@
 
     .footer-grid h4 {
       font-size: 14px;
-      font-weight: 400;
+      font-weight: 500;
       margin: 0 0 15px;
+      color: #111;
     }
 
     .footer-grid a {
       display: block;
-      color: #a69c9b;
+      color: #7e7978;
       font-size: 13px;
-      line-height: 1.85;
+      line-height: 1.95;
       text-align: left;
     }
 
     .footer-grid a:hover {
-      color: #080808;
+      color: #ee5a7a;
     }
 
     .footer-bottom {
@@ -350,34 +356,34 @@
     }
 
     .footer-bottom .social-icons a:hover {
-      background: #e9476b;
+      background: #ee5a7a;
       color: #fff;
     }
 
     .footer-bottom .copyright {
-      font-size: 13px;
-      color: #888;
+      font-size: 12px;
+      color: #aaa;
       margin-bottom: 8px;
     }
 
     .footer-bottom .developer {
-      font-size: 13px;
-      font-weight: 500;
+      font-size: 12px;
+      font-weight: 400;
     }
 
     .footer-bottom .developer a {
-      color: #555;
+      color: #999;
       text-decoration: none;
       transition: color 0.2s;
     }
 
     .footer-bottom .developer a:hover {
-      color: #e9476b;
+      color: #ee5a7a;
       text-decoration: underline;
     }
 
     /* =========================================
-       7. RESPONSIVE
+       6. RESPONSIVE
        ========================================= */
     @media (max-width: 900px) {
       .nav {
@@ -407,6 +413,11 @@
       .footer-grid {
         grid-template-columns: 1fr 1fr;
       }
+      .language-switcher {
+        margin-left: 0;
+        padding: 16px 0 0;
+        gap: 14px;
+      }
     }
 
     @media (max-width: 560px) {
@@ -422,6 +433,10 @@
     }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="alternate" hreflang="no" href="https://danielatorp.no/6-piliru-intimity/index.html">
+  <link rel="alternate" hreflang="cs" href="https://www.danielatorp.cz/6-piliru-intimity/index.html">
+  <link rel="alternate" hreflang="en" href="https://danielatorp.com/6-piliru-intimity/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://danielatorp.com/6-piliru-intimity/index.html">
 </head>
 <body>
 
@@ -434,75 +449,49 @@
       
       <nav class="nav" id="mainNav">
         <!-- Home -->
-        <a href="../index.html" data-lang="no">Hjem</a>
-        <a href="../index.html" data-lang="en">Home</a>
+        <a href="../index.html">Hjem</a>
         
         <!-- Dropdown: Pillars -->
         <div class="drop" onclick="location.href='#pilarer'">
-          <span data-lang="no">6 pilarer for intimitet</span>
-          <span data-lang="en">6 Pillars of Intimacy</span>
+          <span>Intimitetens 6 søyler</span>
           <div class="dropdown-menu">
-            <a href="#pilar-1" data-lang="no">1. Parintimitet & egen kropp</a>
-            <a href="#pilar-1" data-lang="en">1. Couple Intimacy & Own Body</a>
-            <a href="#pilar-2" data-lang="no">2. Graviditet og fødsel</a>
-            <a href="#pilar-2" data-lang="en">2. Pregnancy & Childbirth</a>
-            <a href="#pilar-3" data-lang="no">3. Intimitet med baby</a>
-            <a href="#pilar-3" data-lang="en">3. Baby & Family Intimacy</a>
-            <a href="#pilar-4" data-lang="no">4. Barn og ungdom</a>
-            <a href="#pilar-4" data-lang="en">4. Children & Adolescents</a>
-            <a href="#pilar-5" data-lang="no">5. Intimitet i moden alder</a>
-            <a href="#pilar-5" data-lang="en">5. Intimacy in Mature Age</a>
-            <a href="#pilar-6" data-lang="no">6. Intimitet i døden</a>
-            <a href="#pilar-6" data-lang="en">6. Intimacy in Dying</a>
+            <a href="#pilar-1">1. Intimitet i parforhold og forholdet til egen kropp</a>
+            <a href="#pilar-2">2. Graviditet og fødsel</a>
+            <a href="#pilar-3">3. Intimitet med baby og familie</a>
+            <a href="#pilar-4">4. Intimitet hos barn og ungdom</a>
+            <a href="#pilar-5">5. Intimitet i moden alder</a>
+            <a href="#pilar-6">6. Intimitet ved livets slutt</a>
           </div>
         </div>
 
         <!-- About -->
-        <a href="../index.html#om-daniela" data-lang="no">Hvem er Daniela</a>
-        <a href="../index.html#om-daniela" data-lang="en">Who is Daniela</a>
+        <a href="../index.html#om-daniela">Hvem er Daniela</a>
         
         <!-- Dropdown: Workshops -->
         <div class="drop" onclick="location.href='../workshops.html'">
-          <span data-lang="no">Workshoper</span>
-          <span data-lang="en">Workshops</span>
+          <span>Workshops</span>
           <div class="dropdown-menu">
-            <a href="../workshops/umeni-potesit-zenu.html" data-lang="no">Kunsten å behage en kvinne</a>
-            <a href="../workshops/umeni-potesit-zenu.html" data-lang="en">The Art of Pleasing a Woman</a>
-            <a href="../workshops/umeni-potesit-muze.html" data-lang="no">Kunsten å behage en mann</a>
-            <a href="../workshops/umeni-potesit-muze.html" data-lang="en">The Art of Pleasing a Man</a>
-            <a href="../workshops/jen-pro-pary.html" data-lang="no">Kunsten å behage (for par)</a>
-            <a href="../workshops/jen-pro-pary.html" data-lang="en">The Art of Pleasing (For Couples)</a>
-            <a href="../workshops/tajemstvi-panevniho-dna.html" data-lang="no">Bekkenbunnens hemmeligheter</a>
-            <a href="../workshops/tajemstvi-panevniho-dna.html" data-lang="en">Secrets of the Pelvic Floor</a>
-            <a href="../workshops/byla-jsem-tehotna-ale.html" data-lang="no">Jeg var gravid, men …</a>
-            <a href="../workshops/byla-jsem-tehotna-ale.html" data-lang="en">I Was Pregnant, But …</a>
-            <a href="../workshops/porod-jako-jistota.html" data-lang="no">Fødsel som sikkerhet</a>
-            <a href="../workshops/porod-jako-jistota.html" data-lang="en">Birth as Certainty</a>
-            <a href="../workshops/matka-a-dcera.html" data-lang="no">Mor og datter</a>
-            <a href="../workshops/matka-a-dcera.html" data-lang="en">Mother and Daughter</a>
-            <a href="../workshops/Hraj-si-se-mnou.html" data-lang="no">Spill med meg</a>
-            <a href="../workshops/Hraj-si-se-mnou.html" data-lang="en">Play With Me</a>
-            <a href="../workshops/zenska-esence-no.html" data-lang="no">Kvinneessens og livskraft</a>
-            <a href="../workshops/zenska-esence-no.html" data-lang="en">Female Essence & Life Force</a>
-            <a href="../workshops.html" data-lang="no" style="font-weight:500;color:#ee5a7a;border-top:1px solid #eee;">Se alle 9 workshoper ➜</a>
-            <a href="../workshops.html" data-lang="en" style="font-weight:500;color:#ee5a7a;border-top:1px solid #eee;">See all 9 workshops ➜</a>
+            <a href="../workshops/umeni-potesit-zenu.html">Kunsten å tilfredsstille en kvinne</a>
+            <a href="../workshops/umeni-potesit-muze.html">Kunsten å tilfredsstille en mann</a>
+            <a href="../workshops/jen-pro-pary.html">Kunsten å tilfredsstille – for par</a>
+            <a href="../workshops/tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
+            <a href="../workshops/byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
+            <a href="../workshops/porod-jako-jistota.html">Fødsel som trygghet</a>
+            <a href="../workshops/matka-a-dcera.html">Mor og datter</a>
+            <a href="../workshops/Hraj-si-se-mnou.html">Lek med meg</a>
+            <a href="../workshops/zenska-esence-no.html">Kvinnelig essens og vitalitet</a>
+            <a href="../workshops.html" style="font-weight:500;color:#ee5a7a;border-top:1px solid #eee;">Se alle 9 workshops ➜</a>
           </div>
         </div>
 
-        <a href="../konsultasjon.html" data-lang="no">Personlig konsultasjon</a>
-        <a href="../konsultasjon.html" data-lang="en">Private Consultation</a>
+        <a href="../konsultasjon.html">Personlig konsultasjon</a>
+        <a href="../blog.html">Blogg</a>
+        <a href="../index.html#kontakt">Kontakt</a>
 
-        <a href="../blog.html" data-lang="no">Blogg</a>
-        <a href="../blog.html" data-lang="en">Blog</a>
-
-        <a href="../index.html#kontakt" data-lang="no">Kontakt</a>
-        <a href="../index.html#kontakt" data-lang="en">Contact</a>
-
-        <!-- Dual-Language Toggle Switcher -->
-        <div class="lang-switcher">
-          <button type="button" class="lang-btn" id="btn-no" onclick="setLanguage('no')">🇳🇴 NO</button>
-          <span>|</span>
-          <button type="button" class="lang-btn" id="btn-en" onclick="setLanguage('en')">🇬🇧 EN</button>
+        <div class="language-switcher" aria-label="Språkvalg">
+          <a class="active" href="https://danielatorp.no/6-piliru-intimity/index.html" hreflang="no" aria-label="NO"><span class="language-flag"><svg viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="22" height="16" fill="#ef2b2d"/><path d="M0 6h22v4H0z" fill="#fff"/><path d="M7 0h4v16H7z" fill="#fff"/><path d="M8 0h2v16H8z" fill="#002868"/><path d="M0 7h22v2H0z" fill="#002868"/></svg></span><span>NO</span></a>
+          <a class="" href="https://www.danielatorp.cz/6-piliru-intimity/index.html" hreflang="cz" aria-label="CZ"><span class="language-flag"><svg viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#fff" d="M0 0h22v8H0z"/><path fill="#d7141a" d="M0 8h22v8H0z"/><path fill="#11457e" d="M0 0l10 8L0 16z"/></svg></span><span>CZ</span></a>
+          <a class="" href="https://danielatorp.com/6-piliru-intimity/index.html" hreflang="en" aria-label="EN"><span class="language-flag"><svg viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="22" height="16" fill="#012169"/><path d="M0 0l22 16M22 0L0 16" stroke="#fff" stroke-width="3"/><path d="M0 0l22 16M22 0L0 16" stroke="#c8102e" stroke-width="1.4"/><path d="M11 0v16M0 8h22" stroke="#fff" stroke-width="5"/><path d="M11 0v16M0 8h22" stroke="#c8102e" stroke-width="3"/></svg></span><span>EN</span></a>
         </div>
       </nav>
 
@@ -513,18 +502,10 @@
   <!-- ================= HERO ================= -->
   <section class="page-hero">
     <div class="wrap">
-      <div data-lang="no">
-        <h1>6 pilarer for intimitet</h1>
-        <p>Intimitet er den behagelige følelsen av trygghet og tillit mellom mennesker. Intimitet oppstår ikke av seg selv, man må jobbe med den. Den følger oss gjennom alle faser av livet.</p>
-        <p>Fra mitt perspektiv hviler intimitet på 6 grunnleggende pilarer. I konsultasjoner med klienter fokuserer vi primært på intimitet i forhold til egen kropp. Alt begynner og slutter med kjærlighet til seg selv. Når jeg elsker meg selv, kan jeg elske andre. Når jeg har medfølelse for meg selv, kan jeg vise det til andre i ulike livsfaser.</p>
-        <p><strong>Respekt, kjærlighet og medfølelse.</strong></p>
-      </div>
-      <div data-lang="en">
-        <h1>6 Pillars of Intimacy</h1>
-        <p>Intimacy is that comforting feeling of safety and trust between people. It doesn't appear by itself; it requires care and dedication. It accompanies us throughout every stage of life.</p>
-        <p>From my perspective, intimacy rests upon 6 foundational pillars. In consultations with clients, we focus primarily on the relationship with our own body. Everything begins and ends with self-love. When I love myself, I can love others. When I cultivate self-compassion, I can extend it to others in all walks of life.</p>
-        <p><strong>Respect, love, and compassion.</strong></p>
-      </div>
+      <h1>Intimitetens 6 søyler</h1>
+      <p>Intimitet er den trygge og gode følelsen av tillit og nærhet mellom mennesker. Ekte intimitet oppstår sjelden av seg selv; den må næres, utforskes og pleies. Den følger oss gjennom alle livets faser.</p>
+      <p>Slik jeg ser det, hviler intimitet på 6 grunnleggende søyler. I mine konsultasjoner fokuserer vi først og fremst på forholdet til egen kropp. Alt begynner og slutter med kjærlighet og respekt for seg selv. Først når jeg aksepterer og verdsetter meg selv, kan jeg åpne meg i ekte kjærlighet til andre. Når jeg møter meg selv med omsorg og medfølelse, kan jeg også møte partneren og menneskene rundt meg med den samme varmen gjennom alle livets faser.</p>
+      <p><strong>Respekt, kjærlighet og medfølelse.</strong></p>
     </div>
   </section>
 
@@ -533,20 +514,13 @@
     <section class="pillar-section" id="pilar-1">
       <div class="pillar-row">
         <div class="pillar-image">
-          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/1male_komplet_na_web.png" width="224" height="224" alt="Parintimitet">
+          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/1male_komplet_na_web.png" width="224" height="224" alt="Parintimitet og egen kropp">
         </div>
         <div class="pillar-content">
           <div class="svg-divider"></div>
-          <div data-lang="no">
-            <h2>Parintimitet, forholdet til egen kropp</h2>
-            <p>Ofte forstår vi rett og slett ikke oss selv. Eller hverandre. Likevel ønsker vi alle det samme – å elske og bli elsket. Å nyte et romantisk forhold og seksualiteten vår. Vi kan bare akseptere den andre fullt ut dersom vi aksepterer oss selv fullt ut. Kjærlighet til egen kropp. Ofte det vanskeligste. Det betyr å akseptere kroppen din akkurat slik den er. Jeg jobber med par både individuelt og sammen.</p>
-            <a href="../index.html#kontakt" class="button">Bestill konsultasjon</a>
-          </div>
-          <div data-lang="en">
-            <h2>Couple Intimacy & Relationship with One's Own Body</h2>
-            <p>Often we simply struggle to understand ourselves—and each other. Yet we all yearn for the same thing: to love and be loved, and to genuinely enjoy our romantic partnership and sexuality. We can only fully accept someone else once we fully embrace ourselves. Loving our own body is often the greatest hurdle, meaning accepting it precisely as it is. I work with couples both individually and together.</p>
-            <a href="../index.html#kontakt" class="button">Book a Consultation</a>
-          </div>
+          <h2>1. Intimitet i parforhold og forholdet til egen kropp</h2>
+          <p>Noen ganger strever vi rett og slett med å forstå oss selv – eller hverandre. Likevel lengter vi innerst inne etter det samme: å elske og bli elsket, og å nyte et nært parforhold og en trygg seksualitet. Vi kan bare ta imot den andre fullt ut dersom vi har akseptert oss selv. Kjærlighet til egen kropp er ofte den største terskelen. Det handler om å slutte fred med kroppen akkurat slik den er. Jeg arbeider med par både individuelt og sammen.</p>
+          <a href="../konsultasjon.html" class="button">Bestill time / meld interesse</a>
         </div>
       </div>
     </section>
@@ -555,20 +529,13 @@
     <section class="pillar-section" id="pilar-2">
       <div class="pillar-row">
         <div class="pillar-image">
-          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/2male%CC%81_komplet_na_web.png" width="224" height="224" alt="Graviditet">
+          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/2male%CC%81_komplet_na_web.png" width="224" height="224" alt="Graviditet og fødsel">
         </div>
         <div class="pillar-content">
           <div class="svg-divider"></div>
-          <div data-lang="no">
-            <h2>Intimitet i svangerskapet og ved fødsel</h2>
-            <p>Du elsker kroppen din. Akkurat slik den er. Du har blitt vant til deg selv. Du tar vare på den. Plutselig, på grunn av graviditet, begynner den å endre seg ukontrollert. Den endrer seg på en slik måte at du ofte ikke en gang kjenner deg selv igjen. Den reagerer annerledes på berøring, bevegelse og intimitet. Å opprettholde intimitet som par under graviditet er ofte en utfordring. Jeg er her for å hjelpe deg med det. I trygge omgivelser vil jeg veilede deg gjennom intimitetens verden i svangerskapet.</p>
-            <a href="../index.html#kontakt" class="button">Bestill konsultasjon</a>
-          </div>
-          <div data-lang="en">
-            <h2>Intimacy in Pregnancy & Birth</h2>
-            <p>You love your body as it is; you have grown familiar with it and take good care of it. Suddenly, pregnancy initiates profound, uncontrollable shifts. It changes to the point where you might barely recognize yourself, responding differently to touch, movement, and affection. Nurturing intimacy as a couple throughout pregnancy is frequently a sensitive challenge. I am here to guide you safely through this profound chapter.</p>
-            <a href="../index.html#kontakt" class="button">Book a Consultation</a>
-          </div>
+          <h2>2. Graviditet og fødsel</h2>
+          <p>Kanskje har du lært å trives i egen kropp, blitt fortrolig med den og passet godt på den. Plutselig fører en graviditet med seg store, ukjente forandringer. Kroppen forandrer seg så raskt at du knapt kjenner deg selv igjen; den reagerer annerledes på berøring, bevegelse og nærhet. Å ivareta intimiteten og samlivet gjennom svangerskapet er ofte en sårbar utfordring for et par. Jeg er her for å hjelpe og veilede dere trygt gjennom intimitetens verden under graviditet og forberedelse til fødsel.</p>
+          <a href="../konsultasjon.html" class="button">Bestill time / meld interesse</a>
         </div>
       </div>
     </section>
@@ -577,20 +544,13 @@
     <section class="pillar-section" id="pilar-3">
       <div class="pillar-row">
         <div class="pillar-image">
-          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/3male%CC%81_komplet_na_web.png" width="224" height="224" alt="Morsrollen">
+          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/3male%CC%81_komplet_na_web.png" width="224" height="224" alt="Intimitet med baby og familie">
         </div>
         <div class="pillar-content">
           <div class="svg-divider"></div>
-          <div data-lang="no">
-            <h2>Intimitet i morsrollen</h2>
-            <p>Den etterlengtede babyen er født. Dere er lykkelige foreldre. Verden deres er plutselig snudd helt på hodet. Intimiteten i forholdet deres har plutselig forsvunnet. Hvordan gjenopprette den? Hvordan håndtere denne helt nye situasjonen sammen. Jeg har opplevd det selv. Jeg vet hva som hjelper. Du må bare ønske å endre det.</p>
-            <a href="../index.html#kontakt" class="button">Bestill konsultasjon</a>
-          </div>
-          <div data-lang="en">
-            <h2>Intimacy in Motherhood & Family Bonds</h2>
-            <p>Your long-awaited child has arrived. You are joyful parents, yet your daily reality has turned upside down. Romantic intimacy often takes a sudden backseat. How do you rekindle that connection? How do you navigate this brand-new dynamic as partners? Having walked this path myself, I know what truly supports reconnection—all it takes is the mutual will to begin.</p>
-            <a href="../index.html#kontakt" class="button">Book a Consultation</a>
-          </div>
+          <h2>3. Intimitet med baby og familie</h2>
+          <p>Det etterlengtede barnet har kommet til verden. Dere er lykkelige nybakte foreldre, men hverdagen er snudd fullstendig på hodet. Kjæresteintimiteten og den romantiske nærheten blir brått satt på vent eller forsvinner i ammetåke og våkenetter. Hvordan gjenoppbygger man nærheten? Hvordan finner dere tilbake til hverandre som par i denne nye fasen? Jeg har stått i dette selv og vet hva som fungerer. Dere trenger bare et ønske om å ta det første steget sammen.</p>
+          <a href="../konsultasjon.html" class="button">Bestill time / meld interesse</a>
         </div>
       </div>
     </section>
@@ -599,20 +559,13 @@
     <section class="pillar-section" id="pilar-4">
       <div class="pillar-row">
         <div class="pillar-image">
-          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/4male%CC%81_komplet_na_web.png" width="224" height="224" alt="Barn og Ungdom">
+          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/4male%CC%81_komplet_na_web.png" width="224" height="224" alt="Intimitet hos barn og ungdom">
         </div>
         <div class="pillar-content">
           <div class="svg-divider"></div>
-          <div data-lang="no">
-            <h2>Intimitet hos barn og ungdom</h2>
-            <p>I løpet av de første 18 månedene utvikler barn et intimt forhold til sin egen kropp. Gruer du deg til de første spørsmålene om seksualitet og sex? Er du rådvill når ditt kjære barn leker med underlivet sitt? Du har stor makt til å endre barnets tilnærming til kroppen sin. Du kan påvirke hva slags første seksuelle opplevelse datteren din vil ha. Først vil vi bearbeide frykten din sammen, og deretter kan vi gå videre og forberede deg på tiden med nysgjerrige spørsmål.</p>
-            <a href="../index.html#kontakt" class="button">Bestill konsultasjon</a>
-          </div>
-          <div data-lang="en">
-            <h2>Intimacy in Children & Adolescents</h2>
-            <p>During the first 18 months, children already begin forming an intimate relationship with their physical selves. Do you feel anxious about early questions regarding bodies and sexuality? Are you unsure how to respond when your little one explores private parts? Parents hold tremendous influence in cultivating a healthy body image and setting the stage for respectful future relationships. Together, we address your worries and prepare you for insightful, open conversations.</p>
-            <a href="../index.html#kontakt" class="button">Book a Consultation</a>
-          </div>
+          <h2>4. Intimitet hos barn og ungdom</h2>
+          <p>Allerede i løpet av de første 18 månedene begynner et lite barn å etablere et forhold til kroppen sin. Gruer du deg til de første nysgjerrige spørsmålene om kropp, kjønn og seksualitet? Er du usikker på hvordan du skal respondere når barnet utforsker underlivet sitt? Som foreldre har vi en uvurderlig mulighet til å gi barna et sunt og skamfritt forhold til egen kropp, og legge grunnlaget for trygge grenser og gode relasjoner senere i livet. Sammen bearbeider vi din egen usikkerhet slik at du kan møte barnets spørsmål med ro, trygghet og åpenhet.</p>
+          <a href="../konsultasjon.html" class="button">Bestill time / meld interesse</a>
         </div>
       </div>
     </section>
@@ -621,20 +574,13 @@
     <section class="pillar-section" id="pilar-5">
       <div class="pillar-row">
         <div class="pillar-image">
-          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/5male%CC%81_komplet_na_web.png" width="224" height="224" alt="Moden alder">
+          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/5male%CC%81_komplet_na_web.png" width="224" height="224" alt="Intimitet i moden alder">
         </div>
         <div class="pillar-content">
           <div class="svg-divider"></div>
-          <div data-lang="no">
-            <h2>Intimitet i moden alder</h2>
-            <p>Lever du i et langvarig forhold og tror at dere ikke kan oppdage noe nytt om hverandre? La meg motbevise det. Du vil bli overrasket over hvor mye dere kan nyte, og hvordan dere kan forelske dere på nytt selv etter 20 års samliv. Dere vil finne mye inspirasjon til det intime livet. Dersom du lever alene etter en skilsmisse eller et langt brudd og ikke vet hvordan du knytter nye bånd, finner vi ut av det sammen. Vi avdekker dine skjulte styrker. Du vil bli overrasket over hvor fullt og rikt livet kan leves også i moden alder.</p>
-            <a href="../index.html#kontakt" class="button">Bestill konsultasjon</a>
-          </div>
-          <div data-lang="en">
-            <h2>Intimacy in Mature Age</h2>
-            <p>If you have shared a long-term bond, you might believe there is nothing left to learn about each other. Let me prove otherwise. You will be amazed at the renewed passion you can discover and how you can fall in love all over again, even after decades together. And if you are single following a divorce or long separation, we will explore your inner strengths and show you how richly intimacy can flourish at any age.</p>
-            <a href="../index.html#kontakt" class="button">Book a Consultation</a>
-          </div>
+          <h2>5. Intimitet i moden alder</h2>
+          <p>Har dere levd sammen i mange år og tenker at dere kjenner hverandre ut og inn, uten mer å oppdage? La meg vise dere noe annet. Det er forbløffende hvor mye nytt dere kan erfare sammen, og hvordan dere kan gjenopplive forelskelsen og lekenheten selv etter flere tiår som par. Og hvis du lever alene etter et samlivsbrudd eller en skilsmisse og synes det er vanskelig å åpne deg for ny kjærlighet, finner vi veien sammen. Vi henter fram dine indre ressurser og styrker. Livet og intimiteten kan blomstre like dypt og rikt i moden alder.</p>
+          <a href="../konsultasjon.html" class="button">Bestill time / meld interesse</a>
         </div>
       </div>
     </section>
@@ -643,20 +589,13 @@
     <section class="pillar-section" id="pilar-6">
       <div class="pillar-row">
         <div class="pillar-image">
-          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/6male%CC%81_komplet_na_web.png" width="224" height="224" alt="Døden">
+          <img src="https://raw.githubusercontent.com/alansmorais/danielatorp/main/images/6male%CC%81_komplet_na_web.png" width="224" height="224" alt="Intimitet ved livets slutt">
         </div>
         <div class="pillar-content">
           <div class="svg-divider"></div>
-          <div data-lang="no">
-            <h2>Intimitet i døden</h2>
-            <p>Alt tar en slutt en dag. Også livet. Det er opp til oss om vi klarer å følge våre nærmeste til veis ende med verdighet og respekt.</p>
-            <a href="../index.html#kontakt" class="button">Bestill konsultasjon</a>
-          </div>
-          <div data-lang="en">
-            <h2>Intimacy in Dying & Departure</h2>
-            <p>Everything in life eventually runs its course. It rests within our hands whether we are able to accompany our loved ones through their final journey with reverence, peace, and deep human presence.</p>
-            <a href="../index.html#kontakt" class="button">Book a Consultation</a>
-          </div>
+          <h2>6. Intimitet ved livets slutt</h2>
+          <p>Alt i denne verden har en begynnelse og en slutt – også livet selv. Det hviler i våre hender og hjerter om vi evner å følge våre nærmeste på den siste reisen med ro, verdighet, dyp tilstedeværelse og kjærlig respekt.</p>
+          <a href="../konsultasjon.html" class="button">Bestill time / meld interesse</a>
         </div>
       </div>
     </section>
@@ -667,60 +606,39 @@
     <div class="footer-grid">
       <!-- Col 1: Contact -->
       <div>
-        <h4 data-lang="no">Kontakt</h4>
-        <h4 data-lang="en">Contact</h4>
-        <a href="../index.html" data-lang="no">Hjem</a>
-        <a href="../index.html" data-lang="en">Home</a>
-        <a href="../index.html#om-daniela" data-lang="no">Hvem er Daniela</a>
-        <a href="../index.html#om-daniela" data-lang="en">Who is Daniela</a>
-        <a href="../index.html#om-daniela" data-lang="no">Daniela i media</a>
-        <a href="../index.html#om-daniela" data-lang="en">Daniela in Media</a>
-        <a href="../blog.html" data-lang="no">Blogg</a>
-        <a href="../blog.html" data-lang="en">Blog</a>
-        <a href="../index.html#kontakt" data-lang="no">Kontakt</a>
-        <a href="../index.html#kontakt" data-lang="en">Contact</a>
+        <h4>Kontakt</h4>
+        <a href="../index.html">Hjem</a>
+        <a href="../index.html#om-daniela">Hvem er Daniela</a>
+        <a href="../index.html#om-daniela">Daniela i media</a>
+        <a href="../blog.html">Blogg</a>
+        <a href="../index.html#kontakt">Kontakt</a>
       </div>
 
       <!-- Col 2: Workshops -->
       <div>
-        <h4 data-lang="no">Workshoper</h4>
-        <h4 data-lang="en">Workshops</h4>
-        <a href="../workshops/umeni-potesit-zenu.html" data-lang="no">Kunsten å behage en kvinne</a>
-        <a href="../workshops/umeni-potesit-zenu.html" data-lang="en">The Art of Pleasing a Woman</a>
-        <a href="../workshops/umeni-potesit-muze.html" data-lang="no">Kunsten å behage en mann</a>
-        <a href="../workshops/umeni-potesit-muze.html" data-lang="en">The Art of Pleasing a Man</a>
-        <a href="../workshops/jen-pro-pary.html" data-lang="no">Kunsten å behage (for par)</a>
-        <a href="../workshops/jen-pro-pary.html" data-lang="en">The Art of Pleasing (For Couples)</a>
-        <a href="../workshops/tajemstvi-panevniho-dna.html" data-lang="no">Bekkenbunnens hemmeligheter</a>
-        <a href="../workshops/tajemstvi-panevniho-dna.html" data-lang="en">Secrets of the Pelvic Floor</a>
-        <a href="../workshops/byla-jsem-tehotna-ale.html" data-lang="no">Jeg var gravid, men …</a>
-        <a href="../workshops/byla-jsem-tehotna-ale.html" data-lang="en">I Was Pregnant, But …</a>
-        <a href="../workshops/porod-jako-jistota.html" data-lang="no">Fødsel som sikkerhet</a>
-        <a href="../workshops/porod-jako-jistota.html" data-lang="en">Birth as Certainty</a>
-        <a href="../workshops/matka-a-dcera.html" data-lang="no">Mor og datter</a>
-        <a href="../workshops/matka-a-dcera.html" data-lang="en">Mother and Daughter</a>
-        <a href="../workshops.html" data-lang="no" style="color:#e9476b;font-weight:500;">Se alle 9 workshoper ➜</a>
-        <a href="../workshops.html" data-lang="en" style="color:#e9476b;font-weight:500;">See all 9 workshops ➜</a>
+        <h4>Workshops</h4>
+        <a href="../workshops/umeni-potesit-zenu.html">Kunsten å tilfredsstille en kvinne</a>
+        <a href="../workshops/umeni-potesit-muze.html">Kunsten å tilfredsstille en mann</a>
+        <a href="../workshops/jen-pro-pary.html">Kunsten å tilfredsstille – for par</a>
+        <a href="../workshops/tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
+        <a href="../workshops/byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
+        <a href="../workshops/porod-jako-jistota.html">Fødsel som trygghet</a>
+        <a href="../workshops/matka-a-dcera.html">Mor og datter</a>
+        <a href="../workshops/Hraj-si-se-mnou.html">Lek med meg</a>
+        <a href="../workshops/zenska-esence-no.html">Kvinnelig essens og vitalitet</a>
+        <a href="../workshops.html" style="color:#ee5a7a;font-weight:500;">Se alle 9 workshops ➜</a>
       </div>
 
       <!-- Col 3: Pillars -->
       <div>
-        <h4 data-lang="no">Konsultasjoner / 6 pilarer for intimitet</h4>
-        <h4 data-lang="en">Consultations / 6 Pillars of Intimacy</h4>
-        <a href="../konsultasjon.html" data-lang="no">Personlig konsultasjon</a>
-        <a href="../konsultasjon.html" data-lang="en">Private Consultation</a>
-        <a href="#pilar-1" data-lang="no">Parintimitet, forholdet til egen kropp</a>
-        <a href="#pilar-1" data-lang="en">Couple intimacy & body image</a>
-        <a href="#pilar-2" data-lang="no">Intimitet under graviditet og ved fødsel</a>
-        <a href="#pilar-2" data-lang="en">Intimacy in pregnancy and childbirth</a>
-        <a href="#pilar-3" data-lang="no">Intimitet i morsrollen</a>
-        <a href="#pilar-3" data-lang="en">Intimacy in motherhood</a>
-        <a href="#pilar-4" data-lang="no">Intimitet hos barn og ungdom</a>
-        <a href="#pilar-4" data-lang="en">Intimacy in children & youth</a>
-        <a href="#pilar-5" data-lang="no">Intimitet i moden alder</a>
-        <a href="#pilar-5" data-lang="en">Intimacy in mature age</a>
-        <a href="#pilar-6" data-lang="no">Intimitet i døden</a>
-        <a href="#pilar-6" data-lang="en">Intimacy in dying</a>
+        <h4>Konsultasjoner / Intimitetens 6 søyler</h4>
+        <a href="../konsultasjon.html">Personlig konsultasjon</a>
+        <a href="#pilar-1">1. Intimitet i parforhold og forholdet til egen kropp</a>
+        <a href="#pilar-2">2. Graviditet og fødsel</a>
+        <a href="#pilar-3">3. Intimitet med baby og familie</a>
+        <a href="#pilar-4">4. Intimitet hos barn og ungdom</a>
+        <a href="#pilar-5">5. Intimitet i moden alder</a>
+        <a href="#pilar-6">6. Intimitet ved livets slutt</a>
       </div>
     </div>
 
@@ -731,7 +649,7 @@
         <a href="https://www.facebook.com/danielatorp" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/intimitycoachdanielatorp/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
       </div>
-      <p class="copyright">© 2026 <span data-lang="no">Alle rettigheter forbeholdt</span><span data-lang="en">All rights reserved</span> | Daniela Torp</p>
+      <p class="copyright">© 2026 Alle rettigheter forbeholdt | Daniela Torp</p>
       <p class="developer">
         <a href="https://AlanSMSolutions.com" target="_blank" rel="noopener noreferrer">Developed by AlanSMSolutions.com</a>
       </p>
@@ -740,27 +658,6 @@
 
   <!-- ================= SCRIPTS ================= -->
   <script>
-    // Language switching logic with persistent storage
-    function setLanguage(lang) {
-      if (lang === 'en') {
-        document.body.classList.add('lang-en');
-        document.documentElement.setAttribute('lang', 'en');
-        localStorage.setItem('site_lang', 'en');
-      } else {
-        document.body.classList.remove('lang-en');
-        document.documentElement.setAttribute('lang', 'no');
-        localStorage.setItem('site_lang', 'no');
-      }
-    }
-
-    // Apply saved language on page load
-    (function initLanguage() {
-      const saved = localStorage.getItem('site_lang');
-      if (saved === 'en') {
-        setLanguage('en');
-      }
-    })();
-
     // Mobile nav toggle
     function toggleMobileNav() {
       const nav = document.getElementById('mainNav');

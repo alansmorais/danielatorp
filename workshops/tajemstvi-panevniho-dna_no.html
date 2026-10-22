@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Bekkenbunnens hemmeligheter – Daniela Torp</title>
-  <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-32x32.png" sizes="32x32">
-  <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-192x192.png" sizes="192x192">
-  <link rel="apple-touch-icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-180x180.png">
+  <meta name="description" content="Workshop for kvinner: Bekkenbunnens hemmeligheter med Daniela Torp. En helhetlig opplevelsesworkshop basert på 3×3-metoden.">
+  <link rel="icon" href="../images/logo_perem_bez_pozadi%CC%81.png" type="image/png">
+  <link rel="apple-touch-icon" href="../images/logo_perem_bez_pozadi%CC%81.png">
 
   <style>
     /* =========================================
@@ -81,7 +81,7 @@
       display: flex;
       align-items: center;
       gap: 21px;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 400;
     }
 
@@ -112,7 +112,7 @@
       border: 1px solid #eee;
       border-radius: 8px;
       padding: 8px 0;
-      min-width: 240px;
+      min-width: 260px;
       z-index: 100;
     }
 
@@ -126,7 +126,7 @@
       width: 100%;
       text-align: left;
       padding: 8px 16px;
-      font-size: 12px;
+      font-size: 13px;
       color: #333;
     }
 
@@ -136,21 +136,52 @@
       color: #e9476b;
     }
 
-    .flag {
-      margin-left: 30px;
-      cursor: default;
-      display: flex;
+    .language-switcher {
+      display: inline-flex;
       align-items: center;
+      gap: 10px;
+      margin-left: 10px;
+      white-space: nowrap;
+    }
+    .language-switcher a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 400;
+      color: #555;
+      text-decoration: none;
+    }
+    .language-switcher a:hover,
+    .language-switcher a.active {
+      color: #ee5a7a;
+    }
+    .language-flag {
+      display: inline-flex;
+      width: 22px;
+      height: 16px;
+      flex: 0 0 22px;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+      vertical-align: middle;
+    }
+    .language-flag svg {
+      display: block;
+      width: 22px;
+      height: 16px;
     }
 
     .mobile-menu-btn {
       display: none;
-      font-size: 20px;
+      font-size: 24px;
       padding: 5px;
     }
 
     /* =========================================
-       3. HERO SECTION (Custom Workshop Image)
+       3. HERO SECTION
        ========================================= */
     .hero {
       position: relative;
@@ -478,6 +509,18 @@
       background: #333;
     }
 
+    .error-box {
+      display: none;
+      padding: 16px 20px;
+      background: #fff3f5;
+      border: 1px solid #f5c2cb;
+      border-radius: 8px;
+      margin-top: 20px;
+      color: #d63031;
+      font-size: 14.5px;
+      text-align: left;
+    }
+
     .success-box {
       display: none;
       padding: 30px;
@@ -510,21 +553,22 @@
 
     .footer-grid h4 {
       font-size: 14px;
-      font-weight: 400;
+      font-weight: 500;
       margin: 0 0 15px;
+      color: #111;
     }
 
     .footer-grid a, .footer-grid button {
       display: block;
-      color: #a69c9b;
+      color: #7e7978;
       font-size: 13px;
-      line-height: 1.85;
+      line-height: 1.95;
       text-align: left;
       cursor: pointer;
     }
 
     .footer-grid a:hover, .footer-grid button:hover {
-      color: #080808;
+      color: #ee5a7a;
     }
 
     .social {
@@ -627,6 +671,7 @@
       .mobile-menu-btn { display: block; }
       .workshop-grid, .footer-grid { grid-template-columns: 1fr; }
       .workshop-right { padding-left: 0; }
+      .language-switcher { margin-left: 0; padding: 16px 0 0; }
     }
 
     @media (max-width: 560px) {
@@ -635,65 +680,73 @@
       .send { margin-top: 10px; }
     }
   </style>
+  <link rel="alternate" hreflang="no" href="https://danielatorp.no/workshops/tajemstvi-panevniho-dna.html">
+  <link rel="alternate" hreflang="cs" href="https://www.danielatorp.cz/workshops/tajemstvi-panevniho-dna.html">
+  <link rel="alternate" hreflang="en" href="https://danielatorp.com/workshops/tajemstvi-panevniho-dna.html">
+  <link rel="alternate" hreflang="x-default" href="https://danielatorp.com/workshops/tajemstvi-panevniho-dna.html">
 </head>
 <body>
 
-    <!-- HEADER -->
-    <!-- HEADER -->
+  <!-- HEADER -->
   <header>
     <div class="wrap">
       <a href="../index.html">
-        <img class="logo" src="https://www.danielatorp.cz/wp-content/uploads/2020/02/logo_perem_bez_pozadi%CC%81.png" alt="Daniela Torp">
+        <img class="logo" src="../images/logo_perem_bez_pozadi%CC%81.png" alt="Daniela Torp">
       </a>
       
-      <nav class="nav">
+      <nav class="nav" id="mainNav">
         <a href="../index.html">Hjem</a>
         
         <div class="drop" onclick="location.href='../6-piliru-intimity/index.html'">
-          6 pilarer for intimitet
+          Intimitetens 6 søyler
           <div class="dropdown-menu">
-            <a href="../6-piliru-intimity/index.html#pilar-1">1. Párová intimita & vlastní tělo</a>
-            <a href="../6-piliru-intimity/index.html#pilar-2">2. Těhotenství a porod</a>
-            <a href="../6-piliru-intimity/index.html#pilar-3">3. Intimita s miminkem</a>
-            <a href="../6-piliru-intimity/index.html#pilar-4">4. Děti a dospívající</a>
-            <a href="../6-piliru-intimity/index.html#pilar-5">5. Intimita ve zralém věku</a>
-            <a href="../6-piliru-intimity/index.html#pilar-6">6. Intimita v umírání</a>
+            <a href="../6-piliru-intimity/index.html#pilar-1">1. Intimitet i parforhold og forholdet til egen kropp</a>
+            <a href="../6-piliru-intimity/index.html#pilar-2">2. Graviditet og fødsel</a>
+            <a href="../6-piliru-intimity/index.html#pilar-3">3. Intimitet med baby og familie</a>
+            <a href="../6-piliru-intimity/index.html#pilar-4">4. Intimitet hos barn og ungdom</a>
+            <a href="../6-piliru-intimity/index.html#pilar-5">5. Intimitet i moden alder</a>
+            <a href="../6-piliru-intimity/index.html#pilar-6">6. Intimitet ved livets slutt</a>
           </div>
         </div>
 
-        <a href="../index.html#om-daniela">Kdo je Daniela</a>
+        <a href="../index.html#om-daniela">Hvem er Daniela</a>
         
         <div class="drop" onclick="location.href='../workshops.html'">
           Workshops
           <div class="dropdown-menu">
-            <a href="umeni-potesit-zenu.html">Kunsten å behage en kvinne</a>
-            <a href="umeni-potesit-muze.html">Kunsten å behage en mann</a>
-            <a href="jen-pro-pary.html">Kun for par</a>
+            <a href="umeni-potesit-zenu.html">Kunsten å tilfredsstille en kvinne</a>
+            <a href="umeni-potesit-muze.html">Kunsten å tilfredsstille en mann</a>
+            <a href="jen-pro-pary.html">Kunsten å tilfredsstille – for par</a>
             <a href="tajemstvi-panevniho-dna.html" style="color:#ee5a7a;font-weight:500;">Bekkenbunnens hemmeligheter</a>
             <a href="byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
-            <a href="porod-jako-jistota.html">Fødsel med trygghet</a>
+            <a href="porod-jako-jistota.html">Fødsel som trygghet</a>
             <a href="matka-a-dcera.html">Mor og datter</a>
             <a href="Hraj-si-se-mnou.html">Lek med meg</a>
-            <a href="zenska-esence-no.html">Kvinneessens og livskraft</a>
-            <a href="../workshops.html" style="font-weight:500;color:#ee5a7a;border-top:1px solid #eee;">Zobrazit všech 9 workshopů ➜</a>
+            <a href="zenska-esence-no.html">Kvinnelig essens og vitalitet</a>
+            <a href="../workshops.html" style="font-weight:500;color:#ee5a7a;border-top:1px solid #eee;">Se alle 9 workshops ➜</a>
           </div>
         </div>
 
-        <a href="../konsultasjon.html">Osobní konzultace</a>
-        <a href="../blog.html">Blog</a>
+        <a href="../konsultasjon.html">Personlig konsultasjon</a>
+        <a href="../blog.html">Blogg</a>
         <a href="#kontakt">Kontakt</a>
-        <span class="flag"><img src="https://flagcdn.com/w20/cz.png" width="20" alt="Norsk" style="border-radius: 2px;"></span>
+        
+        <div class="language-switcher" aria-label="Språkvalg">
+          <a class="active" href="https://danielatorp.no/workshops/tajemstvi-panevniho-dna.html" hreflang="no" aria-label="NO"><span class="language-flag"><svg viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="22" height="16" fill="#ef2b2d"/><path d="M0 6h22v4H0z" fill="#fff"/><path d="M7 0h4v16H7z" fill="#fff"/><path d="M8 0h2v16H8z" fill="#002868"/><path d="M0 7h22v2H0z" fill="#002868"/></svg></span><span>NO</span></a>
+          <a class="" href="https://www.danielatorp.cz/workshops/tajemstvi-panevniho-dna.html" hreflang="cz" aria-label="CZ"><span class="language-flag"><svg viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#fff" d="M0 0h22v8H0z"/><path fill="#d7141a" d="M0 8h22v8H0z"/><path fill="#11457e" d="M0 0l10 8L0 16z"/></svg></span><span>CZ</span></a>
+          <a class="" href="https://danielatorp.com/workshops/tajemstvi-panevniho-dna.html" hreflang="en" aria-label="EN"><span class="language-flag"><svg viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="22" height="16" fill="#012169"/><path d="M0 0l22 16M22 0L0 16" stroke="#fff" stroke-width="3"/><path d="M0 0l22 16M22 0L0 16" stroke="#c8102e" stroke-width="1.4"/><path d="M11 0v16M0 8h22" stroke="#fff" stroke-width="5"/><path d="M11 0v16M0 8h22" stroke="#c8102e" stroke-width="3"/></svg></span><span>EN</span></a>
+        </div>
       </nav>
 
-      <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Menu">☰</button>
+      <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Meny">☰</button>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="hero">
     <div class="intro">
-      <h1>TAJEMSTVÍ PÁNEVNÍHO DNA</h1>
-      <p>Poznejte svého nového nejlepšího přítele – celostní zážitkový workshop pro ženy</p>
+      <h1>BEKKENBUNNENS HEMMELIGHETER</h1>
+      <p>Møt din nye beste venn – en helhetlig opplevelsesworkshop for kvinner</p>
       <a class="button" href="#kontakt">Meld deg på</a>
     </div>
   </section>
@@ -705,32 +758,32 @@
       <!-- Left Column -->
       <div class="workshop-left">
         <h2>Bekkenbunnens hemmeligheter</h2>
-        <h3 class="subtitle">Celodenní zážitkový workshop pro ženy</h3>
+        <h3 class="subtitle">En helhetlig opplevelsesworkshop for kvinner</h3>
 
-        <p>Ať už toužíte otěhotnět, prožívat bohatší a naplněnější sexuální život, nebo vás trápí gynekologické potíže – na tomto workshopu se seznámíte se svým novým nejlepším přítelem: vaším pánevním dnem.</p>
+        <p>Uansett om du ønsker å bli gravid, få et rikere og mer tilfredsstillende sexliv, eller om du sliter med gynekologiske plager – på denne workshopen vil du bli kjent med din nye beste venn: bekkenbunnen din.</p>
         
-        <p>Pracujeme podle uznávané <strong>metody 3×3 ze Školy pánevního dna Renaty Skálové</strong>, která propojuje tři dimenze:</p>
+        <p>Vi arbeider etter den anerkjente <strong>3×3-metoden fra Skolen for bekkenbunn ved Renata Skálová</strong>, som forener tre dimensjoner:</p>
 
         <!-- Level 1 -->
         <div class="level-box">
-          <h5>1. Rovina těla = Zdravotní cvičení pánevního dna</h5>
-          <p>Poznejte jednotlivé vrstvy pánevního dna a naučte se je vnímat. Jednoduché techniky pro uvolnění i posílení. Zde nejde o hrubou sílu, ale o <em>funkčnost</em> a pružnost – zapomeňte na vše, co jste se učily ve fitness centrech. Vyvrátíme časté mýty a naučíme vás využívat tzv. PC pumpu v každodenním životě.</p>
+          <h5>1. Kroppens plan = Helseøvelser for bekkenbunnen</h5>
+          <p>Lær bekkenbunnens ulike lag og hvordan du kjenner dem igjen. Enkle teknikker for avspenning og styrking. Her handler det ikke om rå styrke, men om <em>funksjon</em> og smidighet – glem alt du har lært på treningssenteret. Vi rydder opp i vanlige misforståelser og lærer deg å bruke den såkalte PC-muskelen / bekkenbunnspumpen i hverdagen.</p>
         </div>
 
         <!-- Level 2 -->
         <div class="level-box">
-          <h5>2. Rovina emocí = Psychosomatika a bioenergetika</h5>
-          <p>Prozkoumáme pánevní dno z psychosomatického pohledu a podíváme se na souvislost mezi tělesným napětím a zážitky v našem každodenním životě. Využíváme bioenergetická cvičení zaměřená speciálně na oblast pánve.</p>
+          <h5>2. Det emosjonelle plan = Psykosomatikk og bioenergetikk</h5>
+          <p>Vi utforsker bekkenbunnen fra et psykosomatisk perspektiv og ser på sammenhengen mellom spenninger i kroppen og opplevelsene i hverdagen vår. Vi bruker bioenergetiske øvelser spesielt rettet mot bekkenregionen.</p>
         </div>
 
         <!-- Level 3 -->
         <div class="level-box">
-          <h5>3. Rovina energie = Východní filozofie, jóga a tantrické techniky</h5>
-          <p>Hlubší přístup, který spojuje fyzické a mentální tělo v jeden celek. Propojujeme principy hormonální jógy, gyn-jógy, kundaliní a tantry a napojujeme je na přirozenou životní sílu pánevního dna.</p>
+          <h5>3. Det energetiske plan = Østlig filosofi, yoga og tantriske teknikker</h5>
+          <p>En dypere tilnærming som forener det fysiske og mentale til en helhet. Vi fletter inn prinsipper fra hormonell yoga, gyn-yoga, kundalini og tantra og kobler dem til bekkenbunnens iboende livskraft.</p>
         </div>
 
         <div class="highlight-quote">
-          „Pro ženy ve všech fázích života. Zvláště doporučeno pro ženy, které si přejí otěhotnět, ženy v menopauze a pro novopečené maminky po porodu.“
+          «For kvinner i alle livsfaser. Spesielt anbefalt for kvinner som ønsker å bli gravid, kvinner i overgangsalderen, og for nybakte mødre i tiden etter fødsel.»
         </div>
       </div>
 
@@ -738,21 +791,20 @@
       <div class="workshop-right">
         <h4>Hvem passer kurset for?</h4>
         <ul>
-          <li>Ženy všech věkových kategorií</li>
-          <li>Ženy, které chtějí otěhotnět nebo řeší gynekologické nerovnováhy</li>
-          <li>Zdravé ženy, které touží po hlubším sebepoznání, silnější sexualitě a větší radosti ze života</li>
-          <li>Ženy v menopauze a maminky po porodu</li>
+          <li>Kvinner i alle aldre</li>
+          <li>Kvinner som ønsker å bli gravide eller som opplever gynekologiske ubalanser</li>
+          <li>Friske kvinner som ønsker dypere selvforståelse, sterkere seksualitet og mer livsglede</li>
+          <li>Kvinner i overgangsalderen og mødre etter fødsel</li>
         </ul>
 
-        <h4>Sted</h4>
-        <p><strong>Kamenný Újezd 83, Nýřany (Plzeň-sever)</strong></p>
-        <p>🚗 5 min med bil langs motorveien fra Bory i retning Zbůch/Nýřany.<br>
-        🚆 Vlakové spojení každou hodinu z Plzně (cesta cca 20 min).</p>
+        <h4>Møtested</h4>
+        <p><strong>Kamenný Újezd 83, Nýřany (Tsjekkia) / Kurs i Norge annonseres fortløpende</strong></p>
+        <p>Ta gjerne kontakt for oppdaterte datoer og kurssteder i Norge (Oslo).</p>
 
-        <h4>Hva du bør ta med</h4>
+        <h4>Ta med</h4>
         <ul>
           <li>Behagelige klær du føler deg feminin og komfortabel i</li>
-          <li>Podložku na cvičení (jógamatku) nebo deku na sezení a polštářek pro větší pohodlí</li>
+          <li>Yogamatte eller et teppe å sitte på, samt en liten pute for ekstra komfort</li>
         </ul>
 
         <h4>Program</h4>
@@ -761,12 +813,12 @@
         Oppmøte lørdag senest kl. 09:45 for felles start.</p>
 
         <h4>Pris</h4>
-        <p class="price-tag">2 250 Kč</p>
-        <p style="font-size:13.5px; color:#777; margin-top:4px;">+ Vegetariánská strava (objednává se při příjezdu v sobotu ráno: oběd/večeře sobota + snídaně/oběd neděle): <strong>850 Kč na osobu</strong>.</p>
+        <p class="price-tag">2 250 CZK</p>
+        <p style="font-size:13.5px; color:#777; margin-top:4px;">+ Vegetarisk kost (bestilles ved ankomst lørdag morgen: lunsj/middag lørdag + frokost/lunsj søndag): <strong>850 CZK per person</strong>.<br>Ta kontakt for kursinformasjon og priser i Norge (NOK).</p>
 
         <div class="side-card">
-          <h5>O metodě</h5>
-          <p>Škola pánevního dna staví na jemné, celostní somatice, jejímž cílem je obnovit přirozený proud energie a uvolnění v těle, bez zatěžujících či nesprávných stahovacích cviků.</p>
+          <h5>Om metoden</h5>
+          <p>Skolen for bekkenbunn bygger på en skånsom, helhetlig somatisk tilnærming der målet er å gjenopprette kroppens naturlige flyt og avspenning, uten belastende eller feilaktige knipeøvelser.</p>
         </div>
       </div>
 
@@ -776,117 +828,166 @@
   <!-- DATES DIVIDER -->
   <div class="dates-divider">
     <div class="divider-line">
-      <span>Aktuální termíny workshopů</span>
+      <span>Kommende datoer og påmelding</span>
     </div>
   </div>
 
   <!-- CONTACT SECTION -->
   <section class="contact" id="kontakt">
-    <h2>Skriv til meg</h2>
-    <p>a přihlaste se na workshop.</p>
+    <h2>Meld deg på eller still spørsmål</h2>
+    <p>Send inn din henvendelse, så tar Daniela kontakt med deg så snart som mulig.</p>
     
     <form class="form" id="contactForm" onsubmit="handleFormSubmit(event)">
+      <!-- Accessible honeypot field -->
+      <div style="position: absolute; left: -9999px; top: -9999px; height: 0; width: 0; overflow: hidden;" aria-hidden="true">
+        <label for="website_url_hp">Ikke fyll ut dette feltet</label>
+        <input type="text" id="website_url_hp" name="website_url_hp" tabindex="-1" autocomplete="off">
+      </div>
+
       <div class="field">
-        <label>Navn og etternavn <span class="required">*</span></label>
-        <input type="text" required placeholder="Jan Novák" id="formName">
+        <label for="formName">Navn og etternavn <span class="required">*</span></label>
+        <input type="text" required placeholder="Kari Nordmann" id="formName" autocomplete="name">
       </div>
       <div class="field">
-        <label>Váš e-mail <span class="required">*</span></label>
-        <input type="email" required placeholder="jan.novak@priklad.cz" id="formEmail">
+        <label for="formEmail">Din e-postadresse <span class="required">*</span></label>
+        <input type="email" required placeholder="kari@eksempel.no" id="formEmail" autocomplete="email">
       </div>
       <div class="field full">
-        <label>Emne <span class="required">*</span></label>
-        <input type="text" required value="Přihláška: Bekkenbunnens hemmeligheter" id="formSubject">
+        <label for="formSubject">Emne <span class="required">*</span></label>
+        <input type="text" required value="Påmelding: Bekkenbunnens hemmeligheter" id="formSubject">
       </div>
       <div class="field full">
-        <label>Melding <span class="required">*</span></label>
-        <textarea required placeholder="Napište svou zprávu nebo dotaz k workshopu..." id="formMessage"></textarea>
+        <label for="formMessage">Melding <span class="required">*</span></label>
+        <textarea required placeholder="Skriv din melding eller spørsmål om workshopen her..." id="formMessage"></textarea>
       </div>
       
       <div class="form-bottom">
         <div>
-          <div class="captcha">Chráněno reCAPTCHA ✓</div>
+          <div class="captcha">Beskyttet mot søppelpost ✓</div>
           <div class="notice">
-            Felt merket sletter/stjerne er obligatoriske.<br>
-            Odesláním zprávy souhlasím se <a onclick="openGenericModal('Ochrana údajů', 'Všechny dotazy jsou zpracovávány v přísné důvěrnosti v souladu s GDPR. Údaje nikdy nepředáváme třetím stranám.')">zpracováním osobních údajů</a>.
+            Felter merket med stjerne (*) er obligatoriske.<br>
+            Ved å sende meldingen godtar du vår <a onclick="openGenericModal('Personvern og behandling av opplysninger', 'Alle henvendelser behandles strengt konfidensielt etter gjeldende personvernregler (GDPR). Opplysningene dine deles aldri med tredjeparter.')">personvernerklæring</a>.
           </div>
         </div>
-        <button class="send" id="sendBtn" type="submit">Send zprávu ➜</button>
+        <button class="send" id="sendBtn" type="submit">Send henvendelse ➜</button>
       </div>
     </form>
 
+    <div class="error-box" id="errorBox"></div>
+
     <div class="success-box" id="successBox">
-      <h3>Děkuji za vaši zprávu!</h3>
-      <p>Vaše zpráva byla odeslána. Daniela vám odpoví co nejdříve.</p>
+      <h3>Takk for din henvendelse!</h3>
+      <p>Meldingen din er sendt. Daniela vil svare deg så snart som mulig.</p>
     </div>
   </section>
 
-    <!-- FOOTER -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div>
         <h4>Kontakt</h4>
         <a href="../index.html">Hjem</a>
-        <a href="../index.html#om-daniela">Kdo je Daniela</a>
-        <button onclick="openGenericModal('Daniela v médiích', 'Články, rozhovory a podcasty jsou k dispozici na vyžádání.')">Daniela v médiích</button>
-        <a href="../blog.html">Blog</a>
+        <a href="../index.html#om-daniela">Hvem er Daniela</a>
+        <button onclick="openGenericModal('Daniela i media', 'Artikler, medieomtale og podkaster er tilgjengelige på forespørsel.')">Daniela i media</button>
+        <a href="../blog.html">Blogg</a>
         <a href="#kontakt">Kontakt</a>
       </div>
       <div>
         <h4>Workshops</h4>
-        <a href="umeni-potesit-zenu.html">Kunsten å behage en kvinne</a>
-        <a href="umeni-potesit-muze.html">Kunsten å behage en mann</a>
-        <a href="jen-pro-pary.html">Kun for par</a>
+        <a href="umeni-potesit-zenu.html">Kunsten å tilfredsstille en kvinne</a>
+        <a href="umeni-potesit-muze.html">Kunsten å tilfredsstille en mann</a>
+        <a href="jen-pro-pary.html">Kunsten å tilfredsstille – for par</a>
         <a href="tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
         <a href="byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
-        <a href="porod-jako-jistota.html">Fødsel med trygghet</a>
+        <a href="porod-jako-jistota.html">Fødsel som trygghet</a>
         <a href="matka-a-dcera.html">Mor og datter</a>
-        <a href="../workshops.html" style="color:#ee5a7a; font-weight:500;">Zobrazit všech 9 workshopů ➜</a>
+        <a href="Hraj-si-se-mnou.html">Lek med meg</a>
+        <a href="zenska-esence-no.html">Kvinnelig essens og vitalitet</a>
+        <a href="../workshops.html" style="color:#ee5a7a; font-weight:500;">Se alle 9 workshops ➜</a>
       </div>
       <div>
-        <h4>Konzultace / 6 pilířů intimity</h4>
-        <a href="../konsultasjon.html">Osobní konzultace</a>
-        <a href="../6-piliru-intimity/index.html#pilar-1">1. Párová intimita & vlastní tělo</a>
-        <a href="../6-piliru-intimity/index.html#pilar-2">2. Těhotenství a porod</a>
-        <a href="../6-piliru-intimity/index.html#pilar-3">3. Intimita s miminkem</a>
-        <a href="../6-piliru-intimity/index.html#pilar-4">4. Děti a dospívající</a>
-        <a href="../6-piliru-intimity/index.html#pilar-5">5. Intimita ve zralém věku</a>
-        <a href="../6-piliru-intimity/index.html#pilar-6">6. Intimita v umírání</a>
+        <h4>Konsultasjoner / Intimitetens 6 søyler</h4>
+        <a href="../konsultasjon.html">Personlig konsultasjon</a>
+        <a href="../6-piliru-intimity/index.html#pilar-1">1. Intimitet i parforhold og forholdet til egen kropp</a>
+        <a href="../6-piliru-intimity/index.html#pilar-2">2. Graviditet og fødsel</a>
+        <a href="../6-piliru-intimity/index.html#pilar-3">3. Intimitet med baby og familie</a>
+        <a href="../6-piliru-intimity/index.html#pilar-4">4. Intimitet hos barn og ungdom</a>
+        <a href="../6-piliru-intimity/index.html#pilar-5">5. Intimitet i moden alder</a>
+        <a href="../6-piliru-intimity/index.html#pilar-6">6. Intimitet ved livets slutt</a>
       </div>
     </div>
     
     <div class="social">
-      <a href="https://facebook.com/danielatorp" target="_blank">f</a>
-      <a href="https://instagram.com/intimitycoachdanielatorp/" target="_blank">◎</a>
-      <a href="https://youtube.com" target="_blank">◉</a>
+      <a href="https://facebook.com/danielatorp" target="_blank" rel="noopener">f</a>
+      <a href="https://instagram.com/intimitycoachdanielatorp/" target="_blank" rel="noopener">◎</a>
+      <a href="https://youtube.com" target="_blank" rel="noopener">◉</a>
     </div>
-    <div class="copyright">© 2026 Všechna práva vyhrazena | Daniela Torp</div>
+    <div class="copyright">© 2026 Alle rettigheter forbeholdt | Daniela Torp</div>
   </footer>
 
   <!-- MODAL -->
   <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
     <div class="modal-card">
       <span class="modal-close" onclick="closeModalDirect()">&times;</span>
-      <span class="modal-tag" id="modalTag">Podrobnosti</span>
-      <h3 class="modal-title" id="modalTitle">Název</h3>
-      <div class="modal-body" id="modalContent">Obsah</div>
+      <span class="modal-tag" id="modalTag">Detaljer</span>
+      <h3 class="modal-title" id="modalTitle">Tittel</h3>
+      <div class="modal-body" id="modalContent">Innhold</div>
       <div class="modal-btn-row">
-        <button class="button" onclick="closeModalDirect()">Zavřít</button>
+        <button class="button" onclick="closeModalDirect()">Lukk</button>
       </div>
     </div>
   </div>
 
-    <script>
+  <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwiptZDdNVNSavoyJeHCvoc7XxOSTG0yg_K5Z-Si81Up_4CSBo5AJUUOuMYLNh2eT3h/exec";
+    const formLoadTime = Date.now();
+
+    const FORM_ATTRIBUTION = {
+      website: 'danielatorp.no',
+      locale: 'no',
+      workshop_id: 'tajemstvi-panevniho-dna',
+      workshop_title: 'Bekkenbunnens hemmeligheter',
+      form_type: 'workshop_inquiry',
+      page_url: window.location.href
+    };
+
+    function showError(msg) {
+      const errorBox = document.getElementById('errorBox');
+      if (errorBox) {
+        errorBox.textContent = msg;
+        errorBox.style.display = 'block';
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        alert(msg);
+      }
+    }
+
+    function clearError() {
+      const errorBox = document.getElementById('errorBox');
+      if (errorBox) {
+        errorBox.textContent = '';
+        errorBox.style.display = 'none';
+      }
+    }
 
     async function handleFormSubmit(e) {
       e.preventDefault();
-      const sendBtn = document.getElementById('sendBtn') || document.getElementById('sendSubmitBtn') || document.querySelector('.send');
-      const originalText = sendBtn ? sendBtn.innerHTML : 'Send zprávu ➜';
+      clearError();
 
-      if (sendBtn) {
-        sendBtn.disabled = true;
-        sendBtn.innerHTML = 'Odesílám...';
+      // Layer 1: Honeypot check
+      const honeypot = document.getElementById('website_url_hp');
+      if (honeypot && honeypot.value.trim() !== '') {
+        console.warn('Honeypot triggered');
+        fakeSuccess();
+        return;
+      }
+
+      // Layer 2: Time-trap check (minimum 3 seconds)
+      const elapsedSeconds = (Date.now() - formLoadTime) / 1000;
+      if (elapsedSeconds < 3) {
+        console.warn('Form submitted too fast');
+        fakeSuccess();
+        return;
       }
 
       const name = document.getElementById('formName').value.trim();
@@ -894,13 +995,51 @@
       const subject = document.getElementById('formSubject') ? document.getElementById('formSubject').value.trim() : '';
       const message = document.getElementById('formMessage').value.trim();
 
-      const formattedMessage = subject ? `[Emne: ${subject}]
+      // Layer 3: Field validation and limits
+      if (name.length < 2 || name.length > 100) {
+        showError('Vennligst oppgi et gyldig navn (mellom 2 og 100 tegn).');
+        return;
+      }
 
-${message}` : message;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email) || email.length > 120) {
+        showError('Vennligst oppgi en gyldig e-postadresse.');
+        return;
+      }
+
+      if (message.length < 5 || message.length > 5000) {
+        showError('Meldingen må være mellom 5 og 5 000 tegn.');
+        return;
+      }
+
+      // Layer 4: Anti-spam link limiter
+      const urlCount = (message.match(/https?:\/\//gi) || []).length;
+      if (urlCount > 1 || /https?:\/\//i.test(name)) {
+        showError('Meldingen kan ikke inneholde mer enn én lenke.');
+        return;
+      }
+
+      const sendBtn = document.getElementById('sendBtn');
+      const originalText = sendBtn ? sendBtn.innerHTML : 'Send henvendelse ➜';
+      if (sendBtn) {
+        sendBtn.disabled = true;
+        sendBtn.innerHTML = 'Sender...';
+      }
+
+      const submissionTimestamp = new Date().toISOString();
+      const attributionHeader = `[KILDE: ${FORM_ATTRIBUTION.website} | Språk: ${FORM_ATTRIBUTION.locale.toUpperCase()}][SKJEMA: ${FORM_ATTRIBUTION.form_type}][WORKSHOP: ${FORM_ATTRIBUTION.workshop_title} (ID: ${FORM_ATTRIBUTION.workshop_id})][SIDE: ${FORM_ATTRIBUTION.page_url}][TIDSPUNKT: ${submissionTimestamp}]\n\n`;
+      const formattedMessage = subject ? `${attributionHeader}[Emne: ${subject}]\n\n${message}` : `${attributionHeader}${message}`;
 
       const payload = {
         type: 'contact',
-        lang: 'CZ',
+        lang: 'NO',
+        website: FORM_ATTRIBUTION.website,
+        locale: FORM_ATTRIBUTION.locale,
+        workshop_id: FORM_ATTRIBUTION.workshop_id,
+        workshop_title: FORM_ATTRIBUTION.workshop_title,
+        form_type: FORM_ATTRIBUTION.form_type,
+        page_url: FORM_ATTRIBUTION.page_url,
+        timestamp: submissionTimestamp,
         name: name,
         email: email,
         subject: subject,
@@ -926,11 +1065,21 @@ ${message}` : message;
         }
       } catch (err) {
         console.error('Error submitting form:', err);
-        alert('Při odesílání zprávy došlo k chybě. Zkuste to prosím znovu.');
+        showError('Det oppsto en feil under sending. Vennligst prøv igjen, eller kontakt oss direkte.');
         if (sendBtn) {
           sendBtn.disabled = false;
           sendBtn.innerHTML = originalText;
         }
+      }
+    }
+
+    function fakeSuccess() {
+      const formEl = document.getElementById('contactForm');
+      if (formEl) formEl.style.display = 'none';
+      const successEl = document.getElementById('successBox');
+      if (successEl) {
+        successEl.style.display = 'block';
+        successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     }
 
@@ -952,7 +1101,7 @@ ${message}` : message;
     }
 
     function toggleMobileNav() {
-      const nav = document.querySelector('.nav');
+      const nav = document.getElementById('mainNav');
       nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
     }
 

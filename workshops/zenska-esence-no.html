@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Kvinneessens og livskraft – Daniela Torp</title>
+  <meta name="description" content="Kvinneessens og livskraft – fire årstidsmøter for kvinner dedikert til ekte hvile, somatisk tilstedeværelse og fornyelse med Daniela Torp.">
   <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-32x32.png" sizes="32x32">
   <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-192x192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-180x180.png">
@@ -136,11 +137,42 @@
       color: #e9476b;
     }
 
-    .flag {
-      margin-left: 30px;
-      cursor: default;
-      display: flex;
+    /* Multilingual language switcher */
+    .language-switcher {
+      display: inline-flex;
       align-items: center;
+      gap: 8px;
+      margin-left: 10px;
+    }
+
+    .language-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 5px;
+      border-radius: 5px;
+      font-size: 11px;
+      font-weight: 500;
+      color: #555;
+      transition: all .2s ease;
+    }
+
+    .language-link:hover {
+      background: #f7f7f7;
+      color: #ee5a7a;
+    }
+
+    .language-link.active {
+      color: #111;
+      background: #f3f3f3;
+    }
+
+    .language-link svg {
+      width: 20px;
+      height: 14px;
+      display: block;
+      border-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.15);
     }
 
     .mobile-menu-btn {
@@ -720,14 +752,13 @@
 <body>
 
     <!-- HEADER -->
-    <!-- HEADER -->
   <header>
     <div class="wrap">
       <a href="../index.html">
-        <img class="logo" src="https://www.danielatorp.cz/wp-content/uploads/2020/02/logo_perem_bez_pozadi%CC%81.png" alt="Daniela Torp">
+        <img class="logo" src="https://danielatorp.no/images/logo_perem_bez_pozadi%CC%81.png" alt="Daniela Torp">
       </a>
       
-      <nav class="nav">
+      <nav class="nav" id="mainNav">
         <a href="../index.html">Hjem</a>
         
         <div class="drop" onclick="location.href='../6-piliru-intimity/index.html'">
@@ -749,12 +780,12 @@
           <div class="dropdown-menu">
             <a href="umeni-potesit-zenu.html">Kunsten å behage en kvinne</a>
             <a href="umeni-potesit-muze.html">Kunsten å behage en mann</a>
-            <a href="jen-pro-pary.html">Kunsten å behage (for par)</a>
+            <a href="jen-pro-pary.html">Kunsten å tilfredsstille – for par</a>
             <a href="tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
             <a href="byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
-            <a href="porod-jako-jistota.html">Fødsel som sikkerhet</a>
+            <a href="porod-jako-jistota.html">Fødsel som trygghet</a>
             <a href="matka-a-dcera.html">Mor og datter</a>
-            <a href="Hraj-si-se-mnou.html">Spill med meg</a>
+            <a href="Hraj-si-se-mnou.html">Lek med meg</a>
             <a href="zenska-esence-no.html" style="color:#ee5a7a;font-weight:500;">Kvinneessens og livskraft</a>
             <a href="../workshops.html" style="font-weight:500;color:#ee5a7a;border-top:1px solid #eee;">Se alle 9 workshoper ➜</a>
           </div>
@@ -763,7 +794,36 @@
         <a href="../konsultasjon.html">Personlig konsultasjon</a>
         <a href="../blog.html">Blogg</a>
         <a href="#kontakt">Kontakt</a>
-        <span class="flag"><img src="https://flagcdn.com/w20/no.png" width="20" alt="Norsk" style="border-radius: 2px;"></span>
+
+        <div class="language-switcher" aria-label="Language selection">
+          <a class="language-link active" href="https://danielatorp.no/workshops/zenska-esence-no.html" aria-label="Norsk">
+            <svg viewBox="0 0 20 14" aria-hidden="true">
+              <rect width="20" height="14" fill="#BA0C2F"/>
+              <rect x="6" width="2" height="14" fill="#fff"/>
+              <rect y="6" width="20" height="2" fill="#fff"/>
+              <rect x="6.5" width="1" height="14" fill="#00205B"/>
+              <rect y="6.5" width="20" height="1" fill="#00205B"/>
+            </svg>
+            <span>NO</span>
+          </a>
+          <a class="language-link" href="https://www.danielatorp.cz/workshops/zenska-esence-no.html" aria-label="Čeština">
+            <svg viewBox="0 0 20 14" aria-hidden="true">
+              <path d="M0 0h20v7H0z" fill="#fff"/>
+              <path d="M0 7h20v7H0z" fill="#d7141a"/>
+              <path d="M0 0v14l10-7z" fill="#11457e"/>
+            </svg>
+            <span>CZ</span>
+          </a>
+          <a class="language-link" href="https://danielatorp.com/workshops/zenska-esence-no.html" aria-label="English">
+            <svg viewBox="0 0 20 14" aria-hidden="true">
+              <rect width="20" height="14" fill="#fff"/>
+              <path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="2"/>
+              <path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/>
+              <path d="M10 0v14M0 7h20" stroke="#012169" stroke-width="2"/>
+            </svg>
+            <span>EN</span>
+          </a>
+        </div>
       </nav>
 
       <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Meny">☰</button>
@@ -860,8 +920,8 @@
         <p>Reserver én helg eller en helhetlig pakke for alle fire samlinger.</p>
 
         <h4>Pris</h4>
-        <p><strong>2 250 Kč / samling</strong></p>
-        <p style="font-size:13.5px; color:#777;">Vennligst overfør beløpet til konto <strong>3497044044/5500</strong>. Oppgi <em>«Ženská esence – [Navn på samling]»</em> i meldingsfeltet.</p>
+        <p><strong>2 250 CZK per samling</strong></p>
+        <p style="font-size:13.5px; color:#777;">Betalingsinformasjon og betingelser formidles ved påmelding / henvendelse.</p>
 
         <h4>Møtested</h4>
         <p><strong>Kamenný Újezd 38</strong><br>Nýřany, Tsjekkia</p>
@@ -951,7 +1011,15 @@
     <h2>Skriv til meg</h2>
     <p>og meld deg på samlingen.</p>
     
+    <div id="errorBox" style="display:none; color:#c0392b; background:#fdf2f2; border:1px solid #e74c3c; padding:12px 16px; border-radius:4px; margin:20px auto; max-width:640px; font-size:14px; text-align:left;"></div>
+
     <form class="form" id="contactForm" onsubmit="handleFormSubmit(event)">
+      <!-- Accessible Honeypot Field -->
+      <div style="position: absolute; left: -9999px; top: -9999px; height: 0; width: 0; overflow: hidden;" aria-hidden="true">
+        <label for="website_url_hp">Ikke fyll ut dette feltet</label>
+        <input type="text" id="website_url_hp" name="website_url_hp" tabindex="-1" autocomplete="off">
+      </div>
+
       <div class="field">
         <label>Navn og etternavn <span class="required">*</span></label>
         <input type="text" required placeholder="Ola Nordmann" id="formName">
@@ -977,7 +1045,7 @@
             Ved å sende meldingen aksepterer jeg <a onclick="openGenericModal('Personvern', 'Alle henvendelser behandles strengt konfidensielt etter gjeldende GDPR-retningslinjer.')">behandling av personopplysninger</a>.
           </div>
         </div>
-        <button class="send" id="sendBtn" type="submit">Send inn ➜</button>
+        <button class="send" id="sendBtn" type="submit">Send henvendelse ➜</button>
       </div>
     </form>
 
@@ -987,7 +1055,7 @@
     </div>
   </section>
 
-    <!-- FOOTER -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div>
@@ -1002,11 +1070,13 @@
         <h4>Workshoper</h4>
         <a href="umeni-potesit-zenu.html">Kunsten å behage en kvinne</a>
         <a href="umeni-potesit-muze.html">Kunsten å behage en mann</a>
-        <a href="jen-pro-pary.html">Kunsten å behage (for par)</a>
+        <a href="jen-pro-pary.html">Kunsten å tilfredsstille – for par</a>
         <a href="tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
         <a href="byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
-        <a href="porod-jako-jistota.html">Fødsel som sikkerhet</a>
+        <a href="porod-jako-jistota.html">Fødsel som trygghet</a>
         <a href="matka-a-dcera.html">Mor og datter</a>
+        <a href="Hraj-si-se-mnou.html">Lek med meg</a>
+        <a href="zenska-esence-no.html" style="color:#ee5a7a; font-weight:500;">Kvinneessens og livskraft</a>
         <a href="../workshops.html" style="color:#ee5a7a; font-weight:500;">Se alle 9 workshoper ➜</a>
       </div>
       <div>
@@ -1042,17 +1112,56 @@
     </div>
   </div>
 
-    <script>
+  <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwiptZDdNVNSavoyJeHCvoc7XxOSTG0yg_K5Z-Si81Up_4CSBo5AJUUOuMYLNh2eT3h/exec";
+    const formLoadTime = Date.now();
+
+    const FORM_ATTRIBUTION = {
+      website: 'danielatorp.no',
+      locale: 'no',
+      workshop_id: 'zenska-esence-no',
+      workshop_title: 'Kvinneessens og livskraft',
+      form_type: 'workshop_inquiry',
+      page_url: window.location.href
+    };
+
+    function showError(msg) {
+      const errorBox = document.getElementById('errorBox');
+      if (errorBox) {
+        errorBox.textContent = msg;
+        errorBox.style.display = 'block';
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        alert(msg);
+      }
+    }
+
+    function clearError() {
+      const errorBox = document.getElementById('errorBox');
+      if (errorBox) {
+        errorBox.textContent = '';
+        errorBox.style.display = 'none';
+      }
+    }
 
     async function handleFormSubmit(e) {
       e.preventDefault();
-      const sendBtn = document.getElementById('sendBtn') || document.getElementById('sendSubmitBtn') || document.querySelector('.send');
-      const originalText = sendBtn ? sendBtn.innerHTML : 'Send inn ➜';
+      clearError();
 
-      if (sendBtn) {
-        sendBtn.disabled = true;
-        sendBtn.innerHTML = 'Sender...';
+      // Layer 1: Honeypot check
+      const honeypot = document.getElementById('website_url_hp');
+      if (honeypot && honeypot.value.trim() !== '') {
+        console.warn('Honeypot triggered');
+        fakeSuccess();
+        return;
+      }
+
+      // Layer 2: Time-trap check (minimum 3 seconds)
+      const elapsedSeconds = (Date.now() - formLoadTime) / 1000;
+      if (elapsedSeconds < 3) {
+        console.warn('Form submitted too fast');
+        fakeSuccess();
+        return;
       }
 
       const name = document.getElementById('formName').value.trim();
@@ -1060,12 +1169,51 @@
       const subject = document.getElementById('formSubject') ? document.getElementById('formSubject').value.trim() : '';
       const message = document.getElementById('formMessage').value.trim();
 
-      const formattedMessage = subject ? `[Emne: ${subject}]
+      // Layer 3: Field validation and limits
+      if (name.length < 2 || name.length > 100) {
+        showError('Vennligst oppgi et gyldig navn (mellom 2 og 100 tegn).');
+        return;
+      }
 
-${message}` : message;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email) || email.length > 120) {
+        showError('Vennligst oppgi en gyldig e-postadresse.');
+        return;
+      }
+
+      if (message.length < 5 || message.length > 5000) {
+        showError('Meldingen må være mellom 5 og 5 000 tegn.');
+        return;
+      }
+
+      // Layer 4: Anti-spam link limiter
+      const urlCount = (message.match(/https?:\/\//gi) || []).length;
+      if (urlCount > 1 || /https?:\/\//i.test(name)) {
+        showError('Meldingen kan ikke inneholde mer enn én lenke.');
+        return;
+      }
+
+      const sendBtn = document.getElementById('sendBtn');
+      const originalText = sendBtn ? sendBtn.innerHTML : 'Send henvendelse ➜';
+      if (sendBtn) {
+        sendBtn.disabled = true;
+        sendBtn.innerHTML = 'Sender...';
+      }
+
+      const submissionTimestamp = new Date().toISOString();
+      const attributionHeader = `[KILDE: ${FORM_ATTRIBUTION.website} | Språk: ${FORM_ATTRIBUTION.locale.toUpperCase()}][SKJEMA: ${FORM_ATTRIBUTION.form_type}][WORKSHOP: ${FORM_ATTRIBUTION.workshop_title} (ID: ${FORM_ATTRIBUTION.workshop_id})][SIDE: ${FORM_ATTRIBUTION.page_url}][TIDSPUNKT: ${submissionTimestamp}]\n\n`;
+      const formattedMessage = subject ? `${attributionHeader}[Emne: ${subject}]\n\n${message}` : `${attributionHeader}${message}`;
 
       const payload = {
         type: 'contact',
+        lang: 'NO',
+        website: FORM_ATTRIBUTION.website,
+        locale: FORM_ATTRIBUTION.locale,
+        workshop_id: FORM_ATTRIBUTION.workshop_id,
+        workshop_title: FORM_ATTRIBUTION.workshop_title,
+        form_type: FORM_ATTRIBUTION.form_type,
+        page_url: FORM_ATTRIBUTION.page_url,
+        timestamp: submissionTimestamp,
         name: name,
         email: email,
         subject: subject,
@@ -1091,11 +1239,21 @@ ${message}` : message;
         }
       } catch (err) {
         console.error('Error submitting form:', err);
-        alert('Det oppstod en feil ved sending av meldingen. Vennligst prøv igjen.');
+        showError('Det oppsto en feil under sending. Vennligst prøv igjen, eller kontakt oss direkte.');
         if (sendBtn) {
           sendBtn.disabled = false;
           sendBtn.innerHTML = originalText;
         }
+      }
+    }
+
+    function fakeSuccess() {
+      const formEl = document.getElementById('contactForm');
+      if (formEl) formEl.style.display = 'none';
+      const successEl = document.getElementById('successBox');
+      if (successEl) {
+        successEl.style.display = 'block';
+        successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     }
 
@@ -1117,7 +1275,7 @@ ${message}` : message;
     }
 
     function toggleMobileNav() {
-      const nav = document.querySelector('.nav');
+      const nav = document.getElementById('mainNav');
       nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
     }
 
