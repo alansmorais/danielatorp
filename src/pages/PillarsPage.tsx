@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PILLARS_DATA } from '../data/pillarsData';
 import { ContactSection } from '../components/ContactSection';
+import { getAssetUrl } from '../services/assets';
 
 interface PillarsPageProps {
   onOpenPrivacyModal: () => void;
@@ -14,7 +15,7 @@ export const PillarsPage: React.FC<PillarsPageProps> = ({ onOpenPrivacyModal }) 
       <section
         className="relative py-24 sm:py-32 px-4 sm:px-6 text-center border-b border-black/5 bg-cover bg-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(255, 250, 251, 0.90), rgba(255, 245, 247, 0.94)), url('/images/web-1920-–-pilire.jpg')`,
+          backgroundImage: `linear-gradient(rgba(255, 250, 251, 0.90), rgba(255, 245, 247, 0.94)), url('${getAssetUrl('/images/web-1920-–-pilire.jpg')}')`,
         }}
       >
         <div className="hero-radial-overlay absolute inset-0 pointer-events-none" />

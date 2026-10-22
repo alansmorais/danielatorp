@@ -1,4 +1,5 @@
 import { Workshop } from '../types';
+import { getAssetUrl } from '../services/assets';
 
 export const WORKSHOPS_DATA: Workshop[] = [
   {
@@ -343,6 +344,20 @@ export const WORKSHOPS_DATA: Workshop[] = [
     ]
   }
 ];
+
+// Ensure asset URLs adapt automatically to GitHub Pages or custom domain
+WORKSHOPS_DATA.forEach((w) => {
+  w.cardImage = getAssetUrl(w.cardImage);
+  w.heroImage = getAssetUrl(w.heroImage);
+  if (w.seasons) {
+    w.seasons.forEach((s) => {
+      s.image = getAssetUrl(s.image);
+    });
+  }
+  if (w.pusteritual) {
+    w.pusteritual.image = getAssetUrl(w.pusteritual.image);
+  }
+});
 
 // Helper to look up workshop by slug or id or compatible legacy URLs
 export function getWorkshopBySlug(slug: string): Workshop | undefined {

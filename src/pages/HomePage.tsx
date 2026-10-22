@@ -4,6 +4,7 @@ import { DynamicDatesBanner } from '../components/DynamicDatesBanner';
 import { ContactSection } from '../components/ContactSection';
 import { PILLARS_DATA } from '../data/pillarsData';
 import { WORKSHOPS_DATA } from '../data/workshopsData';
+import { getAssetUrl } from '../services/assets';
 
 interface HomePageProps {
   onOpenDateModal: (dateText: string) => void;
@@ -92,7 +93,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           <div className="md:col-span-5 text-center">
             <div className="relative inline-block">
               <img
-                src="/images/daniela-torp.png"
+                src={getAssetUrl('/images/daniela-torp.png')}
                 alt="Daniela Torp"
                 className="w-64 h-64 sm:w-72 sm:h-72 rounded-full object-cover shadow-lg mx-auto border-4 border-white ring-1 ring-neutral-200"
               />

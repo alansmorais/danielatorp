@@ -4,9 +4,13 @@ import { BrowserRouter } from 'react-router-dom';
 import { App } from './App';
 import './index.css';
 
+// Automatically detect subpath for GitHub Pages (/danielatorp) or root (danielatorp.no / localhost)
+const isGithubPagesSubdir = typeof window !== 'undefined' && window.location.pathname.startsWith('/danielatorp');
+const basename = isGithubPagesSubdir ? '/danielatorp' : '';
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <App />
     </BrowserRouter>
   </React.StrictMode>

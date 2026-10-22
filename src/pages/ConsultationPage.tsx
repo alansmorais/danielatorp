@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ContactSection } from '../components/ContactSection';
 import { CheckCircle2, Video, MapPin, Sparkles } from 'lucide-react';
+import { getAssetUrl } from '../services/assets';
 
 interface ConsultationPageProps {
   onOpenPrivacyModal: () => void;
@@ -182,7 +183,7 @@ export const ConsultationPage: React.FC<ConsultationPageProps> = ({
       <section className="grid grid-cols-1 sm:grid-cols-3 bg-neutral-100 border-y border-neutral-200">
         <div className="h-64 sm:h-80 overflow-hidden relative group">
           <img
-            src="/images/two-assorted-color-padded-chairs-near-side-table-1350789.jpg"
+            src={getAssetUrl('/images/two-assorted-color-padded-chairs-near-side-table-1350789.jpg')}
             alt="Rolig og fortrolig samtalerom for individuelle konsultasjoner og parterapi"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
@@ -192,7 +193,7 @@ export const ConsultationPage: React.FC<ConsultationPageProps> = ({
         </div>
         <div className="h-64 sm:h-80 overflow-hidden relative group">
           <img
-            src="/images/living-room-area-2988860.jpg"
+            src={getAssetUrl('/images/living-room-area-2988860.jpg')}
             alt="Harmoniske og trygge omgivelser for somatisk arbeid og avspenning"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
@@ -202,7 +203,7 @@ export const ConsultationPage: React.FC<ConsultationPageProps> = ({
         </div>
         <div className="h-64 sm:h-80 overflow-hidden relative group">
           <img
-            src="/images/photo-of-woman-looking-at-the-mirror-774866.jpg"
+            src={getAssetUrl('/images/photo-of-woman-looking-at-the-mirror-774866.jpg')}
             alt="Rom for refleksjon, selvinnsikt og kontakt med egen kropp"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
@@ -216,7 +217,7 @@ export const ConsultationPage: React.FC<ConsultationPageProps> = ({
       <section className="py-20 px-4 sm:px-6 bg-[#fdf8f9]">
         <div className="max-w-[900px] mx-auto flex flex-col sm:flex-row items-center gap-8 sm:gap-12 text-left">
           <img
-            src="/images/daniela-torp.png"
+            src={getAssetUrl('/images/daniela-torp.png')}
             alt="Daniela Torp"
             className="w-44 h-44 rounded-full object-cover shadow-md border-3 border-white ring-1 ring-neutral-200 shrink-0"
           />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown, Menu, X } from 'lucide-react';
+import { getAssetUrl } from '../services/assets';
 
 interface HeaderProps {
   onOpenCancellationModal: () => void;
@@ -29,7 +30,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCancellationModal }) => {
         {/* Brand Logo */}
         <Link to="/" className="inline-flex items-center h-full mr-auto py-2">
           <img
-            src="/images/logo_perem_bez_pozadí.png"
+            src={getAssetUrl('/images/logo_perem_bez_pozadí.png')}
             alt="Daniela Torp"
             className="h-[55px] sm:h-[70px] w-auto object-contain"
           />

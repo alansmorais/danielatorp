@@ -1,6 +1,7 @@
 import React from 'react';
 import { Calendar } from 'lucide-react';
 import { ContactSection } from '../components/ContactSection';
+import { getAssetUrl } from '../services/assets';
 
 interface BlogPageProps {
   onOpenArticleModal: (title: string, content: string) => void;
@@ -44,12 +45,12 @@ I mange år søkte jeg bekreftelse utenfor meg selv, før jeg oppdaget kraften i
             <article className="bg-white border border-neutral-200/80 rounded-xl overflow-hidden shadow-xs hover:shadow-md transition-shadow grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="h-56 sm:h-full min-h-[220px] bg-neutral-100 overflow-hidden">
                 <img
-                  src="/images/40_50_198-1024x575.jpg"
+                  src={getAssetUrl('/images/40_50_198-1024x575.jpg')}
                   alt="Min historie – Daniela Torp"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     // Fallback to /images/40_50_198.jpg if 1024x575 is missing
-                    (e.target as HTMLImageElement).src = '/images/40_50_198.jpg';
+                    (e.target as HTMLImageElement).src = getAssetUrl('/images/40_50_198.jpg');
                   }}
                 />
               </div>

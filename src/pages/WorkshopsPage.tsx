@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { DynamicDatesBanner } from '../components/DynamicDatesBanner';
 import { ContactSection } from '../components/ContactSection';
 import { WORKSHOPS_DATA } from '../data/workshopsData';
+import { getAssetUrl } from '../services/assets';
 
 interface WorkshopsPageProps {
   onOpenDateModal: (dateText: string) => void;
@@ -19,7 +20,7 @@ export const WorkshopsPage: React.FC<WorkshopsPageProps> = ({
       <section
         className="relative py-24 sm:py-32 px-4 sm:px-6 text-center border-b border-black/5 bg-cover bg-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(255, 250, 251, 0.90), rgba(255, 245, 247, 0.94)), url('/images/web-1920-–-workshop.jpg')`,
+          backgroundImage: `linear-gradient(rgba(255, 250, 251, 0.90), rgba(255, 245, 247, 0.94)), url('${getAssetUrl('/images/web-1920-–-workshop.jpg')}')`,
         }}
       >
         <div className="hero-radial-overlay absolute inset-0 pointer-events-none" />

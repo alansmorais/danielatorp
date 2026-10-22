@@ -10,6 +10,7 @@ import { PillarsPage } from './pages/PillarsPage';
 import { ConsultationPage } from './pages/ConsultationPage';
 import { BlogPage } from './pages/BlogPage';
 import { ModalContent } from './types';
+import { getAssetUrl } from './services/assets';
 
 // Scroll to top helper
 function ScrollToTop() {
@@ -164,7 +165,7 @@ export const App: React.FC = () => {
             <div className="rounded-lg overflow-hidden border border-neutral-200 bg-neutral-50 shadow-xs group">
               <div className="h-40 overflow-hidden bg-neutral-100">
                 <img
-                  src="/images/page_1-2.jpg"
+                  src={getAssetUrl('/images/page_1-2.jpg')}
                   alt="Moje Psychologie – Intervju med Daniela Torp: Dokonalá milenka"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -178,7 +179,7 @@ export const App: React.FC = () => {
             <div className="rounded-lg overflow-hidden border border-neutral-200 bg-neutral-50 shadow-xs group">
               <div className="h-40 overflow-hidden bg-neutral-100">
                 <img
-                  src="/images/untitled-design.jpg"
+                  src={getAssetUrl('/images/untitled-design.jpg')}
                   alt="Magasinet Maminka – Temaartikkel om fødsel og intimitet"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -192,7 +193,7 @@ export const App: React.FC = () => {
             <div className="rounded-lg overflow-hidden border border-neutral-200 bg-neutral-50 shadow-xs group">
               <div className="h-40 overflow-hidden bg-neutral-100">
                 <img
-                  src="/images/untitled-design-7.jpg"
+                  src={getAssetUrl('/images/untitled-design-7.jpg')}
                   alt="Maminka reportasje med Daniela Torp"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -206,7 +207,7 @@ export const App: React.FC = () => {
             <div className="rounded-lg overflow-hidden border border-neutral-200 bg-neutral-50 shadow-xs group">
               <div className="h-40 overflow-hidden bg-neutral-100">
                 <img
-                  src="/images/received_10207630749517902.jpeg"
+                  src={getAssetUrl('/images/received_10207630749517902.jpeg')}
                   alt="Daniela Torp i radiostudio under direktesending"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
