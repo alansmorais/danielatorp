@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blogg – Daniela Torp</title>
   <meta name="description" content="Artikler og personlige refleksjoner om intimitet, parforhold, somatisk helse og personlig utvikling av Daniela Torp.">
-  <link rel="icon" href="images/logo_perem_bez_pozadi%CC%81.png" type="image/png">
-<link rel="apple-touch-icon" href="images/logo_perem_bez_pozadi%CC%81.png">
+  <link rel="icon" href="images/cropped-favicona-32x32.png" sizes="32x32">
+  <link rel="icon" href="images/cropped-favicona-192x192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="images/cropped-favicona-180x180.png">
 
   <style>
     /* =========================================
@@ -82,12 +83,12 @@
        2. STANDARDIZED HEADER & NAVIGATION
        ========================================= */
     header {
-      height: 90px;
-      background: rgba(255, 255, 255, 0.96);
+      height: 100px;
+      background: rgba(255, 255, 255, 0.98);
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       display: flex;
@@ -98,42 +99,44 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      width: 100%;
+      max-width: 1344px; /* Matches other pages */
     }
 
     .logo-link {
       display: inline-flex;
       align-items: center;
-      height: 100%;
+      height: 100px;
+      margin-right: auto;
     }
 
     .logo {
-      width: auto;
-      height: 52px;
-      max-width: 250px;
+      width: 325px;
+      height: 100px;
       object-fit: contain;
     }
 
     .nav {
       display: flex;
       align-items: center;
-      gap: 22px;
-      font-size: 13px;
+      gap: 24px;
+      font-size: 14px;
       font-weight: 400;
-      letter-spacing: 0.2px;
+      color: #111;
     }
 
     .nav > a,
     .nav .drop-toggle {
-      color: #2b2b2e;
-      padding: 8px 0;
+      color: inherit;
+      padding: 10px 0;
       position: relative;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
       background: none;
       border: none;
       cursor: pointer;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 400;
       font-family: inherit;
     }
@@ -147,6 +150,7 @@
     .nav .drop {
       position: relative;
       padding: 10px 0;
+      cursor: pointer;
     }
 
     .drop-arrow {
@@ -163,8 +167,8 @@
     .dropdown-menu {
       display: none;
       position: absolute;
-      top: calc(100% - 4px);
-      left: -12px;
+      top: 100%;
+      left: 0;
       background: #fff;
       box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
       border: 1px solid var(--color-border);
@@ -212,60 +216,6 @@
       padding-left: 22px;
     }
 
-    .flag {
-      display: inline-flex;
-      align-items: center;
-      margin-left: 10px;
-      cursor: default;
-    }
-
-    .flag img {
-      width: 20px;
-      height: 14px;
-      object-fit: cover;
-      border-radius: 2px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
-    }
-
-
-    .language-switcher {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-left: 10px;
-      white-space: nowrap;
-    }
-    .language-switcher a {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 12px;
-      font-weight: 400;
-      color: #555;
-      text-decoration: none;
-    }
-    .language-switcher a:hover,
-    .language-switcher a.active {
-      color: var(--color-primary, #ee5a7a);
-    }
-    .language-flag {
-      display: inline-flex;
-      width: 22px;
-      height: 16px;
-      flex: 0 0 22px;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      border-radius: 2px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.18);
-      vertical-align: middle;
-    }
-    .language-flag svg {
-      display: block;
-      width: 22px;
-      height: 16px;
-    }
-
     .mobile-menu-btn {
       display: none;
       font-size: 26px;
@@ -277,6 +227,13 @@
       border: none;
       cursor: pointer;
     }
+
+    /* Multilingual Switcher */
+    .language-flag { display: inline-flex; width: 22px; height: 16px; flex: 0 0 22px; align-items: center; justify-content: center; overflow: hidden; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.18); vertical-align: middle; }
+    .language-flag svg { display: block; width: 22px; height: 16px; }
+    .language-switcher { display: inline-flex; align-items: center; gap: 8px; margin-left: 4px; padding-left: 4px; border-left: 1px solid var(--color-border); }
+    .language-link { display: inline-flex; align-items: center; gap: 4px; padding: 6px 4px; font-size: 12px; font-weight: 500; color: #555; white-space: nowrap; border-radius: 6px; }
+    .language-link:hover, .language-link.active { color: var(--color-primary); }
 
     /* =========================================
        3. PAGE HERO SECTION
@@ -311,7 +268,7 @@
       margin-bottom: 10px;
       letter-spacing: -0.5px;
     }
-
+    
     .button {
       display: inline-flex;
       align-items: center;
@@ -327,7 +284,7 @@
       box-shadow: var(--shadow-sm);
       transition: all var(--transition-fast);
     }
-
+    
     .button:hover {
       background: #111;
       color: #fff;
@@ -453,59 +410,88 @@
        5. FOOTER
        ========================================= */
     footer {
-      padding: 65px 8% 30px;
-      text-align: center;
+      padding: 70px 0 35px;
+      background: #ffffff;
       border-top: 1px solid var(--color-border);
-      background: #fff;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1.4fr;
-      gap: 55px;
-      max-width: 1050px;
-      margin: auto;
-      text-align: left;
+      grid-template-columns: 1fr 1fr 1.3fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto 55px;
     }
 
-    .footer-grid h4 {
+    .footer-col h4 {
       font-size: 14px;
       font-weight: 500;
-      margin: 0 0 15px;
       color: #111;
+      margin-bottom: 18px;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
     }
 
-    .footer-grid a,
-    .footer-grid button {
-      display: block;
-      color: #7e7978;
-      font-size: 13px;
-      line-height: 1.95;
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a,
+    .footer-links button {
+      color: #71717a;
+      font-size: 13.5px;
+      line-height: 1.5;
       text-align: left;
-      cursor: pointer;
+      background: transparent;
+      padding: 0;
     }
 
-    .footer-grid a:hover,
-    .footer-grid button:hover {
+    .footer-links a:hover,
+    .footer-links button:hover {
       color: var(--color-primary);
+      padding-left: 3px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #f2f2f5;
+      padding-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
     }
 
     .social {
       display: flex;
       justify-content: center;
-      gap: 22px;
-      font-size: 19px;
-      color: #999;
-      margin: 85px 0 16px;
+      gap: 20px;
+      font-size: 20px;
+      color: #888892;
+    }
+
+    .social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #f7f7f9;
+      color: #555;
+      transition: all var(--transition-fast);
     }
 
     .social a:hover {
-      color: #111;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      transform: translateY(-2px);
     }
 
     .copyright {
-      font-size: 12px;
-      color: #aaa;
+      font-size: 12.5px;
+      color: #92929c;
     }
 
     /* =========================================
@@ -515,46 +501,61 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.65);
       z-index: 2000;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 24px;
       backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
     }
 
     .modal-card {
       background: #fff;
-      max-width: 600px;
+      max-width: 650px;
       width: 100%;
       max-height: 85vh;
       overflow-y: auto;
       border-radius: var(--border-radius-md);
-      padding: 32px;
+      padding: 36px 32px;
       position: relative;
       box-shadow: var(--shadow-lg);
       text-align: left;
+      animation: modalSlide 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes modalSlide {
+      from { opacity: 0; transform: translateY(12px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
     .modal-close {
       position: absolute;
-      top: 16px;
+      top: 18px;
       right: 18px;
-      font-size: 24px;
+      font-size: 26px;
       color: #999;
       cursor: pointer;
       line-height: 1;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
     }
 
     .modal-close:hover {
-      color: #000;
+      color: #111;
+      background: #f4f4f6;
     }
 
     .modal-title {
       font-size: 24px;
       font-weight: 400;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       color: #111;
+      line-height: 1.3;
     }
 
     .modal-tag {
@@ -570,7 +571,7 @@
     .modal-body {
       font-size: 15px;
       color: #444;
-      line-height: 1.7;
+      line-height: 1.75;
       white-space: pre-line;
     }
 
@@ -578,17 +579,33 @@
       margin-bottom: 12px;
     }
 
+    .modal-body h4 {
+      font-size: 16px;
+      font-weight: 500;
+      color: #111;
+      margin: 16px 0 8px;
+    }
+
+    .modal-body ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    .modal-body li {
+      margin-bottom: 6px;
+    }
+
     .modal-btn-row {
-      margin-top: 24px;
+      margin-top: 28px;
       display: flex;
       justify-content: flex-end;
-      gap: 10px;
+      gap: 12px;
       border-top: 1px solid #eee;
-      padding-top: 16px;
+      padding-top: 20px;
     }
 
     /* =========================================
-       7. RESPONSIVE MEDIA QUERIES
+       7. RESPONSIVE ARCHITECTURE
        ========================================= */
     @media (max-width: 991px) {
       header {
@@ -656,11 +673,15 @@
         border-bottom: 1px dashed #ececed;
       }
 
-      .flag {
-        padding: 16px 0 0;
-        margin-left: 0;
+      .language-switcher {
+        width: 100%;
+        justify-content: center;
+        margin: 8px 0 0;
+        padding: 12px 0 4px;
+        border-left: 0;
+        border-top: 1px solid var(--color-border);
       }
-
+      
       .blog-container {
         grid-template-columns: 1fr;
       }
@@ -681,23 +702,13 @@
         grid-template-columns: 1fr;
       }
     }
-      /* MOBILE LANGUAGE SWITCHER */
-
-      .language-switcher {
-        margin-left: 0;
-        padding: 16px 0 0;
-        gap: 14px;
-      }
-      .language-switcher a {
-        width: auto;
-        padding: 0;
-        border: none;
-      }
   </style>
+  
   <link rel="alternate" hreflang="no" href="https://danielatorp.no/blog.html">
   <link rel="alternate" hreflang="cs" href="https://www.danielatorp.cz/blog.html">
   <link rel="alternate" hreflang="en" href="https://danielatorp.com/blog.html">
   <link rel="alternate" hreflang="x-default" href="https://danielatorp.com/blog.html">
+
 </head>
 <body>
 
@@ -720,7 +731,7 @@
             Intimitetens 6 søyler <span class="drop-arrow">▼</span>
           </button>
           <div class="dropdown-menu">
-            <a href="6-piliru-intimity/index.html#pilar-1">1. Intimitet i parforhold og forholdet til egen kropp</a>
+            <a href="6-piliru-intimity/index.html#pilar-1">Intimitet i parforhold og forholdet til egen kropp</a>
             <a href="6-piliru-intimity/index.html#pilar-2">2. Graviditet og fødsel</a>
             <a href="6-piliru-intimity/index.html#pilar-3">3. Intimitet med baby og familie</a>
             <a href="6-piliru-intimity/index.html#pilar-4">4. Intimitet hos barn og ungdom</a>
@@ -749,14 +760,18 @@
           </div>
         </div>
 
-        <a href="konsultasjon.html">Personlig konsultasjon</a>
+        <a href="konsultasjon.html">Privat konsultasjon</a>
         <a href="blog.html" style="color:var(--color-primary); font-weight:500;">Blogg</a>
         <a href="index.html#kontakt">Kontakt</a>
+        
+        <!-- Cancellation Policy Header Link -->
+        <a href="#" onclick="openCancellationModal(); return false;" style="color:var(--color-text-muted);">Avbestillingsvilkår</a>
+
         <div class="language-switcher" aria-label="Language selection">
-  <a class="active" href="https://danielatorp.no/blog.html" hreflang="no" aria-label="NO"><span class="language-flag"><svg viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="22" height="16" fill="#ef2b2d"/><path d="M0 6h22v4H0z" fill="#fff"/><path d="M7 0h4v16H7z" fill="#fff"/><path d="M8 0h2v16H8z" fill="#002868"/><path d="M0 7h22v2H0z" fill="#002868"/></svg></span><span>NO</span></a>
-  <a class="" href="https://www.danielatorp.cz/blog.html" hreflang="cz" aria-label="CZ"><span class="language-flag"><svg viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#fff" d="M0 0h22v8H0z"/><path fill="#d7141a" d="M0 8h22v8H0z"/><path fill="#11457e" d="M0 0l10 8L0 16z"/></svg></span><span>CZ</span></a>
-  <a class="" href="https://danielatorp.com/blog.html" hreflang="en" aria-label="EN"><span class="language-flag"><svg viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="22" height="16" fill="#012169"/><path d="M0 0l22 16M22 0L0 16" stroke="#fff" stroke-width="3"/><path d="M0 0l22 16M22 0L0 16" stroke="#c8102e" stroke-width="1.4"/><path d="M11 0v16M0 8h22" stroke="#fff" stroke-width="5"/><path d="M11 0v16M0 8h22" stroke="#c8102e" stroke-width="3"/></svg></span><span>EN</span></a>
-</div>
+          <a class="language-link active" href="https://danielatorp.no/blog.html" hreflang="no" lang="no" aria-label="Norsk"><span class="language-flag" aria-hidden="true"><svg viewBox="0 0 22 16" role="img"><rect width="22" height="16" fill="#ba0c2f"/><rect x="6" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="7" width="2" height="16" fill="#00205b"/><rect y="7" width="22" height="2" fill="#00205b"/></svg></span><span>NO</span></a>
+          <a class="language-link" href="https://www.danielatorp.cz/blog.html" hreflang="cs" lang="cs" aria-label="Čeština"><span class="language-flag" aria-hidden="true"><svg viewBox="0 0 22 16" role="img"><rect width="22" height="8" fill="#fff"/><rect y="8" width="22" height="8" fill="#d7141a"/><path d="M0 0L11 8 0 16Z" fill="#11457e"/></svg></span><span>CZ</span></a>
+          <a class="language-link" href="https://danielatorp.com/blog.html" hreflang="en" lang="en" aria-label="English"><span class="language-flag" aria-hidden="true"><svg viewBox="0 0 22 16" role="img"><rect width="22" height="16" fill="#012169"/><path d="M0 0L22 16M22 0L0 16" stroke="#fff" stroke-width="4"/><path d="M0 0L22 16M22 0L0 16" stroke="#c8102e" stroke-width="2"/><path d="M11 0V16M0 8H22" stroke="#fff" stroke-width="6"/><path d="M11 0V16M0 8H22" stroke="#c8102e" stroke-width="3"/></svg></span><span>EN</span></a>
+        </div>
       </nav>
     </div>
   </header>
@@ -801,44 +816,58 @@
        FOOTER
        ========================================= -->
   <footer>
-    <div class="footer-grid">
-      <div>
-        <h4>Kontakt</h4>
-        <a href="index.html">Hjem</a>
-        <a href="index.html#om-daniela">Hvem er Daniela</a>
-        <button type="button" onclick="openGenericModal('Daniela i media', 'Medieomtale og podkastintervjuer er tilgjengelige på forespørsel.')">Daniela i media</button>
-        <a href="blog.html">Blogg</a>
-        <a href="index.html#kontakt">Kontakt</a>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <div class="footer-links">
+            <a href="index.html">Hjem</a>
+            <a href="index.html#om-daniela">Hvem er Daniela</a>
+            <button type="button" onclick="openGenericModal('Daniela i media', 'Medieomtale og podkastintervjuer er tilgjengelige på forespørsel.')">Daniela i media</button>
+            <a href="blog.html">Blogg</a>
+            <a href="index.html#kontakt">Kontakt</a>
+            <!-- Cancellation Policy Footer Link -->
+            <a href="#" onclick="openCancellationModal(); return false;">Avbestillingsvilkår</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Workshops</h4>
+          <div class="footer-links">
+            <a href="workshops/umeni-potesit-zenu.html">Kunsten å tilfredsstille en kvinne</a>
+            <a href="workshops/umeni-potesit-muze.html">Kunsten å tilfredsstille en mann</a>
+            <a href="workshops/jen-pro-pary.html">Kunsten å tilfredsstille – for par</a>
+            <a href="workshops/tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
+            <a href="workshops/byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
+            <a href="workshops/porod-jako-jistota.html">Fødsel som trygghet</a>
+            <a href="workshops/matka-a-dcera.html">Mor og datter</a>
+            <a href="workshops.html" style="color:var(--color-primary); font-weight:500;">Se alle 9 workshops ➜</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Konsultasjoner / Intimitetens 6 søyler</h4>
+          <div class="footer-links">
+            <a href="konsultasjon.html">Privat konsultasjon</a>
+            <a href="6-piliru-intimity/index.html#pilar-1">Intimitet i parforhold og forholdet til egen kropp</a>
+            <a href="6-piliru-intimity/index.html#pilar-2">2. Graviditet og fødsel</a>
+            <a href="6-piliru-intimity/index.html#pilar-3">3. Intimitet med baby og familie</a>
+            <a href="6-piliru-intimity/index.html#pilar-4">4. Intimitet hos barn og ungdom</a>
+            <a href="6-piliru-intimity/index.html#pilar-5">5. Intimitet i moden alder</a>
+            <a href="6-piliru-intimity/index.html#pilar-6">6. Intimitet ved livets slutt</a>
+          </div>
+        </div>
       </div>
-      <div>
-        <h4>Workshops</h4>
-        <a href="workshops/umeni-potesit-zenu.html">Kunsten å tilfredsstille en kvinne</a>
-        <a href="workshops/umeni-potesit-muze.html">Kunsten å tilfredsstille en mann</a>
-        <a href="workshops/jen-pro-pary.html">Kunsten å tilfredsstille – for par</a>
-        <a href="workshops/tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
-        <a href="workshops/byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
-        <a href="workshops/porod-jako-jistota.html">Fødsel som trygghet</a>
-        <a href="workshops/matka-a-dcera.html">Mor og datter</a>
-        <a href="workshops.html" style="color:var(--color-primary); font-weight:500;">Se alle 9 workshops ➜</a>
-      </div>
-      <div>
-        <h4>Konsultasjoner / Intimitetens 6 søyler</h4>
-        <a href="konsultasjon.html">Personlig konsultasjon</a>
-        <a href="6-piliru-intimity/index.html#pilar-1">1. Intimitet i parforhold og forholdet til egen kropp</a>
-        <a href="6-piliru-intimity/index.html#pilar-2">2. Graviditet og fødsel</a>
-        <a href="6-piliru-intimity/index.html#pilar-3">3. Intimitet med baby og familie</a>
-        <a href="6-piliru-intimity/index.html#pilar-4">4. Intimitet hos barn og ungdom</a>
-        <a href="6-piliru-intimity/index.html#pilar-5">5. Intimitet i moden alder</a>
-        <a href="6-piliru-intimity/index.html#pilar-6">6. Intimitet ved livets slutt</a>
+
+      <div class="footer-bottom">
+        <div class="social">
+          <a href="https://facebook.com/danielatorp" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+          <a href="https://instagram.com/intimitycoachdanielatorp/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">◎</a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">◉</a>
+        </div>
+        <div class="copyright">© 2026 Alle rettigheter forbeholdt | Daniela Torp</div>
       </div>
     </div>
-    
-    <div class="social">
-      <a href="https://facebook.com/danielatorp" target="_blank" rel="noopener">f</a>
-      <a href="https://instagram.com/intimitycoachdanielatorp/" target="_blank" rel="noopener">◎</a>
-      <a href="https://youtube.com" target="_blank" rel="noopener">◉</a>
-    </div>
-    <div class="copyright">© 2026 Alle rettigheter forbeholdt | Daniela Torp</div>
   </footer>
 
   <!-- =========================================
@@ -860,6 +889,22 @@
        JAVASCRIPT LOGIC
        ========================================= -->
   <script>
+    const LANGUAGE_DOMAINS = {'no': 'https://danielatorp.no/', 'cz': 'https://www.danielatorp.cz/', 'en': 'https://danielatorp.com/'};
+
+    function updateLanguageLinksForCurrentPath() {
+      const currentPath = window.location.pathname || '/';
+      const currentHash = window.location.hash || '';
+      document.querySelectorAll('.language-link').forEach(link => {
+        const targetCode = link.getAttribute('hreflang') === 'cs' ? 'cz' : link.getAttribute('hreflang');
+        if (!targetCode || !LANGUAGE_DOMAINS[targetCode]) return;
+        if (currentPath !== '/' && currentPath !== '/index.html') {
+          link.href = LANGUAGE_DOMAINS[targetCode].replace(/\/$/, '') + currentPath + currentHash;
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', updateLanguageLinksForCurrentPath);
+
     function toggleMobileNav() {
       const nav = document.getElementById('mainNav');
       const btn = document.querySelector('.mobile-menu-btn');
@@ -890,6 +935,45 @@
         document.querySelectorAll('.drop-arrow').forEach(a => a.style.transform = 'rotate(0)');
       }
     });
+
+    function openCancellationModal() {
+      const policyHTML = `
+        <p>Jeg setter stor pris på tiden din og tilliten du viser meg ved å velge mine tjenester. Hver time og hvert arrangement krever tid, forberedelse og omtanke. For å skape en trygg og respektfull opplevelse for alle ber jeg deg om å gjøre deg kjent med følgende avbestillingsvilkår.</p>
+        
+        <h4>1. Seminarer og workshops</h4>
+        <ul>
+          <li><strong>14 dager eller mer før arrangementet:</strong> Du får refundert 100 % av det innbetalte beløpet.</li>
+          <li><strong>7–13 dager før arrangementet:</strong> Du får refundert 50 % av det innbetalte beløpet.</li>
+          <li><strong>Mindre enn 7 dager før arrangementet:</strong> Det innbetalte beløpet refunderes ikke, med forbehold om eventuelle lovfestede forbrukerrettigheter.</li>
+        </ul>
+        <p>Dersom du ikke har mulighet til å delta, kan du be om å overføre plassen din til en annen person etter nærmere avtale.</p>
+        <p>Dersom jeg avlyser et arrangement, vil du få tilbud om enten full refusjon eller å overføre betalingen til et annet arrangement.</p>
+
+        <h4>2. Massasje og individuelle timer</h4>
+        <p>For individuelle avtaler, inkludert massasje og konsultasjoner, gjelder følgende avbestillingsvilkår:</p>
+        <ul>
+          <li><strong>48 timer eller mer før avtalen:</strong> Du kan avbestille eller endre tidspunktet uten kostnad.</li>
+          <li><strong>Mindre enn 48 timer før avtalen:</strong> Det påløper et avbestillingsgebyr på 50 % av prisen for den bestilte tjenesten.</li>
+          <li><strong>Mindre enn 24 timer før avtalen, eller dersom du ikke møter opp uten å gi beskjed:</strong> Det påløper et avbestillingsgebyr på 100 % av prisen for den bestilte tjenesten.</li>
+        </ul>
+        <p>Dersom uforutsette og alvorlige omstendigheter gjør at du ikke kan møte, ber jeg deg ta kontakt så snart som mulig. Jeg vil vurdere slike situasjoner individuelt og med forståelse.</p>
+
+        <h4>3. Hvordan avbestille eller endre en avtale</h4>
+        <p>Avbestilling eller forespørsel om endring av tidspunkt skal sendes skriftlig via e-post eller gjennom den kommunikasjonskanalen som ble brukt ved bestilling.</p>
+        <p>Tidspunktet da den skriftlige avbestillingen mottas, avgjør hvilke avbestillingsvilkår som gjelder.</p>
+
+        <h4>4. Forbrukerrettigheter</h4>
+        <p>Disse avbestillingsvilkårene begrenser ikke eventuelle ufravikelige rettigheter du har etter norsk lovgivning eller relevant EØS-regelverk om forbrukervern, herunder eventuell lovfestet angrerett der denne gjelder.</p>
+        <p>Angrerett og avbestillingsvilkår for en bestemt time eller et bestemt arrangement er to forskjellige forhold. Eventuelle lovfestede rettigheter går foran disse vilkårene.</p>
+
+        <h4>5. Takk for forståelsen</h4>
+        <p>Takk for at du respekterer tiden min, arbeidet mitt og rommet vi skaper sammen. Din forståelse hjelper meg med å tilby en gjennomtenkt, trygg og profesjonell opplevelse for hver enkelt klient.</p>
+        
+        <p>Varm hilsen,<br><strong>Daniela Torp</strong><br>Grunnlegger av SHE Academy</p>
+      `;
+
+      showModal("Vilkår", "Avbestillingsvilkår", policyHTML);
+    }
 
     function openBloggPost(title, text) {
       showModal("Blogginnlegg", title, text);
