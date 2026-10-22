@@ -921,7 +921,7 @@
     }
 
     /* =========================================
-       9. POPUP MODAL
+       9. POPUP MODAL & CANCELLATION POLICY
        ========================================= */
     .modal-overlay {
       display: none;
@@ -938,7 +938,7 @@
 
     .modal-card {
       background: #fff;
-      max-width: 600px;
+      max-width: 650px;
       width: 100%;
       max-height: 85vh;
       overflow-y: auto;
@@ -1003,6 +1003,22 @@
 
     .modal-body p {
       margin-bottom: 12px;
+    }
+    
+    .modal-body h4 {
+      font-size: 16px;
+      font-weight: 500;
+      color: #111;
+      margin: 16px 0 8px;
+    }
+    
+    .modal-body ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+    
+    .modal-body li {
+      margin-bottom: 6px;
     }
 
     .modal-btn-row {
@@ -1205,8 +1221,6 @@
     /* =========================================
        MULTILINGUAL LANGUAGE SWITCHER
        ========================================= */
-
-    /* Language flags: inline SVG so they render consistently on Windows, macOS, iOS and Android. */
     .language-flag {
       display: inline-flex;
       width: 22px;
@@ -1251,11 +1265,6 @@
       color: var(--color-primary);
     }
 
-    .language-flag {
-      font-size: 16px;
-      line-height: 1;
-    }
-
     @media (max-width: 991px) {
       .language-switcher {
         width: 100%;
@@ -1273,7 +1282,6 @@
 
   </style>
 
-  <!-- Multilingual SEO: equivalent homepage versions -->
   <link rel="alternate" hreflang="no" href="https://danielatorp.no/">
   <link rel="alternate" hreflang="cs" href="https://www.danielatorp.cz/">
   <link rel="alternate" hreflang="en" href="https://danielatorp.com/">
@@ -1333,6 +1341,9 @@
         <a href="konsultasjon.html">Privat konsultasjon</a>
         <a href="blog.html">Blogg</a>
         <a href="#kontakt">Kontakt</a>
+        
+        <!-- Cancellation Policy Header Link -->
+        <a href="#" onclick="openCancellationModal(); return false;" style="color:var(--color-text-muted);">Avbestillingsvilkår</a>
 
         <div class="language-switcher" aria-label="Language selection">
           <a class="language-link active" href="https://danielatorp.no/" hreflang="no" lang="no" aria-label="Norsk"><span class="language-flag" aria-hidden="true"><svg viewBox="0 0 22 16" role="img"><rect width="22" height="16" fill="#ba0c2f"/><rect x="6" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="7" width="2" height="16" fill="#00205b"/><rect y="7" width="22" height="2" fill="#00205b"/></svg></span><span>NO</span></a>
@@ -1600,6 +1611,8 @@
             <button type="button" onclick="openGenericModal('Daniela i media', 'Medieomtale og podkastintervjuer er tilgjengelige på forespørsel.')">Daniela i media</button>
             <a href="blog.html">Blogg</a>
             <a href="#kontakt">Kontakt</a>
+            <!-- Cancellation Policy Footer Link -->
+            <a href="#" onclick="openCancellationModal(); return false;">Avbestillingsvilkår</a>
           </div>
         </div>
 
@@ -1667,15 +1680,12 @@
        ========================================= */
     const LANGUAGE_DOMAINS = {'no': 'https://danielatorp.no/', 'cz': 'https://www.danielatorp.cz/', 'en': 'https://danielatorp.com/'};
 
-    // The three homepage links above are explicit. For equivalent deeper pages,
-    // preserve the current pathname/hash when this same file is reused there.
     function updateLanguageLinksForCurrentPath() {
       const currentPath = window.location.pathname || '/';
       const currentHash = window.location.hash || '';
       document.querySelectorAll('.language-link').forEach(link => {
         const targetCode = link.getAttribute('hreflang') === 'cs' ? 'cz' : link.getAttribute('hreflang');
         if (!targetCode || !LANGUAGE_DOMAINS[targetCode]) return;
-        // Keep homepage links clean while preserving deeper paths automatically.
         if (currentPath !== '/' && currentPath !== '/index.html') {
           link.href = LANGUAGE_DOMAINS[targetCode].replace(/\/$/, '') + currentPath + currentHash;
         }
@@ -1742,7 +1752,7 @@
     }
 
     function openDateModal(title, dateStr) {
-      showModal("Arrangementsdato", title, "Dato: " + dateStr + "\\n\\nØnsker du mer informasjon eller vil du reservere plassen din? Fyll ut skjemaet nedenfor.", function() {
+      showModal("Arrangementsdato", title, "Dato: " + dateStr + "\n\nØnsker du mer informasjon eller vil du reservere plassen din? Fyll ut skjemaet nedenfor.", function() {
         prefillEmne("Interesse for arrangement: " + title + " (" + dateStr + ")");
       });
     }
@@ -1753,17 +1763,62 @@
       });
     }
 
+    // New Function for Cancellation Policy
+    function openCancellationModal() {
+      const policyHTML = `
+        <p>Jeg setter stor pris på tiden din og tilliten du viser meg ved å velge mine tjenester. Hver time og hvert arrangement krever tid, forberedelse og omtanke. For å skape en trygg og respektfull opplevelse for alle ber jeg deg om å gjøre deg kjent med følgende avbestillingsvilkår.</p>
+        
+        <h4>1. Seminarer og workshops</h4>
+        <ul>
+          <li><strong>14 dager eller mer før arrangementet:</strong> Du får refundert 100 % av det innbetalte beløpet.</li>
+          <li><strong>7–13 dager før arrangementet:</strong> Du får refundert 50 % av det innbetalte beløpet.</li>
+          <li><strong>Mindre enn 7 dager før arrangementet:</strong> Det innbetalte beløpet refunderes ikke, med forbehold om eventuelle lovfestede forbrukerrettigheter.</li>
+        </ul>
+        <p>Dersom du ikke har mulighet til å delta, kan du be om å overføre plassen din til en annen person etter nærmere avtale.</p>
+        <p>Dersom jeg avlyser et arrangement, vil du få tilbud om enten full refusjon eller å overføre betalingen til et annet arrangement.</p>
+
+        <h4>2. Massasje og individuelle timer</h4>
+        <p>For individuelle avtaler, inkludert massasje og konsultasjoner, gjelder følgende avbestillingsvilkår:</p>
+        <ul>
+          <li><strong>48 timer eller mer før avtalen:</strong> Du kan avbestille eller endre tidspunktet uten kostnad.</li>
+          <li><strong>Mindre enn 48 timer før avtalen:</strong> Det påløper et avbestillingsgebyr på 50 % av prisen for den bestilte tjenesten.</li>
+          <li><strong>Mindre enn 24 timer før avtalen, eller dersom du ikke møter opp uten å gi beskjed:</strong> Det påløper et avbestillingsgebyr på 100 % av prisen for den bestilte tjenesten.</li>
+        </ul>
+        <p>Dersom uforutsette og alvorlige omstendigheter gjør at du ikke kan møte, ber jeg deg ta kontakt så snart som mulig. Jeg vil vurdere slike situasjoner individuelt og med forståelse.</p>
+
+        <h4>3. Hvordan avbestille eller endre en avtale</h4>
+        <p>Avbestilling eller forespørsel om endring av tidspunkt skal sendes skriftlig via e-post eller gjennom den kommunikasjonskanalen som ble brukt ved bestilling.</p>
+        <p>Tidspunktet da den skriftlige avbestillingen mottas, avgjør hvilke avbestillingsvilkår som gjelder.</p>
+
+        <h4>4. Forbrukerrettigheter</h4>
+        <p>Disse avbestillingsvilkårene begrenser ikke eventuelle ufravikelige rettigheter du har etter norsk lovgivning eller relevant EØS-regelverk om forbrukervern, herunder eventuell lovfestet angrerett der denne gjelder.</p>
+        <p>Angrerett og avbestillingsvilkår for en bestemt time eller et bestemt arrangement er to forskjellige forhold. Eventuelle lovfestede rettigheter går foran disse vilkårene.</p>
+
+        <h4>5. Takk for forståelsen</h4>
+        <p>Takk for at du respekterer tiden min, arbeidet mitt og rommet vi skaper sammen. Din forståelse hjelper meg med å tilby en gjennomtenkt, trygg og profesjonell opplevelse for hver enkelt klient.</p>
+        
+        <p>Varm hilsen,<br><strong>Daniela Torp</strong><br>Grunnlegger av SHE Academy</p>
+      `;
+
+      showModal("Vilkår", "Avbestillingsvilkår", policyHTML, null); // passing null hides the action button
+    }
+
     function showModal(tag, title, contentHtml, onAction) {
       document.getElementById('modalTag').innerText = tag;
       document.getElementById('modalTittel').innerText = title;
       document.getElementById('modalInnhold').innerHTML = contentHtml;
 
       const actionBtn = document.getElementById('modalActionBtn');
-      actionBtn.innerText = "Registrer / spør";
-      actionBtn.onclick = function() {
-        closeModalDirect();
-        if (onAction) onAction();
-      };
+      if (onAction) {
+        actionBtn.style.display = 'inline-flex';
+        actionBtn.innerText = "Registrer / spør";
+        actionBtn.onclick = function() {
+          closeModalDirect();
+          onAction();
+        };
+      } else {
+        actionBtn.style.display = 'none';
+      }
 
       document.getElementById('modalOverlay').style.display = 'flex';
       document.body.style.overflow = 'hidden';
@@ -1810,7 +1865,7 @@
       const subject = document.getElementById('formEmne') ? document.getElementById('formEmne').value.trim() : '';
       const message = document.getElementById('formMelding').value.trim();
 
-      const formattedMelding = subject ? `[Emne: ${subject}]\\n\\n${message}` : message;
+      const formattedMelding = subject ? `[Emne: ${subject}]\n\n${message}` : message;
 
       const payload = {
         type: 'contact',
@@ -1864,7 +1919,7 @@
             btn.innerText = dateText;
             
             btn.onclick = function() {
-              openGenericModal("Forespørsel om arrangement", "Ønsker du mer informasjon eller å registrere deg til dette arrangementet?\\n\\n" + dateText);
+              openGenericModal("Forespørsel om arrangement", "Ønsker du mer informasjon eller å registrere deg til dette arrangementet?\n\n" + dateText);
             };
             
             div.appendChild(btn);
