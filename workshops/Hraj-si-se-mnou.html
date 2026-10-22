@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Spill med meg – Daniela Torp</title>
+  <title>Lek med meg – Daniela Torp</title>
+  <meta name="description" content="Lek med meg – en tredagers reise inn i sensualitet, samtykkebasert lek og egne lengsler med Daniela Torp og Bas van der Tang.">
   <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-32x32.png" sizes="32x32">
   <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-192x192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-180x180.png">
@@ -757,12 +758,12 @@
           <div class="dropdown-menu">
             <a href="umeni-potesit-zenu.html">Kunsten å behage en kvinne</a>
             <a href="umeni-potesit-muze.html">Kunsten å behage en mann</a>
-            <a href="jen-pro-pary.html">Kunsten å behage (for par)</a>
+            <a href="jen-pro-pary.html">Kunsten å tilfredsstille – for par</a>
             <a href="tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
             <a href="byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
-            <a href="porod-jako-jistota.html">Fødsel som sikkerhet</a>
+            <a href="porod-jako-jistota.html">Fødsel som trygghet</a>
             <a href="matka-a-dcera.html">Mor og datter</a>
-            <a href="Hraj-si-se-mnou.html" style="color:#ee5a7a;font-weight:500;">Spill med meg</a>
+            <a href="Hraj-si-se-mnou.html" style="color:#ee5a7a;font-weight:500;">Lek med meg</a>
             <a href="zenska-esence-no.html">Kvinneessens og livskraft</a>
             <a href="../workshops.html" style="font-weight:500;color:#ee5a7a;border-top:1px solid #eee;">Se alle 9 workshoper ➜</a>
           </div>
@@ -808,7 +809,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="intro">
-      <h1>SPILL MED MEG</h1>
+      <h1>LEK MED MEG</h1>
       <p>En tredagers reise til røttene av dine begjær</p>
       <a class="button" href="#kontakt">Meld deg på</a>
     </div>
@@ -820,7 +821,7 @@
       
       <!-- Left Column -->
       <div class="workshop-left">
-        <h2>Spill med meg</h2>
+        <h2>Lek med meg</h2>
         <h3 class="subtitle">En tredagers reise til røttene av dine begjær</h3>
 
         <p>Hva om det finnes langt mer i din nytelse enn det man ser ved første øyekast? Hva om du våget å forlate de vante og trygge rammene for hvordan man møter andre, og trådte inn på kink-veien – inn i et rike av uendelige muligheter der du kan skape akkurat det du drømmer om?</p>
@@ -841,7 +842,7 @@
 
         <!-- Lørdag -->
         <div class="day-box">
-          <h5>Lørdag: Det praktiske – Sanselig påvirkning og binding (Impact & Bondage)</h5>
+          <h5>Lørdag: Det praktiske – Sanselig slaglek og binding (Impact Play & Bondage)</h5>
           <p>Vi bygger videre på rammene fra fredagen og går dypere inn i lengselens kjerne. Ta med leketøy! Praktisk veiledning i bruk av tau og pisk, med god plass til å øve i eget tempo. Hvordan forhandle, sette rammer, skape trygghet og bygge scener. Dagen avrundes med en leken kveldssamling.</p>
         </div>
 
@@ -894,7 +895,15 @@
     <h2>Skriv til meg</h2>
     <p>og meld deg på kurset.</p>
     
+    <div id="errorBox" style="display:none; color:#c0392b; background:#fdf2f2; border:1px solid #e74c3c; padding:12px 16px; border-radius:4px; margin:20px auto; max-width:640px; font-size:14px; text-align:left;"></div>
+
     <form class="form" id="contactForm" onsubmit="handleFormSubmit(event)">
+      <!-- Accessible Honeypot Field -->
+      <div style="position: absolute; left: -9999px; top: -9999px; height: 0; width: 0; overflow: hidden;" aria-hidden="true">
+        <label for="website_url_hp">Ikke fyll ut dette feltet</label>
+        <input type="text" id="website_url_hp" name="website_url_hp" tabindex="-1" autocomplete="off">
+      </div>
+
       <div class="field">
         <label>Navn og etternavn <span class="required">*</span></label>
         <input type="text" required placeholder="Ola Nordmann" id="formName">
@@ -905,7 +914,7 @@
       </div>
       <div class="field full">
         <label>Emne <span class="required">*</span></label>
-        <input type="text" required value="Påmelding: Spill med meg" id="formSubject">
+        <input type="text" required value="Påmelding: Lek med meg" id="formSubject">
       </div>
       <div class="field full">
         <label>Melding <span class="required">*</span></label>
@@ -920,7 +929,7 @@
             Ved å sende meldingen aksepterer jeg <a onclick="openGenericModal('Personvern', 'Alle henvendelser behandles strengt konfidensielt etter gjeldende GDPR-retningslinjer.')">behandling av personopplysninger</a>.
           </div>
         </div>
-        <button class="send" id="sendBtn" type="submit">Send inn ➜</button>
+        <button class="send" id="sendBtn" type="submit">Send henvendelse ➜</button>
       </div>
     </form>
 
@@ -930,7 +939,7 @@
     </div>
   </section>
 
-    <!-- FOOTER -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div>
@@ -945,11 +954,12 @@
         <h4>Workshoper</h4>
         <a href="umeni-potesit-zenu.html">Kunsten å behage en kvinne</a>
         <a href="umeni-potesit-muze.html">Kunsten å behage en mann</a>
-        <a href="jen-pro-pary.html">Kunsten å behage (for par)</a>
+        <a href="jen-pro-pary.html">Kunsten å tilfredsstille – for par</a>
         <a href="tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
         <a href="byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
-        <a href="porod-jako-jistota.html">Fødsel som sikkerhet</a>
+        <a href="porod-jako-jistota.html">Fødsel som trygghet</a>
         <a href="matka-a-dcera.html">Mor og datter</a>
+        <a href="Hraj-si-se-mnou.html" style="color:#ee5a7a; font-weight:500;">Lek med meg</a>
         <a href="../workshops.html" style="color:#ee5a7a; font-weight:500;">Se alle 9 workshoper ➜</a>
       </div>
       <div>
@@ -985,17 +995,56 @@
     </div>
   </div>
 
-    <script>
+  <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwiptZDdNVNSavoyJeHCvoc7XxOSTG0yg_K5Z-Si81Up_4CSBo5AJUUOuMYLNh2eT3h/exec";
+    const formLoadTime = Date.now();
+
+    const FORM_ATTRIBUTION = {
+      website: 'danielatorp.no',
+      locale: 'no',
+      workshop_id: 'Hraj-si-se-mnou',
+      workshop_title: 'Lek med meg',
+      form_type: 'workshop_inquiry',
+      page_url: window.location.href
+    };
+
+    function showError(msg) {
+      const errorBox = document.getElementById('errorBox');
+      if (errorBox) {
+        errorBox.textContent = msg;
+        errorBox.style.display = 'block';
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        alert(msg);
+      }
+    }
+
+    function clearError() {
+      const errorBox = document.getElementById('errorBox');
+      if (errorBox) {
+        errorBox.textContent = '';
+        errorBox.style.display = 'none';
+      }
+    }
 
     async function handleFormSubmit(e) {
       e.preventDefault();
-      const sendBtn = document.getElementById('sendBtn') || document.getElementById('sendSubmitBtn') || document.querySelector('.send');
-      const originalText = sendBtn ? sendBtn.innerHTML : 'Send inn ➜';
+      clearError();
 
-      if (sendBtn) {
-        sendBtn.disabled = true;
-        sendBtn.innerHTML = 'Sender...';
+      // Layer 1: Honeypot check
+      const honeypot = document.getElementById('website_url_hp');
+      if (honeypot && honeypot.value.trim() !== '') {
+        console.warn('Honeypot triggered');
+        fakeSuccess();
+        return;
+      }
+
+      // Layer 2: Time-trap check (minimum 3 seconds)
+      const elapsedSeconds = (Date.now() - formLoadTime) / 1000;
+      if (elapsedSeconds < 3) {
+        console.warn('Form submitted too fast');
+        fakeSuccess();
+        return;
       }
 
       const name = document.getElementById('formName').value.trim();
@@ -1003,12 +1052,51 @@
       const subject = document.getElementById('formSubject') ? document.getElementById('formSubject').value.trim() : '';
       const message = document.getElementById('formMessage').value.trim();
 
-      const formattedMessage = subject ? `[Emne: ${subject}]
+      // Layer 3: Field validation and limits
+      if (name.length < 2 || name.length > 100) {
+        showError('Vennligst oppgi et gyldig navn (mellom 2 og 100 tegn).');
+        return;
+      }
 
-${message}` : message;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email) || email.length > 120) {
+        showError('Vennligst oppgi en gyldig e-postadresse.');
+        return;
+      }
+
+      if (message.length < 5 || message.length > 5000) {
+        showError('Meldingen må være mellom 5 og 5 000 tegn.');
+        return;
+      }
+
+      // Layer 4: Anti-spam link limiter
+      const urlCount = (message.match(/https?:\/\//gi) || []).length;
+      if (urlCount > 1 || /https?:\/\//i.test(name)) {
+        showError('Meldingen kan ikke inneholde mer enn én lenke.');
+        return;
+      }
+
+      const sendBtn = document.getElementById('sendBtn');
+      const originalText = sendBtn ? sendBtn.innerHTML : 'Send henvendelse ➜';
+      if (sendBtn) {
+        sendBtn.disabled = true;
+        sendBtn.innerHTML = 'Sender...';
+      }
+
+      const submissionTimestamp = new Date().toISOString();
+      const attributionHeader = `[KILDE: ${FORM_ATTRIBUTION.website} | Språk: ${FORM_ATTRIBUTION.locale.toUpperCase()}][SKJEMA: ${FORM_ATTRIBUTION.form_type}][WORKSHOP: ${FORM_ATTRIBUTION.workshop_title} (ID: ${FORM_ATTRIBUTION.workshop_id})][SIDE: ${FORM_ATTRIBUTION.page_url}][TIDSPUNKT: ${submissionTimestamp}]\n\n`;
+      const formattedMessage = subject ? `${attributionHeader}[Emne: ${subject}]\n\n${message}` : `${attributionHeader}${message}`;
 
       const payload = {
         type: 'contact',
+        lang: 'NO',
+        website: FORM_ATTRIBUTION.website,
+        locale: FORM_ATTRIBUTION.locale,
+        workshop_id: FORM_ATTRIBUTION.workshop_id,
+        workshop_title: FORM_ATTRIBUTION.workshop_title,
+        form_type: FORM_ATTRIBUTION.form_type,
+        page_url: FORM_ATTRIBUTION.page_url,
+        timestamp: submissionTimestamp,
         name: name,
         email: email,
         subject: subject,
@@ -1034,11 +1122,21 @@ ${message}` : message;
         }
       } catch (err) {
         console.error('Error submitting form:', err);
-        alert('Det oppstod en feil ved sending av meldingen. Vennligst prøv igjen.');
+        showError('Det oppsto en feil under sending. Vennligst prøv igjen, eller kontakt oss direkte.');
         if (sendBtn) {
           sendBtn.disabled = false;
           sendBtn.innerHTML = originalText;
         }
+      }
+    }
+
+    function fakeSuccess() {
+      const formEl = document.getElementById('contactForm');
+      if (formEl) formEl.style.display = 'none';
+      const successEl = document.getElementById('successBox');
+      if (successEl) {
+        successEl.style.display = 'block';
+        successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     }
 
@@ -1061,24 +1159,8 @@ ${message}` : message;
 
     function toggleMobileNav() {
       const nav = document.getElementById('mainNav');
-      const btn = document.querySelector('.mobile-menu-btn');
-      if (!nav || !btn) return;
-      const isOpen = nav.classList.toggle('is-open');
-      btn.innerText = isOpen ? '✕' : '☰';
-      btn.setAttribute('aria-expanded', isOpen);
+      nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
     }
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 992) {
-        const nav = document.getElementById('mainNav');
-        const btn = document.querySelector('.mobile-menu-btn');
-        if (nav) nav.classList.remove('is-open');
-        if (btn) {
-          btn.innerText = '☰';
-          btn.setAttribute('aria-expanded', 'false');
-        }
-      }
-    });
 
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeModalDirect();
