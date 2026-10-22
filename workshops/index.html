@@ -161,15 +161,48 @@
       border-bottom: none;
     }
 
-    .flag {
-      padding: 14px 0 0;
+    /* Language Switcher Styles */
+    .lang-switcher-container {
       display: flex;
       align-items: center;
+      margin-left: auto;
     }
 
-    .flag img {
+    .lang-divider {
+      width: 1px;
+      height: 24px;
+      background-color: #ddd;
+      margin: 0 15px;
+      display: none;
+    }
+
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lang-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #555 !important;
+      text-transform: uppercase;
+      font-weight: 400;
+      padding: 0 !important;
+    }
+
+    .lang-link:hover {
+      color: #111 !important;
+    }
+
+    .lang-link.active {
+      color: #ee5a7a !important; 
+    }
+
+    .lang-link img {
       width: 20px;
-      height: auto;
       border-radius: 2px;
       display: block;
     }
@@ -247,9 +280,12 @@
         color: #ee5a7a;
       }
 
-      .flag {
-        padding: 0;
-        margin-left: 20px;
+      .lang-divider {
+        display: block;
+      }
+      
+      .lang-switcher-container {
+        margin-left: 15px;
       }
     }
 
@@ -316,6 +352,45 @@
     .workshops-section {
       padding: 80px 4% 100px;
       background: #fff;
+    }
+
+    /* DYNAMIC DATES BANNER STYLES */
+    .upcoming-dates-banner {
+      max-width: 1120px;
+      margin: 0 auto 50px;
+      background: #fff5f7;
+      border-left: 4px solid #ee5a7a;
+      padding: 24px 30px;
+      border-radius: 4px;
+      display: none;
+    }
+    
+    .upcoming-dates-banner h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 22px;
+      font-weight: 400;
+      color: #111;
+    }
+
+    .dynamic-dates-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .dynamic-dates-list li {
+      margin-bottom: 10px;
+      font-size: 15px;
+      color: #444;
+      display: flex;
+      align-items: center;
+    }
+    
+    .dynamic-dates-list li::before {
+      content: "📅";
+      margin-right: 10px;
+      font-size: 14px;
     }
 
     .cards-grid {
@@ -680,7 +755,7 @@
         <!-- Dropdown: 6 pilarer -->
         <div class="drop">
           <button type="button" class="drop-toggle" onclick="toggleDropdown(this)">
-            6 pilarer for intimitet <span>▼</span>
+            Intimitetens 6 søyler <span>▼</span>
           </button>
           <div class="dropdown-menu">
             <a href="../6-piliru-intimity/index.html#pilar-1">1. Párová intimita & vlastní tělo</a>
@@ -692,7 +767,7 @@
           </div>
         </div>
 
-        <a href="../index.html#om-daniela">Kdo je Daniela</a>
+        <a href="../index.html#om-daniela">Hvem er Daniela</a>
 
         <!-- Dropdown: Workshops -->
         <div class="drop">
@@ -713,10 +788,19 @@
           </div>
         </div>
 
-        <a href="../konsultasjon.html">Osobní konzultace</a>
-        <a href="../blog.html">Blog</a>
+        <a href="../konsultasjon.html">Privat konsultasjon</a>
+        <a href="../blog.html">Blogg</a>
         <a href="../index.html#kontakt">Kontakt</a>
-        <span class="flag"><img src="https://flagcdn.com/w20/cz.png" width="20" alt="Norsk"></span>
+        
+        <!-- Language Switcher Section -->
+        <div class="lang-switcher-container">
+          <div class="lang-divider"></div>
+          <div class="lang-switcher">
+            <a href="#" class="lang-link active"><img src="https://flagcdn.com/w20/no.png" alt="Norwegian Flag"> NO</a>
+            <a href="https://www.danielatorp.cz/" class="lang-link"><img src="https://flagcdn.com/w20/cz.png" alt="Czech Flag"> CZ</a>
+            <a href="https://www.danielatorp.com/" class="lang-link"><img src="https://flagcdn.com/w20/gb.png" alt="UK Flag"> EN</a>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -729,8 +813,17 @@
     </div>
   </section>
 
-  <!-- WORKSHOPS CATALOG (All 9 Workshops Linked) -->
+  <!-- WORKSHOPS CATALOG -->
   <section class="workshops-section">
+    
+    <!-- DYNAMIC DATES CONTAINER -->
+    <div class="upcoming-dates-banner" id="upcoming-dates-banner">
+      <h2>Kommende datoer</h2>
+      <ul class="dynamic-dates-list" id="dynamic-dates-list">
+        <li>Laster inn datoer...</li>
+      </ul>
+    </div>
+    
     <div class="cards-grid">
       
       <!-- 1. Spill med meg -->
@@ -1021,6 +1114,48 @@
       document.body.style.overflow = 'auto';
     }
 
+    /* ----------------------------------------------------
+       FETCH WORKSHOP DATES FROM GOOGLE APPS SCRIPT CMS 
+       ---------------------------------------------------- */
+    async function loadWorkshopDates() {
+      const DATES_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwrA4qfZdmzOWaRdbIgtDqL0VO5NpURvNBU-5GdnmJ__3cBPbK4Hy-b5vkn1P0FJo0F/exec?action=getDates';
+      const container = document.getElementById('upcoming-dates-banner');
+      const list = document.getElementById('dynamic-dates-list');
+
+      try {
+        const response = await fetch(DATES_SCRIPT_URL);
+        const data = await response.json();
+
+        // Check if we have Norwegian dates set in the CMS
+        if (data && data.NO && data.NO.length > 0) {
+          list.innerHTML = ''; // Clear loading text
+          data.NO.forEach(dateStr => {
+            if (dateStr.trim() !== "") {
+              const li = document.createElement('li');
+              li.innerText = dateStr; 
+              list.appendChild(li);
+            }
+          });
+          // Only show banner if there are valid dates to display
+          if (list.innerHTML !== '') {
+            container.style.display = 'block';
+          }
+        } else {
+          list.innerHTML = '<li>Ingen kommende datoer er satt enda.</li>';
+        }
+      } catch (err) {
+        console.error('Error fetching workshop dates:', err);
+        list.innerHTML = '<li>Kunne ikke laste inn datoer akkurat nå.</li>';
+      }
+    }
+
+    // Call the function when page loads
+    document.addEventListener('DOMContentLoaded', loadWorkshopDates);
+    
+    
+    /* ----------------------------------------------------
+       CONTACT FORM LOGIC
+       ---------------------------------------------------- */
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwiptZDdNVNSavoyJeHCvoc7XxOSTG0yg_K5Z-Si81Up_4CSBo5AJUUOuMYLNh2eT3h/exec';
 
     async function handleFormSubmit(e) {
