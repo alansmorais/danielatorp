@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Kunsten å behage en mann – Daniela Torp</title>
+  <title>Kunsten å tilfredsstille en mann – Daniela Torp</title>
   <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-32x32.png" sizes="32x32">
   <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-192x192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-180x180.png">
@@ -136,17 +136,65 @@
       color: #e9476b;
     }
 
-    .flag {
-      margin-left: 30px;
-      cursor: default;
-      display: flex;
-      align-items: center;
-    }
-
     .mobile-menu-btn {
       display: none;
       font-size: 20px;
       padding: 5px;
+    }
+
+    /* Language Switcher Styles */
+    .lang-switcher-container {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+
+    .lang-divider {
+      width: 1px;
+      height: 24px;
+      background-color: #ddd;
+      margin: 0 15px;
+      display: none;
+    }
+
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lang-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #555 !important;
+      text-transform: uppercase;
+      font-weight: 400;
+      padding: 0 !important;
+    }
+
+    .lang-link:hover {
+      color: #111 !important;
+    }
+
+    .lang-link.active {
+      color: #ee5a7a !important; 
+    }
+
+    .lang-link img {
+      width: 20px;
+      border-radius: 2px;
+      display: block;
+    }
+
+    @media (min-width: 992px) {
+      .lang-divider {
+        display: block;
+      }
+      .lang-switcher-container {
+        margin-left: 15px;
+      }
     }
 
     /* =========================================
@@ -617,19 +665,23 @@
 </head>
 <body>
 
-    <!-- HEADER -->
-    <!-- HEADER -->
+  <!-- HEADER & NAVIGATION -->
   <header>
     <div class="wrap">
       <a href="../index.html">
         <img class="logo" src="https://www.danielatorp.cz/wp-content/uploads/2020/02/logo_perem_bez_pozadi%CC%81.png" alt="Daniela Torp">
       </a>
-      
-      <nav class="nav">
+
+      <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Otevřít menu">☰</button>
+
+      <nav class="nav" id="mainNav">
         <a href="../index.html">Hjem</a>
-        
-        <div class="drop" onclick="location.href='../6-piliru-intimity/index.html'">
-          6 pilarer for intimitet
+
+        <!-- Dropdown: 6 pilarer -->
+        <div class="drop">
+          <button type="button" class="drop-toggle" onclick="toggleDropdown(this)">
+            Intimitetens 6 søyler <span>▼</span>
+          </button>
           <div class="dropdown-menu">
             <a href="../6-piliru-intimity/index.html#pilar-1">1. Párová intimita & vlastní tělo</a>
             <a href="../6-piliru-intimity/index.html#pilar-2">2. Těhotenství a porod</a>
@@ -640,13 +692,16 @@
           </div>
         </div>
 
-        <a href="../index.html#om-daniela">Kdo je Daniela</a>
-        
-        <div class="drop" onclick="location.href='../workshops.html'">
-          Workshops
+        <a href="../index.html#om-daniela">Hvem er Daniela</a>
+
+        <!-- Dropdown: Workshops -->
+        <div class="drop">
+          <button type="button" class="drop-toggle" onclick="toggleDropdown(this)">
+            Workshops <span>▼</span>
+          </button>
           <div class="dropdown-menu">
             <a href="umeni-potesit-zenu.html">Kunsten å behage en kvinne</a>
-            <a href="umeni-potesit-muze.html" style="color:#ee5a7a;font-weight:500;">Kunsten å behage en mann</a>
+            <a href="umeni-potesit-muze.html" style="font-weight: 500; color: #ee5a7a;">Kunsten å tilfredsstille en mann</a>
             <a href="jen-pro-pary.html">Kun for par</a>
             <a href="tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
             <a href="byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
@@ -654,24 +709,31 @@
             <a href="matka-a-dcera.html">Mor og datter</a>
             <a href="Hraj-si-se-mnou.html">Lek med meg</a>
             <a href="zenska-esence-no.html">Kvinneessens og livskraft</a>
-            <a href="../workshops.html" style="font-weight:500;color:#ee5a7a;border-top:1px solid #eee;">Zobrazit všech 9 workshopů ➜</a>
+            <a href="../workshops.html" style="font-weight: 500; border-top: 1px solid #eee; margin-top: 4px; padding-top: 8px;">Zobrazit všech 9 workshopů ➜</a>
           </div>
         </div>
 
-        <a href="../konsultasjon.html">Osobní konzultace</a>
-        <a href="../blog.html">Blog</a>
+        <a href="../konsultasjon.html">Privat konsultasjon</a>
+        <a href="../blog.html">Blogg</a>
         <a href="#kontakt">Kontakt</a>
-        <span class="flag"><img src="https://flagcdn.com/w20/cz.png" width="20" alt="Norsk" style="border-radius: 2px;"></span>
+        
+        <!-- Language Switcher Section -->
+        <div class="lang-switcher-container">
+          <div class="lang-divider"></div>
+          <div class="lang-switcher">
+            <a href="#" class="lang-link active"><img src="https://flagcdn.com/w20/no.png" alt="Norwegian Flag"> NO</a>
+            <a href="https://www.danielatorp.cz/" class="lang-link"><img src="https://flagcdn.com/w20/cz.png" alt="Czech Flag"> CZ</a>
+            <a href="https://www.danielatorp.com/" class="lang-link"><img src="https://flagcdn.com/w20/gb.png" alt="UK Flag"> EN</a>
+          </div>
+        </div>
       </nav>
-
-      <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Menu">☰</button>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="hero">
     <div class="intro">
-      <h1>UMĚNÍ POTĚŠIT MUŽE</h1>
+      <h1>KUNSTEN Å TILFREDSSTILLE EN MANN</h1>
       <p>Åpne døren til mannens dypere erotiske verden og opplev ekte samspill</p>
       <a class="button" href="#kontakt">Meld deg på</a>
     </div>
@@ -683,8 +745,8 @@
       
       <!-- Left Column -->
       <div class="workshop-left">
-        <h2>Kunsten å behage en mann</h2>
-        <h3 class="subtitle">Seminář je určen výhradně pro ženy</h3>
+        <h2>Kunsten å tilfredsstille en mann</h2>
+        <h3 class="subtitle">Seminaret er forbeholdt kvinner. Kurset avholdes på engelsk</h3>
 
         <p>Uspokojit muže může na první pohled vypadat jako pouhá formalita. Mnoho žen si možná myslí, že to nevyžaduje žádné velké umění – že se stačí dotknout tady nebo tam, a je spokojený. Je však obrovský rozdíl mezi rutinním uspokojením a tím, když mu darujete hluboký, transformující zážitek.</p>
         
@@ -714,10 +776,12 @@
 
       <!-- Right Column -->
       <div class="workshop-right">
+        
+        <h4>Kommende datoer</h4>
+        <p><strong>29 November</strong></p>
+
         <h4>Sted</h4>
-        <p><strong>Kamenný Újezd 83, Nýřany</strong></p>
-        <p>🚗 5 min autem z Borů směr Zbůch, Nýřany.<br>
-        🚆 Vlakové spojení každou hodinu z Plzně (cesta cca 20 min).</p>
+        <p><strong>Oslo Sentrum, lokale annonseres senere</strong></p>
 
         <h4>Hva du bør ta med</h4>
         <ul>
@@ -729,7 +793,7 @@
         <p>Program začíná v <strong>10:00</strong>.<br>Prosíme o příchod nejpozději v <strong>09:45</strong>, aby se všichni stihli usadit a mohli jsme začít přesně.</p>
 
         <h4>Pris</h4>
-        <p class="price-tag">2 900 Kč</p>
+        <p class="price-tag">2 500 kr</p>
 
         <div class="side-card">
           <h5>O workshopu</h5>
@@ -763,7 +827,7 @@
       </div>
       <div class="field full">
         <label>Emne <span class="required">*</span></label>
-        <input type="text" required value="Přihláška: Kunsten å behage en mann" id="formSubject">
+        <input type="text" required value="Påmelding: Kunsten å tilfredsstille en mann" id="formSubject">
       </div>
       <div class="field full">
         <label>Melding <span class="required">*</span></label>
@@ -802,7 +866,7 @@
       <div>
         <h4>Workshops</h4>
         <a href="umeni-potesit-zenu.html">Kunsten å behage en kvinne</a>
-        <a href="umeni-potesit-muze.html">Kunsten å behage en mann</a>
+        <a href="umeni-potesit-muze.html">Kunsten å tilfredsstille en mann</a>
         <a href="jen-pro-pary.html">Kun for par</a>
         <a href="tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
         <a href="byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
@@ -843,7 +907,7 @@
     </div>
   </div>
 
-    <script>
+  <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwiptZDdNVNSavoyJeHCvoc7XxOSTG0yg_K5Z-Si81Up_4CSBo5AJUUOuMYLNh2eT3h/exec";
 
     async function handleFormSubmit(e) {
@@ -861,9 +925,7 @@
       const subject = document.getElementById('formSubject') ? document.getElementById('formSubject').value.trim() : '';
       const message = document.getElementById('formMessage').value.trim();
 
-      const formattedMessage = subject ? `[Emne: ${subject}]
-
-${message}` : message;
+      const formattedMessage = subject ? `[Emne: ${subject}]\n\n${message}` : message;
 
       const payload = {
         type: 'contact',
@@ -920,7 +982,24 @@ ${message}` : message;
 
     function toggleMobileNav() {
       const nav = document.querySelector('.nav');
-      nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+      if (nav.classList.contains('is-open')) {
+        nav.classList.remove('is-open');
+        nav.style.display = 'none';
+      } else {
+        nav.classList.add('is-open');
+        nav.style.display = 'flex';
+      }
+    }
+    
+    function toggleDropdown(btn) {
+      if (window.innerWidth < 992) {
+        const menu = btn.nextElementSibling;
+        if (menu.style.display === 'block') {
+          menu.style.display = 'none';
+        } else {
+          menu.style.display = 'block';
+        }
+      }
     }
 
     document.addEventListener('keydown', function(e) {
