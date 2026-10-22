@@ -80,13 +80,17 @@
     .nav {
       display: flex;
       align-items: center;
-      gap: 21px;
-      font-size: 12px;
+      gap: 24px;
+      font-size: 14px;
       font-weight: 400;
     }
 
     .nav a:hover, .nav .drop:hover {
       color: #ee5a7a;
+    }
+
+    .nav .active-page {
+      color: #8B4553; /* Match the dark red active state from the design */
     }
 
     .nav .drop {
@@ -97,7 +101,7 @@
 
     .nav .drop:after {
       content: '▼';
-      font-size: 7px;
+      font-size: 8px;
       margin-left: 7px;
       display: inline-block;
     }
@@ -126,7 +130,7 @@
       width: 100%;
       text-align: left;
       padding: 8px 16px;
-      font-size: 12px;
+      font-size: 13px;
       color: #333;
     }
 
@@ -138,7 +142,7 @@
 
     .mobile-menu-btn {
       display: none;
-      font-size: 20px;
+      font-size: 24px;
       padding: 5px;
     }
 
@@ -146,21 +150,21 @@
     .lang-switcher-container {
       display: flex;
       align-items: center;
-      margin-left: auto;
+      margin-left: 10px;
     }
 
     .lang-divider {
       width: 1px;
       height: 24px;
       background-color: #ddd;
-      margin: 0 15px;
+      margin: 0 20px;
       display: none;
     }
 
     .lang-switcher {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
     }
 
     .lang-link {
@@ -191,9 +195,6 @@
     @media (min-width: 992px) {
       .lang-divider {
         display: block;
-      }
-      .lang-switcher-container {
-        margin-left: 15px;
       }
     }
 
@@ -649,7 +650,12 @@
     /* =========================================
        9. RESPONSIVE
        ========================================= */
-    @media (max-width: 900px) {
+    @media (max-width: 1080px) {
+      .nav { gap: 14px; font-size: 13px; }
+      .lang-switcher { gap: 10px; }
+    }
+
+    @media (max-width: 991px) {
       .nav { display: none; }
       .mobile-menu-btn { display: block; }
       .workshop-grid, .footer-grid { grid-template-columns: 1fr; }
@@ -669,7 +675,7 @@
   <header>
     <div class="wrap">
       <a href="../index.html">
-        <img class="logo" src="https://www.danielatorp.cz/wp-content/uploads/2020/02/logo_perem_bez_pozadi%CC%81.png" alt="Daniela Torp">
+        <img class="logo" src="https://danielatorp.no/images/logo_perem_bez_pozadi%CC%81.png" alt="Daniela Torp">
       </a>
 
       <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Otevřít menu">☰</button>
@@ -696,7 +702,7 @@
 
         <!-- Dropdown: Workshops -->
         <div class="drop">
-          <button type="button" class="drop-toggle" onclick="toggleDropdown(this)">
+          <button type="button" class="drop-toggle active-page" onclick="toggleDropdown(this)">
             Workshops <span>▼</span>
           </button>
           <div class="dropdown-menu">
