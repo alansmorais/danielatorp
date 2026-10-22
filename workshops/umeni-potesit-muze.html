@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Kunsten å behage en mann – Daniela Torp</title>
+  <title>Kunsten å tilfredsstille en mann – Daniela Torp</title>
   <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-32x32.png" sizes="32x32">
   <link rel="icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-192x192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="https://www.danielatorp.cz/wp-content/uploads/2020/02/cropped-favicona-180x180.png">
@@ -80,13 +80,17 @@
     .nav {
       display: flex;
       align-items: center;
-      gap: 21px;
-      font-size: 12px;
+      gap: 24px;
+      font-size: 14px;
       font-weight: 400;
     }
 
     .nav a:hover, .nav .drop:hover {
       color: #ee5a7a;
+    }
+
+    .nav .active-page {
+      color: #8B4553; /* Match the dark red active state from the design */
     }
 
     .nav .drop {
@@ -97,7 +101,7 @@
 
     .nav .drop:after {
       content: '▼';
-      font-size: 7px;
+      font-size: 8px;
       margin-left: 7px;
       display: inline-block;
     }
@@ -126,7 +130,7 @@
       width: 100%;
       text-align: left;
       padding: 8px 16px;
-      font-size: 12px;
+      font-size: 13px;
       color: #333;
     }
 
@@ -136,17 +140,62 @@
       color: #e9476b;
     }
 
-    .flag {
-      margin-left: 30px;
-      cursor: default;
-      display: flex;
-      align-items: center;
-    }
-
     .mobile-menu-btn {
       display: none;
-      font-size: 20px;
+      font-size: 24px;
       padding: 5px;
+    }
+
+    /* Language Switcher Styles */
+    .lang-switcher-container {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+    }
+
+    .lang-divider {
+      width: 1px;
+      height: 24px;
+      background-color: #ddd;
+      margin: 0 20px;
+      display: none;
+    }
+
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .lang-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #555 !important;
+      text-transform: uppercase;
+      font-weight: 400;
+      padding: 0 !important;
+    }
+
+    .lang-link:hover {
+      color: #111 !important;
+    }
+
+    .lang-link.active {
+      color: #ee5a7a !important; 
+    }
+
+    .lang-link img {
+      width: 20px;
+      border-radius: 2px;
+      display: block;
+    }
+
+    @media (min-width: 992px) {
+      .lang-divider {
+        display: block;
+      }
     }
 
     /* =========================================
@@ -601,7 +650,12 @@
     /* =========================================
        9. RESPONSIVE
        ========================================= */
-    @media (max-width: 900px) {
+    @media (max-width: 1080px) {
+      .nav { gap: 14px; font-size: 13px; }
+      .lang-switcher { gap: 10px; }
+    }
+
+    @media (max-width: 991px) {
       .nav { display: none; }
       .mobile-menu-btn { display: block; }
       .workshop-grid, .footer-grid { grid-template-columns: 1fr; }
@@ -617,61 +671,75 @@
 </head>
 <body>
 
-    <!-- HEADER -->
-    <!-- HEADER -->
+  <!-- HEADER & NAVIGATION -->
   <header>
     <div class="wrap">
       <a href="../index.html">
-        <img class="logo" src="https://www.danielatorp.cz/wp-content/uploads/2020/02/logo_perem_bez_pozadi%CC%81.png" alt="Daniela Torp">
+        <img class="logo" src="https://raw.githubusercontent.com/alansmorais/danielatorp/refs/heads/main/images/logo_perem_bez_pozadi%CC%81.png" alt="Daniela Torp">
       </a>
-      
-      <nav class="nav">
+
+      <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Otevřít menu">☰</button>
+
+      <nav class="nav" id="mainNav">
         <a href="../index.html">Hjem</a>
-        
-        <div class="drop" onclick="location.href='../6-piliru-intimity/index.html'">
-          6 pilarer for intimitet
+
+        <!-- Dropdown: 6 pilarer -->
+        <div class="drop">
+          <button type="button" class="drop-toggle" onclick="toggleDropdown(this)">
+            Intimitetens 6 søyler <span>▼</span>
+          </button>
           <div class="dropdown-menu">
-            <a href="../6-piliru-intimity/index.html#pilar-1">1. Parintimitet & egen kropp</a>
-            <a href="../6-piliru-intimity/index.html#pilar-2">2. Graviditet og fødsel</a>
-            <a href="../6-piliru-intimity/index.html#pilar-3">3. Intimitet med baby</a>
-            <a href="../6-piliru-intimity/index.html#pilar-4">4. Barn og ungdom</a>
-            <a href="../6-piliru-intimity/index.html#pilar-5">5. Intimitet i moden alder</a>
-            <a href="../6-piliru-intimity/index.html#pilar-6">6. Intimitet i døden</a>
+            <a href="../6-piliru-intimity/index.html#pilar-1">1. Párová intimita & vlastní tělo</a>
+            <a href="../6-piliru-intimity/index.html#pilar-2">2. Těhotenství a porod</a>
+            <a href="../6-piliru-intimity/index.html#pilar-3">3. Intimita s miminkem</a>
+            <a href="../6-piliru-intimity/index.html#pilar-4">4. Děti a dospívající</a>
+            <a href="../6-piliru-intimity/index.html#pilar-5">5. Intimita ve zralém věku</a>
+            <a href="../6-piliru-intimity/index.html#pilar-6">6. Intimita v umírání</a>
           </div>
         </div>
 
         <a href="../index.html#om-daniela">Hvem er Daniela</a>
-        
-        <div class="drop" onclick="location.href='../workshops.html'">
-          Workshoper
+
+        <!-- Dropdown: Workshops -->
+        <div class="drop">
+          <button type="button" class="drop-toggle active-page" onclick="toggleDropdown(this)">
+            Workshops <span>▼</span>
+          </button>
           <div class="dropdown-menu">
             <a href="umeni-potesit-zenu.html">Kunsten å behage en kvinne</a>
-            <a href="umeni-potesit-muze.html" style="color:#ee5a7a;font-weight:500;">Kunsten å behage en mann</a>
-            <a href="jen-pro-pary.html">Kunsten å behage (for par)</a>
+            <a href="umeni-potesit-muze.html" style="font-weight: 500; color: #ee5a7a;">Kunsten å tilfredsstille en mann</a>
+            <a href="jen-pro-pary.html">Kun for par</a>
             <a href="tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
             <a href="byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
-            <a href="porod-jako-jistota.html">Fødsel som sikkerhet</a>
+            <a href="porod-jako-jistota.html">Fødsel med trygghet</a>
             <a href="matka-a-dcera.html">Mor og datter</a>
-            <a href="Hraj-si-se-mnou.html">Spill med meg</a>
+            <a href="Hraj-si-se-mnou.html">Lek med meg</a>
             <a href="zenska-esence-no.html">Kvinneessens og livskraft</a>
-            <a href="../workshops.html" style="font-weight:500;color:#ee5a7a;border-top:1px solid #eee;">Se alle 9 workshoper ➜</a>
+            <a href="../workshops.html" style="font-weight: 500; border-top: 1px solid #eee; margin-top: 4px; padding-top: 8px;">Zobrazit všech 9 workshopů ➜</a>
           </div>
         </div>
 
-        <a href="../konsultasjon.html">Personlig konsultasjon</a>
+        <a href="../konsultasjon.html">Privat konsultasjon</a>
         <a href="../blog.html">Blogg</a>
         <a href="#kontakt">Kontakt</a>
-        <span class="flag"><img src="https://flagcdn.com/w20/no.png" width="20" alt="Norsk" style="border-radius: 2px;"></span>
+        
+        <!-- Language Switcher Section -->
+        <div class="lang-switcher-container">
+          <div class="lang-divider"></div>
+          <div class="lang-switcher">
+            <a href="#" class="lang-link active"><img src="https://flagcdn.com/w20/no.png" alt="Norwegian Flag"> NO</a>
+            <a href="https://www.danielatorp.cz/" class="lang-link"><img src="https://flagcdn.com/w20/cz.png" alt="Czech Flag"> CZ</a>
+            <a href="https://www.danielatorp.com/" class="lang-link"><img src="https://flagcdn.com/w20/gb.png" alt="UK Flag"> EN</a>
+          </div>
+        </div>
       </nav>
-
-      <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Meny">☰</button>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="hero">
     <div class="intro">
-      <h1>KUNSTEN Å BEHAGE EN MANN</h1>
+      <h1>KUNSTEN Å TILFREDSSTILLE EN MANN</h1>
       <p>Åpne døren til mannens dypere erotiske verden og opplev ekte samspill</p>
       <a class="button" href="#kontakt">Meld deg på</a>
     </div>
@@ -683,57 +751,59 @@
       
       <!-- Left Column -->
       <div class="workshop-left">
-        <h2>Kunsten å behage en mann</h2>
-        <h3 class="subtitle">Seminaret er forbeholdt kvinner</h3>
+        <h2>Kunsten å tilfredsstille en mann</h2>
+        <h3 class="subtitle">Seminaret er forbeholdt kvinner. Kurset avholdes på engelsk</h3>
 
-        <p>Å tilfredsstille en mann kan ved første øyekast virke som en ren formalitet. Mange kvinner tror kanskje at det ikke krever noen særlig kunst – at man bare berører her eller der, og så er han fornøyd. Men det er en enorm forskjell på rutinemessig tilfredsstillelse og det å virkelig gi ham en dyp, transformerende opplevelse.</p>
+        <p>Uspokojit muže může na první pohled vypadat jako pouhá formalita. Mnoho žen si možná myslí, že to nevyžaduje žádné velké umění – že se stačí dotknout tady nebo tam, a je spokojený. Je však obrovský rozdíl mezi rutinním uspokojením a tím, když mu darujete hluboký, transformující zážitek.</p>
         
-        <p>På denne workshopen vil du oppdage at det finnes hemmelige, sårbare og kraftfulle lag av mannens seksualitet som de færreste kvinner kjenner til. Du lærer hvordan du møter ham med nærvær, finesse og ekte forståelse.</p>
+        <p>Na tomto workshopu objevíte, že existují tajemné, zranitelné i silné vrstvy mužské sexuality, o kterých většina žen nemá ani tušení. Naučíte se, jak se s ním setkat v plné přítomnosti, s jemností i opravdovým porozuměním.</p>
 
-        <h4>Passer kurset for deg?</h4>
+        <h4>Je kurz vhodný právě pro vás?</h4>
         <ul>
-          <li>Har du en ny partner og ønsker å overraske og berøre ham på et dypere plan?</li>
-          <li>Er du i et langvarig parforhold og vil vekke den gnistrende lidenskapen til live igjen?</li>
-          <li>Er du for tiden singel, men nysgjerrig på å forstå menns anatomi, psykologi og din egen kvinnelige tiltrekningskraft?</li>
+          <li>Máte nového partnera a chcete ho překvapit a dotknout se ho na hlubší úrovni?</li>
+          <li>Jste v dlouhodobém vztahu a chcete znovu zažehnout jiskřivou vášeň?</li>
+          <li>Jste momentálně nezadaná, ale zvídavá a chcete lépe porozumět mužské anatomii, psychologii i vlastní ženské přitažlivosti?</li>
         </ul>
 
-        <p>Da er denne workshopen en uvurderlig investering. Vi går gjennom både teori og praktiske prinsipper, og viser hvordan du gjennom bevisst og sanselig massasje (lingam-massasje) kan lede mannen inn i en dypere og mer helhetlig nytelse fri for prestasjonspress.</p>
+        <p>Pak je tento workshop neocenitelnou investicí. Projdeme si teorii i praktické principy a ukážeme si, jak můžete prostřednictvím vědomé a smyslné masáže (lingam masáž) dovést muže k hlubšímu a celistvějšímu potěšení bez tlaku na výkon.</p>
 
         <div class="highlight-quote">
-          «Selv i perioder der du av ulike grunner ikke kjenner deg opplagt til tradisjonelt samleie – for eksempel under graviditet, etter fødsel eller operasjon – vil du ved hjelp av disse teknikkene kunne gi din partner uforglemmelig nærhet og dyp intim tilfredsstillelse.»
+          „I v obdobích, kdy se z různých důvodů necítíte na klasický pohlavní styk – například v těhotenství, po porodu nebo po operaci – dokážete pomocí těchto technik poskytnout svému partnerovi nezapomenutelnou blízkost a hluboké intimní potěšení.“
         </div>
 
-        <h4>Hva gir deltakelse på workshopen deg?</h4>
+        <h4>Co vám účast na workshopu přinese?</h4>
         <ul>
-          <li><strong>Forstå mannens indre verden:</strong> Få innsikt i forskjellene mellom kvinnelig og mannlig seksualopplevelse og emosjonelle behov.</li>
-          <li><strong>Styrket selvtillit:</strong> Føl deg trygg, uimotståelig og fri i rollen som elskerinne.</li>
-          <li><strong>Tantriske massasjeteknikker:</strong> Lær sanselig massasje og berøring som sprer energien gjennom hele mannens kropp.</li>
-          <li><strong>Dypere tilknytning:</strong> Forstå hvordan dere som par kan skape en trygg bro mellom hjerte og sanselig lyst.</li>
+          <li><strong>Pochopit vnitřní svět muže:</strong> Získejte vhled do rozdílů mezi ženským a mužským prožíváním sexuality i do citových potřeb muže.</li>
+          <li><strong>Posílené sebevědomí:</strong> Ciťte se jistá, přitažlivá a svobodná v roli milenky.</li>
+          <li><strong>Tantrické masážní techniky:</strong> Osvojte si smyslnou masáž a vědomý dotek, které rozproudí energii celým mužským tělem.</li>
+          <li><strong>Hlubší propojení:</strong> Pochopte, jak můžete jako pár vytvořit bezpečný most mezi srdcem a smyslnou touhou.</li>
         </ul>
       </div>
 
       <!-- Right Column -->
       <div class="workshop-right">
-        <h4>Møtested</h4>
-        <p><strong>Kamenný Újezd 83, Nýřany</strong></p>
-        <p>🚗 5 min med bil fra Bory retning Zbůch, Nýřany.<br>
-        🚆 Togforbindelse hver time fra Pilsen (reisetid ca. 20 min).</p>
+        
+        <h4>Kommende datoer</h4>
+        <p><strong>29 November</strong></p>
 
-        <h4>Hva du må ta med</h4>
+        <h4>Sted</h4>
+        <p><strong>Oslo Sentrum, lokale annonseres senere</strong></p>
+
+        <h4>Hva du bør ta med</h4>
         <ul>
-          <li>Behagelige klær</li>
-          <li>Notatbok og penn</li>
+          <li>Komfortable klær</li>
+          <li>Zápisník a tužku</li>
         </ul>
 
         <h4>Program</h4>
-        <p>Programmet starter kl. <strong>10:00</strong>.<br>Vi ber om oppmøte senest <strong>09:45</strong>, slik at alle rekker å finne seg til rette og vi kan starte presist.</p>
+        <p>Program začíná v <strong>10:00</strong>.<br>Prosíme o příchod nejpozději v <strong>09:45</strong>, aby se všichni stihli usadit a mohli jsme začít přesně.</p>
 
         <h4>Pris</h4>
-        <p class="price-tag">2 900 Kč</p>
+        <p class="price-tag">2 500 kr</p>
 
         <div class="side-card">
-          <h5>Om workshopen</h5>
-          <p>Workshopen holdes i et varmt, respektfullt og diskré kvinnefellesskap ledet av Daniela Torp. Her er det god plass til spørsmål, trygg utforsking og faglig trygghet.</p>
+          <h5>O workshopu</h5>
+          <p>Workshop se koná ve vřelém, respektujícím a diskrétním ženském kruhu pod vedením Daniely Torp. Je zde dostatek prostoru pro dotazy, bezpečné objevování a odborné vedení.</p>
         </div>
       </div>
 
@@ -743,48 +813,48 @@
   <!-- DATES DIVIDER -->
   <div class="dates-divider">
     <div class="divider-line">
-      <span>Kommende datoer</span>
+      <span>Aktuální termíny workshopů</span>
     </div>
   </div>
 
   <!-- CONTACT SECTION -->
   <section class="contact" id="kontakt">
     <h2>Skriv til meg</h2>
-    <p>og meld deg på kurset.</p>
+    <p>a přihlaste se na workshop.</p>
     
     <form class="form" id="contactForm" onsubmit="handleFormSubmit(event)">
       <div class="field">
         <label>Navn og etternavn <span class="required">*</span></label>
-        <input type="text" required placeholder="Ola Nordmann" id="formName">
+        <input type="text" required placeholder="Jan Novák" id="formName">
       </div>
       <div class="field">
-        <label>Din e-postadresse <span class="required">*</span></label>
-        <input type="email" required placeholder="ola.nordmann@eksempel.no" id="formEmail">
+        <label>Váš e-mail <span class="required">*</span></label>
+        <input type="email" required placeholder="jan.novak@priklad.cz" id="formEmail">
       </div>
       <div class="field full">
         <label>Emne <span class="required">*</span></label>
-        <input type="text" required value="Påmelding: Kunsten å behage en mann" id="formSubject">
+        <input type="text" required value="Påmelding: Kunsten å tilfredsstille en mann" id="formSubject">
       </div>
       <div class="field full">
         <label>Melding <span class="required">*</span></label>
-        <textarea required placeholder="Skriv din melding eller eventuelle spørsmål her" id="formMessage"></textarea>
+        <textarea required placeholder="Napište svou zprávu nebo dotaz k workshopu..." id="formMessage"></textarea>
       </div>
       
       <div class="form-bottom">
         <div>
-          <div class="captcha">Beskyttet av reCAPTCHA ✓</div>
+          <div class="captcha">Chráněno reCAPTCHA ✓</div>
           <div class="notice">
-            Felt merket med stjerne er obligatoriske.<br>
-            Ved å sende meldingen aksepterer jeg <a onclick="openGenericModal('Personvern', 'Alle henvendelser behandles strengt konfidensielt etter gjeldende GDPR-retningslinjer.')">behandling av personopplysninger</a>.
+            Pole označená hvězdičkou jsou povinná.<br>
+            Odesláním zprávy souhlasím se <a onclick="openGenericModal('Ochrana údajů', 'Všechny dotazy jsou zpracovávány v přísné důvěrnosti v souladu s GDPR. Údaje nikdy nepředáváme třetím stranám.')">zpracováním osobních údajů</a>.
           </div>
         </div>
-        <button class="send" id="sendBtn" type="submit">Send inn ➜</button>
+        <button class="send" id="sendBtn" type="submit">Send zprávu ➜</button>
       </div>
     </form>
 
     <div class="success-box" id="successBox">
-      <h3>Takk for henvendelsen din!</h3>
-      <p>Meldingen din er sendt. Daniela vil svare deg så snart som mulig.</p>
+      <h3>Děkuji za vaši zprávu!</h3>
+      <p>Vaše zpráva byla odeslána. Daniela vám odpoví co nejdříve.</p>
     </div>
   </section>
 
@@ -794,31 +864,31 @@
       <div>
         <h4>Kontakt</h4>
         <a href="../index.html">Hjem</a>
-        <a href="../index.html#om-daniela">Hvem er Daniela</a>
-        <button onclick="openGenericModal('Daniela i media', 'Presse og podkaster er tilgjengelige via forespørsel.')">Daniela i media</button>
-        <a href="../blog.html">Blogg</a>
+        <a href="../index.html#om-daniela">Kdo je Daniela</a>
+        <button onclick="openGenericModal('Daniela v médiích', 'Články, rozhovory a podcasty jsou k dispozici na vyžádání.')">Daniela v médiích</button>
+        <a href="../blog.html">Blog</a>
         <a href="#kontakt">Kontakt</a>
       </div>
       <div>
-        <h4>Workshoper</h4>
+        <h4>Workshops</h4>
         <a href="umeni-potesit-zenu.html">Kunsten å behage en kvinne</a>
-        <a href="umeni-potesit-muze.html">Kunsten å behage en mann</a>
-        <a href="jen-pro-pary.html">Kunsten å behage (for par)</a>
+        <a href="umeni-potesit-muze.html">Kunsten å tilfredsstille en mann</a>
+        <a href="jen-pro-pary.html">Kun for par</a>
         <a href="tajemstvi-panevniho-dna.html">Bekkenbunnens hemmeligheter</a>
         <a href="byla-jsem-tehotna-ale.html">Jeg var gravid, men …</a>
-        <a href="porod-jako-jistota.html">Fødsel som sikkerhet</a>
+        <a href="porod-jako-jistota.html">Fødsel med trygghet</a>
         <a href="matka-a-dcera.html">Mor og datter</a>
-        <a href="../workshops.html" style="color:#ee5a7a; font-weight:500;">Se alle 9 workshoper ➜</a>
+        <a href="../workshops.html" style="color:#ee5a7a; font-weight:500;">Zobrazit všech 9 workshopů ➜</a>
       </div>
       <div>
-        <h4>Konsultasjoner / 6 pilarer for intimitet</h4>
-        <a href="../konsultasjon.html">Personlig konsultasjon</a>
-        <a href="../6-piliru-intimity/index.html#pilar-1">1. Parintimitet & egen kropp</a>
-        <a href="../6-piliru-intimity/index.html#pilar-2">2. Graviditet og fødsel</a>
-        <a href="../6-piliru-intimity/index.html#pilar-3">3. Intimitet med baby</a>
-        <a href="../6-piliru-intimity/index.html#pilar-4">4. Barn og ungdom</a>
-        <a href="../6-piliru-intimity/index.html#pilar-5">5. Intimitet i moden alder</a>
-        <a href="../6-piliru-intimity/index.html#pilar-6">6. Intimitet i døden</a>
+        <h4>Konzultace / 6 pilířů intimity</h4>
+        <a href="../konsultasjon.html">Osobní konzultace</a>
+        <a href="../6-piliru-intimity/index.html#pilar-1">1. Párová intimita & vlastní tělo</a>
+        <a href="../6-piliru-intimity/index.html#pilar-2">2. Těhotenství a porod</a>
+        <a href="../6-piliru-intimity/index.html#pilar-3">3. Intimita s miminkem</a>
+        <a href="../6-piliru-intimity/index.html#pilar-4">4. Děti a dospívající</a>
+        <a href="../6-piliru-intimity/index.html#pilar-5">5. Intimita ve zralém věku</a>
+        <a href="../6-piliru-intimity/index.html#pilar-6">6. Intimita v umírání</a>
       </div>
     </div>
     
@@ -827,33 +897,33 @@
       <a href="https://instagram.com/intimitycoachdanielatorp/" target="_blank">◎</a>
       <a href="https://youtube.com" target="_blank">◉</a>
     </div>
-    <div class="copyright">© 2026 Alle rettigheter forbeholdt | Daniela Torp</div>
+    <div class="copyright">© 2026 Všechna práva vyhrazena | Daniela Torp</div>
   </footer>
 
   <!-- MODAL -->
   <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
     <div class="modal-card">
       <span class="modal-close" onclick="closeModalDirect()">&times;</span>
-      <span class="modal-tag" id="modalTag">Detaljer</span>
-      <h3 class="modal-title" id="modalTitle">Tittel</h3>
-      <div class="modal-body" id="modalContent">Innhold</div>
+      <span class="modal-tag" id="modalTag">Podrobnosti</span>
+      <h3 class="modal-title" id="modalTitle">Název</h3>
+      <div class="modal-body" id="modalContent">Obsah</div>
       <div class="modal-btn-row">
-        <button class="button" onclick="closeModalDirect()">Lukk</button>
+        <button class="button" onclick="closeModalDirect()">Zavřít</button>
       </div>
     </div>
   </div>
 
-    <script>
+  <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwiptZDdNVNSavoyJeHCvoc7XxOSTG0yg_K5Z-Si81Up_4CSBo5AJUUOuMYLNh2eT3h/exec";
 
     async function handleFormSubmit(e) {
       e.preventDefault();
       const sendBtn = document.getElementById('sendBtn') || document.getElementById('sendSubmitBtn') || document.querySelector('.send');
-      const originalText = sendBtn ? sendBtn.innerHTML : 'Send inn ➜';
+      const originalText = sendBtn ? sendBtn.innerHTML : 'Send zprávu ➜';
 
       if (sendBtn) {
         sendBtn.disabled = true;
-        sendBtn.innerHTML = 'Sender...';
+        sendBtn.innerHTML = 'Odesílám...';
       }
 
       const name = document.getElementById('formName').value.trim();
@@ -861,12 +931,11 @@
       const subject = document.getElementById('formSubject') ? document.getElementById('formSubject').value.trim() : '';
       const message = document.getElementById('formMessage').value.trim();
 
-      const formattedMessage = subject ? `[Emne: ${subject}]
-
-${message}` : message;
+      const formattedMessage = subject ? `[Emne: ${subject}]\n\n${message}` : message;
 
       const payload = {
         type: 'contact',
+        lang: 'CZ',
         name: name,
         email: email,
         subject: subject,
@@ -892,7 +961,7 @@ ${message}` : message;
         }
       } catch (err) {
         console.error('Error submitting form:', err);
-        alert('Det oppstod en feil ved sending av meldingen. Vennligst prøv igjen.');
+        alert('Při odesílání zprávy došlo k chybě. Zkuste to prosím znovu.');
         if (sendBtn) {
           sendBtn.disabled = false;
           sendBtn.innerHTML = originalText;
@@ -919,7 +988,24 @@ ${message}` : message;
 
     function toggleMobileNav() {
       const nav = document.querySelector('.nav');
-      nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+      if (nav.classList.contains('is-open')) {
+        nav.classList.remove('is-open');
+        nav.style.display = 'none';
+      } else {
+        nav.classList.add('is-open');
+        nav.style.display = 'flex';
+      }
+    }
+    
+    function toggleDropdown(btn) {
+      if (window.innerWidth < 992) {
+        const menu = btn.nextElementSibling;
+        if (menu.style.display === 'block') {
+          menu.style.display = 'none';
+        } else {
+          menu.style.display = 'block';
+        }
+      }
     }
 
     document.addEventListener('keydown', function(e) {
