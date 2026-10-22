@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #ee5a7a;
+    --color-primary-dark: #d63d60;
+    --color-primary-light: #fff3f6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    color: #1d1d1f;
+    font-weight: 300;
+    line-height: 1.65;
+  }
+}
+
+/* Custom Gradients & Hero Styles */
+.hero-gradient {
+  background: linear-gradient(90deg, #f9dbe3 0%, #f8d7e1 31%, #ffffff 49%, #d7f0f3 71%, #d5eff2 100%);
+}
+
+.hero-radial-overlay {
+  background: radial-gradient(ellipse 33% 75% at 25% 40%, rgba(246, 174, 194, 0.65), transparent 70%),
+              radial-gradient(ellipse 30% 75% at 80% 45%, rgba(113, 210, 226, 0.5), transparent 73%),
+              radial-gradient(ellipse 38% 90% at 50% 48%, #ffffff 3%, rgba(255, 255, 255, 0.75) 37%, transparent 69%);
+}
+
+.contact-gradient {
+  background: radial-gradient(ellipse at 76% 50%, rgba(218, 173, 229, 0.65), transparent 49%), #fafafa;
+}
+
+/* Buttons */
+.btn-primary-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #111111;
+  border-radius: 9999px;
+  padding: 10px 26px;
+  background-color: #ffffff;
+  font-size: 13px;
+  font-weight: 400;
+  color: #111111;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary-outline:hover {
+  background-color: #111111;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #111111;
+  border-radius: 9999px;
+  padding: 11px 30px;
+  background-color: #111111;
+  font-size: 13px;
+  font-weight: 400;
+  color: #ffffff;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary-solid:hover {
+  background-color: #ee5a7a;
+  border-color: #ee5a7a;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(238, 90, 122, 0.25);
+}
+
+/* SVG divider */
+.svg-divider-pattern {
+  width: 126px;
+  height: 26px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' overflow='visible' height='100%25' viewBox='0 0 126 26' fill='black' stroke='none'%3E%3Cpath d='M3,10.2c2.6,0,2.6,2,2.6,3.2S4.4,16.5,3,16.5s-3-1.4-3-3.2S0.4,10.2,3,10.2z M18.8,10.2c1.7,0,3.2,1.4,3.2,3.2s-1.4,3.2-3.2,3.2c-1.7,0-3.2-1.4-3.2-3.2S17,10.2,18.8,10.2z M34.6,10.2c1.5,0,2.6,1.4,2.6,3.2s-0.5,3.2-1.9,3.2c-1.5,0-3.4-1.4-3.4-3.2S33.1,10.2,34.6,10.2z M50.5,10.2c1.7,0,3.2,1.4,3.2,3.2s-1.4,3.2-3.2,3.2c-1.7,0-3.3-0.9-3.3-2.6S48.7,10.2,50.5,10.2z M66.2,10.2c1.5,0,3.4,1.4,3.4,3.2s-1.9,3.2-3.4,3.2c-1.5,0-2.6-0.4-2.6-2.1S64.8,10.2,66.2,10.2z M82.2,10.2c1.7,0.8,2.6,1.4,2.6,3.2s-0.1,3.2-1.6,3.2c-1.5,0-3.7-1.4-3.7-3.2S80.5,9.4,82.2,10.2zM98.6,10.2c1.5,0,2.6,0.4,2.6,2.1s-1.2,4.2-2.6,4.2c-1.5,0-3.7-0.4-3.7-2.1S97.1,10.2,98.6,10.2z M113.4,10.2c1.2,0,2.2,0.9,2.2,3.2s-0.1,3.2-1.3,3.2s-3.1-1.4-3.1-3.2S112.2,10.2,113.4,10.2z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
