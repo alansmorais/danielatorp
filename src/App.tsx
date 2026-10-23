@@ -262,6 +262,16 @@ export const App: React.FC = () => {
           <p className="font-semibold text-neutral-900 text-base">{dateText}</p>
           <p>
             Ønsker du mer informasjon om dette arrangementet, ledige plasser eller vil du reservere plassen din på forhånd?
+
+            Register by SMS to 958 64 782.
+Your place is confirmed after payment of a 50% deposit Vipps #970088
+
+Daniela Torp
+Daniela Torp has spent more than 20 years guiding people through topics related to the body, intimacy, sexuality and relationships. She works with individuals and couples, combining coaching, body-based practices and trauma-informed approaches.
+
+She completed professional training in Sexological Bodywork in California and, in 2025, training in Compassionate Trauma Therapy. Her work offers a welcoming space to explore these personal topics without judgment or shame.
+
+Daniela will lead our pelvic floor workshop in Larvik on 7–8 November.
           </p>
           <p>
             Fyll ut henvendelsen nedenfor, så tar Daniela kontakt med deg med praktiske detaljer.
