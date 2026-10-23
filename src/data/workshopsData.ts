@@ -38,7 +38,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
       'For nysgjerrige, åpne og respektfulle mennesker',
       'Både for nybegynnere og de med tidligere erfaring'
     ],
-    location: 'Tantracentrum Kameňák, Kamenný Újezd 83, Nýřany / Kurs i Norge annonseres fortløpende',
+    location: 'Asker Norge',
     timing: 'Fredag kl. 17:00 til søndag kl. 17:00',
     whatToBring: ['Behagelige klær', 'Notatbok og penn', 'Egne lekerekvisitter dersom du har'],
     priceNOK: 'Level 1: 6 400 kr | Level 2: 7 250 kr',
