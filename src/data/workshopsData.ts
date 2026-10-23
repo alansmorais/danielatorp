@@ -214,7 +214,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
         desc: 'Vekk opp bekkenbunnens feminine energisenter. Lær hvordan pusten og oppmerksomheten kan sirkulere vitalitet til hele kroppen og gi fornyet glede og sanselighet.'
       }
     ],
-    location: 'Oslo (Norge) & Nýřany (Tsjekkia) / Online tilbys også',
+    location: 'Hurdal (Norge)',
     timing: 'Dagsseminar (10:00 – 17:30)',
     whatToBring: ['Myke treningsklær', 'Varmt teppe', 'Notatbok'],
     priceNOK: 'Veiledende 2 200 kr (kontakt for dato i Norge)',
@@ -330,7 +330,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
       'Få støtte og et trygt rom til å snakke om temaer som ellers skaper emosjonell avstand i relasjonen',
       'Le, danse, hvile, pleie dere selv og knytte dypere bånd på tvers av generasjoner'
     ],
-    location: 'Hurgal - Norge',
+    location: 'Hurdal - Norge',
     timing: 'Helgesamling eller dagsseminar',
     whatToBring: ['Behagelige klær du føler deg feminin og vel i', 'Notatbok og penn'],
     priceNOK: 'Veiledende 2 800 kr for mor og datter / Ta kontakt for datoer i Norge',
