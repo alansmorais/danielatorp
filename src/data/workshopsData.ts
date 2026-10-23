@@ -270,7 +270,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
       'Dette er et trygt, fortrolig og omsorgsfullt rom der du kan møte andre kvinner i samme situasjon, bli møtt uten dømmende blikk, og finne tilbake til verdighet, varme og kontakt med din egen kropp.'
     ],
     quote: '«Hvis du kjenner at det er på tide å gi sorgen plass, bearbeide opplevelsen og finne veien tilbake til din indre livskraft, er dette seminaret her for deg.»',
-    location: 'Oslo (Norge) & Kamenný Újezd 83, Nýřany (Tsjekkia)',
+    location: 'Oslo (Norge)',
     timing: 'Dagsseminar kl. 10:00 – 19:00',
     catering: 'Velsmakende vegetarisk lunsj er inkludert i kursavgiften.',
     whatToBring: ['Behagelige klær', 'Notatbok og penn'],
@@ -300,7 +300,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
       'Pusteøvelser tilpasset fødselens faser: Rolig pust som roer nervesystemet og bevarer oksygentilførselen',
       'Sanselig berøring og massasje: Spesifikke berøringsteknikker partneren kan utføre for umiddelbar smertelindring og trygghet'
     ],
-    location: 'Oslo (Norge) & Kamenný Újezd 83, Nýřany (Tsjekkia)',
+    location: 'Oslo (Norge)',
     timing: 'Helgesamling eller dagsseminar (10:00 – 18:00)',
     catering: 'Velsmakende vegetarisk lunsj er inkludert i kursavgiften.',
     whatToBring: ['Behagelige, myke klær', 'Øyebind eller skjerf', 'Varmt pledd og innesko', 'Massasjeolje'],
@@ -330,7 +330,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
       'Få støtte og et trygt rom til å snakke om temaer som ellers skaper emosjonell avstand i relasjonen',
       'Le, danse, hvile, pleie dere selv og knytte dypere bånd på tvers av generasjoner'
     ],
-    location: 'Oslo (Norge) & Kamenný Újezd 83, Nýřany (Tsjekkia)',
+    location: 'Hurgal - Norge',
     timing: 'Helgesamling eller dagsseminar',
     whatToBring: ['Behagelige klær du føler deg feminin og vel i', 'Notatbok og penn'],
     priceNOK: 'Veiledende 2 800 kr for mor og datter / Ta kontakt for datoer i Norge',
