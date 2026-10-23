@@ -115,8 +115,8 @@ export const WORKSHOPS_DATA: Workshop[] = [
     tag: 'Workshop for par',
     subtitle: 'Gjenoppdag gnisten og den dype intimiteten i parforholdet',
     shortDescription: 'Gjenoppdag nærheten og den dype gnisten i parforholdet gjennom samspill og bevisst berøring.',
-    cardImage: '/images/6-1024x1024.jpg',
-    heroImage: '/images/6-1024x1024.jpg',
+    cardImage: 'https://www.danielatorp.cz/images/6-1024x1024.jpg',
+    heroImage: 'https://www.danielatorp.cz/images/6-1024x1024.jpg',
     fullDescription: [
       'Oppdag hva menn og kvinner virkelig ønsker i intimitet. Lær å gi, ta imot, berøre og kommunisere… med full tilstedeværelse og bevissthet.',
       'Føler du også noen ganger at partneren din kommer fra en helt annen planet? Kvinner er ofte et mysterium for menn, og menn kan fremstå som enkle for kvinner – men sannheten er langt mer nyansert og dyp.',
