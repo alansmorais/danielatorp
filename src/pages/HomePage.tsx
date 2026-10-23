@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { DynamicDatesBanner } from '../components/DynamicDatesBanner';
 import { ContactSection } from '../components/ContactSection';
 import { PILLARS_DATA } from '../data/pillarsData';
 import { WORKSHOPS_DATA } from '../data/workshopsData';
+import { DEFAULT_HOMEPAGE_CONTENT, loadHomepageContent } from '../services/content';
 import { getAssetUrl } from '../services/assets';
 
 interface HomePageProps {
@@ -16,28 +17,70 @@ export const HomePage: React.FC<HomePageProps> = ({
   onOpenDateModal,
   onOpenPrivacyModal,
 }) => {
+  const [content, setContent] = useState(DEFAULT_HOMEPAGE_CONTENT);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    loadHomepageContent()
+      .then((data) => {
+        if (!cancelled) {
+          setContent(data);
+          setError(null);
+        }
+      })
+      .catch((err) => {
+        if (!cancelled) {
+          setError(err instanceof Error ? err.message : 'Unknown content error');
+        }
+      })
+      .finally(() => {
+        if (!cancelled) {
+          setLoading(false);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   const featuredWorkshops = WORKSHOPS_DATA.slice(0, 3);
+
+  if (loading) {
+    return (
+      <div className="py-20 px-6 text-center text-sm text-neutral-500">
+        Laster inn innhold...
+      </div>
+    );
+  }
 
   return (
     <div>
-      {/* 1. HERO SECTION */}
       <section className="hero-gradient relative pt-12 pb-20 px-4 sm:px-6 text-center overflow-hidden border-b border-black/5">
         <div className="hero-radial-overlay absolute inset-0 pointer-events-none" />
 
         <div className="relative z-10 max-w-[620px] mx-auto">
           <h1 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4 tracking-tight">
-            Intimitet i sammenheng
+            {content.hero_title}
           </h1>
 
           <p className="text-[13px] sm:text-sm text-neutral-700 leading-relaxed mb-3">
-            Intimitet er ikke bare sex. Det handler om å etablere et fortrolig forhold til deg selv og til menneskene som står deg nær. Intimitet, den behagelige følelsen av tillit, sammensmelting og forståelse uten ord, hviler på 6 pilarer. Det starter med oss selv. Ta et skritt sammen med meg på veien mot tillit og kjærlig omsorg.
+            {content.hero_subtitle}
           </p>
 
           <p className="text-[13px] sm:text-sm text-neutral-700 leading-relaxed mb-6 font-normal">
-            Jeg vil hjelpe deg med å finne veien til ditt sanne jeg og til dine nærmeste.
+            {content.hero_subtitle_2}
           </p>
 
-          {/* Dynamic Live Dates from Google Apps Script */}
+          {error ? (
+            <div className="mb-4 rounded border border-amber-200 bg-amber-50 px-4 py-3 text-left text-xs text-amber-800">
+              Kunne ikke laste publisert innhold. Viser siste tilgjengelige innhold.
+            </div>
+          ) : null}
+
           <DynamicDatesBanner onSelectDate={onOpenDateModal} variant="box" />
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -51,7 +94,6 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 2. PILLARS OVERVIEW GRID */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-neutral-50/60 border-b border-neutral-100">
         <div className="max-w-[1200px] mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-light text-neutral-900 mb-2">
@@ -66,7 +108,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <Link
                 key={pillar.id}
                 to={`/6-piliru-intimity#${pillar.id}`}
-                className="bg-white p-4 rounded-lg border border-neutral-100 shadow-xs hover:shadow-md hover:border-[#ee5a7a]/40 hover:-translate-y-1 transition-all flex flex-col items-center justify-between min-h-[220px] text-center group"
+                className="bg-white p-4 rounded-lg border border-neutral-100 shadow-xs hover:shadow-md hover:border-[#ee5a7a]/40 hover:-translate-y-1 transition-all flex flex-col items-center justify-between min-h-[210px]"
               >
                 <div className="w-24 h-24 flex items-center justify-center p-2 mb-2">
                   <img
@@ -87,7 +129,6 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 3. ABOUT DANIELA SECTION */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white" id="om-daniela">
         <div className="max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-14 items-center">
           <div className="md:col-span-5 text-center">
@@ -108,19 +149,19 @@ export const HomePage: React.FC<HomePageProps> = ({
               Møt veilederen
             </span>
             <h2 className="text-3xl sm:text-4xl font-light text-neutral-900 tracking-tight">
-              Hvem er Daniela
+              {content.about_title}
             </h2>
 
             <p className="text-sm text-neutral-600 leading-relaxed">
-              Jeg er et menneske. Jeg føler og oppfatter akkurat som deg. Jeg opplever lignende situasjoner, utfordringer, gleder og sorger. Jeg tar vare på meg selv, familien min og vennene mine. Jeg ærer naturen og bøyer meg ydmykt for dens lover, dens uendelige mangfold og dens sans for humor.
+              {content.about_p1}
             </p>
 
             <blockquote className="p-4 bg-[#fdf8f9] border-l-3 border-[#ee5a7a] rounded-r-md text-sm italic text-neutral-700 leading-relaxed my-3">
-              «Visste du at det finnes mer enn 180 000 øyer i verden? Det finnes tusenvis av øyer, og de ligner ofte på hverandre. Likevel er hver enkelt et unikt økosystem.»
+              «{content.about_p2}»
             </blockquote>
 
             <p className="text-sm text-neutral-600 leading-relaxed">
-              Slik er også hvert enkelt menneske. Min oppgave er ikke å fortelle deg hvordan du skal leve, men å holde et trygt og fordomsfritt rom der du kan finne veien hjem til din egen kropp og dine sanne lengsler.
+              {content.about_p3}
             </p>
 
             <div className="pt-2 flex items-center gap-4">
@@ -135,7 +176,6 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 4. WORKSHOPS PREVIEW */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-neutral-50/50 border-t border-neutral-100">
         <div className="max-w-[1140px] mx-auto text-center">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 text-left">
@@ -200,9 +240,8 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 5. CONSULTATION TEASER */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-t border-neutral-100">
-        <div className="max-w-[1000px] mx-auto bg-gradient-to-r from-[#fff5f7] to-[#f0f9fa] rounded-2xl p-8 sm:p-12 border border-neutral-100 shadow-xs flex flex-col md:flex-row items-center justify-between gap-8 text-left">
+        <div className="max-w-[1000px] mx-auto bg-gradient-to-r from-[#fff5f7] to-[#f0f9fa] rounded-2xl p-8 sm:p-12 border border-neutral-100 shadow-xs flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="max-w-xl">
             <span className="text-xs font-semibold uppercase tracking-wider text-[#ee5a7a]">
               Én til én & parterapi
@@ -234,13 +273,12 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 6. CONTACT SECTION */}
       <ContactSection
-        title="Skriv til meg"
-        subtitle="Har du spørsmål eller ønsker å melde deg på et arrangement? Jeg er her for deg."
+        title={content.workshop_1_title || 'Skriv til meg'}
+        subtitle={content.workshop_1_desc || 'Har du spørsmål eller ønsker å melde deg på et arrangement? Jeg er her for deg.'}
         formType="homepage_contact"
         workshopId="general_contact"
-        workshopTitle="Forside – Generell henvendelse"
+        workshopTitle={content.workshop_3_title || 'Forside – Generell henvendelse'}
         onOpenPrivacyModal={onOpenPrivacyModal}
       />
     </div>
