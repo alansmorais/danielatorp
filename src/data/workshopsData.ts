@@ -101,7 +101,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
       ],
       image: '/images/danča-fb-4.jpg'
     },
-    location: 'Larvik / Oslo (Norge) & Kamenný Újezd 38, Nýřany (Tsjekkia)',
+    location: 'Larvik / Oslo (Norge)',
     timing: 'Ankomst fredag kl. 16:00, programstart kl. 17:00, avslutning søndag kl. 15:00–16:00',
     whatToBring: ['Behagelige klær og innesko', 'Vannflaske', 'Teppe', 'Sovepose eller dyne/pute'],
     priceNOK: 'Woman Vital Essence (IMBOLC / BELTANE): 4 350 kr | SAMHAIN: 3 650 kr',
