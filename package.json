@@ -4,10 +4,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 0.0.0.0 --port 3000",
-    "build": "tsc && vite build && node scripts/generate-404.js",
+    "dev": "npm run sync:content && vite --host 0.0.0.0 --port 3000",
+    "build": "npm run sync:content && tsc && vite build && node scripts/generate-404.js",
     "preview": "vite preview --host 0.0.0.0 --port 3000",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "sync:content": "node scripts/sync-content.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.16.0",
