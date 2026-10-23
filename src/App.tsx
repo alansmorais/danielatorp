@@ -257,27 +257,37 @@ export const App: React.FC = () => {
       isOpen: true,
       tag: 'Arrangementsdato',
       title: 'Forespørsel om arrangement',
+
       body: (
         <div className="space-y-3 text-xs sm:text-sm text-neutral-600">
           <p className="font-semibold text-neutral-900 text-base">{dateText}</p>
           <p>
             Ønsker du mer informasjon om dette arrangementet, ledige plasser eller vil du reservere plassen din på forhånd?
-
+          </p>
+          <p>
             Register by SMS to 958 64 782.
-Your place is confirmed after payment of a 50% deposit Vipps #970088<p><p>
-
-Daniela Torp
-Daniela Torp has spent more than 20 years guiding people through topics related to the body, intimacy, sexuality and relationships. She works with individuals and couples, combining coaching, body-based practices and trauma-informed approaches.<p><p>
-
-She completed professional training in Sexological Bodywork in California and, in 2025, training in Compassionate Trauma Therapy. Her work offers a welcoming space to explore these personal topics without judgment or shame.<p><p>
-
-Daniela will lead our pelvic floor workshop in Larvik on 7–8 November.<p><p>
+          </p>
+          <p>
+            Your place is confirmed after payment of a 50% deposit Vipps #970088
+          </p>
+          <p>
+            Daniela Torp
+          </p>
+          <p>
+            Daniela Torp has spent more than 20 years guiding people through topics related to the body, intimacy, sexuality and relationships. She works with individuals and couples, combining coaching, body-based practices and trauma-informed approaches.
+          </p>
+          <p>
+            She completed professional training in Sexological Bodywork in California and, in 2025, training in Compassionate Trauma Therapy. Her work offers a welcoming space to explore these personal topics without judgment or shame.
+          </p>
+          <p>
+            Daniela will lead our pelvic floor workshop in Larvik on 7–8 November.
           </p>
           <p>
             Fyll ut henvendelsen nedenfor, så tar Daniela kontakt med deg med praktiske detaljer.
           </p>
         </div>
       ),
+
       actionButtonText: 'Meld interesse for denne datoen',
       onAction: () => {
         scrollToContactWithSubject(`Interesse for arrangement: ${dateText}`);
