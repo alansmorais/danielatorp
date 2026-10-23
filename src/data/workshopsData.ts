@@ -157,8 +157,8 @@ export const WORKSHOPS_DATA: Workshop[] = [
     tag: 'Workshop for menn',
     subtitle: 'Bli en oppmerksom, trygg og dypt nærværende elsker',
     shortDescription: 'Bli en oppmerksom, trygg og dypt nærværende elsker gjennom dyp forståelse og sanselig berøring.',
-    cardImage: '/images/2-1024x1024.jpg',
-    heroImage: '/images/2-1024x1024.jpg',
+    cardImage: 'https://www.danielatorp.cz/images/2-1024x1024.jpg',
+    heroImage: 'https://www.danielatorp.cz/images/2-1024x1024.jpg',
     fullDescription: [
       'En praktisk og respektfull workshop der du lærer hemmelighetene bak kvinnelig nytelse, langsom berøring, energiflyt og emosjonell trygghet.',
       'Mange menn har et oppriktig ønske om å gi kvinnen den beste opplevelsen, men kjenner på usikkerhet eller frustrasjon over at de vanlige metodene ikke ser ut til å fungere.',
