@@ -93,7 +93,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
       }
     ],
     pusteritual: {
-      title: 'Pusteritual for heling av «søstersåret»',
+      title: 'Pusteritual for heling av «søstersåret»', 
       description: [
         'Et dypt forankret, intimt pusteritual som har som mål å hele søstersåret og gjenoppbygge tillit, trygghet og kontakt mellom kvinner.',
         'Gjennom sammenhengende pust, somatisk oppmerksomhet og emosjonelt uttrykk møter og forløser vi skånsomt følelser lagret i kroppen. Søstersår – ofte formet av sammenligning, fordømmelse, utestengelse eller svik – sitter ikke bare i minnet, men i nervesystemet.',
