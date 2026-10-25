@@ -49,6 +49,42 @@ export const HomePage: React.FC<HomePageProps> = ({
   }, []);
 
   const featuredWorkshops = WORKSHOPS_DATA.slice(0, 3);
+  const openUpcomingWorkshop = (dateText: string, url?: string) => {
+    // Keep links on the Norwegian site, including legacy Czech workshop slugs.
+    if (url) {
+      const candidate = url.trim();
+      try {
+        const parsed = new URL(candidate, window.location.origin);
+        if (parsed.hostname === window.location.hostname) {
+          const match = parsed.pathname.match(/\/workshops\/([^/]+?)(?:\.html)?\/?$/i);
+          if (match?.[1]) {
+            navigate(`/workshops/${decodeURIComponent(match[1])}`);
+            return;
+          }
+        }
+      } catch {
+        // Fall through to relative URL handling.
+      }
+      const relativeMatch = candidate.replace(/^\.\//, '').replace(/^\//, '').match(/^workshops\/([^/]+?)(?:\.html)?\/?$/i);
+      if (relativeMatch?.[1]) {
+        navigate(`/workshops/${decodeURIComponent(relativeMatch[1])}`);
+        return;
+      }
+    }
+
+    const normalized = dateText.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    const workshop = WORKSHOPS_DATA.find((item) => {
+      const title = item.title.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+      return normalized.includes(title) || title.includes(normalized);
+    });
+    if (workshop) {
+      navigate(`/workshops/${workshop.slug}`);
+      return;
+    }
+
+    // Events without a matching detail page remain accessible through the catalogue.
+    navigate('/workshops');
+  };
 
   if (loading) {
     return (
@@ -82,7 +118,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
           ) : null}
 
-          <DynamicDatesBanner onSelectDate={() => navigate('/workshops')} variant="box" />
+          <DynamicDatesBanner onSelectDate={openUpcomingWorkshop} variant="box" />
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link to="/workshops" className="btn-primary-outline text-xs">
