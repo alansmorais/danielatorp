@@ -3,7 +3,7 @@ import { Calendar, Loader2 } from 'lucide-react';
 import { fetchLiveDates, LiveDateItem, DEFAULT_NO_DATES } from '../services/api';
 
 interface DynamicDatesBannerProps {
-  onSelectDate: (dateText: string) => void;
+  onSelectDate: (dateText: string, url?: string) => void;
   variant?: 'banner' | 'box';
 }
 
@@ -57,7 +57,7 @@ export const DynamicDatesBanner: React.FC<DynamicDatesBannerProps> = ({
               <li key={idx}>
                 <button
                   type="button"
-                  onClick={() => onSelectDate(dateItem.text)}
+                  onClick={() => onSelectDate(dateItem.text, dateItem.url)}
                   className="text-left text-sm text-neutral-700 hover:text-[#ee5a7a] hover:underline flex items-center gap-2 transition-colors py-1 cursor-pointer w-full"
                 >
                   <span className="text-sm">📅</span>
@@ -97,7 +97,7 @@ export const DynamicDatesBanner: React.FC<DynamicDatesBannerProps> = ({
             <div key={idx}>
               <button
                 type="button"
-                onClick={() => onSelectDate(dateItem.text)}
+                onClick={() => onSelectDate(dateItem.text, dateItem.url)}
                 className="text-left text-[#ee5a7a] font-medium hover:underline cursor-pointer block leading-normal py-0.5"
               >
                 {dateItem.text}
