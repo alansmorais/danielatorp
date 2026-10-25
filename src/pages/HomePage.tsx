@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { DynamicDatesBanner } from '../components/DynamicDatesBanner';
 import { ContactSection } from '../components/ContactSection';
 import { PILLARS_DATA } from '../data/pillarsData';
@@ -17,6 +17,7 @@ export const HomePage: React.FC<HomePageProps> = ({
   onOpenDateModal,
   onOpenPrivacyModal,
 }) => {
+  const navigate = useNavigate();
   const [content, setContent] = useState(DEFAULT_HOMEPAGE_CONTENT);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -81,7 +82,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
           ) : null}
 
-          <DynamicDatesBanner onSelectDate={onOpenDateModal} variant="box" />
+          <DynamicDatesBanner onSelectDate={() => navigate('/workshops')} variant="box" />
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link to="/workshops" className="btn-primary-outline text-xs">
