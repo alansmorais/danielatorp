@@ -73,9 +73,37 @@ export const HomePage: React.FC<HomePageProps> = ({
       }
     }
 
-    const normalized = dateText.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    const normalized = dateText
+      .normalize('NFD')
+      .replace(/[\\u0300-\\u036f]/g, '')
+      .toLowerCase();
+
+    // Upcoming-date labels may use short event names rather than full workshop titles.
+    // Route known events to the matching Norwegian detail page, retaining the Czech slug.
+    const aliases: Array<{ matches: string[]; slug: string }> = [
+      { matches: ['lek med meg', 'hraj si se mnou'], slug: 'Hraj-si-se-mnou' },
+      { matches: ['kvinneessens', 'kvinnelig essens', 'vital essens', 'samhain', 'imbolc', 'beltane', 'woman vital essence'], slug: 'zenska-esence-no' },
+      { matches: ['kunsten a tilfredsstille en kvinne', 'tilfredsstille en kvinne', 'umeni potesit zenu'], slug: 'umeni-potesit-zenu' },
+      { matches: ['kunsten a tilfredsstille en mann', 'tilfredsstille en mann', 'umeni potesit muze'], slug: 'umeni-potesit-muze' },
+      { matches: ['kunsten a tilfredsstille', 'for par', 'jen pro pary'], slug: 'jen-pro-pary' },
+      { matches: ['bekkenbunn', 'tajemstvi panevniho dna'], slug: 'tajemstvi-panevniho-dna' },
+      { matches: ['jeg var gravid', 'byla jsem tehotna'], slug: 'byla-jsem-tehotna-ale' },
+      { matches: ['fødsel med trygghet', 'fodsel med trygghet', 'porod jako jistota'], slug: 'porod-jako-jistota' },
+      { matches: ['mor og datter', 'matka a dcera'], slug: 'matka-a-dcera' },
+    ];
+
+    const aliasMatch = aliases.find((alias) =>
+      alias.matches.some((phrase) => normalized.includes(
+        phrase.normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase()
+      ))
+    );
+    if (aliasMatch) {
+      navigate(`/workshops/${aliasMatch.slug}`);
+      return;
+    }
+
     const workshop = WORKSHOPS_DATA.find((item) => {
-      const title = item.title.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+      const title = item.title.normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase();
       return normalized.includes(title) || title.includes(normalized);
     });
     if (workshop) {
