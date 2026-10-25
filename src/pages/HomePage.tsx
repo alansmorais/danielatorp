@@ -75,7 +75,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
     const normalized = dateText
       .normalize('NFD')
-      .replace(/[\\u0300-\\u036f]/g, '')
+      .replace(/[\u0300-\u036f]/g, '')
       .toLowerCase();
 
     // Upcoming-date labels may use short event names rather than full workshop titles.
@@ -83,9 +83,9 @@ export const HomePage: React.FC<HomePageProps> = ({
     const aliases: Array<{ matches: string[]; slug: string }> = [
       { matches: ['lek med meg', 'hraj si se mnou'], slug: 'Hraj-si-se-mnou' },
       { matches: ['kvinneessens', 'kvinnelig essens', 'vital essens', 'samhain', 'imbolc', 'beltane', 'woman vital essence'], slug: 'zenska-esence-no' },
-      { matches: ['kunsten a tilfredsstille en kvinne', 'tilfredsstille en kvinne', 'umeni potesit zenu'], slug: 'umeni-potesit-zenu' },
-      { matches: ['kunsten a tilfredsstille en mann', 'tilfredsstille en mann', 'umeni potesit muze'], slug: 'umeni-potesit-muze' },
-      { matches: ['kunsten a tilfredsstille', 'for par', 'jen pro pary'], slug: 'jen-pro-pary' },
+      { matches: ['kunsten a tilfredsstille en kvinne', 'kunsten å tilfredsstille en kvinne', 'tilfredsstille en kvinne', 'umeni potesit zenu'], slug: 'umeni-potesit-zenu' },
+      { matches: ['kunsten a tilfredsstille en mann', 'kunsten å tilfredsstille en mann', 'tilfredsstille en mann', 'umeni potesit muze'], slug: 'umeni-potesit-muze' },
+      { matches: ['kunsten a tilfredsstille', 'kunsten å tilfredsstille', 'for par', 'jen pro pary'], slug: 'jen-pro-pary' },
       { matches: ['bekkenbunn', 'tajemstvi panevniho dna'], slug: 'tajemstvi-panevniho-dna' },
       { matches: ['jeg var gravid', 'byla jsem tehotna'], slug: 'byla-jsem-tehotna-ale' },
       { matches: ['fødsel med trygghet', 'fodsel med trygghet', 'porod jako jistota'], slug: 'porod-jako-jistota' },
@@ -94,7 +94,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
     const aliasMatch = aliases.find((alias) =>
       alias.matches.some((phrase) => normalized.includes(
-        phrase.normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase()
+        phrase.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
       ))
     );
     if (aliasMatch) {
@@ -103,7 +103,7 @@ export const HomePage: React.FC<HomePageProps> = ({
     }
 
     const workshop = WORKSHOPS_DATA.find((item) => {
-      const title = item.title.normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase();
+      const title = item.title.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
       return normalized.includes(title) || title.includes(normalized);
     });
     if (workshop) {
