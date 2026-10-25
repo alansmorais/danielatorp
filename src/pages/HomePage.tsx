@@ -55,12 +55,13 @@ export const HomePage: React.FC<HomePageProps> = ({
       const candidate = url.trim();
       try {
         const parsed = new URL(candidate, window.location.origin);
-        if (parsed.hostname === window.location.hostname) {
-          const match = parsed.pathname.match(/\/workshops\/([^/]+?)(?:\.html)?\/?$/i);
-          if (match?.[1]) {
-            navigate(`/workshops/${decodeURIComponent(match[1])}`);
-            return;
-          }
+        // The Norwegian homepage intentionally uses Czech legacy slugs.
+        // Apps Script may provide a danielatorp.cz URL; preserve its workshop
+        // path while navigating on the current Norwegian domain.
+        const match = parsed.pathname.match(/\/workshops\/([^/]+?)(?:\.html)?\/?$/i);
+        if (match?.[1]) {
+          navigate(`/workshops/${decodeURIComponent(match[1])}`);
+          return;
         }
       } catch {
         // Fall through to relative URL handling.
