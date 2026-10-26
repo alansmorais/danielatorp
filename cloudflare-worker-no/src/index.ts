@@ -147,7 +147,7 @@ export default {
     const site = new URL(env.SITE_URL);
     const successUrl = new URL('/', site);
     successUrl.search = '?payment=success&session_id={CHECKOUT_SESSION_ID}';
-    const cancelUrl = new URL(`/workshops/${encodeURIComponent(workshopId)}`, site);
+    const cancelUrl = new URL('/workshops', site);
     const form = new URLSearchParams();
     form.set('mode', 'payment');
     form.set('success_url', successUrl.toString());
