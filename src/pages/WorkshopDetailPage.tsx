@@ -90,7 +90,7 @@ export const WorkshopDetailPage: React.FC<WorkshopDetailPageProps> = ({
           <p className="text-base sm:text-lg text-neutral-700 leading-relaxed mb-8">
             {workshop.subtitle}
           </p>
-          <button type="button" onClick={() => { setCheckoutError(''); setRegistrationOpen(true); }} className="btn-primary-solid text-xs py-3 px-8">
+          <button type="button" onClick={() => { setCheckoutError(''); setPriceOption(workshop.id === 'lek-med-meg' ? 'level1' : workshop.id === 'kvinneessens-og-livskraft' ? 'samhain' : 'standard'); setRegistrationOpen(true); }} className="btn-primary-solid text-xs py-3 px-8">
             Meld deg på
           </button>
         </div>
