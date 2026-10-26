@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getWorkshopBySlug } from '../data/workshopsData';
 import { ContactSection } from '../components/ContactSection';
@@ -13,6 +13,47 @@ export const WorkshopDetailPage: React.FC<WorkshopDetailPageProps> = ({
 }) => {
   const { slug } = useParams<{ slug: string }>();
   const workshop = getWorkshopBySlug(slug || '');
+  const [registrationOpen, setRegistrationOpen] = useState(false);
+  const [participantName, setParticipantName] = useState('');
+  const [participantEmail, setParticipantEmail] = useState('');
+  const [priceOption, setPriceOption] = useState('standard');
+  const [checkoutError, setCheckoutError] = useState('');
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
+
+  const priceOptions = workshop?.id === 'lek-med-meg'
+    ? [{ value: 'level1', label: 'Nivå 1 – 6 400 NOK' }, { value: 'level2', label: 'Nivå 2 – 7 250 NOK' }]
+    : workshop?.id === 'kvinneessens-og-livskraft'
+      ? [{ value: 'samhain', label: 'SAMHAIN – 3 650 NOK' }, { value: 'imbolc', label: 'IMBOLC – 4 350 NOK' }, { value: 'beltane', label: 'BELTANE – 4 350 NOK' }]
+      : [{ value: 'standard', label: workshop?.id === 'kun-for-par' ? '8 500 NOK per par' : 'Fortsett til betaling' }];
+
+  const handleCheckout = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setCheckoutError('');
+    setCheckoutLoading(true);
+    try {
+      const endpoint = (import.meta as ImportMeta & { env?: { VITE_STRIPE_WORKER_URL?: string } }).env?.VITE_STRIPE_WORKER_URL
+        || 'https://danielatorp-no-stripe-checkout.YOUR_SUBDOMAIN.workers.dev';
+      if (endpoint.includes('YOUR_SUBDOMAIN')) {
+        throw new Error('Online betaling er ikke konfigurert ennå. Kontakt Daniela for påmelding.');
+      }
+      const response = await fetch(`${endpoint.replace(/\\/$/, '')}/api/create-checkout-session`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          workshopId: workshop?.id,
+          priceOption,
+          participantName: participantName.trim(),
+          participantEmail: participantEmail.trim()
+        })
+      });
+      const result = await response.json() as { url?: string; error?: string };
+      if (!response.ok || !result.url) throw new Error(result.error || 'Betalingen kunne ikke startes. Prøv igjen.');
+      window.location.assign(result.url);
+    } catch (error) {
+      setCheckoutError(error instanceof Error ? error.message : 'En feil oppstod ved klargjøring av betaling.');
+      setCheckoutLoading(false);
+    }
+  };
 
   if (!workshop) {
     return (
@@ -49,9 +90,9 @@ export const WorkshopDetailPage: React.FC<WorkshopDetailPageProps> = ({
           <p className="text-base sm:text-lg text-neutral-700 leading-relaxed mb-8">
             {workshop.subtitle}
           </p>
-          <a href="#kontakt" className="btn-primary-solid text-xs py-3 px-8">
+          <button type="button" onClick={() => { setCheckoutError(''); setRegistrationOpen(true); }} className="btn-primary-solid text-xs py-3 px-8">
             Meld deg på
-          </a>
+          </button>
         </div>
       </section>
 
@@ -373,6 +414,40 @@ export const WorkshopDetailPage: React.FC<WorkshopDetailPageProps> = ({
       </section>
 
       {/* 3. CONTACT FORM SPECIFIC TO THIS WORKSHOP */}
+      {registrationOpen && workshop && (
+        <div role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget && !checkoutLoading) setRegistrationOpen(false); }} className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/60 p-4">
+          <section role="dialog" aria-modal="true" aria-labelledby="registration-modal-title" className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-xl bg-white p-6 sm:p-8 text-left shadow-2xl">
+            <button type="button" aria-label="Lukk" onClick={() => setRegistrationOpen(false)} disabled={checkoutLoading} className="absolute right-4 top-3 text-3xl text-neutral-500">×</button>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-[#ee5a7a]">Påmelding og betaling</p>
+            <h2 id="registration-modal-title" className="mb-3 pr-6 text-2xl font-medium text-neutral-900">{workshop.title}</h2>
+            <p className="mb-5 text-sm text-neutral-600">Fyll inn kontaktinformasjonen din for å fortsette til sikker betaling med Stripe.</p>
+            <form onSubmit={handleCheckout} className="grid gap-4">
+              {priceOptions.length > 1 && (
+                <div>
+                  <label htmlFor="payment-option" className="mb-1 block text-sm font-medium text-neutral-800">Velg arrangement *</label>
+                  <select id="payment-option" value={priceOption} onChange={(event) => setPriceOption(event.target.value)} className="w-full rounded-lg border border-neutral-300 bg-white p-3 text-sm">
+                    {priceOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+                  </select>
+                </div>
+              )}
+              <div>
+                <label htmlFor="registration-name" className="mb-1 block text-sm font-medium text-neutral-800">Fullt navn *</label>
+                <input id="registration-name" name="name" autoComplete="name" required maxLength={120} value={participantName} onChange={(event) => setParticipantName(event.target.value)} className="w-full rounded-lg border border-neutral-300 p-3 text-sm" />
+              </div>
+              <div>
+                <label htmlFor="registration-email" className="mb-1 block text-sm font-medium text-neutral-800">E-post *</label>
+                <input id="registration-email" name="email" type="email" autoComplete="email" required maxLength={254} value={participantEmail} onChange={(event) => setParticipantEmail(event.target.value)} className="w-full rounded-lg border border-neutral-300 p-3 text-sm" />
+              </div>
+              {checkoutError && <p role="alert" className="rounded-lg bg-red-50 p-3 text-sm text-red-700">{checkoutError}</p>}
+              <button type="submit" disabled={checkoutLoading} className="btn-primary-solid w-full py-3 text-sm disabled:opacity-60">
+                {checkoutLoading ? 'Klargjør sikker betaling…' : 'Fortsett til sikker betaling'}
+              </button>
+              <p className="text-xs leading-relaxed text-neutral-500">Betalingen behandles sikkert av Stripe. Påmeldingen bekreftes etter at betalingen er verifisert.</p>
+            </form>
+          </section>
+        </div>
+      )}
+
       <ContactSection
         title={`Meld deg på: ${workshop.title}`}
         subtitle="Send inn din henvendelse, så tar Daniela kontakt med deg med praktiske detaljer."
