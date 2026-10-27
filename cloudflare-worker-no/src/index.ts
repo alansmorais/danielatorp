@@ -149,11 +149,11 @@ export default {
     }
 
     if (url.pathname !== '/api/create-checkout-session' || request.method !== 'POST') return new Response('Not found', { status: 404 });
-    if (!originAllowed) return json({ error: 'Origin is not allowed.' }, 403, allowedOrigin);
-    if (!env.STRIPE_SECRET_KEY || !env.SITE_URL) return json({ error: 'Online betaling er ikke konfigurert ennå. Kontakt Daniela.' }, 503, allowedOrigin);
+    if (!originAllowed) return json({ error: 'Origin is not allowed.' }, 403, corsOrigin);
+    if (!env.STRIPE_SECRET_KEY || !env.SITE_URL) return json({ error: 'Online betaling er ikke konfigurert ennå. Kontakt Daniela.' }, 503, corsOrigin);
 
     let body: { workshopId?: string; priceOption?: string; participantName?: string; participantEmail?: string };
-    try { body = await request.json(); } catch { return json({ error: 'Ugyldig forespørsel.' }, 400, allowedOrigin); }
+    try { body = await request.json(); } catch { return json({ error: 'Ugyldig forespørsel.' }, 400, corsOrigin); }
     const workshopId = body.workshopId || '';
     const priceOption = body.priceOption || 'standard';
     const isSheAcademy = origin === SHE_ORIGIN || origin === 'https://www.sheacademy.no';
@@ -161,7 +161,7 @@ export default {
     const name = (body.participantName || '').trim().slice(0, 120);
     const email = (body.participantEmail || '').trim().slice(0, 254);
     if (!price || !name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return json({ error: 'Kontroller workshop og kontaktopplysninger.' }, 400, allowedOrigin);
+      return json({ error: 'Kontroller workshop og kontaktopplysninger.' }, 400, corsOrigin);
     }
 
     const site = new URL(isSheAcademy ? 'https://sheacademy.no' : env.SITE_URL);
@@ -195,7 +195,7 @@ export default {
       body: form.toString()
     });
     const stripeData = await stripeResponse.json() as { url?: string; error?: { message?: string } };
-    if (!stripeResponse.ok || !stripeData.url) return json({ error: 'Stripe kunne ikke klargjøre betalingen. Prøv igjen senere.' }, 502, allowedOrigin);
+    if (!stripeResponse.ok || !stripeData.url) return json({ error: 'Stripe kunne ikke klargjøre betalingen. Prøv igjen senere.' }, 502, corsOrigin);
     return json({ url: stripeData.url }, 200, corsOrigin);
   }
 };
