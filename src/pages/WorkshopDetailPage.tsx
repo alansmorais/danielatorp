@@ -36,7 +36,7 @@ export const WorkshopDetailPage: React.FC<WorkshopDetailPageProps> = ({
       if (endpoint.includes('YOUR_SUBDOMAIN')) {
         throw new Error('Online betaling er ikke konfigurert ennå. Kontakt Daniela for påmelding.');
       }
-      const response = await fetch(`${endpoint.replace(/\\/$/, '')}/api/create-checkout-session`, {
+      const response = await fetch(`${endpoint.replace(/\/$/, '')}/api/create-checkout-session`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
