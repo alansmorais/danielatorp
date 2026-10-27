@@ -393,8 +393,16 @@ WORKSHOPS_DATA.forEach((w) => {
 export function getWorkshopBySlug(slug: string): Workshop | undefined {
   if (!slug) return undefined;
   const clean = slug.toLowerCase().replace(/\.html$/, '').replace(/_no$/, '');
-  return WORKSHOPS_DATA.find(w => 
-    w.slug.toLowerCase() === clean || 
+
+  // Legacy spellings/slugs for the Ané & Daniela trauma workshop all resolve
+  // to the dedicated Norwegian detail page.
+  if (/trauma|traumaworkshop/.test(clean) && /(ane|anna|daniela)/.test(clean)) {
+    const traumaWorkshop = WORKSHOPS_DATA.find(w => w.id === 'trauma-workshops-ane-daniela');
+    if (traumaWorkshop) return traumaWorkshop;
+  }
+
+  return WORKSHOPS_DATA.find(w =>
+    w.slug.toLowerCase() === clean ||
     w.id.toLowerCase() === clean ||
     w.slug.toLowerCase() === slug.toLowerCase() ||
     w.id.toLowerCase() === slug.toLowerCase()
