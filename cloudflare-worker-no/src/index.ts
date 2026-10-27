@@ -41,6 +41,21 @@ const PRICES: Record<string, Record<string, Price>> = {
   }
 };
 
+
+const SHE_ORIGIN = 'https://sheacademy.no';
+const SHE_PRICES: Record<string, Record<string, Price>> = {
+  'ws-1': { standard: { title: 'The Art of Pleasing a Woman', amount: 350000, description: 'SHE Academy workshop; price in NOK' } },
+  'ws-2': { standard: { title: 'The Art of Pleasing a Man', amount: 350000, description: 'SHE Academy workshop; price in NOK' } },
+  'ws-3': { standard: { title: 'Larvik Vital Essence SAMHAIN', amount: 550000, description: 'SHE Academy workshop; price in NOK' } },
+  'ws-4': { standard: { title: 'Trauma workshop with Anne-Oslo', amount: 490000, description: 'SHE Academy workshop; price in NOK' } },
+  'ws-5': { standard: { title: 'Play with Me 1', amount: 650000, description: 'SHE Academy workshop; price in NOK' } },
+  'ws-6': { standard: { title: 'Play with Me Level 2', amount: 690000, description: 'SHE Academy workshop; price in NOK' } },
+  'ws-7': { standard: { title: 'Woman Vital Essence Imbolic', amount: 590000, description: 'SHE Academy workshop; price in NOK' } },
+  'ws-8': { standard: { title: 'How to Please a Man', amount: 350000, description: 'SHE Academy workshop; price in NOK' } },
+  'ws-9': { standard: { title: 'How to Please a Woman', amount: 350000, description: 'SHE Academy workshop; price in NOK' } },
+  'ws-10': { standard: { title: 'Just for Couples', amount: 750000, description: 'SHE Academy workshop; price in NOK' } }
+};
+
 function json(data: unknown, status: number, origin: string): Response {
   return new Response(JSON.stringify(data), {
     status,
@@ -77,7 +92,7 @@ export default {
     const url = new URL(request.url);
     const origin = request.headers.get('Origin') || '';
     const allowedOrigin = env.ALLOWED_ORIGIN;
-    const allowedOrigins = [allowedOrigin, 'https://danielatorp.no', 'https://www.danielatorp.no'];
+    const allowedOrigins = [allowedOrigin, 'https://danielatorp.no', 'https://www.danielatorp.no', SHE_ORIGIN, 'https://www.sheacademy.no'];
     const originAllowed = allowedOrigins.includes(origin) || origin === 'http://localhost:3000';
     const corsOrigin = originAllowed ? origin : allowedOrigin;
 
@@ -120,6 +135,12 @@ export default {
             customer_email: object.customer_details?.email,
             customer_name: object.customer_details?.name || object.metadata?.participant_name,
             metadata: object.metadata,
+            registration_source: object.metadata?.registration_source || 'DanielaTorp.no',
+            // Compatibility fields for the existing spreadsheet's Website source column (M).
+            website_source: object.metadata?.registration_source || 'DanielaTorp.no',
+            source_website: object.metadata?.source_website || object.metadata?.site_url || env.SITE_URL,
+            site_language: object.metadata?.site_language || 'NO',
+            workshop_id: object.metadata?.workshop_id || object.client_reference_id || '',
             paid_at: new Date().toISOString()
           })
         });
@@ -130,24 +151,25 @@ export default {
     }
 
     if (url.pathname !== '/api/create-checkout-session' || request.method !== 'POST') return new Response('Not found', { status: 404 });
-    if (!originAllowed) return json({ error: 'Origin is not allowed.' }, 403, allowedOrigin);
-    if (!env.STRIPE_SECRET_KEY || !env.SITE_URL) return json({ error: 'Online betaling er ikke konfigurert ennå. Kontakt Daniela.' }, 503, allowedOrigin);
+    if (!originAllowed) return json({ error: 'Origin is not allowed.' }, 403, corsOrigin);
+    if (!env.STRIPE_SECRET_KEY || !env.SITE_URL) return json({ error: 'Online betaling er ikke konfigurert ennå. Kontakt Daniela.' }, 503, corsOrigin);
 
     let body: { workshopId?: string; priceOption?: string; participantName?: string; participantEmail?: string };
-    try { body = await request.json(); } catch { return json({ error: 'Ugyldig forespørsel.' }, 400, allowedOrigin); }
+    try { body = await request.json(); } catch { return json({ error: 'Ugyldig forespørsel.' }, 400, corsOrigin); }
     const workshopId = body.workshopId || '';
     const priceOption = body.priceOption || 'standard';
-    const price = PRICES[workshopId]?.[priceOption];
+    const isSheAcademy = origin === SHE_ORIGIN || origin === 'https://www.sheacademy.no';
+    const price = (isSheAcademy ? SHE_PRICES : PRICES)[workshopId]?.[priceOption];
     const name = (body.participantName || '').trim().slice(0, 120);
     const email = (body.participantEmail || '').trim().slice(0, 254);
     if (!price || !name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return json({ error: 'Kontroller workshop og kontaktopplysninger.' }, 400, allowedOrigin);
+      return json({ error: 'Kontroller workshop og kontaktopplysninger.' }, 400, corsOrigin);
     }
 
-    const site = new URL(env.SITE_URL);
+    const site = new URL(isSheAcademy ? 'https://sheacademy.no' : env.SITE_URL);
     const successUrl = new URL('/', site);
     successUrl.search = '?payment=success&session_id={CHECKOUT_SESSION_ID}';
-    const cancelUrl = new URL('/workshops', site);
+    const cancelUrl = new URL(isSheAcademy ? '/#workshops' : '/workshops', site);
     const form = new URLSearchParams();
     form.set('mode', 'payment');
     form.set('success_url', successUrl.toString());
@@ -163,7 +185,10 @@ export default {
     form.set('metadata[workshop_title]', price.title);
     form.set('metadata[participant_name]', name);
     form.set('metadata[participant_email]', email);
-    form.set('metadata[site_language]', 'no');
+    form.set('metadata[site_language]', isSheAcademy ? 'SHE' : 'NO');
+    form.set('metadata[registration_source]', isSheAcademy ? 'SHE Academy' : 'DanielaTorp.no');
+    form.set('metadata[website_source]', isSheAcademy ? 'SHE Academy' : 'DanielaTorp.no');
+    form.set('metadata[source_website]', site.origin);
     form.set('metadata[price_option]', priceOption);
     form.set('metadata[site_url]', env.SITE_URL);
 
@@ -173,7 +198,7 @@ export default {
       body: form.toString()
     });
     const stripeData = await stripeResponse.json() as { url?: string; error?: { message?: string } };
-    if (!stripeResponse.ok || !stripeData.url) return json({ error: 'Stripe kunne ikke klargjøre betalingen. Prøv igjen senere.' }, 502, allowedOrigin);
+    if (!stripeResponse.ok || !stripeData.url) return json({ error: 'Stripe kunne ikke klargjøre betalingen. Prøv igjen senere.' }, 502, corsOrigin);
     return json({ url: stripeData.url }, 200, corsOrigin);
   }
 };
