@@ -50,6 +50,20 @@ export const HomePage: React.FC<HomePageProps> = ({
 
   const featuredWorkshops = WORKSHOPS_DATA.slice(0, 3);
   const openUpcomingWorkshop = (dateText: string, url?: string) => {
+    const normalized = dateText
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase();
+    const traumaWorkshopSlug = 'traumaworkshops-ane-daniela';
+    const isTraumaWorkshop = /trauma|traumaworkshop|ane.{0,4}daniela|anna.{0,4}daniela/i.test(normalized);
+
+    // Always route Trauma Workshops references to the dedicated Norwegian detail page,
+    // even if the CMS provides an older Czech URL or slug.
+    if (isTraumaWorkshop) {
+      navigate(`/workshops/${traumaWorkshopSlug}`);
+      return;
+    }
+
     // Keep links on the Norwegian site, including legacy Czech workshop slugs.
     if (url) {
       const candidate = url.trim();
@@ -72,11 +86,6 @@ export const HomePage: React.FC<HomePageProps> = ({
         return;
       }
     }
-
-    const normalized = dateText
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .toLowerCase();
 
     // Upcoming-date labels may use short event names rather than full workshop titles.
     // Route known events to the matching Norwegian detail page, retaining the Czech slug.
