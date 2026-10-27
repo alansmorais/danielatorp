@@ -90,8 +90,8 @@ export const WorkshopDetailPage: React.FC<WorkshopDetailPageProps> = ({
           <p className="text-base sm:text-lg text-neutral-700 leading-relaxed mb-8">
             {workshop.subtitle}
           </p>
-          <button type="button" onClick={() => { setCheckoutError(''); setPriceOption(workshop.id === 'lek-med-meg' ? 'level1' : workshop.id === 'kvinneessens-og-livskraft' ? 'samhain' : 'standard'); setRegistrationOpen(true); }} className="btn-primary-solid text-xs py-3 px-8">
-            Meld deg på
+          <button type="button" onClick={() => { if (workshop.id === 'trauma-workshops-ane-daniela') { window.location.href = 'sms:95864782?body=' + encodeURIComponent('Hei, jeg ønsker å melde meg på Traumaworkshops Ané & Daniela 21.–22. november.'); return; } setCheckoutError(''); setPriceOption(workshop.id === 'lek-med-meg' ? 'level1' : workshop.id === 'kvinneessens-og-livskraft' ? 'samhain' : 'standard'); setRegistrationOpen(true); }} className="btn-primary-solid text-xs py-3 px-8">
+            {workshop.id === 'trauma-workshops-ane-daniela' ? 'Meld deg på via SMS' : 'Meld deg på'}
           </button>
         </div>
       </section>
@@ -345,9 +345,11 @@ export const WorkshopDetailPage: React.FC<WorkshopDetailPageProps> = ({
                   {workshop.priceNOK}
                 </div>
               )}
-              <div className="text-xs text-neutral-600">
-                Opprinnelig referansepris: <strong>{workshop.priceCZK}</strong>
-              </div>
+              {workshop.id !== 'trauma-workshops-ane-daniela' && (
+                <div className="text-xs text-neutral-600">
+                  Opprinnelig referansepris: <strong>{workshop.priceCZK}</strong>
+                </div>
+              )}
               {workshop.priceNote && (
                 <p className="text-[11px] text-neutral-500 mt-2 leading-relaxed border-t border-neutral-100 pt-2">
                   {workshop.priceNote}
