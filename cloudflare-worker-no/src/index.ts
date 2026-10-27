@@ -136,7 +136,9 @@ export default {
             customer_name: object.customer_details?.name || object.metadata?.participant_name,
             metadata: object.metadata,
             registration_source: object.metadata?.registration_source || 'DanielaTorp.no',
-            source_website: object.metadata?.site_url || env.SITE_URL,
+            // Compatibility fields for the existing spreadsheet's Website source column (M).
+            website_source: object.metadata?.registration_source || 'DanielaTorp.no',
+            source_website: object.metadata?.source_website || object.metadata?.site_url || env.SITE_URL,
             site_language: object.metadata?.site_language || 'NO',
             workshop_id: object.metadata?.workshop_id || object.client_reference_id || '',
             paid_at: new Date().toISOString()
@@ -185,6 +187,7 @@ export default {
     form.set('metadata[participant_email]', email);
     form.set('metadata[site_language]', isSheAcademy ? 'SHE' : 'NO');
     form.set('metadata[registration_source]', isSheAcademy ? 'SHE Academy' : 'DanielaTorp.no');
+    form.set('metadata[website_source]', isSheAcademy ? 'SHE Academy' : 'DanielaTorp.no');
     form.set('metadata[source_website]', site.origin);
     form.set('metadata[price_option]', priceOption);
     form.set('metadata[site_url]', env.SITE_URL);
