@@ -275,11 +275,34 @@ export const WorkshopDetailPage: React.FC<WorkshopDetailPageProps> = ({
           <div className="lg:col-span-5 bg-neutral-50/70 p-6 sm:p-8 rounded-2xl border border-neutral-200/70 space-y-6">
             {/* Workshop Photography Card */}
             <div className="rounded-xl overflow-hidden border border-neutral-200/80 shadow-xs bg-white">
-              <img
-                src={workshop.cardImage}
-                alt={`Fotografi for workshopen ${workshop.title}`}
-                className="w-full h-56 sm:h-64 object-cover"
-              />
+              {workshop.id === 'trauma-workshops-ane-daniela' ? (
+                <div className="grid grid-cols-2 gap-0 bg-[#fdf8f9] p-3 sm:p-4">
+                  <div className="px-1 text-center">
+                    <img
+                      src="/images/anne-small.jpg"
+                      alt="Anne Brit Borch Sandberg"
+                      className="mx-auto h-32 w-32 max-w-full rounded-full object-cover object-center ring-4 ring-white shadow-md sm:h-40 sm:w-40"
+                      loading="lazy"
+                    />
+                    <p className="mt-3 text-xs font-semibold text-neutral-900">Anne Brit Borch Sandberg</p>
+                  </div>
+                  <div className="px-1 text-center">
+                    <img
+                      src="/images/daniela-small.jpg"
+                      alt="Daniela Torp"
+                      className="mx-auto h-32 w-32 max-w-full rounded-full object-cover object-center ring-4 ring-white shadow-md sm:h-40 sm:w-40"
+                      loading="lazy"
+                    />
+                    <p className="mt-3 text-xs font-semibold text-neutral-900">Daniela Torp</p>
+                  </div>
+                </div>
+              ) : (
+                <img
+                  src={workshop.cardImage}
+                  alt={`Fotografi for workshopen ${workshop.title}`}
+                  className="w-full h-56 sm:h-64 object-cover"
+                />
+              )}
             </div>
 
             <h4 className="text-xs font-semibold uppercase tracking-wider text-[#ee5a7a] border-b border-neutral-200/80 pb-3">
