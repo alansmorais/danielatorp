@@ -342,7 +342,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
         author: 'Lucie L.'
       }
     ]
-  }
+  },
   {
     id: 'trauma-workshops-ane-daniela',
     slug: 'traumaworkshops-ane-daniela',
