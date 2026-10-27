@@ -343,6 +343,36 @@ export const WORKSHOPS_DATA: Workshop[] = [
       }
     ]
   }
+  {
+    id: 'trauma-workshops-ane-daniela',
+    slug: 'traumaworkshops-ane-daniela',
+    title: 'Traumaworkshops Ané & Daniela',
+    tag: 'To-dagers workshop',
+    subtitle: 'To dager som kan endre måten du forstår deg selv og andre på',
+    shortDescription: 'Utforsk hvordan traumer påvirker relasjoner, tilknytning og måten vi møter oss selv og andre på.',
+    cardImage: '/images/web-1920---workshop.jpg',
+    heroImage: '/images/web-1920---workshop.jpg',
+    fullDescription: [
+      'Traumer påvirker hvordan vi opplever oss selv, andre mennesker og relasjonene våre. I denne workshopen utforsker vi hvordan tidligere erfaringer kan forme tilknytning, reaksjoner og mønstre i hverdagen.',
+      'Gjennom faglige innspill, praktiske demonstrasjoner og øvelser får du mulighet til å forstå mer av hvordan traumer virker, og hvordan de kan komme til uttrykk i relasjonene våre.',
+      'Workshopen passer både for deg som ønsker å forstå deg selv og relasjonene dine bedre, og for fagpersoner som arbeider med og støtter andre mennesker.',
+      'Vi skaper et respektfullt rom for læring, refleksjon og praktisk utforskning.'
+    ],
+    quote: 'To dager med ny innsikt i hvordan vi formes av erfaringene våre – og hvordan vi kan møte oss selv og andre med større forståelse.',
+    targetAudience: [
+      'For deg som ønsker større forståelse av deg selv og egne relasjoner',
+      'For deg som vil forstå tilknytning og traumereaksjoner bedre',
+      'For fagpersoner som støtter og arbeider med andre mennesker'
+    ],
+    location: 'Prindsen Yoga & Terapi, Storgata 36C, Oslo, Norge',
+    timing: '21. november kl. 10:00–18:00 · 22. november kl. 10:00–15:00',
+    whatToBring: ['Behagelige klær', 'Notatbok og penn'],
+    priceNOK: '2 850 NOK',
+    priceCZK: 'Ikke relevant',
+    priceNote: 'Depositum: 1 425 NOK (50 % av totalprisen). Betaling skjer kun via Vipps #970088. Plassen bekreftes når depositumet er betalt. Påmelding via SMS: 958 64 782.',
+    hosts: 'Anne Brit Borch Sandberg er psykiatrisk sykepleier og kognitiv terapeut, og arbeider med AIM (Anerkjennelse, Innsikt, Mestring). Hun støtter mennesker i å utforske selvforståelse gjennom kognitiv forståelse og innsikt, og i å utvikle en indre veiviser for relasjoner, egenomsorg og nye perspektiver. Daniela Torp har over 20 års erfaring med kropp, intimitet, seksualitet og relasjoner. Hun arbeider med enkeltpersoner og par gjennom coaching, kroppsbaserte og traumebevisste tilnærminger, og har utdanning i Sexological Bodywork fra California og Compassionate Trauma Therapy (2025).'
+  },
+
 ];
 
 // Ensure asset URLs adapt automatically to GitHub Pages or custom domain
