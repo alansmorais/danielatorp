@@ -110,6 +110,17 @@ export const WorkshopDetailPage: React.FC<WorkshopDetailPageProps> = ({
               </h3>
             </div>
 
+            {workshop.id === 'trauma-workshops-ane-daniela' && (
+              <figure className="mx-auto w-full max-w-2xl overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
+                <img
+                  src="/images/promo-small.jpg"
+                  alt="Traumaworkshops Ané & Daniela – seminarinformasjon"
+                  className="block h-auto w-full object-contain"
+                  loading="eager"
+                />
+              </figure>
+            )}
+
             <div className="space-y-4 text-[15px] text-neutral-700 leading-relaxed font-light">
               {workshop.fullDescription.map((p, idx) => (
                 <p key={idx}>{p}</p>
@@ -374,8 +385,38 @@ export const WorkshopDetailPage: React.FC<WorkshopDetailPageProps> = ({
               </div>
             )}
 
-            {/* Host info */}
-            {workshop.hosts && (
+            {/* Host profiles: dedicated layout for Ané & Daniela */}
+            {workshop.id === 'trauma-workshops-ane-daniela' ? (
+              <div className="space-y-5 pt-4">
+                <h4 className="text-lg font-medium text-neutral-900">Møt kursholderne</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <article className="rounded-xl border border-neutral-200 bg-white p-5 text-center shadow-sm">
+                    <img
+                      src="/images/anne-small.jpg"
+                      alt="Anne Brit Borch Sandberg"
+                      className="mx-auto mb-4 h-32 w-32 rounded-full object-cover object-center ring-4 ring-[#f7e7e8] shadow-sm"
+                      loading="lazy"
+                    />
+                    <h5 className="text-sm font-semibold text-neutral-900">Anne Brit Borch Sandberg</h5>
+                    <p className="mt-1 text-xs leading-relaxed text-neutral-600">
+                      Psykiatrisk sykepleier, kognitiv terapeut og AIM-veileder (Anerkjennelse, Innsikt, Mestring).
+                    </p>
+                  </article>
+                  <article className="rounded-xl border border-neutral-200 bg-white p-5 text-center shadow-sm">
+                    <img
+                      src="/images/daniela-small.jpg"
+                      alt="Daniela Torp"
+                      className="mx-auto mb-4 h-32 w-32 rounded-full object-cover object-center ring-4 ring-[#f7e7e8] shadow-sm"
+                      loading="lazy"
+                    />
+                    <h5 className="text-sm font-semibold text-neutral-900">Daniela Torp</h5>
+                    <p className="mt-1 text-xs leading-relaxed text-neutral-600">
+                      Over 20 års erfaring med kropp, intimitet, seksualitet og relasjoner, med kroppsbaserte og traumebevisste tilnærminger.
+                    </p>
+                  </article>
+                </div>
+              </div>
+            ) : workshop.hosts ? (
               <div className="flex items-start gap-3 bg-white p-4 rounded-xl border border-neutral-200">
                 <Award className="w-5 h-5 text-[#ee5a7a] shrink-0 mt-0.5" />
                 <div>
@@ -387,7 +428,7 @@ export const WorkshopDetailPage: React.FC<WorkshopDetailPageProps> = ({
                   </p>
                 </div>
               </div>
-            )}
+            ) : null}
 
             {/* Testimonials */}
             {workshop.testimonials && workshop.testimonials.length > 0 && (
