@@ -447,9 +447,17 @@ export const WorkshopDetailPage: React.FC<WorkshopDetailPageProps> = ({
             )}
 
             <div className="pt-2">
-              <a href="#kontakt" className="btn-primary-solid w-full text-center text-xs py-3 block">
-                Meld interesse for {workshop.title}
-              </a>
+              <button
+                type="button"
+                onClick={() => {
+                  setCheckoutError('');
+                  setPriceOption(workshop.id === 'lek-med-meg' ? 'level1' : workshop.id === 'kvinneessens-og-livskraft' ? 'samhain' : 'standard');
+                  setRegistrationOpen(true);
+                }}
+                className="btn-primary-solid w-full text-center text-xs py-3 block"
+              >
+                {workshop.id === 'trauma-workshops-ane-daniela' ? 'Betal depositum' : 'Meld deg på og betal'}
+              </button>
             </div>
           </div>
         </div>
