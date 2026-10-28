@@ -53,7 +53,8 @@ const COM_PRICES: Record<string, Price> = {
   'secrets-of-the-pelvic-floor': { title: 'Secrets of the Pelvic Floor', amount: 260000, description: 'Workshop registration; price in NOK' },
   'art-of-pleasing-a-man': { title: 'The Art of Pleasing a Man', amount: 280000, description: 'Workshop registration; price in NOK' },
   'art-of-pleasing-a-woman': { title: 'The Art of Pleasing a Woman', amount: 280000, description: 'Workshop registration; price in NOK' },
-  'female-essence-and-life-force': { title: 'Female Essence and Life Force', amount: 320000, description: 'Workshop registration; price in NOK' }
+  'female-essence-and-life-force': { title: 'Female Essence and Life Force', amount: 320000, description: 'Workshop registration; price in NOK' },
+  'trauma-workshops-ane-daniela': { title: 'Trauma Workshops Ané & Daniela — full payment', amount: 285000, description: 'Two-day workshop in Oslo, November 21–22, 2026; full payment in NOK' }
 };
 
 const SHE_PRICES: Record<string, Record<string, Price>> = {
@@ -173,7 +174,11 @@ export default {
     const priceOption = body.priceOption || 'standard';
     const isSheAcademy = origin === SHE_ORIGIN || origin === 'https://www.sheacademy.no';
     const isDanielaCom = origin === COM_ORIGIN || origin === 'https://www.danielatorp.com';
-    const price = isDanielaCom ? COM_PRICES[workshopId] : (isSheAcademy ? SHE_PRICES : PRICES)[workshopId]?.[priceOption];
+    const price = isDanielaCom
+      ? (workshopId === 'trauma-workshops-ane-daniela' && priceOption === 'deposit'
+          ? { title: 'Trauma Workshops Ané & Daniela — 50% deposit', amount: 142500, description: '50% deposit for the two-day workshop in Oslo, November 21–22, 2026; remaining balance payable separately' }
+          : COM_PRICES[workshopId])
+      : (isSheAcademy ? SHE_PRICES : PRICES)[workshopId]?.[priceOption];
     const name = (body.participantName || '').trim().slice(0, 120);
     const email = (body.participantEmail || '').trim().slice(0, 254);
     if (!price || !name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
