@@ -7,7 +7,7 @@ export interface Env {
   GOOGLE_REGISTRATION_SHARED_SECRET: string;
 }
 
-type Price = { title: string; amount: number; description: string; path?: string };
+type Price = { title: string; amount: number; description: string };
 const PRICES: Record<string, Record<string, Price>> = {
   'lek-med-meg': {
     level1: { title: 'Lek med meg – nivå 1', amount: 640000, description: 'Workshop i Norge; pris i NOK' },
@@ -43,6 +43,19 @@ const PRICES: Record<string, Record<string, Price>> = {
 
 
 const SHE_ORIGIN = 'https://sheacademy.no';
+const COM_ORIGIN = 'https://danielatorp.com';
+const COM_PRICES: Record<string, Price> = {
+  'play-with-me': { title: 'Play with Me', amount: 690000, description: 'Workshop registration; price in NOK' },
+  'i-was-pregnant-but': { title: 'I Was Pregnant, But …', amount: 240000, description: 'Workshop registration; price in NOK' },
+  'art-of-pleasing-couples': { title: 'The Art of Pleasing (For Couples)', amount: 540000, description: 'Workshop registration; price in NOK' },
+  'mother-and-daughter': { title: 'Mother and Daughter', amount: 390000, description: 'Workshop registration; price in NOK' },
+  'birth-as-certainty': { title: 'Birth as Certainty', amount: 320000, description: 'Workshop registration; price in NOK' },
+  'secrets-of-the-pelvic-floor': { title: 'Secrets of the Pelvic Floor', amount: 260000, description: 'Workshop registration; price in NOK' },
+  'art-of-pleasing-a-man': { title: 'The Art of Pleasing a Man', amount: 280000, description: 'Workshop registration; price in NOK' },
+  'art-of-pleasing-a-woman': { title: 'The Art of Pleasing a Woman', amount: 280000, description: 'Workshop registration; price in NOK' },
+  'female-essence-and-life-force': { title: 'Female Essence and Life Force', amount: 320000, description: 'Workshop registration; price in NOK' }
+};
+
 const SHE_PRICES: Record<string, Record<string, Price>> = {
   'ws-1': { standard: { title: 'The Art of Pleasing a Woman', amount: 350000, description: 'SHE Academy workshop; price in NOK' } },
   'ws-2': { standard: { title: 'The Art of Pleasing a Man', amount: 350000, description: 'SHE Academy workshop; price in NOK' } },
@@ -54,20 +67,6 @@ const SHE_PRICES: Record<string, Record<string, Price>> = {
   'ws-8': { standard: { title: 'How to Please a Man', amount: 350000, description: 'SHE Academy workshop; price in NOK' } },
   'ws-9': { standard: { title: 'How to Please a Woman', amount: 350000, description: 'SHE Academy workshop; price in NOK' } },
   'ws-10': { standard: { title: 'Just for Couples', amount: 750000, description: 'SHE Academy workshop; price in NOK' } }
-};
-
-
-const COM_ORIGIN = 'https://danielatorp.com';
-const COM_PRICES: Record<string, Price> = {
-  'play-with-me': { title: 'Play with Me', amount: 690000, description: 'Workshop registration; price in NOK', path: '/workshops/Hraj-si-se-mnou.html' },
-  'i-was-pregnant-but': { title: 'I Was Pregnant, But …', amount: 240000, description: 'Workshop registration; price in NOK', path: '/workshops/byla-jsem-tehotna-ale.html' },
-  'art-of-pleasing-couples': { title: 'The Art of Pleasing (For Couples)', amount: 540000, description: 'Workshop registration; price in NOK', path: '/workshops/jen-pro-pary.html' },
-  'mother-and-daughter': { title: 'Mother and Daughter', amount: 390000, description: 'Workshop registration; price in NOK', path: '/workshops/matka-a-dcera.html' },
-  'birth-as-certainty': { title: 'Birth as Certainty', amount: 320000, description: 'Workshop registration; price in NOK', path: '/workshops/porod-jako-jistota.html' },
-  'secrets-of-the-pelvic-floor': { title: 'Secrets of the Pelvic Floor', amount: 260000, description: 'Workshop registration; price in NOK', path: '/workshops/tajemstvi-panevniho-dna.html' },
-  'art-of-pleasing-a-man': { title: 'The Art of Pleasing a Man', amount: 280000, description: 'Workshop registration; price in NOK', path: '/workshops/umeni-potesit-muze.html' },
-  'art-of-pleasing-a-woman': { title: 'The Art of Pleasing a Woman', amount: 280000, description: 'Workshop registration; price in NOK', path: '/workshops/umeni-potesit-zenu.html' },
-  'female-essence-and-life-force': { title: 'Female Essence and Life Force', amount: 320000, description: 'Workshop registration; price in NOK', path: '/workshops/zenska-esence-no.html' }
 };
 
 function json(data: unknown, status: number, origin: string): Response {
@@ -181,10 +180,10 @@ export default {
       return json({ error: 'Kontroller workshop og kontaktopplysninger.' }, 400, corsOrigin);
     }
 
-    const site = new URL(isDanielaCom ? COM_ORIGIN : isSheAcademy ? 'https://sheacademy.no' : env.SITE_URL);
-    const successUrl = new URL(isDanielaCom ? (price.path || '/') : '/', site);
+    const site = new URL(isSheAcademy ? 'https://sheacademy.no' : env.SITE_URL);
+    const successUrl = new URL('/', site);
     successUrl.search = '?payment=success&session_id={CHECKOUT_SESSION_ID}';
-    const cancelUrl = new URL(isDanielaCom ? (price.path || '/workshops') + '#kontakt' : isSheAcademy ? '/#workshops' : '/workshops', site);
+    const cancelUrl = new URL(isSheAcademy ? '/#workshops' : '/workshops', site);
     const form = new URLSearchParams();
     form.set('mode', 'payment');
     form.set('success_url', successUrl.toString());
@@ -200,7 +199,7 @@ export default {
     form.set('metadata[workshop_title]', price.title);
     form.set('metadata[participant_name]', name);
     form.set('metadata[participant_email]', email);
-    form.set('metadata[site_language]', isDanielaCom ? 'EN' : isSheAcademy ? 'SHE' : 'NO');
+    form.set('metadata[site_language]', isSheAcademy ? 'SHE' : 'NO');
     form.set('metadata[registration_source]', isDanielaCom ? 'DanielaTorp.com' : isSheAcademy ? 'SHE Academy' : 'DanielaTorp.no');
     form.set('metadata[website_source]', isDanielaCom ? 'DanielaTorp.com' : isSheAcademy ? 'SHE Academy' : 'DanielaTorp.no');
     form.set('metadata[source_website]', site.origin);
