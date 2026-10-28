@@ -21,7 +21,7 @@ export const WorkshopDetailPage: React.FC<WorkshopDetailPageProps> = ({
   const [checkoutLoading, setCheckoutLoading] = useState(false);
 
   const priceOptions = workshop?.id === 'lek-med-meg'
-    ? [{ value: 'level1', label: 'Nivå 1 – 6 400 NOK' }, { value: 'level2', label: 'Nivå 2 – 7 250 NOK' }]
+    ? [{ value: 'level1', label: 'Nivå 1 · 22.–24.01.2027 · 6 400 NOK' }, { value: 'level2', label: 'Nivå 2 · 29.–31.01.2027 · 7 250 NOK' }]
     : workshop?.id === 'kvinneessens-og-livskraft'
       ? [{ value: 'samhain', label: 'SAMHAIN – 3 650 NOK' }, { value: 'imbolc', label: 'IMBOLC – 4 350 NOK' }, { value: 'beltane', label: 'BELTANE – 4 350 NOK' }]
       : [{ value: 'standard', label: workshop?.id === 'kun-for-par' ? '8 500 NOK per par' : 'Fortsett til betaling' }];
