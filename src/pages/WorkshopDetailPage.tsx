@@ -355,11 +355,6 @@ export const WorkshopDetailPage: React.FC<WorkshopDetailPageProps> = ({
                   {workshop.priceNOK}
                 </div>
               )}
-              {workshop.id !== 'trauma-workshops-ane-daniela' && (
-                <div className="text-xs text-neutral-600">
-                  Opprinnelig referansepris: <strong>{workshop.priceCZK}</strong>
-                </div>
-              )}
               {workshop.priceNote && (
                 <p className="text-[11px] text-neutral-500 mt-2 leading-relaxed border-t border-neutral-100 pt-2">
                   {workshop.priceNote}
