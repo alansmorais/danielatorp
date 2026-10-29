@@ -185,7 +185,7 @@ export default {
       return json({ error: 'Kontroller workshop og kontaktopplysninger.' }, 400, corsOrigin);
     }
 
-    const site = new URL(isSheAcademy ? 'https://sheacademy.no' : env.SITE_URL);
+    const site = new URL(isSheAcademy ? 'https://sheacademy.no' : (isDanielaCom ? origin : env.SITE_URL));
     const successUrl = new URL('/', site);
     successUrl.search = '?payment=success&session_id={CHECKOUT_SESSION_ID}';
     const cancelUrl = new URL(isSheAcademy ? '/#workshops' : '/workshops', site);
@@ -209,7 +209,7 @@ export default {
     form.set('metadata[website_source]', isDanielaCom ? 'DanielaTorp.com' : isSheAcademy ? 'SHE Academy' : 'DanielaTorp.no');
     form.set('metadata[source_website]', site.origin);
     form.set('metadata[price_option]', priceOption);
-    form.set('metadata[site_url]', env.SITE_URL);
+    form.set('metadata[site_url]', site.origin);
 
     const stripeResponse = await fetch('https://api.stripe.com/v1/checkout/sessions', {
       method: 'POST',
