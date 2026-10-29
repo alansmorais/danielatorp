@@ -32,7 +32,7 @@ export const WorkshopDetailPage: React.FC<WorkshopDetailPageProps> = ({
     setCheckoutLoading(true);
     try {
       const endpoint = (import.meta as ImportMeta & { env?: { VITE_STRIPE_WORKER_URL?: string } }).env?.VITE_STRIPE_WORKER_URL
-        || 'https://danielatorp-no-stripe-checkout.YOUR_SUBDOMAIN.workers.dev';
+        || 'https://danielatorp-no-stripe-checkout.alanpkmorais.workers.dev';
       if (endpoint.includes('YOUR_SUBDOMAIN')) {
         throw new Error('Online betaling er ikke konfigurert ennå. Kontakt Daniela for påmelding.');
       }
