@@ -39,7 +39,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
       'Både for nybegynnere og de med tidligere erfaring'
     ],
     location: 'Asker Norge',
-    timing: 'Fredag kl. 17:00 til søndag kl. 17:00',
+    timing: 'Level 1: 22.–24. januar 2027 · Level 2: 29.–31. januar 2027. Fredag kl. 17:00 til søndag kl. 15:00.',
     whatToBring: ['Behagelige klær', 'Notatbok og penn', 'Egne lekerekvisitter dersom du har'],
     priceNOK: 'Level 1: 6 400 kr | Level 2: 7 250 kr',
     priceCZK: 'Oppgis ved påmelding',
@@ -65,14 +65,14 @@ export const WORKSHOPS_DATA: Workshop[] = [
     seasons: [
       {
         name: 'Imbolc',
-        date: '27.02. – 01.03.2026',
+        date: '5.–7. februar 2027',
         focus: 'Barndom & røtter',
         description: 'Oppdag din lekne natur, hel barndommens sår og forstå hvordan familierelasjoner former dine overbevisninger. Knytt kontakt med røttene dine og finn emosjonell støtte for å nære ditt indre barn.',
         image: '/images/chatgpt-image-9.-1.-2026-14_29_46-2.png'
       },
       {
         name: 'Beltane',
-        date: 'Vår / Forsommer',
+        date: '30. april–2. mai 2027',
         focus: 'Ungdom & selverkjennelse',
         description: 'Favn din sensualitet, lær å elske deg selv og sett sunne grenser. Møt ungdomstidens utfordringer, skam, skyld og identitetssøken. Lær kunsten å samtykke og fullstendig selvaksept.',
         image: '/images/danča-fb-1.jpg'
@@ -86,7 +86,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
       },
       {
         name: 'Samhain',
-        date: '16.10. – 18.10.2026',
+        date: '7.–8. november 2026',
         focus: 'Visdom & ro',
         description: 'Favn modningen, finn ro i din sanselige visdom og oppdag overgangsalderens skjønnhet. Gjenopprett kontakten med din dype intuisjon og lær kunsten å ikke dømme.',
         image: '/images/danča-fb-3.jpg'
@@ -102,7 +102,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
       image: '/images/danča-fb-4.jpg'
     },
     location: 'Larvik / Oslo (Norge)',
-    timing: 'Ankomst fredag kl. 16:00, programstart kl. 17:00, avslutning søndag kl. 15:00–16:00',
+    timing: 'Helgesamlinger: ankomst fredag kl. 16:00, programstart kl. 17:00 og avslutning søndag kl. 15:00.',
     whatToBring: ['Behagelige klær og innesko', 'Vannflaske', 'Teppe', 'Sovepose eller dyne/pute'],
     priceNOK: 'Woman Vital Essence (IMBOLC / BELTANE): 4 350 kr | SAMHAIN: 3 650 kr',
     priceCZK: '2 250 CZK per samling',
