@@ -38,36 +38,41 @@ const PRICES: Record<string, Record<string, Price>> = {
   },
   'mor-og-datter': {
     standard: { title: 'Mor og datter', amount: 280000, description: 'Veiledende pris for mor og datter; bekreft norsk dato før betaling' }
+  },
+  'trauma-workshops-ane-daniela': {
+    standard: { title: 'Traumaworkshops Ané & Daniela', amount: 285000, description: 'To-dagers workshop i Oslo 21.–22. november 2026; pris i NOK' }
   }
 };
 
 
 const SHE_ORIGIN = 'https://sheacademy.no';
 const COM_ORIGIN = 'https://danielatorp.com';
+// English and SHE Academy workshop IDs are aliases to the single Norwegian price catalog.
+// This keeps every checkout amount identical across all three websites.
 const COM_PRICES: Record<string, Price> = {
-  'play-with-me': { title: 'Play with Me', amount: 690000, description: 'Workshop registration; price in NOK' },
-  'i-was-pregnant-but': { title: 'I Was Pregnant, But …', amount: 240000, description: 'Workshop registration; price in NOK' },
-  'art-of-pleasing-couples': { title: 'The Art of Pleasing (For Couples)', amount: 540000, description: 'Workshop registration; price in NOK' },
-  'mother-and-daughter': { title: 'Mother and Daughter', amount: 390000, description: 'Workshop registration; price in NOK' },
-  'birth-as-certainty': { title: 'Birth as Certainty', amount: 320000, description: 'Workshop registration; price in NOK' },
-  'secrets-of-the-pelvic-floor': { title: 'Secrets of the Pelvic Floor', amount: 260000, description: 'Workshop registration; price in NOK' },
-  'art-of-pleasing-a-man': { title: 'The Art of Pleasing a Man', amount: 280000, description: 'Workshop registration; price in NOK' },
-  'art-of-pleasing-a-woman': { title: 'The Art of Pleasing a Woman', amount: 280000, description: 'Workshop registration; price in NOK' },
-  'female-essence-and-life-force': { title: 'Female Essence and Life Force', amount: 320000, description: 'Workshop registration; price in NOK' },
-  'trauma-workshops-ane-daniela': { title: 'Trauma Workshops Ané & Daniela — full payment', amount: 285000, description: 'Two-day workshop in Oslo, November 21–22, 2026; full payment in NOK' }
+  'play-with-me': PRICES['lek-med-meg'].level1,
+  'i-was-pregnant-but': PRICES['jeg-var-gravid-men'].standard,
+  'art-of-pleasing-couples': PRICES['kun-for-par'].standard,
+  'mother-and-daughter': PRICES['mor-og-datter'].standard,
+  'birth-as-certainty': PRICES['fodsel-med-trygghet'].standard,
+  'secrets-of-the-pelvic-floor': PRICES['bekkenbunnens-hemmeligheter'].standard,
+  'art-of-pleasing-a-man': PRICES['kunsten-a-tilfredsstille-en-mann'].standard,
+  'art-of-pleasing-a-woman': PRICES['kunsten-a-tilfredsstille-en-kvinne'].standard,
+  'female-essence-and-life-force': PRICES['kvinneessens-og-livskraft'].samhain,
+  'trauma-workshops-ane-daniela': PRICES['trauma-workshops-ane-daniela'].standard
 };
 
 const SHE_PRICES: Record<string, Record<string, Price>> = {
-  'ws-1': { standard: { title: 'The Art of Pleasing a Woman', amount: 350000, description: 'SHE Academy workshop; price in NOK' } },
-  'ws-2': { standard: { title: 'The Art of Pleasing a Man', amount: 350000, description: 'SHE Academy workshop; price in NOK' } },
-  'ws-3': { standard: { title: 'Larvik Vital Essence SAMHAIN', amount: 550000, description: 'SHE Academy workshop; price in NOK' } },
-  'ws-4': { standard: { title: 'Trauma workshop with Anne-Oslo', amount: 490000, description: 'SHE Academy workshop; price in NOK' } },
-  'ws-5': { standard: { title: 'Play with Me 1', amount: 650000, description: 'SHE Academy workshop; price in NOK' } },
-  'ws-6': { standard: { title: 'Play with Me Level 2', amount: 690000, description: 'SHE Academy workshop; price in NOK' } },
-  'ws-7': { standard: { title: 'Woman Vital Essence Imbolic', amount: 590000, description: 'SHE Academy workshop; price in NOK' } },
-  'ws-8': { standard: { title: 'How to Please a Man', amount: 350000, description: 'SHE Academy workshop; price in NOK' } },
-  'ws-9': { standard: { title: 'How to Please a Woman', amount: 350000, description: 'SHE Academy workshop; price in NOK' } },
-  'ws-10': { standard: { title: 'Just for Couples', amount: 750000, description: 'SHE Academy workshop; price in NOK' } }
+  'ws-1': { standard: PRICES['kunsten-a-tilfredsstille-en-kvinne'].standard },
+  'ws-2': { standard: PRICES['kunsten-a-tilfredsstille-en-mann'].standard },
+  'ws-3': { standard: PRICES['kvinneessens-og-livskraft'].samhain },
+  'ws-4': { standard: PRICES['trauma-workshops-ane-daniela'].standard },
+  'ws-5': { standard: PRICES['lek-med-meg'].level1 },
+  'ws-6': { standard: PRICES['lek-med-meg'].level2 },
+  'ws-7': { standard: PRICES['kvinneessens-og-livskraft'].imbolc },
+  'ws-8': { standard: PRICES['kunsten-a-tilfredsstille-en-mann'].standard },
+  'ws-9': { standard: PRICES['kunsten-a-tilfredsstille-en-kvinne'].standard },
+  'ws-10': { standard: PRICES['kun-for-par'].standard }
 };
 
 function json(data: unknown, status: number, origin: string): Response {
@@ -176,7 +181,7 @@ export default {
     const isDanielaCom = origin === COM_ORIGIN || origin === 'https://www.danielatorp.com';
     const price = isDanielaCom
       ? (workshopId === 'trauma-workshops-ane-daniela' && priceOption === 'deposit'
-          ? { title: 'Trauma Workshops Ané & Daniela — 50% deposit', amount: 142500, description: '50% deposit for the two-day workshop in Oslo, November 21–22, 2026; remaining balance payable separately' }
+          ? { title: 'Traumaworkshops Ané & Daniela — 50 % deposit', amount: Math.round(PRICES['trauma-workshops-ane-daniela'].standard.amount / 2), description: '50 % deposit for the two-day workshop in Oslo, November 21–22, 2026; remaining balance payable separately' }
           : COM_PRICES[workshopId])
       : (isSheAcademy ? SHE_PRICES : PRICES)[workshopId]?.[priceOption];
     const name = (body.participantName || '').trim().slice(0, 120);
