@@ -143,7 +143,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
       'For nysgjerrige, åpne og respektfulle deltakere',
       'Både for nybegynnere og de med tidligere erfaring'
     ],
-    location: 'Oslo (Norge) & Tantracentrum Kameňák, Tsjekkia',
+    location: 'Oslo (Norge)',
     timing: '1 dag (10:00 – 18:00) eller helgesamling',
     whatToBring: ['Behagelige klær', 'Notatbok og penn'],
     priceNOK: 'Only for Couples: 8 500 kr (per par)',
@@ -173,7 +173,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
       'Kommunikasjon uten ord: Lesing av kroppsspråk, pust og mikrobevegelser',
       'Avspenning av egne prestasjonskrav og trygghet i egen maskulinitet'
     ],
-    location: 'Oslo (Norge) & Tantracentrum Kameňák (Tsjekkia)',
+    location: 'Oslo (Norge)',
     timing: '1 dag (10:00 – 18:00)',
     whatToBring: ['Behagelige klær', 'Notatbok og penn'],
     priceNOK: 'How to Please a Woman: 2 500 kr',
@@ -248,7 +248,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
       'Er dere i et langvarig parforhold og ønsker å vekke den gnistrende lidenskapen til live igjen?',
       'Er du for tiden singel, men nysgjerrig og vil forstå mannens anatomi, psykologi og din egen kvinnelige tiltrekningskraft bedre?'
     ],
-    location: 'Oslo (Norge) & Tantracentrum Kameňák (Tsjekkia)',
+    location: 'Oslo (Norge)',
     timing: '1 dag (10:00 – 18:00)',
     whatToBring: ['Behagelige klær du trives i', 'Notatbok og penn'],
     priceNOK: 'How to Please a Man: 2 500 kr',
