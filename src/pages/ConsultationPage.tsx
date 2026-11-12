@@ -55,7 +55,7 @@ export const ConsultationPage: React.FC<ConsultationPageProps> = ({
                 Hvordan møtes vi?
               </h4>
               <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                Jeg tilbyr konsultasjoner ved personlig oppmøte (i Oslo eller Tsjekkia) eller digitalt over nettet (f.eks. via Skype, Zoom eller Google Meet). Dersom du ønsker en samtale, ta gjerne kontakt via skjemaet nedenfor.
+                Jeg tilbyr konsultasjoner ved personlig oppmøte i Oslo eller digitalt over nettet (f.eks. via Skype, Zoom eller Google Meet). Dersom du ønsker en samtale, ta gjerne kontakt via skjemaet nedenfor.
               </p>
             </div>
 
@@ -165,7 +165,7 @@ export const ConsultationPage: React.FC<ConsultationPageProps> = ({
                   Hvor finner konsultasjonene sted?
                 </h4>
                 <p className="text-xs text-neutral-600 leading-relaxed">
-                  Norge (Oslo), Tsjekkia eller digitalt over nettet (Zoom / Teams / Google Meet).
+                  Oslo, Norge eller digitalt over nettet (Zoom / Teams / Google Meet).
                 </p>
               </div>
 
