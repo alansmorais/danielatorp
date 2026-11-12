@@ -325,7 +325,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               Personlige konsultasjoner
             </h2>
             <p className="text-sm text-neutral-600 leading-relaxed mb-4">
-              Når du foretrekker et privat møte – én til én eller som par. Når du føler at noen ting bare kan sies ansikt til ansikt. Tilbys i Oslo, Tsjekkia eller digitalt over video.
+              Når du foretrekker et privat møte – én til én eller som par. Når du føler at noen ting bare kan sies ansikt til ansikt. Tilbys i Oslo eller digitalt over video.
             </p>
             <div className="flex flex-wrap gap-2 text-xs text-neutral-600">
               <span className="bg-white/80 px-2.5 py-1 rounded-full border border-neutral-200">
