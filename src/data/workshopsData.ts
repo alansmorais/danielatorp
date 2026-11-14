@@ -71,6 +71,13 @@ export const WORKSHOPS_DATA: Workshop[] = [
         image: '/images/chatgpt-image-9.-1.-2026-14_29_46-2.png'
       },
       {
+        name: 'Ostara – en feiring av livet',
+        date: '20. mars 2027',
+        focus: 'Feiring av livet',
+        description: 'Vi feirer livet og vårens ankomst sammen. Det er ingen pengeavgift; vi samles rundt et stort felles måltid, og hver deltaker tar med frukt eller nøtter.',
+        image: '/images/1.jpg'
+      },
+      {
         name: 'Beltane',
         date: '30. april–2. mai 2027',
         focus: 'Ungdom & selverkjennelse',
@@ -83,13 +90,6 @@ export const WORKSHOPS_DATA: Workshop[] = [
         focus: 'Morskap & egenkraft',
         description: 'Favn kroppen din, ta imot kraften i lyst og livmor, og gi slipp på gamle traumer. Tre inn i svangerskapets magi, fødselens skjønnhet og kunsten å skape bevisst.',
         image: '/images/danča-fb-2.jpg'
-      },
-      {
-        name: 'Ostara – en feiring av livet',
-        date: '20. mars 2027',
-        focus: 'Feiring av livet',
-        description: 'Vi feirer livet og vårens ankomst sammen. Det er ingen pengeavgift; vi samles rundt et stort felles måltid, og hver deltaker tar med frukt eller nøtter.',
-        image: '/images/1.jpg'
       },
       {
         name: 'Samhain',
