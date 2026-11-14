@@ -85,6 +85,13 @@ export const WORKSHOPS_DATA: Workshop[] = [
         image: '/images/danča-fb-2.jpg'
       },
       {
+        name: 'Ostara – en feiring av livet',
+        date: '20. mars 2027',
+        focus: 'Feiring av livet',
+        description: 'Vi feirer livet og vårens ankomst sammen. Det er ingen pengeavgift; vi samles rundt et stort felles måltid, og hver deltaker tar med frukt eller nøtter.',
+        image: '/images/1.jpg'
+      },
+      {
         name: 'Samhain',
         date: '7.–8. november 2026',
         focus: 'Visdom & ro',
