@@ -180,9 +180,7 @@ export default {
     const isSheAcademy = origin === SHE_ORIGIN || origin === 'https://www.sheacademy.no';
     const isDanielaCom = origin === COM_ORIGIN || origin === 'https://www.danielatorp.com';
     const price = isDanielaCom
-      ? (workshopId === 'trauma-workshops-ane-daniela' && priceOption === 'deposit'
-          ? { title: 'Traumaworkshops Ané & Daniela — 50 % deposit', amount: Math.round(PRICES['trauma-workshops-ane-daniela'].standard.amount / 2), description: '50 % deposit for the two-day workshop in Oslo, November 21–22, 2026; remaining balance payable separately' }
-          : COM_PRICES[workshopId])
+      ? COM_PRICES[workshopId]
       : (isSheAcademy ? SHE_PRICES : PRICES)[workshopId]?.[priceOption];
     const name = (body.participantName || '').trim().slice(0, 120);
     const email = (body.participantEmail || '').trim().slice(0, 254);
