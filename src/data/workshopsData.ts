@@ -354,8 +354,8 @@ export const WORKSHOPS_DATA: Workshop[] = [
     id: 'trauma-workshops-ane-daniela',
     slug: 'traumaworkshops-ane-daniela',
     title: 'Traumaworkshops Ané & Daniela',
-    tag: 'To-dagers workshop',
-    subtitle: 'To dager som kan endre måten du forstår deg selv og andre på',
+    tag: 'Éndags workshop',
+    subtitle: 'En dag som kan endre måten du forstår deg selv og andre på',
     shortDescription: 'Utforsk hvordan traumer påvirker relasjoner, tilknytning og måten vi møter oss selv og andre på.',
     cardImage: '/images/web-1920---workshop.jpg',
     heroImage: '/images/web-1920---workshop.jpg',
@@ -372,11 +372,11 @@ export const WORKSHOPS_DATA: Workshop[] = [
       'For fagpersoner som støtter og arbeider med andre mennesker'
     ],
     location: 'Prindsen Yoga & Terapi, Storgata 36C, Oslo, Norge',
-    timing: '21. november kl. 10:00–18:00 · 22. november kl. 10:00–15:00',
+    timing: 'Lørdag 13. mars 2027 kl. 10:00–19:00',
     whatToBring: ['Behagelige klær', 'Notatbok og penn'],
-    priceNOK: '2 850 NOK',
+    priceNOK: '1 190 NOK',
     priceCZK: 'Ikke relevant',
-    priceNote: 'Depositum: 1 425 NOK (50 % av totalprisen). Betaling skjer kun via Vipps #970088. Plassen bekreftes når depositumet er betalt. Påmelding via SMS: 958 64 782.',
+    priceNote: 'Påmelding via SMS: 958 64 782.',
     hosts: 'Anne Brit Borch Sandberg er psykiatrisk sykepleier og kognitiv terapeut, og arbeider med AIM (Anerkjennelse, Innsikt, Mestring). Hun støtter mennesker i å utforske selvforståelse gjennom kognitiv forståelse og innsikt, og i å utvikle en indre veiviser for relasjoner, egenomsorg og nye perspektiver. Daniela Torp har over 20 års erfaring med kropp, intimitet, seksualitet og relasjoner. Hun arbeider med enkeltpersoner og par gjennom coaching, kroppsbaserte og traumebevisste tilnærminger, og har utdanning i Sexological Bodywork fra California og Compassionate Trauma Therapy (2025).'
   },
 
