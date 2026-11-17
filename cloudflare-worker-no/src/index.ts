@@ -40,7 +40,7 @@ const PRICES: Record<string, Record<string, Price>> = {
     standard: { title: 'Mor og datter', amount: 280000, description: 'Veiledende pris for mor og datter; bekreft norsk dato før betaling' }
   },
   'trauma-workshops-ane-daniela': {
-    standard: { title: 'Traumaworkshops Ané & Daniela', amount: 285000, description: 'To-dagers workshop i Oslo 21.–22. november 2026; pris i NOK' }
+    standard: { title: 'Traumaworkshops Ané & Daniela', amount: 119000, description: 'Éndags workshop i Oslo 13. mars 2027 kl. 10:00–19:00; pris i NOK' }
   }
 };
 
