@@ -354,7 +354,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
     id: 'trauma-workshops-ane-daniela',
     slug: 'traumaworkshops-ane-daniela',
     title: 'Traumaworkshops Ané & Daniela',
-    tag: 'Éndags workshop',
+    tag: 'Én-dags workshop',
     subtitle: 'En dag som kan endre måten du forstår deg selv og andre på',
     shortDescription: 'Utforsk hvordan traumer påvirker relasjoner, tilknytning og måten vi møter oss selv og andre på.',
     cardImage: '/images/web-1920---workshop.jpg',
